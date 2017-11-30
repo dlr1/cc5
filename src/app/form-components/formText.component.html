@@ -1,0 +1,15 @@
+﻿<div class="row clearfix" style="padding-top:5px">
+    <label class="col-sm-4 control-label">{{data.label}}</label>
+    <div class="col-sm-6">
+        <input 
+               type="text"
+               name="input"
+               [disabled]="data.isDisabled"
+               class="form-control"
+               ng-model="data.values[0].value"
+               ng-pattern="validate"
+               ng-required="varscope.required"
+               [placeholder]="data.placeholder" />
+    </div>
+    <br/>
+</div>
