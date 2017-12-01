@@ -1,20 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, enableProdMode } from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 
 import {FormComponentsModule} from './form-components/form-components.module';
-import { CommandComponent } from './command.component';
 
 import { FormsModule }   from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { CommandsComponent } from './commands.component';
+import { CommandModalComponent } from './command-modal.component';
+
+enableProdMode();
 
 @NgModule({
   declarations: [
     AppComponent,
-    CommandComponent,
+    CommandModalComponent,
     CommandsComponent
   ],
   imports: [
@@ -24,7 +26,7 @@ import { CommandsComponent } from './commands.component';
     HttpClientModule,
     FormsModule
   ],
-  entryComponents:[CommandComponent],
+  entryComponents:[CommandModalComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

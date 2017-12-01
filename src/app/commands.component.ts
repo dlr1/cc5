@@ -4,9 +4,8 @@ import { HttpClient } from '@angular/common/http';
 
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
-import {CommandComponent} from './command.component';
-
 import {Variable, Command} from './form-components/models';
+import { CommandModalComponent } from './command-modal.component';
 
 @Component({
     selector: 'commands-component',
@@ -38,17 +37,16 @@ export class CommandsComponent {
                 this.groupedCategories.push({name:key, count:categories[key].length});                
             }
             this.selectedCategory = this.groupedCategories[0];
-//            this.categoryChanged();
         });        
     }
 
     openDialog(){
-        const modalRef = this.modalService.open(CommandComponent,{size:"lg"});
+        const modalRef = this.modalService.open(CommandModalComponent,{size:"lg"});
         modalRef.componentInstance.command = this.selectedCommand;
       }
 
-    editCommand(){
-
+      editCommand(){
+        this.openDialog();
     }
 
     commandChanged(){      

@@ -1,22 +1,21 @@
 ﻿<div class="row clearfix" style="padding-top:5px">
-    <label class="col-sm-4 control-label">{{data.label}}</label>
+    <label class="col-sm-4 control-label">{{data?.label}}</label>
     <div class="col-sm-6">
         <input #box
                type="text"
                name="input"
-               [disabled]="data.isDisabled"
+               [disabled]="data?.isDisabled"
                class="form-control"
-               ng-model="data.value"    
-               [pattern]="data.regex_name"
+               ng-model="data?.value"                   
                (blur)="validate(box.value)"
-               [required]="data.required"
-               [placeholder]="data.placeholder" />
+               [required]="data?.required"
+               [placeholder]="data?.placeholder == null ? '': data.placeholder" />
     </div>
     <div class="col-sm-1">
         <span 
-              style="font-size:xx-large; vertical-align:bottom; ">
+              style="font-size:large; vertical-align:bottom; ">
             <b [style.color]="isValid ? 'green' : 'red'" >*</b>
         </span>
     </div>  
-    <br/>
+    <br/>    
 </div>

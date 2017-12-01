@@ -8,7 +8,7 @@
     </select>
             <div class="col-md-1">
             <div class="btn-group btn-sm">
-                    <button class="btn btn-default btn-sm ng-scope" ng-click="editCommand()" tooltip=" edit parameters" 
+                    <button class="btn btn-default btn-sm ng-scope" (click)="editCommand()" tooltip=" edit parameters" 
                     [disabled]="selectedCommand == null">
                         <i class="fa fa-pencil"></i>
                     </button>
@@ -27,13 +27,6 @@
       </div>   
   </ng-template>
 </ngb-panel>
-<ngb-panel >
-  <ng-template ngbPanelTitle>
-    <span>&#9733; <b>Fancy</b> title &#9733;</span>
-  </ng-template>
-  <ng-template ngbPanelContent>
-   
-  </ng-template>
-</ngb-panel>
+
 
 </ngb-accordion>

@@ -1,15 +1,16 @@
 import { Component, OnInit, Input, OnChanges, SimpleChange, ViewChild, ComponentFactoryResolver, ChangeDetectorRef } from '@angular/core';
-import {NgbModal, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
-import {Variable, Command} from './form-components/models';
+import { Variable, Command } from './form-components/models';
 import { HostDirective } from './form-components/host.directive';
 import { FormTextComponent } from './form-components/formText.component';
 import { BaseComponent } from './form-components/base.component';
+import { FormDropdownComponent } from './form-components/formDropdown.component';
 
 
 
 @Component({
-  selector: 'command-component',
+  selector: 'command-modal-component',
   template: `
   <div class="modal-header">
     <h4 class="modal-title">{{command.name}}</h4>
@@ -26,62 +27,75 @@ import { BaseComponent } from './form-components/base.component';
   </div>
 `
 })
-export class CommandComponent implements OnInit, OnChanges {
+export class CommandModalComponent implements OnInit, OnChanges {
   _command: Command;
 
-  
+
   @Input()
   set command(val: Command) {
-    this._command = val;    
+    this._command = val;
 
     this.cdref.detach();
     let viewContainerRef = this.componentHost.viewContainerRef;
     this.ctrls = [];
     this._command.variables.forEach(element => {
-      let componentFactory = this.componentFactoryResolver.resolveComponentFactory(FormTextComponent);      
-          let componentRef = viewContainerRef.createComponent(componentFactory);
-          let inst = (<FormTextComponent>componentRef.instance);
-          inst.data = element;
-          inst.valueChanged.subscribe(data=>{this.raiseDependantEvents(data); this.checkValid()});
-          this.ctrls.push(inst);
+      let componentFactory;
+      switch (element.type) {
+        case "form-text":
+          componentFactory = this.componentFactoryResolver.resolveComponentFactory(FormTextComponent);
+          break;
+        case "form-dropdown":
+          componentFactory = this.componentFactoryResolver.resolveComponentFactory(FormDropdownComponent);
+          break;
+        default:
+          break;
+      }
+
+      let componentRef = viewContainerRef.createComponent(componentFactory);
+      let inst = (<BaseComponent>componentRef.instance);
+      inst.data = element;
+      inst.valueChanged.subscribe(data => { this.raiseDependantEvents(data); this.checkValid() });
+      this.ctrls.push(inst);
     });
     this.cdref.detectChanges();
   }
+
 
   get command(): Command { return this._command; }
 
 
   @ViewChild(HostDirective) componentHost: HostDirective;
-  
-  ctrls:Array<BaseComponent>;
 
-  isValid:boolean = false;
+  ctrls: Array<BaseComponent>;
 
-  ngOnChanges(changes: {[propKey: string]: SimpleChange}) {
-   
+  isValid: boolean = false;
+
+  ngOnChanges(changes: { [propKey: string]: SimpleChange }) {
+
   }
-  
-  constructor(public activeModal: NgbActiveModal, private componentFactoryResolver: ComponentFactoryResolver, private cdref:ChangeDetectorRef) {}
+
+  constructor(public activeModal: NgbActiveModal, private componentFactoryResolver: ComponentFactoryResolver,
+    private cdref: ChangeDetectorRef) { }
 
   ngOnInit() {
   }
 
   ngAfterViewInit() {
-    
+
   }
 
-  checkValid(){
-    let controlsNotValid = this.ctrls.filter(x=>!x.isValid);
+  checkValid() {
+    let controlsNotValid = this.ctrls.filter(x => !x.isValid);
     this.isValid = controlsNotValid.length == 0;
-//    this.cdref.detectChanges();
+    this.cdref.detectChanges();
   }
-  
-  raiseDependantEvents(data:Variable){
+
+  raiseDependantEvents(data: Variable) {
     console.log("raise events");
     this.checkValid();
   }
 
-  save(){
+  save() {
 
   }
 

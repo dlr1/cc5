@@ -2463,8 +2463,7 @@
         "name": "MPLS - Ping Routing Instance with Source",
         "groups": [ { "name": "MPLS" } ],
         "platform": "MCR",
-        "category": "Execute",
-        "groups": [ { "name": "Broadband" } ],
+        "category": "Execute",        
         "access": [ "Command Center Level 2" ],
         "intrusiveness": "",
         "approved": true,
@@ -7428,57 +7427,7 @@
           }
         ]
       },
-      {
-        "id": 903,
-        "name": "Enable Sub-Interface",
-        "platform": "MCR",
-        "category": "Execute",
-        "groups": [ { "name": "Broadband" } ],
-        "access": [ "Command Center Level 4", "Command Center Repair" ],
-        "intrusiveness": "Y",
-        "approved": true,
-        "device": null,
-        "resource_hog": false,
-        "snippets": [
-          {
-            "text": "{{configure private\n}}"
-          },
-          {
-            "text": "{{set interface <<Interface>> enable\n}}"
-          },
-          {
-            "text": "{{show | compare\n}}"
-          },
-          {
-            "text": "{{<<Commit>>}}"
-          }
-        ],
-        "variables": [
-          {
-            "type": "form-select-interface-byname",
-            "variable": "Interface",
-            "label": "Interface",
-            "regex_name": "any_value",
-            "required": true,
-            "postProcessing": "SubInterfaceSplitProc",
-            "values": [ { "value": "" } ]
-          },
-          {
-            "type": "form-checkbox",
-            "variable": "Commit",
-            "label": "Commit",
-            "values": [ { "value": "commit check\nrollback\nexit" } ],
-            "options": [
-              {
-                "label": "Commit",
-                "value": "commit"
-              }
-            ],
-            "checked": "commit\nexit\nshow configuration interfaces <<Interface>>",
-            "unchecked": "commit check\nrollback\nexit"
-          }
-        ]
-      },
+      
       {
         "id": 904,
         "name": "Disable Sub-Interface",

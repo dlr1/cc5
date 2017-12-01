@@ -1,0 +1,14 @@
+<div class="row clearfix" style="padding-top:5px">
+    <label class="col-sm-4 control-label">{{data.label}}</label>
+    <div class="col-sm-6">
+        <select type="text" name="input" class="form-control" [(ngModel)]="data.value" ng-pattern="validate" [required]="data.required">
+            <option *ngFor="let c of filteredCommands" [value]="c.name">{{c.name}}</option>
+        </select>
+    </div>
+    <div class="col-sm-1">
+        <span 
+        style="font-size:large; vertical-align:bottom; ">
+      <b [style.color]="isValid ? 'green' : 'red'" >*</b>
+  </span>
+    </div>
+</div>
