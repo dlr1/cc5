@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import {NgbModal, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import {CommandComponent} from './command.component';
 
-import {Variable} from './form-components/models';
+import {Variable, Command} from './form-components/models';
+import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-root',
@@ -10,6 +12,7 @@ import {Variable} from './form-components/models';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  commands:Array<Command>;
   variables: Array<Variable> = [{
     "type": "form-text",
     "name": "VRF",
@@ -46,8 +49,15 @@ export class AppComponent {
     "placeholder": "ex. 255.255.255.255",
     "value":""
   }]
-  constructor(private modalService: NgbModal) {
+  constructor(private modalService: NgbModal, private http: HttpClient) {
 
+  }
+
+  ngOnInit(){
+    this.http.get<Array<Command>>('assets/data.json').subscribe(x=>{
+      this.commands = x;
+      
+    });
   }
 
   openDialog(){

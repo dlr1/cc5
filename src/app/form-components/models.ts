@@ -8,3 +8,9 @@ export interface Variable{
     value:string
 }
 
+export interface Command{
+    intrusiveness:string;
+    name:string;
+    snippets:Array<{text:string}>
+    variables:Array<Variable>
+}

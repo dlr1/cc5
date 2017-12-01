@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import {FormComponentsModule} from './form-components/form-components.module';
 import { CommandComponent } from './command.component';
 
+import {HttpClientModule} from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,7 +17,8 @@ import { CommandComponent } from './command.component';
   imports: [
     BrowserModule,
     NgbModule.forRoot(),
-    FormComponentsModule
+    FormComponentsModule,
+    HttpClientModule
   ],
   entryComponents:[CommandComponent],
   providers: [],
