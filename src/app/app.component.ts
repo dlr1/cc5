@@ -17,7 +17,7 @@ export class AppComponent {
     "regex": "string_no_spaces",
     "required": true,
     "placeholder": "VRF",
-    "values": [ { "value": "" } ]
+    "value":""
   },
   {
     "type": "form-text",
@@ -26,16 +26,16 @@ export class AppComponent {
     "regex": "ip_v4",
     "required": true,
     "placeholder": "ex. 255.255.255.255",
-    "values": [ { "value": "" } ]
+    "value":""
   },
   {
     "type": "form-text",
     "name": "NetworkIPCIDR",
     "label": "Network IP CIDR",
     "regex": "any_value",
-    "required": true,
+    "required": false,
     "placeholder": "CIDR",
-    "values": [ { "value": "" } ]
+    "value":""
   },
   {
     "type": "form-text",
@@ -44,7 +44,7 @@ export class AppComponent {
     "regex": "ip_v4",
     "required": true,
     "placeholder": "ex. 255.255.255.255",
-    "values": [ { "value": "" } ]
+    "value":""
   }]
   constructor(private modalService: NgbModal) {
 

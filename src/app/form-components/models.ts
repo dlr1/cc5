@@ -5,5 +5,6 @@ export interface Variable{
     regex:string;
     required:boolean;
     placeholder:string;
-    values:Array<any>;
+    value:string
 }
+

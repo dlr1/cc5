@@ -1,15 +1,18 @@
 ﻿<div class="row clearfix" style="padding-top:5px">
     <label class="col-sm-4 control-label">{{data.label}}</label>
     <div class="col-sm-6">
-        <input 
+        <input #box
                type="text"
                name="input"
                [disabled]="data.isDisabled"
                class="form-control"
-               ng-model="data.values[0].value"
-               ng-pattern="validate"
-               ng-required="varscope.required"
+               ng-model="data.values[0].value"               
+               (blur)="validate(box.value)"
+               [required]="data.required"
                [placeholder]="data.placeholder" />
+    </div>
+    <div class="col-sm-1" style="font-size:34px"   [style.color]="isValid ? 'green' : 'red'" >
+        *
     </div>
     <br/>
 </div>

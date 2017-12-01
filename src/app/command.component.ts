@@ -4,6 +4,7 @@ import {NgbModal, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import {Variable} from './form-components/models';
 import { HostDirective } from './form-components/host.directive';
 import { FormTextComponent } from './form-components/formText.component';
+import { BaseComponent } from './form-components/base.component';
 
 
 
@@ -20,13 +21,17 @@ import { FormTextComponent } from './form-components/formText.component';
     <ng-template component-host></ng-template>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+    <button type="button" class="btn btn-outline-dark" [disabled]='!isValid' (click)="activeModal.close('Close click')">Close</button>
   </div>
 `
 })
 export class CommandComponent implements OnInit, OnChanges {
   @Input() variables: Array<Variable>;
   @ViewChild(HostDirective) componentHost: HostDirective;
+  
+  ctrls:Array<BaseComponent>;
+
+  isValid:boolean = false;
 
   ngOnChanges(changes: {[propKey: string]: SimpleChange}) {
     let log: string[] = [];
@@ -48,11 +53,25 @@ export class CommandComponent implements OnInit, OnChanges {
   ngAfterViewInit() {
     this.cdref.detach();
     let viewContainerRef = this.componentHost.viewContainerRef;
+    this.ctrls = [];
     this.variables.forEach(element => {
       let componentFactory = this.componentFactoryResolver.resolveComponentFactory(FormTextComponent);      
           let componentRef = viewContainerRef.createComponent(componentFactory);
-          (<FormTextComponent>componentRef.instance).data = element;
+          let inst = (<FormTextComponent>componentRef.instance);
+          inst.data = element;
+          inst.valueChanged.subscribe(data=>{this.raiseDependantEvents(data); this.checkValid()});
+          this.ctrls.push(inst);
     });
     this.cdref.detectChanges();
+  }
+
+  checkValid(){
+    let controlsNotValid = this.ctrls.filter(x=>!x.isValid);
+    this.isValid = controlsNotValid.length == 0;
+    this.cdref.detectChanges();
+  }
+  raiseDependantEvents(data:Variable){
+    console.log("raise events");
+    this.checkValid();
   }
 }
