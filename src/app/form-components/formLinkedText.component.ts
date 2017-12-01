@@ -8,30 +8,9 @@ import { BaseComponent } from './base.component';
     templateUrl: './formLinkedText.component.html'
 })
 export class FormLinkedTextComponent extends BaseComponent {
-    private _data: Variable;
-    isValid:boolean = false;
-
-    @Input()
-    set data(val: Variable) {
-      this._data = val;
-      this.isValid = !val.required;
-    }
-
-    get data(): Variable { return this._data; }
-
-    @Output() valueChanged = new EventEmitter<Variable>();
-    
-    constructor(private cdref:ChangeDetectorRef){
-        super();
+   
+    constructor(private ref:ChangeDetectorRef){
+        super(ref);
     }
     
-    validate(value) { // without type info
-        if (this.data.required)
-            this.isValid = value != "";
-        else
-            this.isValid = true;
-
-        this.cdref.detectChanges(); 
-        this.valueChanged.emit(this.data);
-      }
 }

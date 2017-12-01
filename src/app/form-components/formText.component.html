@@ -6,7 +6,8 @@
                name="input"
                [disabled]="data.isDisabled"
                class="form-control"
-               ng-model="data.value"               
+               ng-model="data.value"    
+               [pattern]="data.regex_name"
                (blur)="validate(box.value)"
                [required]="data.required"
                [placeholder]="data.placeholder" />
