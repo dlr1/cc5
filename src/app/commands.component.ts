@@ -22,7 +22,7 @@ export class CommandsComponent {
 
     }
     ngOnInit() {
-        this.http.get<Array<Command>>('assets/data.json').subscribe(x => {
+        this.http.get<Array<Command>>('assets/mcr-data.json').subscribe(x => {
             this.commands = x["commands"];
             let categories = {};
             this.commands.forEach((c, i) => {

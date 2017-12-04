@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, OnChanges, SimpleChange, ViewChild, ComponentFactoryResolver, ChangeDetectorRef } from '@angular/core';
 import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
-import { Variable, Command } from './form-components/models';
+import { Variable, Command, controlMappings } from './form-components/models';
 import { HostDirective } from './form-components/host.directive';
 import { FormTextComponent } from './form-components/formText.component';
 import { BaseComponent } from './form-components/base.component';
@@ -39,23 +39,16 @@ export class CommandModalComponent implements OnInit, OnChanges {
     let viewContainerRef = this.componentHost.viewContainerRef;
     this.ctrls = [];
     this._command.variables.forEach(element => {
+      
       let componentFactory;
-      switch (element.type) {
-        case "form-text":
-          componentFactory = this.componentFactoryResolver.resolveComponentFactory(FormTextComponent);
-          break;
-        case "form-dropdown":
-          componentFactory = this.componentFactoryResolver.resolveComponentFactory(FormDropdownComponent);
-          break;
-        default:
-          break;
-      }
+      componentFactory = this.componentFactoryResolver.resolveComponentFactory(controlMappings[element.type]);
 
       let componentRef = viewContainerRef.createComponent(componentFactory);
       let inst = (<BaseComponent>componentRef.instance);
       inst.data = element;
       inst.valueChanged.subscribe(data => { this.raiseDependantEvents(data); this.checkValid() });
       this.ctrls.push(inst);
+
     });
     this.cdref.detectChanges();
   }

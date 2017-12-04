@@ -13,6 +13,7 @@ export class BaseComponent {
     set data(val: Variable) {
         if (val == undefined)
         console.log("value is undefined");
+        this._data = val;
         this.cdref.detach();
         let pattern = regexList.filter(x => x.name == val.regex_name);
         if (pattern.length > 0)
