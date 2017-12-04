@@ -1,7 +1,13 @@
 import { PatternValidator } from "@angular/forms/src/directives/validators";
-import { FormTextComponent } from "./formText.component";
-import { FormDropdownComponent } from "./formDropdown.component";
 
+export interface Device{
+    device_name: string;
+    device_type: string;
+    ip_address: string;
+    market: string;
+    ne_type: string;
+    isLoggedOn?: boolean
+}
 export interface Variable{
     type:string;
     name:string;
@@ -33,11 +39,6 @@ export interface Command{
     device?:string;
     approved?:boolean
     access:any;
-}
-
-export const controlMappings = {
-    'form-text': FormTextComponent,
-    'form-dropdown': FormDropdownComponent
 }
 
 export const regexList = [

@@ -10,6 +10,9 @@ import { FormsModule }   from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { CommandsComponent } from './commands.component';
 import { CommandModalComponent } from './command-modal.component';
+import ServiceHelper from './services/serviceHelper';
+import { LoginModalComponent } from './login-modal.component';
+import { MyDevicesComponent } from './my-devices.component';
 
 enableProdMode();
 
@@ -17,7 +20,8 @@ enableProdMode();
   declarations: [
     AppComponent,
     CommandModalComponent,
-    CommandsComponent
+    CommandsComponent,
+    LoginModalComponent, MyDevicesComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +31,7 @@ enableProdMode();
     FormsModule
   ],
   entryComponents:[CommandModalComponent],
-  providers: [],
+  providers: [ServiceHelper],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
