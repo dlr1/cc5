@@ -1,9 +1,6 @@
-class mcrParsers{
-    MCR_NeighborIP(){
-        alert('hi');
-    }
+export function MCR_NeighborIP() {};
 
-}
-export const parsers = {
-    
-}
+const utils = {
+   MCR_NeighborIP: MCR_NeighborIP
+};
+export default utils; 
