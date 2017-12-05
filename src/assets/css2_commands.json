@@ -1,0 +1,4022 @@
+﻿{
+    "commands": [
+        {
+            "id": 101,
+            "platform": "CSS-ALU",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" }, { "name": "XGEN" } ],
+            "name": "Show Entire Config",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{admin display-config}}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 102,
+            "platform": "CSS-ALU",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" } ],
+            "name": "Show VPLS Service ID Brief",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show service service-using vpls}}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 103,
+            "platform": "CSS-ALU",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" }, { "name": "XGEN" } ],
+            "name": "Show SAP Brief",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show service sap-using}}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 104,
+            "platform": "CSS-ALU",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" } ],
+            "name": "Show Info For A Specific Ring",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show eth-ring <<ETH_RING_ID>> }}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-select",
+                    "variable": "ETH_RING_ID",
+                    "label": "Ethernet Ring ID",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show eth-ring",
+                    "dataParserName": "DataParserForCSSALUShowEthRing",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 105,
+            "platform": "CSS-ALU",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" } ],
+            "name": "Show SAPs on ONB Ring",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show service sap-using eth-ring }}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 106,
+            "platform": "CSS-ALU",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" }, { "name": "XGEN" } ],
+            "name": "Show All Customer IDs Built",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{admin display-config | match \"customer\" }}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 107,
+            "platform": "CSS-ALU",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" }, { "name": "XGEN" } ],
+            "name": "Show Single Port",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show port <<SLOT_MDA_PORT>> }}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-select",
+                    "variable": "SLOT_MDA_PORT",
+                    "label": "Slot/MDA/Port",
+                    "required": true,
+                    "regex_name": "slot_mda_port",
+                    "dataCommand": "show port",
+                    "dataParserName": "DataParserForCSSALUShowSinglePort",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 108,
+            "platform": "CSS-ALU",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" }, { "name": "XGEN" } ],
+            "name": "Show Lag Detail",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show lag <<LAG_ID>> detail }}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "LAG_ID",
+                    "label": "Lag Id",
+                    "regex_name": "range_lag_id",
+                    "required": true,
+                    "placeholder": "Valid Values: 1-20, 31-50, 61-150 only",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 109,
+            "platform": "CSS-ALU",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" }, { "name": "XGEN" } ],
+            "name": "Show Single Port Detail",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show port <<SLOT_MDA_PORT>> detail }}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "SLOT_MDA_PORT",
+                    "label": "Slot/MDA/Port",
+                    "regex_name": "slot_mda_port",
+                    "required": true,
+                    "placeholder": "Valid Values: Slot:1-11, MDA:1-2, Port:1-40 only",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 110,
+            "platform": "CSS-ALU",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" }, { "name": "XGEN" } ],
+            "name": "Show SAP Detail",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show service id <<SVC_ID>> sap <<SAP_ID>> detail }}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-select",
+                    "variable": "SAP_ID",
+                    "label": "SAP Id",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show service sap-using",
+                    "dataParserName": "DataParserForCSSALUSapUsing",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "SVC_ID",
+                    "label": "Service ID",
+                    "regex_name": "any_number",
+                    "required": true,
+                    "dataParserName": "PostProcForSVCIDFromSAPID",
+                    "placeholder": "digits only",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 111,
+            "platform": "CSS-ALU",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" }, { "name": "XGEN" } ],
+            "name": "Show Ingress QOS Policies Built",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show qos sap-ingress}}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 112,
+            "platform": "CSS-ALU",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" }, { "name": "XGEN" } ],
+            "name": "Show Egress QOS Policies Built",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show qos sap-egress}}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 113,
+            "platform": "CSS-ALU",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" }, { "name": "XGEN" } ],
+            "name": "Show Config For A Specified Ingress QOS Policy",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show qos sap-ingress <<INGRESS_SERVICE_POLICY_ID>> detail }}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-select",
+                    "variable": "INGRESS_SERVICE_POLICY_ID",
+                    "label": "Ingress Service Policy",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show qos sap-ingress",
+                    "dataParserName": "DataParserForCSSALUGressPolicy",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 114,
+            "platform": "CSS-ALU",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" }, { "name": "XGEN" } ],
+            "name": "Show Config For A Specified Egress QOS Policy",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show qos sap-egress <<EGRESS_SERVICE_POLICY_ID>> detail }}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-select",
+                    "variable": "EGRESS_SERVICE_POLICY_ID",
+                    "label": "Egress Service Policy",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show qos sap-egress",
+                    "dataParserName": "DataParserForCSSALUGressPolicy",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 115,
+            "platform": "CSS-ALU",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" }, { "name": "XGEN" } ],
+            "name": "Show l2pt For A Specified Service ID",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show service id <<SVC_ID>> l2pt }}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "SVC_ID",
+                    "label": "Service ID",
+                    "regex_name": "any_number",
+                    "required": true,
+                    "placeholder": "digits only",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 116,
+            "platform": "CSS-ALU",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" }, { "name": "XGEN" } ],
+            "name": "Show SAP info for a specified service ID",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show service id <<SVC_ID>> sap }}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "SVC_ID",
+                    "label": "Service ID",
+                    "regex_name": "any_number",
+                    "required": true,
+                    "placeholder": "digits only",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 117,
+            "platform": "CSS-ALU",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" }, { "name": "XGEN" } ],
+            "name": "Show Config for a specified service ID",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show service id <<SVC_ID>> base }}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "SVC_ID",
+                    "label": "Service ID",
+                    "regex_name": "any_number",
+                    "required": true,
+                    "placeholder": "digits only",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 118,
+            "platform": "CSS-ALU",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" }, { "name": "XGEN" } ],
+            "name": "Show SAP Stats",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show service id <<SVC_ID>> sap sap-stats <<SAP_ID>> }}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-select",
+                    "variable": "SAP_ID",
+                    "label": "SAP Id",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show service sap-using",
+                    "dataParserName": "DataParserForCSSALUSapUsing",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "SVC_ID",
+                    "label": "Service ID",
+                    "regex_name": "any_number",
+                    "required": true,
+                    "dataParserName": "PostProcForSVCIDFromSAPID",
+                    "placeholder": "digits only",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 119,
+            "platform": "CSS-ALU",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" }, { "name": "XGEN" } ],
+            "name": "Show Single Port Queuing Stats",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show port <<SLOT_MDA_PORT>> detail | match \"Queue Statistics\" post-lines 50}}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "SLOT_MDA_PORT",
+                    "label": "Slot/MDA/Port",
+                    "regex_name": "slot_mda_port",
+                    "required": true,
+                    "placeholder": "Valid Values: Slot:1-11, MDA:1-2, Port:1-40",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 120,
+            "platform": "CSS-ALU",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" }, { "name": "XGEN" } ],
+            "name": "Show Ports On A Given Lag ID",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show lag <<LAG_ID>> port }}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "LAG_ID",
+                    "label": "Lag Id",
+                    "regex_name": "range_lag_id",
+                    "required": true,
+                    "placeholder": "Valid Values: 1-20, 31-50, 61-150 only",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 121,
+            "platform": "CSS-ALU",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" }, { "name": "XGEN" } ],
+            "name": "Show Time",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show time}}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 122,
+            "platform": "CSS-ALU",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" }, { "name": "XGEN" } ],
+            "name": "Show Uptime",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show uptime}}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 123,
+            "platform": "CSS-ALU",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" }, { "name": "XGEN" } ],
+            "name": "Show Alarms",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show system alarms}}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 124,
+            "platform": "CSS-ALU",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" }, { "name": "XGEN" } ],
+            "name": "Show NTP",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show system ntp}}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 125,
+            "platform": "CSS-ALU",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" }, { "name": "XGEN" } ],
+            "name": "Show Version",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show version}}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 126,
+            "platform": "CSS-ALU",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" }, { "name": "XGEN" } ],
+            "name": "Show BOF",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show bof}}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 127,
+            "platform": "CSS-ALU",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" }, { "name": "XGEN" } ],
+            "name": "Show Chassis Detail",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show chassis detail}}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 128,
+            "platform": "CSS-ALU",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" }, { "name": "XGEN" } ],
+            "name": "Show Card Detail",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show card detail}}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 129,
+            "platform": "CSS-ALU",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" }, { "name": "XGEN" } ],
+            "name": "Show Card A Detail",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show card \"A\" detail}}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 130,
+            "platform": "CSS-ALU",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" }, { "name": "XGEN" } ],
+            "name": "Show Card B Detail",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show card \"B\" detail}}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 131,
+            "platform": "CSS-ALU",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" }, { "name": "XGEN" } ],
+            "name": "Show MDA Detail",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show mda detail}}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 132,
+            "platform": "CSS-ALU",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" } ],
+            "name": "Show Eth-Ring",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show eth-ring}}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 133,
+            "platform": "CSS-ALU",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" } ],
+            "name": "Show Log Log-Id 98",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show log log-id 98}}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 134,
+            "platform": "CSS-ALU",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" } ],
+            "name": "Show Log Log-Id 99",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show log log-id 99}}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 135,
+            "platform": "CSS-ALU",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" }, { "name": "XGEN" } ],
+            "name": "Show Log Log-Id 100",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show log log-id 100}}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 136,
+            "platform": "CSS-ALU",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" }, { "name": "XGEN" } ],
+            "name": "Show Redundancy Synch",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show redundancy synch}}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 137,
+            "platform": "CSS-ALU",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" }, { "name": "XGEN" } ],
+            "name": "Show Port Summary",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show port}}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 138,
+            "platform": "CSS-ALU",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" }, { "name": "XGEN" } ],
+            "name": "Show Specific Lag Info",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show lag <<LAG_ID>> }}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "LAG_ID",
+                    "label": "Lag Id",
+                    "regex_name": "range_lag_id",
+                    "required": true,
+                    "placeholder": "Valid Values: 1-20, 31-50, 61-150 only",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 139,
+            "platform": "CSS-ALU",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" }, { "name": "XGEN" } ],
+            "name": "Show Epipe Service ID Brief",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show service service-using epipe}}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 140,
+            "platform": "CSS-ALU",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" } ],
+            "name": "Show Service Id MAC Info",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show service id <<SVC_ID>> fdb detail }}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "SVC_ID",
+                    "label": "Service ID",
+                    "regex_name": "any_number",
+                    "required": true,
+                    "placeholder": "digits only",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 201,
+            "platform": "CSS-ALU",
+            "category": "Build",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 3" ],
+            "groups": [ { "name": "XGEN" }, { "name": "ONB" } ],
+            "name": "Config Customer UNI Port",
+            "approved": true,
+            "snippets": [
+                { "text": "{{/config port <<SLOT_MDA_PORT>> shutdown }}\n" },
+                { "text": "{{/config port <<SLOT_MDA_PORT>> ethernet mode access }}\n" },
+                { "text": "{{/config port <<SLOT_MDA_PORT>> ethernet encap-type <<ENCAP_TYPE>> }}\n" },
+                { "text": "{{/config port <<SLOT_MDA_PORT>> ethernet mtu 9212 }}\n" },
+                { "text": "{{/config port <<SLOT_MDA_PORT>> ethernet egress-scheduler-policy \"Access_NNI_Trusted_Prt-Sched_1\" }}\n" },
+                { "text": "{{/config port <<SLOT_MDA_PORT>> ethernet access egress queue-gr \"Access_NNI_Trusted_Queue-Grp_1\" instance 1 create scheduler-policy \"Access_NNI_Trustd_Sched_Polcy_1\" }}\n" },
+                { "text": "{{/config port <<SLOT_MDA_PORT>> description <<CUSTNAME>>::OPER::<<SPEED>><<SPEED_TYPE>>::<<CKT_ID>>::<<PSR>> }}\n" },
+                { "text": "{{/config port <<SLOT_MDA_PORT>> no shutdown }}\n" },
+                { "text": "{{/admin save }}\n" },
+                { "text": "{{exit all }}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-select",
+                    "variable": "SLOT_MDA_PORT",
+                    "label": "UNI Slot/MDA/Port",
+                    "required": true,
+                    "regex_name": "slot_mda_port",
+                    "dataCommand": "show port description",
+                    "dataParserName": "DataParserForCSSALUShowPortDescription",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "Valid Values: Slot:1-11, MDA:1-2, Port:1-40 only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-select",
+                    "label": "Encapsulation Type",
+                    "variable": "ENCAP_TYPE",
+                    "intrusiveness": "",
+                    "required": true,
+                    "values": [ { "value": "" } ],
+                    "options": [
+                        { "label": "null", "value": "null" },
+                        { "label": "dot1q", "value": "dot1q" },
+                        { "label": "qinq", "value": "qinq" }
+                    ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "CUSTNAME",
+                    "label": "Customer Name",
+                    "regex_name": "customer_name_32",
+                    "required": true,
+                    "placeholder": "up to 32 characters only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "SPEED",
+                    "label": "Speed",
+                    "regex_name": "digits_1to4",
+                    "required": true,
+                    "placeholder": "up to 4 digits only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-select",
+                    "label": "Speed Type",
+                    "variable": "SPEED_TYPE",
+                    "values": [ { "value": "" } ],
+                    "required": true,
+                    "options": [
+                        { "label": "Megabits", "value": "M" },
+                        { "label": "Gigabits", "value": "G" }
+                    ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "CKT_ID",
+                    "label": "Circuit ID",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "circuit id",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "PSR",
+                    "label": "PSR",
+                    "regex_name": "any_positive_number",
+                    "required": true,
+                    "placeholder": "digits only",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 202,
+            "platform": "CSS-ALU",
+            "category": "Build",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 3" ],
+            "groups": [ { "name": "XGEN" }, { "name": "ONB" } ],
+            "name": "Config Single NNI Port",
+            "approved": true,
+            "snippets": [
+                { "text": "{{/config port <<SLOT_MDA_PORT>> shutdown }}\n" },
+                { "text": "{{/config port <<SLOT_MDA_PORT>> ethernet mode access }}\n" },
+                { "text": "{{/config port <<SLOT_MDA_PORT>> ethernet encap-type <<ENCAP_TYPE>> }}\n" },
+                { "text": "{{/config port <<SLOT_MDA_PORT>> ethernet mtu 9212 }}\n" },
+                { "text": "{{/config port <<SLOT_MDA_PORT>> ethernet egress-scheduler-policy \"Access_NNI_Trusted_Prt-Sched_1\" }}\n" },
+                { "text": "{{/config port <<SLOT_MDA_PORT>> ethernet access egress queue-group \"Access_NNI_Trusted_Queue-Grp_1\" instance 1 create scheduler-pol \"Access_NNI_Trustd_Sched_Polcy_1\" }}\n" },
+                { "text": "{{/config port <<SLOT_MDA_PORT>> description <<<CUSTNAME>>::OPER::<<SPEED>><<SPEED_TYPE>>::<<CKT_ID>>::<<PSR>> }}\n" },
+                { "text": "{{/config port <<SLOT_MDA_PORT>> no shutdown }}\n" },
+                { "text": "{{/admin save }}\n" },
+                { "text": "{{exit all }}\n" }
+            ],
+            "variables": [
+                {
+                    "type": "form-select",
+                    "variable": "SLOT_MDA_PORT",
+                    "label": "NNI Slot/MDA/Port",
+                    "required": true,
+                    "regex_name": "slot_mda_port",
+                    "dataCommand": "show port description",
+                    "dataParserName": "DataParserForCSSALUShowPortDescription",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "Valid Values: Slot:1-11, MDA:1-2, Port:1-40 only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-select",
+                    "label": "Encapsulation Type",
+                    "variable": "ENCAP_TYPE",
+                    "values": [ { "value": "" } ],
+                    "required": true,
+                    "options": [
+                        { "label": "null", "value": "null" },
+                        { "label": "dot1q", "value": "dot1q" },
+                        { "label": "qinq", "value": "qinq" }
+                    ]
+                },
+                {
+                    "type": "form-select",
+                    "label": "Circuit Type",
+                    "variable": "CKT_TYPE",
+                    "values": [ { "value": "" } ],
+                    "required": true,
+                    "options": [
+                        { "label": "Backbone", "value": "Backbone" },
+                        { "label": "TO_LEC", "value": "TO_LEC" },
+                        { "label": "CUST", "value": "CUST" },
+                        { "label": "uplink", "value": "uplink" }
+                    ]
+                },
+                {
+                    "type": "form-select",
+                    "label": "Circuit Status",
+                    "variable": "CKT_STATUS",
+                    "values": [ { "value": "" } ],
+                    "required": true,
+                    "options": [
+                        { "label": "OPERATIONAL", "value": "OPER" },
+                        { "label": "Non-Operational", "value": "NON-OP" }
+                    ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "Speed",
+                    "label": "SPEED",
+                    "regex_name": "digits_1to4",
+                    "required": true,
+                    "placeholder": "up to 4 digits only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-select",
+                    "label": "Speed Type",
+                    "variable": "SPEED_TYPE",
+                    "values": [ { "value": "" } ],
+                    "required": true,
+                    "options": [
+                        { "label": "Megabits", "value": "M" },
+                        { "label": "Gigabits", "value": "G" }
+                    ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "CKT_ID",
+                    "label": "Circuit ID",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "circuit id",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "label": "Circuit Description",
+                    "variable": "CKT_DESC",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "circuit description",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 203,
+            "platform": "CSS-ALU",
+            "category": "Build",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 3" ],
+            "groups": [ { "name": "XGEN" }, { "name": "ONB" } ],
+            "name": "Config NNI LAG Port Bundle",
+            "approved": true,
+            "snippets": [
+                { "text": "{{/config port <<PRIMARY_SLOT_MDA_PORT>> shutdown }}\n" },
+                { "text": "{{/config port <<PRIMARY_SLOT_MDA_PORT>> ethernet mode accesss }}\n" },
+                { "text": "{{/config port <<PRIMARY_SLOT_MDA_PORT>> ethernet encap-type <<ENCAP_TYPE>> }}\n" },
+                { "text": "{{/config port <<PRIMARY_SLOT_MDA_PORT>> ethernet mtu 9212 }}\n" },
+                { "text": "{{/config port <<PRIMARY_SLOT_MDA_PORT>> desc <<CKT_TYPE>>::<<CKT_STATUS>>::<<SPEED>><<SPEED_TYPE>>::<<CKT_ID>>::<<CKT_DESC>> }}\n" },
+                { "text": "{{/config port <<PRIMARY_SLOT_MDA_PORT>> no shutdown }}\n" },
+                { "text": "{{/config port <<SECONDARY_SLOT_MDA_PORT>> shutdown }}\n" },
+                { "text": "{{/config port <<SECONDARY_SLOT_MDA_PORT>> ethernet mode accesss }}\n" },
+                { "text": "{{/config port <<SECONDARY_SLOT_MDA_PORT>> ethernet encap-type <<ENCAP_TYPE>> }}\n" },
+                { "text": "{{/config port <<SECONDARY_SLOT_MDA_PORT>> ethernet mtu 9212 }}\n" },
+                { "text": "{{/config port <<SECONDARY_SLOT_MDA_PORT>> desc <<CKT_TYPE>>::<<CKT_STATUS>>::<<SPEED>><<SPEED_TYPE>>::<<CKT_ID>>::<<CKT_DESC>> }}\n" },
+                { "text": "{{/config port <<SECONDARY_SLOT_MDA_PORT>> no shutdown }}\n" },
+                { "text": "{{/config lag <<LAG_ID>> shutdown }}\n" },
+                { "text": "{{/config lag <<LAG_ID>> ethernet mode access }}\n" },
+                { "text": "{{/config lag <<LAG_ID>> ethernet <<ENCAP_TYPE>> }}\n" },
+                { "text": "{{/config lag <<LAG_ID>> ethernet lacp active }}\n" },
+                { "text": "{{/config lag <<LAG_ID>> ethernet lacp port <<PRIMARY_SLOT_MDA_PORT>> }}\n" },
+                { "text": "{{/config lag <<LAG_ID>> ethernet lacp port <<SECONDARY_SLOT_MDA_PORT>> }}\n" },
+                { "text": "{{/config lag <<LAG_ID>> no shutdown }}\n" },
+                { "text": "{{/admin save }}\n" },
+                { "text": "{{exit all }}\n" }
+            ],
+            "variables": [
+                {
+                    "type": "form-select",
+                    "variable": "PRIMARY_SLOT_MDA_PORT",
+                    "label": "Primary Slot/MDA/Port",
+                    "required": true,
+                    "regex_name": "slot_mda_port",
+                    "dataCommand": "show port description",
+                    "dataParserName": "DataParserForCSSALUShowPortDescription",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-select",
+                    "variable": "SECONDARY_SLOT_MDA_PORT",
+                    "label": "Secondary Slot/MDA/Port",
+                    "required": true,
+                    "regex_name": "slot_mda_port",
+                    "dataCommand": "show port description",
+                    "dataParserName": "DataParserForCSSALUShowPortDescription",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-select",
+                    "label": "Encapsulation Type",
+                    "variable": "ENCAP_TYPE",
+                    "values": [ { "value": "" } ],
+                    "required": true,
+                    "options": [
+                        { "label": "null", "value": "null" },
+                        { "label": "dot1q", "value": "dot1q" },
+                        { "label": "qinq", "value": "qinq" }
+                    ]
+                },
+                {
+                    "type": "form-select",
+                    "label": "Circuit Type",
+                    "variable": "CKT_TYPE",
+                    "values": [ { "value": "" } ],
+                    "required": true,
+                    "options": [
+                        { "label": "Backbone", "value": "Backbone" },
+                        { "label": "TO_LEC", "value": "TO_LEC" },
+                        { "label": "CUST", "value": "CUST" }
+                    ]
+                },
+                {
+                    "type": "form-select",
+                    "label": "Circuit Status",
+                    "variable": "CKT_STATUS",
+                    "values": [ { "value": "" } ],
+                    "required": true,
+                    "options": [
+                        { "label": "OPERATIONAL", "value": "OPER" },
+                        { "label": "Non-Operational", "value": "NON-OP" }
+                    ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "Speed",
+                    "label": "SPEED",
+                    "regex_name": "digits_1to4",
+                    "required": true,
+                    "placeholder": "up to 4 digits only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-select",
+                    "label": "Speed Type",
+                    "variable": "SPEED_TYPE",
+                    "values": [ { "value": "" } ],
+                    "required": true,
+                    "options": [
+                        { "label": "Megabits", "value": "M" },
+                        { "label": "Gigabits", "value": "G" }
+                    ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "CKT_ID",
+                    "label": "Circuit ID",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "circuit id",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "label": "Circuit Description",
+                    "variable": "CKT_DESC",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "circuit description",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "LAG_ID",
+                    "label": "Lag Id",
+                    "regex_name": "range_lag_id",
+                    "required": true,
+                    "placeholder": "Valid Values: 1-20, 31-50, 61-150 only",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 204,
+            "platform": "CSS-ALU",
+            "category": "Build",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 3" ],
+            "groups": [ { "name": "XGEN" } ],
+            "name": "UNI to UNI ePipe (XGEN) ",
+            "approved": true,
+            "snippets": [
+                { "text": "{{/configure service customer <<CUST_ID>> create }}\n" },
+                { "text": "{{/configure service customer <<CUST_ID>> description <<CUSTNAME>>::TBSACCT<<TBSACCTNUM>> }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> create }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> description CUST::<<CKT_STATUS>>::<<SPEED>><<SPEED_TYPE>>::<<CUSTNAME>>::<<CKT_ID>>::<<PSR>> }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> stp shutdown }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> service-mtu 9150 }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> no shutdown }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<UNI1_SLOT_MDA_PORT>>:<<UNI1_STAG>>.<<UNI1_CTAG>> create }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<UNI1_SLOT_MDA_PORT>>:<<UNI1_STAG>>.<<UNI1_CTAG>> ingress qos <<INGRESS_SERVICE_POLICY_ID>> }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<UNI1_SLOT_MDA_PORT>>:<<UNI1_STAG>>.<<UNI1_CTAG>> ingress policer-control-policy UNI_SAP_Ingress_Policer }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<UNI1_SLOT_MDA_PORT>>:<<UNI1_STAG>>.<<UNI1_CTAG>> ingress policer-control-override create }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<UNI1_SLOT_MDA_PORT>>:<<UNI1_STAG>>.<<UNI1_CTAG>> ingress policer-control-override max-rate <<KBPS>> }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<UNI1_SLOT_MDA_PORT>>:<<UNI1_STAG>>.<<UNI1_CTAG>> egress qos <<EGRESS_SERVICE_POLICY_ID>> }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<UNI1_SLOT_MDA_PORT>>:<<UNI1_STAG>>.<<UNI1_CTAG>> no shutdown }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<UNI2_SLOT_MDA_PORT>>:<<UNI2_STAG>>.<<UNI2_CTAG>> create }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<UNI2_SLOT_MDA_PORT>>:<<UNI2_STAG>>.<<UNI2_CTAG>> ingress qos <<INGRESS_SERVICE_POLICY_ID>> }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<UNI2_SLOT_MDA_PORT>>:<<UNI2_STAG>>.<<UNI2_CTAG>> ingress policer-control-policy UNI_SAP_Ingress_Policer }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<UNI2_SLOT_MDA_PORT>>:<<UNI2_STAG>>.<<UNI2_CTAG>> ingress policer-control-override create }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<UNI2_SLOT_MDA_PORT>>:<<UNI2_STAG>>.<<UNI2_CTAG>> ingress policer-control-override max-rate <<KBPS>> }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<UNI2_SLOT_MDA_PORT>>:<<UNI2_STAG>>.<<UNI2_CTAG>> egress qos <<EGRESS_SERVICE_POLICY_ID>> }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<UNI2_SLOT_MDA_PORT>>:<<UNI2_STAG>>.<<UNI2_CTAG>> no shutdown }}\n" },
+                { "text": "{{/admin save }}\n" },
+                { "text": "{{exit all }}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "SVC_ID",
+                    "label": "Service ID",
+                    "regex_name": "any_positive_number",
+                    "required": true,
+                    "placeholder": "digits only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "CUSTNAME",
+                    "label": "Customer Name",
+                    "regex_name": "free_type_32",
+                    "required": true,
+                    "placeholder": "up to 32 characters only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "CUST_ID",
+                    "label": "Customer ID",
+                    "regex_name": "any_positive_number",
+                    "required": true,
+                    "placeholder": "digits only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "TBSACCTNUM",
+                    "label": "TBS Account Number",
+                    "regex_name": "any_positive_number",
+                    "required": true,
+                    "placeholder": "digits only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "PSR",
+                    "label": "PSR",
+                    "regex_name": "any_positive_number",
+                    "required": true,
+                    "placeholder": "digits only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "CKT_ID",
+                    "label": "Circuit ID",
+                    "regex_name": "string_no_spaces",
+                    "required": true,
+                    "placeholder": "circuit id",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-select",
+                    "label": "Circuit Status",
+                    "variable": "CKT_STATUS",
+                    "values": [ { "value": "" } ],
+                    "required": true,
+                    "options": [
+                        { "label": "OPERATIONAL", "value": "OPER" },
+                        { "label": "Non-Operational", "value": "NON-OP" }
+                    ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "SPEED",
+                    "label": "Speed",
+                    "regex_name": "digits_1to4",
+                    "required": true,
+                    "placeholder": "up to 4 digits only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-select",
+                    "label": "Speed Type",
+                    "variable": "SPEED_TYPE",
+                    "values": [ { "value": "" } ],
+                    "required": true,
+                    "options": [
+                        { "label": "Megabits", "value": "M" },
+                        { "label": "Gigabits", "value": "G" }
+                    ]
+                },
+                {
+                    "type": "form-select",
+                    "variable": "UNI1_SLOT_MDA_PORT",
+                    "label": "UNI Slot/MDA/Port",
+                    "required": true,
+                    "regex_name": "slot_mda_port",
+                    "dataCommand": "show port description",
+                    "dataParserName": "DataParserForCSSALUShowPortDescription",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "Valid Values => Slot:1-11, MDA:1-2, Port:1-40 only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "UNI1_STAG",
+                    "label": "UNI1 STAG",
+                    "regex_name": "range_2_4096",
+                    "required": true,
+                    "placeholder": "2 - 4096",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "UNI1_CTAG",
+                    "label": "UNI1 CTAG",
+                    "regex_name": "range_2_4096",
+                    "required": true,
+                    "placeholder": "2 - 4096",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-select",
+                    "variable": "UNI2_SLOT_MDA_PORT",
+                    "label": "UNI2 Slot/MDA/Port",
+                    "required": true,
+                    "regex_name": "slot_mda_port",
+                    "dataCommand": "show port description",
+                    "dataParserName": "DataParserForCSSALUShowPortDescription",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "Valid Values => Slot:1-11, MDA:1-2, Port:1-40 only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "UNI2_STAG",
+                    "label": "UNI2 STAG",
+                    "regex_name": "range_2_4096",
+                    "required": true,
+                    "placeholder": "2 - 4096",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "UNI2_CTAG",
+                    "label": "UNI2 CTAG",
+                    "regex_name": "range_2_4096",
+                    "required": true,
+                    "placeholder": "2 - 4096",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-select",
+                    "variable": "INGRESS_SERVICE_POLICY_ID",
+                    "label": "Ingress Service Policy",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show qos sap-ingress",
+                    "dataParserName": "DataParserForCSSALUGressPolicy",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-select",
+                    "variable": "EGRESS_SERVICE_POLICY_ID",
+                    "label": "Egress Service Policy",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show qos sap-egress",
+                    "dataParserName": "DataParserForCSSALUGressPolicy",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "KBPS",
+                    "label": "Max Rate in KBPS",
+                    "regex_name": "any_positive_number",
+                    "required": true,
+                    "placeholder": "kilo-bps",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 205,
+            "platform": "CSS-ALU",
+            "category": "Build",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 3" ],
+            "groups": [ { "name": "XGEN" } ],
+            "name": "NNI to UNI ePipe (XGEN) ",
+            "approved": true,
+            "snippets": [
+                { "text": "{{/configure service customer <<CUST_ID>> create }}\n" },
+                { "text": "{{/configure service customer <<CUST_ID>> description <<CUSTNAME>>::TBSACCT<<TBSACCTNUM>> }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> create }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> description CUST::<<CKT_STATUS>>::<<SPEED>><<SPEED_TYPE>>::<<CUSTNAME>>::<<CKT_ID>>::<<PSR>> }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> service-mtu 9150 }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> no shutdown }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<NNI_SLOT_MDA_PORT>>:<<NNI_STAG>>.<<NNI_CTAG>> create }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<NNI_SLOT_MDA_PORT>>:<<NNI_STAG>>.<<NNI_CTAG>> ingress qos <<INGRESS_SERVICE_POLICY_ID>> }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<NNI_SLOT_MDA_PORT>>:<<NNI_STAG>>.<<NNI_CTAG>> ingress policer-control-policy UNI_SAP_Ingress_Policer }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<NNI_SLOT_MDA_PORT>>:<<NNI_STAG>>.<<NNI_CTAG>> ingress policer-control-override create }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<NNI_SLOT_MDA_PORT>>:<<NNI_STAG>>.<<NNI_CTAG>> ingress policer-control-override max-rate <<KBPS>> }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<NNI_SLOT_MDA_PORT>>:<<NNI_STAG>>.<<NNI_CTAG>> egress qos <<EGRESS_SERVICE_POLICY_ID>> }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<NNI_SLOT_MDA_PORT>>:<<NNI_STAG>>.<<NNI_CTAG>> no shutdown }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<UNI_SLOT_MDA_PORT>>:<<UNI_STAG>>.<<UNI_CTAG>> create }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<UNI_SLOT_MDA_PORT>>:<<UNI_STAG>>.<<UNI_CTAG>> ingress qos <<INGRESS_SERVICE_POLICY_ID>> }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<UNI_SLOT_MDA_PORT>>:<<UNI_STAG>>.<<UNI_CTAG>> ingress policer-control-policy UNI_SAP_Ingress_Policer }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<UNI_SLOT_MDA_PORT>>:<<UNI_STAG>>.<<UNI_CTAG>> ingress policer-control-override create }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<UNI_SLOT_MDA_PORT>>:<<UNI_STAG>>.<<UNI_CTAG>> ingress policer-control-override max-rate <<KBPS>> }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<UNI_SLOT_MDA_PORT>>:<<UNI_STAG>>.<<UNI_CTAG>> egress qos <<EGRESS_SERVICE_POLICY_ID>> }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<UNI_SLOT_MDA_PORT>>:<<UNI_STAG>>.<<UNI_CTAG>> no shutdown }}\n" },
+                { "text": "{{/admin save }}\n" },
+                { "text": "{{exit all }}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "SVC_ID",
+                    "label": "Service ID",
+                    "regex_name": "any_positive_number",
+                    "required": true,
+                    "placeholder": "digits only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "CUSTNAME",
+                    "label": "Customer Name",
+                    "regex_name": "free_type_32",
+                    "required": true,
+                    "placeholder": "up to 32 characters only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "CUST_ID",
+                    "label": "Customer ID",
+                    "regex_name": "any_positive_number",
+                    "required": true,
+                    "placeholder": "digits only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "TBSACCTNUM",
+                    "label": "TBS Account Number",
+                    "regex_name": "any_positive_number",
+                    "required": true,
+                    "placeholder": "digits only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "PSR",
+                    "label": "PSR",
+                    "regex_name": "any_positive_number",
+                    "required": true,
+                    "placeholder": "digits only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "CKT_ID",
+                    "label": "Circuit ID",
+                    "regex_name": "string_no_spaces",
+                    "required": true,
+                    "placeholder": "circuit id",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-select",
+                    "label": "Circuit Status",
+                    "variable": "CKT_STATUS",
+                    "values": [ { "value": "" } ],
+                    "required": true,
+                    "options": [
+                        { "label": "OPERATIONAL", "value": "OPER" },
+                        { "label": "Non-Operational", "value": "NON-OP" }
+                    ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "SPEED",
+                    "label": "Speed",
+                    "regex_name": "digits_1to4",
+                    "required": true,
+                    "placeholder": "up to 4 digits only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-select",
+                    "label": "Speed Type",
+                    "variable": "SPEED_TYPE",
+                    "values": [ { "value": "" } ],
+                    "required": true,
+                    "options": [
+                        { "label": "Megabits", "value": "M" },
+                        { "label": "Gigabits", "value": "G" }
+                    ]
+                },
+                {
+                    "type": "form-select",
+                    "variable": "UNI_SLOT_MDA_PORT",
+                    "label": "UNI Slot/MDA/Port",
+                    "required": true,
+                    "regex_name": "slot_mda_port",
+                    "dataCommand": "show port description",
+                    "dataParserName": "DataParserForCSSALUShowPortDescription",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "Valid Values => Slot:1-11, MDA:1-2, Port:1-40 only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "UNI_STAG",
+                    "label": "UNI STAG",
+                    "regex_name": "range_2_4096",
+                    "required": true,
+                    "placeholder": "2 - 4096",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "UNI_CTAG",
+                    "label": "UNI CTAG",
+                    "regex_name": "range_2_4096",
+                    "required": true,
+                    "placeholder": "2 - 4096",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-select",
+                    "variable": "NNI_SLOT_MDA_PORT",
+                    "label": "NNI Slot/MDA/Port",
+                    "required": true,
+                    "regex_name": "slot_mda_port",
+                    "dataCommand": "show port description",
+                    "dataParserName": "DataParserForCSSALUShowPortDescription",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "Valid Values => Slot:1-11, MDA:1-2, Port:1-40 only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "NNI_STAG",
+                    "label": "NNI STAG",
+                    "regex_name": "range_2_4096",
+                    "required": true,
+                    "placeholder": "2 - 4096",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "NNI_CTAG",
+                    "label": "NNI CTAG",
+                    "regex_name": "range_2_4096",
+                    "required": true,
+                    "placeholder": "2 - 4096",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-select",
+                    "variable": "INGRESS_SERVICE_POLICY_ID",
+                    "label": "Ingress Service Policy",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show qos sap-ingress",
+                    "dataParserName": "DataParserForCSSALUGressPolicy",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-select",
+                    "variable": "EGRESS_SERVICE_POLICY_ID",
+                    "label": "Egress Service Policy",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show qos sap-egress",
+                    "dataParserName": "DataParserForCSSALUGressPolicy",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "KBPS",
+                    "label": "Max Rate in KBPS",
+                    "regex_name": "any_positive_number",
+                    "required": true,
+                    "placeholder": "kilo-bps",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 206,
+            "platform": "CSS-ALU",
+            "category": "Build",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 3" ],
+            "groups": [ { "name": "XGEN" } ],
+            "name": "NNI to NNI ePipe - (XGEN) ",
+            "approved": true,
+            "snippets": [
+                { "text": "{{/configure service customer <<CUST_ID>> create }}\n" },
+                { "text": "{{/configure service customer <<CUST_ID>> description <<CUSTNAME>>::TBSACCT<<TBSACCTNUM>> }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> create }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> description CUST::<<CKT_STATUS>>::<<SPEED>><<SPEED_TYPE>>::<<CUSTNAME>>::<<CKT_ID>>::<<PSR>> }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> service-mtu 9150 }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> no shutdown }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<XGEN_NNI1_SLOT_MDA_PORT>>:<<S_TAG1>>.<<C_TAG1>> create }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<XGEN_NNI1_SLOT_MDA_PORT>>:<<S_TAG1>>.<<C_TAG1>> ingress qos <<INGRESS_SERVICE_POLICY_ID>> }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<XGEN_NNI1_SLOT_MDA_PORT>>:<<S_TAG1>>.<<C_TAG1>> ingress policer-control-policy UNI_SAP_Ingress_Policer }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<XGEN_NNI1_SLOT_MDA_PORT>>:<<S_TAG1>>.<<C_TAG1>> ingress policer-control-override create }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<XGEN_NNI1_SLOT_MDA_PORT>>:<<S_TAG1>>.<<C_TAG1>> ingress policer-control-override max-rate <<KBPS>> }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<XGEN_NNI1_SLOT_MDA_PORT>>:<<S_TAG1>>.<<C_TAG1>> egress qos <<EGRESS_SERVICE_POLICY_ID>> }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<XGEN_NNI1_SLOT_MDA_PORT>>:<<S_TAG1>>.<<C_TAG1>> no shutdown }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<XGEN_NNI2_SLOT_MDA_PORT>>:<<S_TAG2>>.<<C_TAG2>> create }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<XGEN_NNI2_SLOT_MDA_PORT>>:<<S_TAG2>>.<<C_TAG2>> ingress qos <<INGRESS_SERVICE_POLICY_ID>> }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<XGEN_NNI2_SLOT_MDA_PORT>>:<<S_TAG2>>.<<C_TAG2>> ingress policer-control-policy UNI_SAP_Ingress_Policer }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<XGEN_NNI2_SLOT_MDA_PORT>>:<<S_TAG2>>.<<C_TAG2>> ingress policer-control-override create }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<XGEN_NNI2_SLOT_MDA_PORT>>:<<S_TAG2>>.<<C_TAG2>> ingress policer-control-override max-rate <<KBPS>> }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<XGEN_NNI2_SLOT_MDA_PORT>>:<<S_TAG2>>.<<C_TAG2>> egress qos <<EGRESS_SERVICE_POLICY_ID>> }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<XGEN_NNI2_SLOT_MDA_PORT>>:<<S_TAG2>>.<<C_TAG2>> no shutdown }}\n" },
+                { "text": "{{/admin save }}\n" },
+                { "text": "{{exit all }}\n" }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "SVC_ID",
+                    "label": "Service ID",
+                    "regex_name": "any_positive_number",
+                    "required": true,
+                    "placeholder": "digits only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "CUSTNAME",
+                    "label": "Customer Name",
+                    "regex_name": "free_type_32",
+                    "required": true,
+                    "placeholder": "up to 32 characters only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "CUST_ID",
+                    "label": "Customer ID",
+                    "regex_name": "any_positive_number",
+                    "required": true,
+                    "placeholder": "digits only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "TBSACCTNUM",
+                    "label": "TBS Account Number",
+                    "regex_name": "any_positive_number",
+                    "required": true,
+                    "placeholder": "digits only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "PSR",
+                    "label": "PSR",
+                    "regex_name": "any_positive_number",
+                    "required": true,
+                    "placeholder": "digits only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "CKT_ID",
+                    "label": "Circuit ID",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "circuit id",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-select",
+                    "label": "Circuit Status",
+                    "variable": "CKT_STATUS",
+                    "values": [ { "value": "" } ],
+                    "required": true,
+                    "options": [
+                        { "label": "OPERATIONAL", "value": "OPER" },
+                        { "label": "Non-Operational", "value": "NON-OP" }
+                    ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "SPEED",
+                    "label": "Speed",
+                    "regex_name": "digits_1to4",
+                    "required": true,
+                    "placeholder": "up to 4 digits only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-select",
+                    "label": "Speed Type",
+                    "variable": "SPEED_TYPE",
+                    "values": [ { "value": "" } ],
+                    "required": true,
+                    "options": [
+                        { "label": "Megabits", "value": "M" },
+                        { "label": "Gigabits", "value": "G" }
+                    ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "XGEN_NNI1_SLOT_MDA_PORT",
+                    "label": "XGEN NNI1 Slot/MDA/Port",
+                    "regex_name": "slot_mda_port",
+                    "required": true,
+                    "placeholder": "Valid Values: Slot:1-11, MDA:1-2, Port:1-40 only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "S_TAG1",
+                    "label": "S-TAG 1",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "C_TAG1",
+                    "label": "C-TAG 1",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "XGEN_NNI2_SLOT_MDA_PORT",
+                    "label": "XGEN NNI2 Slot/MDA/Port",
+                    "regex_name": "slot_mda_port",
+                    "required": true,
+                    "placeholder": "Valid Values: Slot:1-11, MDA:1-2, Port:1-40 only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "S_TAG2",
+                    "label": "S-TAG 2",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "C_TAG2",
+                    "label": "C-TAG 2",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-select",
+                    "variable": "INGRESS_SERVICE_POLICY_ID",
+                    "label": "Ingress Service Policy",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show qos sap-ingress",
+                    "dataParserName": "DataParserForCSSALUGressPolicy",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-select",
+                    "variable": "EGRESS_SERVICE_POLICY_ID",
+                    "label": "Egress Service Policy",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show qos sap-egress",
+                    "dataParserName": "DataParserForCSSALUGressPolicy",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "KBPS",
+                    "label": "KBPS",
+                    "regex_name": "any_positive_number",
+                    "required": true,
+                    "placeholder": "kilo-bps",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 207,
+            "platform": "CSS-ALU",
+            "category": "Build",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 3" ],
+            "groups": [ { "name": "XGEN" } ],
+            "name": "LAG to UNI ePipe (XGEN) ",
+            "approved": true,
+            "snippets": [
+                { "text": "{{/configure service customer <<CUST_ID>> create }}\n" },
+                { "text": "{{/configure service customer <<CUST_ID>> description <<CUSTNAME>>::TBSACCT<<TBSACCTNUM>> }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> create }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> description CUST::<<CKT_STATUS>>::<<SPEED>><<SPEED_TYPE>>::<<CUSTNAME>>::<<CKT_ID>>::<<PSR>> }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> service-mtu 9150 }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> no shutdown }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap lag-<<XGEN_LAG_ID>>:<<S_TAG1>>.<<C_TAG1>> create }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap lag-<<XGEN_LAG_ID>>:<<S_TAG1>>.<<C_TAG1>> ingress qos <<INGRESS_SERVICE_POLICY_ID>> }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap lag-<<XGEN_LAG_ID>>:<<S_TAG1>>.<<C_TAG1>> ingress policer-control-policy UNI_SAP_Ingress_Policer }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap lag-<<XGEN_LAG_ID>>:<<S_TAG1>>.<<C_TAG1>> ingress policer-control-override create }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap lag-<<XGEN_LAG_ID>>:<<S_TAG1>>.<<C_TAG1>> ingress policer-control-override max-rate <<KBPS>> }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap lag-<<XGEN_LAG_ID>>:<<S_TAG1>>.<<C_TAG1>> egress qos <<EGRESS_SERVICE_POLICY_ID>> }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap lag-<<XGEN_LAG_ID>>:<<S_TAG1>>.<<C_TAG1>> no shutdown }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<UNI_SLOT_MDA_PORT>>:<<S_TAG2>>.<<C_TAG2>> create }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<UNI_SLOT_MDA_PORT>>:<<S_TAG2>>.<<C_TAG2>> ingress qos <<INGRESS_SERVICE_POLICY_ID>> }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<UNI_SLOT_MDA_PORT>>:<<S_TAG2>>.<<C_TAG2>> ingress policer-control-policy UNI_SAP_Ingress_Policer }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<UNI_SLOT_MDA_PORT>>:<<S_TAG2>>.<<C_TAG2>> ingress policer-control-override create }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<UNI_SLOT_MDA_PORT>>:<<S_TAG2>>.<<C_TAG2>> ingress policer-control-override max-rate <<KBPS>> }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<UNI_SLOT_MDA_PORT>>:<<S_TAG2>>.<<C_TAG2>> egress qos <<EGRESS_SERVICE_POLICY_ID>> }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<UNI_SLOT_MDA_PORT>>:<<S_TAG2>>.<<C_TAG2>> no shutdown }}\n" },
+                { "text": "{{/admin save }}\n" },
+                { "text": "{{exit all }}\n" }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "SVC_ID",
+                    "label": "Service ID",
+                    "regex_name": "any_positive_number",
+                    "required": true,
+                    "placeholder": "digits only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "CUSTNAME",
+                    "label": "Customer Name",
+                    "regex_name": "free_type_32",
+                    "required": true,
+                    "placeholder": "up to 32 characters only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "CUST_ID",
+                    "label": "Customer ID",
+                    "regex_name": "any_positive_number",
+                    "required": true,
+                    "placeholder": "digits only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "TBSACCTNUM",
+                    "label": "TBS Account Number",
+                    "regex_name": "any_positive_number",
+                    "required": true,
+                    "placeholder": "digits only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "PSR",
+                    "label": "PSR",
+                    "regex_name": "any_positive_number",
+                    "required": true,
+                    "placeholder": "digits only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "CKT_ID",
+                    "label": "Circuit ID",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "circuit id",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-select",
+                    "label": "Circuit Status",
+                    "variable": "CKT_STATUS",
+                    "values": [ { "value": "" } ],
+                    "required": true,
+                    "options": [
+                        { "label": "OPERATIONAL", "value": "OPER" },
+                        { "label": "Non-Operational", "value": "NON-OP" }
+                    ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "SPEED",
+                    "label": "Speed",
+                    "regex_name": "digits_1to4",
+                    "required": true,
+                    "placeholder": "up to 4 digits only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-select",
+                    "label": "Speed Type",
+                    "variable": "SPEED_TYPE",
+                    "values": [ { "value": "" } ],
+                    "required": true,
+                    "options": [
+                        { "label": "Megabits", "value": "M" },
+                        { "label": "Gigabits", "value": "G" }
+                    ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "XGEN_LAG_ID",
+                    "label": "XGEN LAG ID",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "S_TAG1",
+                    "label": "S-TAG 1",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "C_TAG1",
+                    "label": "C-TAG 1",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "UNI_SLOT_MDA_PORT",
+                    "label": "UNI Slot/MDA/Port",
+                    "regex_name": "slot_mda_port",
+                    "required": true,
+                    "placeholder": "Valid Values: Slot:1-11, MDA:1-2, Port:1-40 only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "S_TAG2",
+                    "label": "S-TAG 2",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "C_TAG2",
+                    "label": "C-TAG 2",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-select",
+                    "variable": "INGRESS_SERVICE_POLICY_ID",
+                    "label": "Ingress Service Policy",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show qos sap-ingress",
+                    "dataParserName": "DataParserForCSSALUGressPolicy",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-select",
+                    "variable": "EGRESS_SERVICE_POLICY_ID",
+                    "label": "Egress Service Policy",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show qos sap-egress",
+                    "dataParserName": "DataParserForCSSALUGressPolicy",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "KBPS",
+                    "label": "KBPS",
+                    "regex_name": "any_positive_number",
+                    "required": true,
+                    "placeholder": "kilo-bps",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 208,
+            "platform": "CSS-ALU",
+            "category": "Build",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 3" ],
+            "groups": [ { "name": "XGEN" } ],
+            "name": "LAG to NNI ePipe (XGEN) ",
+            "approved": true,
+            "snippets": [
+                { "text": "{{/configure service customer <<CUST_ID>> create }}\n" },
+                { "text": "{{/configure service customer <<CUST_ID>> description <<CUSTNAME>>::TBSACCT<<TBSACCTNUM>> }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> create }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> description CUST::<<CKT_STATUS>>::<<SPEED>><<SPEED_TYPE>>::<<CUSTNAME>>::<<CKT_ID>>::<<PSR>> }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> service-mtu 9150 }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> no shutdown }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap lag-<<XGEN_LAG_ID>>:<<S_TAG1>>.<<C_TAG1>> create }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap lag-<<XGEN_LAG_ID>>:<<S_TAG1>>.<<C_TAG1>> ingress qos <<INGRESS_SERVICE_POLICY_ID>> }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap lag-<<XGEN_LAG_ID>>:<<S_TAG1>>.<<C_TAG1>> ingress policer-control-policy UNI_SAP_Ingress_Policer }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap lag-<<XGEN_LAG_ID>>:<<S_TAG1>>.<<C_TAG1>> ingress policer-control-override create }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap lag-<<XGEN_LAG_ID>>:<<S_TAG1>>.<<C_TAG1>> ingress policer-control-override max-rate <<KBPS>> }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap lag-<<XGEN_LAG_ID>>:<<S_TAG1>>.<<C_TAG1>> egress qos <<EGRESS_SERVICE_POLICY_ID>> }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap lag-<<XGEN_LAG_ID>>:<<S_TAG1>>.<<C_TAG1>> no shutdown }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<XGEN_NNI_SLOT_MDA_PORT>>:<<S_TAG2>>.<<C_TAG2>> create }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<XGEN_NNI_SLOT_MDA_PORT>>:<<S_TAG2>>.<<C_TAG2>> ingress qos <<INGRESS_SERVICE_POLICY_ID>> }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<XGEN_NNI_SLOT_MDA_PORT>>:<<S_TAG2>>.<<C_TAG2>> ingress policer-control-policy UNI_SAP_Ingress_Policer }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<XGEN_NNI_SLOT_MDA_PORT>>:<<S_TAG2>>.<<C_TAG2>> ingress policer-control-override create }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<XGEN_NNI_SLOT_MDA_PORT>>:<<S_TAG2>>.<<C_TAG2>> ingress policer-control-override max-rate <<KBPS>> }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<XGEN_NNI_SLOT_MDA_PORT>>:<<S_TAG2>>.<<C_TAG2>> egress qos <<EGRESS_SERVICE_POLICY_ID>> }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<XGEN_NNI_SLOT_MDA_PORT>>:<<S_TAG2>>.<<C_TAG2>> no shutdown }}\n" },
+                { "text": "{{/admin save }}\n" },
+                { "text": "{{exit all }}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "SVC_ID",
+                    "label": "Service ID",
+                    "regex_name": "any_positive_number",
+                    "required": true,
+                    "placeholder": "digits only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "CUSTNAME",
+                    "label": "Customer Name",
+                    "regex_name": "free_type_32",
+                    "required": true,
+                    "placeholder": "up to 32 characters only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "CUST_ID",
+                    "label": "Customer ID",
+                    "regex_name": "any_positive_number",
+                    "required": true,
+                    "placeholder": "digits only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "TBSACCTNUM",
+                    "label": "TBS Account Number",
+                    "regex_name": "any_positive_number",
+                    "required": true,
+                    "placeholder": "digits only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "PSR",
+                    "label": "PSR",
+                    "regex_name": "any_positive_number",
+                    "required": true,
+                    "placeholder": "digits only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "CKT_ID",
+                    "label": "Circuit ID",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "circuit id",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-select",
+                    "label": "Circuit Status",
+                    "variable": "CKT_STATUS",
+                    "values": [ { "value": "" } ],
+                    "required": true,
+                    "options": [
+                        { "label": "OPERATIONAL", "value": "OPER" },
+                        { "label": "Non-Operational", "value": "NON-OP" }
+                    ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "SPEED",
+                    "label": "Speed",
+                    "regex_name": "digits_1to4",
+                    "required": true,
+                    "placeholder": "up to 4 digits only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-select",
+                    "label": "Speed Type",
+                    "variable": "SPEED_TYPE",
+                    "values": [ { "value": "" } ],
+                    "required": true,
+                    "options": [
+                        { "label": "Megabits", "value": "M" },
+                        { "label": "Gigabits", "value": "G" }
+                    ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "XGEN_LAG_ID",
+                    "label": "XGEN LAG ID",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "S_TAG1",
+                    "label": "S-TAG 1",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "C_TAG1",
+                    "label": "C-TAG 1",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "XGEN_NNI_SLOT_MDA_PORT",
+                    "label": "XGEN NNI Slot/MDA/Port",
+                    "regex_name": "slot_mda_port",
+                    "required": true,
+                    "placeholder": "Valid Values: Slot:1-11, MDA:1-2, Port:1-40 only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "S_TAG2",
+                    "label": "S-TAG 2",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "C_TAG2",
+                    "label": "C-TAG 2",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-select",
+                    "variable": "INGRESS_SERVICE_POLICY_ID",
+                    "label": "Ingress Service Policy",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show qos sap-ingress",
+                    "dataParserName": "DataParserForCSSALUGressPolicy",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-select",
+                    "variable": "EGRESS_SERVICE_POLICY_ID",
+                    "label": "Egress Service Policy",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show qos sap-egress",
+                    "dataParserName": "DataParserForCSSALUGressPolicy",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "KBPS",
+                    "label": "KBPS",
+                    "regex_name": "any_positive_number",
+                    "required": true,
+                    "placeholder": "kilo-bps",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 209,
+            "platform": "CSS-ALU",
+            "category": "Build",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 3" ],
+            "groups": [ { "name": "XGEN" } ],
+            "name": "LAG to LAG ePipe (XGEN) ",
+            "approved": true,
+            "snippets": [
+                { "text": "{{/configure service customer <<CUST_ID>> create }}\n" },
+                { "text": "{{/configure service customer <<CUST_ID>> description <<CUSTNAME>>::TBSACCT<<TBSACCTNUM>> }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> create }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> description CUST::<<CKT_STATUS>>::<<SPEED>><<SPEED_TYPE>>::<<CUSTNAME>>::<<CKT_ID>>::<<PSR>> }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> service-mtu 9150 }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> no shutdown }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap lag-<<XGEN_LAG_ID1>>:<<S_TAG1>>.<<C_TAG1>> create }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap lag-<<XGEN_LAG_ID1>>:<<S_TAG1>>.<<C_TAG1>> ingress qos <<INGRESS_SERVICE_POLICY_ID>> }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap lag-<<XGEN_LAG_ID1>>:<<S_TAG1>>.<<C_TAG1>> ingress policer-control-policy UNI_SAP_Ingress_Policer }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap lag-<<XGEN_LAG_ID1>>:<<S_TAG1>>.<<C_TAG1>> ingress policer-control-override create }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap lag-<<XGEN_LAG_ID1>>:<<S_TAG1>>.<<C_TAG1>> ingress policer-control-override max-rate <<KBPS>> }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap lag-<<XGEN_LAG_ID1>>:<<S_TAG1>>.<<C_TAG1>> egress qos <<EGRESS_SERVICE_POLICY_ID>> }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap lag-<<XGEN_LAG_ID1>>:<<S_TAG1>>.<<C_TAG1>> no shutdown }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap lag-<<XGEN_LAG_ID2>>:<<S_TAG2>>.<<C_TAG2>> create }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap lag-<<XGEN_LAG_ID2>>:<<S_TAG2>>.<<C_TAG2>> ingress qos <<INGRESS_SERVICE_POLICY_ID>> }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap lag-<<XGEN_LAG_ID2>>:<<S_TAG2>>.<<C_TAG2>> ingress policer-control-policy UNI_SAP_Ingress_Policer }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap lag-<<XGEN_LAG_ID2>>:<<S_TAG2>>.<<C_TAG2>> ingress policer-control-override create }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap lag-<<XGEN_LAG_ID2>>:<<S_TAG2>>.<<C_TAG2>> ingress policer-control-override max-rate <<KBPS>> }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap lag-<<XGEN_LAG_ID2>>:<<S_TAG2>>.<<C_TAG2>> egress qos <<EGRESS_SERVICE_POLICY_ID>> }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap lag-<<XGEN_LAG_ID2>>:<<S_TAG2>>.<<C_TAG2>> no shutdown }}\n" },
+                { "text": "{{/admin save }}\n" },
+                { "text": "{{exit all }}\n" }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "SVC_ID",
+                    "label": "Service ID",
+                    "regex_name": "any_positive_number",
+                    "required": true,
+                    "placeholder": "digits only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "CUSTNAME",
+                    "label": "Customer Name",
+                    "regex_name": "free_type_32",
+                    "required": true,
+                    "placeholder": "up to 32 characters only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "CUST_ID",
+                    "label": "Customer ID",
+                    "regex_name": "any_positive_number",
+                    "required": true,
+                    "placeholder": "digits only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "TBSACCTNUM",
+                    "label": "TBS Account Number",
+                    "regex_name": "any_positive_number",
+                    "required": true,
+                    "placeholder": "digits only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "PSR",
+                    "label": "PSR",
+                    "regex_name": "any_positive_number",
+                    "required": true,
+                    "placeholder": "digits only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "CKT_ID",
+                    "label": "Circuit ID",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "circuit id",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-select",
+                    "label": "Circuit Status",
+                    "variable": "CKT_STATUS",
+                    "values": [ { "value": "" } ],
+                    "required": true,
+                    "options": [
+                        { "label": "OPERATIONAL", "value": "OPER" },
+                        { "label": "Non-Operational", "value": "NON-OP" }
+                    ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "SPEED",
+                    "label": "Speed",
+                    "regex_name": "digits_1to4",
+                    "required": true,
+                    "placeholder": "up to 4 digits only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-select",
+                    "label": "Speed Type",
+                    "variable": "SPEED_TYPE",
+                    "values": [ { "value": "" } ],
+                    "required": true,
+                    "options": [
+                        { "label": "Megabits", "value": "M" },
+                        { "label": "Gigabits", "value": "G" }
+                    ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "XGEN_LAG_ID1",
+                    "label": "XGEN LAG ID 1",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "S_TAG1",
+                    "label": "S-TAG 1",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "C_TAG1",
+                    "label": "C-TAG 1",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "XGEN_LAG_ID2",
+                    "label": "XGEN LAG ID 2",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "S_TAG2",
+                    "label": "S-TAG 2",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "C_TAG2",
+                    "label": "C-TAG 2",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-select",
+                    "variable": "INGRESS_SERVICE_POLICY_ID",
+                    "label": "Ingress Service Policy",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show qos sap-ingress",
+                    "dataParserName": "DataParserForCSSALUGressPolicy",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-select",
+                    "variable": "EGRESS_SERVICE_POLICY_ID",
+                    "label": "Egress Service Policy",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show qos sap-egress",
+                    "dataParserName": "DataParserForCSSALUGressPolicy",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "KBPS",
+                    "label": "KBPS",
+                    "regex_name": "any_positive_number",
+                    "required": true,
+                    "placeholder": "kilo-bps",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 301,
+            "platform": "CSS-ALU",
+            "category": "Delete",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 5" ],
+            "groups": [ { "name": "ONB" } ],
+            "name": "Delete UNI Port Config",
+            "approved": true,
+            "must_refresh": true,
+            "snippets": [
+                { "text": "{{/conf serv vpls <<SVC_ID>> customer <<CUST_ID>> sap <<SLOT_PORT_MDA>> shutdown }}\n" },
+                { "text": "{{/conf serv vpls <<SVC_ID>> customer <<CUST_ID>> no sap <<SLOT_PORT_MDA>> }}\n" },
+                { "text": "{{/config port <<SLOT_PORT_MDA>> shutdown  }}\n" },
+                { "text": "{{/config port <<SLOT_PORT_MDA>> no description }}\n" },
+                { "text": "{{/admin save }}\n" },
+                { "text": "{{exit all }}\n" }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "SVC_ID",
+                    "label": "Service ID",
+                    "regex_name": "any_positive_number",
+                    "required": true,
+                    "placeholder": "digits only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "CUST_ID",
+                    "label": "Customer ID",
+                    "regex_name": "any_positive_number",
+                    "required": true,
+                    "placeholder": "digits only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-select",
+                    "variable": "SLOT_MDA_PORT",
+                    "label": "UNI Slot/MDA/Port",
+                    "required": true,
+                    "regex_name": "slot_mda_port",
+                    "dataCommand": "show port description",
+                    "dataParserName": "DataParserForCSSALUShowPortDescription",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 302,
+            "platform": "CSS-ALU",
+            "category": "Delete",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 4" ],
+            "groups": [ { "name": "XGEN" } ],
+            "name": "Delete Epipe Service Only",
+            "approved": true,
+            "must_refresh": true,
+            "snippets": [
+                { "text": "{{/conf serv epipe <<SVC_ID>> customer <<CUST_ID>> sap <<SAP_ID1>> shutdown }}\n" },
+                { "text": "{{/conf serv epipe <<SVC_ID>> customer <<CUST_ID>> no sap <<SAP_ID1>> }}\n" },
+                { "text": "{{/conf serv epipe <<SVC_ID>> customer <<CUST_ID>> sap <<SAP_ID2>> shutdown }}\n" },
+                { "text": "{{/conf serv epipe <<SVC_ID>> customer <<CUST_ID>> no sap <<SAP_ID2>>  }}\n" },
+                { "text": "{{/conf serv epipe <<SVC_ID>> shutdown  }}\n" },
+                { "text": "{{/conf serv no epipe <<SVC_ID>> }}\n" },
+                { "text": "{{/config service no customer <<CUST_ID>> }}\n" },
+                { "text": "{{/admin save }}\n" },
+                { "text": "{{exit all }}\n" }
+            ],
+            "variables": [
+                {
+                    "type": "form-select",
+                    "variable": "SAP_ID1",
+                    "label": "SAP Id 1",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show service sap-using",
+                    "dataParserName": "DP_CSSALUSapID",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-select",
+                    "variable": "SAP_ID2",
+                    "label": "SAP Id 2",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show service sap-using",
+                    "dataParserName": "DP_CSSALUSapID",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "SVC_ID",
+                    "label": "Service ID",
+                    "regex_name": "any_positive_number",
+                    "required": true,
+                    "placeholder": "digits only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "CUST_ID",
+                    "label": "Customer ID",
+                    "regex_name": "any_positive_number",
+                    "required": true,
+                    "placeholder": "digits only",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 303,
+            "platform": "CSS-ALU",
+            "category": "Delete",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 4" ],
+            "groups": [ { "name": "XGEN" } ],
+            "name": "Delete Epipe Service And One UNI",
+            "approved": true,
+            "must_refresh": true,
+            "snippets": [
+                { "text": "{{/conf serv epipe <<SVC_ID>> customer <<CUST_ID>> sap <<SAP_ID>> shutdown }}\n" },
+                { "text": "{{/conf serv epipe <<SVC_ID>> customer <<CUST_ID>> no sap <<SAP_ID>> }}\n" },
+                { "text": "{{/conf serv epipe <<SVC_ID>> customer <<CUST_ID>> sap <<SAP_ID>> shutdown }}\n" },
+                { "text": "{{/conf serv epipe <<SVC_ID>> customer <<CUST_ID>> no sap <<SAP_ID>> }}\n" },
+                { "text": "{{/conf serv epipe <<SVC_ID>> customer <<CUST_ID>> sap <<SAP_ID>> shutdown }}\n" },
+                { "text": "{{/conf serv epipe <<SVC_ID>> customer <<CUST_ID>> no sap <<SAP_ID>> }}\n" },
+                { "text": "{{/conf serv epipe <<SVC_ID>> shutdown \n}}\n" },
+                { "text": "{{/conf serv no epipe <<SVC_ID>> }}\n" },
+                { "text": "{{/config service no customer <<CUST_ID>> }}\n" },
+                { "text": "{{/config port <<SLOT_MDA_PORT>> shutdown  }}\n" },
+                { "text": "{{/config port <<SLOT_MDA_PORT>> no description }}\n" },
+                { "text": "{{/admin save }}\n" },
+                { "text": "{{exit all}}\n" }
+            ],
+            "variables": [
+                {
+                    "type": "form-select",
+                    "variable": "SAP_ID",
+                    "label": "SAP Id",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show service sap-using",
+                    "dataParserName": "DP_CSSALUSapID",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "SVC_ID",
+                    "label": "Service ID",
+                    "regex_name": "any_positive_number",
+                    "required": true,
+                    "placeholder": "digits only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "CUST_ID",
+                    "label": "Customer ID",
+                    "regex_name": "any_positive_number",
+                    "required": true,
+                    "placeholder": "digits only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-select",
+                    "variable": "SLOT_MDA_PORT",
+                    "label": "UNI Slot/MDA/Port",
+                    "required": true,
+                    "regex_name": "slot_mda_port",
+                    "dataCommand": "show port description",
+                    "dataParserName": "DataParserForCSSALUShowPortDescription",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "Valid Values: Slot:1-11, MDA:1-2, Port:1-40 only",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 304,
+            "platform": "CSS-ALU",
+            "category": "Delete",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 4" ],
+            "groups": [ { "name": "XGEN" } ],
+            "name": "Delete Epipe Service And Two UNIs",
+            "approved": true,
+            "must_refresh": true,
+            "snippets": [
+                { "text": "{{/conf serv epipe <<SVC_ID>> customer <<CUST_ID>> sap <<SAP_ID>> shutdown }}\n" },
+                { "text": "{{/conf serv epipe <<SVC_ID>> customer <<CUST_ID>> no sap <<SAP_ID>> }}\n" },
+                { "text": "{{/conf serv epipe <<SVC_ID>> customer <<CUST_ID>> sap <<SAP_ID>> shutdown }}\n" },
+                { "text": "{{/conf serv epipe <<SVC_ID>> customer <<CUST_ID>> no sap <<SAP_ID>> }}\n" },
+                { "text": "{{/conf serv epipe <<SVC_ID>> customer <<CUST_ID>> sap <<SAP_ID>> shutdown }}\n" },
+                { "text": "{{/conf serv epipe <<SVC_ID>> customer <<CUST_ID>> no sap <<SAP_ID>> }}\n" },
+                { "text": "{{/conf serv epipe <<SVC_ID>> shutdown \n}}\n" },
+                { "text": "{{/conf serv no epipe <<SVC_ID>> }}\n" },
+                { "text": "{{/config service no customer <<CUST_ID>> }}\n" },
+                { "text": "{{/config port <<UNI1_SLOT_MDA_PORT>> shutdown  }}\n" },
+                { "text": "{{/config port <<UNI1_SLOT_MDA_PORT>> no description }}\n" },
+                { "text": "{{/config port <<UNI2_SLOT_MDA_PORT>> shutdown  }}\n" },
+                { "text": "{{/config port <<UNI2_SLOT_MDA_PORT>> no description }}\n" },
+                { "text": "{{/admin save }}\n" },
+                { "text": "{{exit all}}\n" }
+            ],
+            "variables": [
+                {
+                    "type": "form-select",
+                    "variable": "SAP_ID",
+                    "label": "SAP Id",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show service sap-using",
+                    "dataParserName": "DP_CSSALUSapID",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "SVC_ID",
+                    "label": "Service ID",
+                    "regex_name": "any_positive_number",
+                    "required": true,
+                    "placeholder": "digits only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "CUST_ID",
+                    "label": "Customer ID",
+                    "regex_name": "any_positive_number",
+                    "required": true,
+                    "placeholder": "digits only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-select",
+                    "variable": "UNI1_SLOT_MDA_PORT",
+                    "label": "UNI Slot/MDA/Port 1",
+                    "required": true,
+                    "regex_name": "slot_mda_port",
+                    "dataCommand": "show port description",
+                    "dataParserName": "DataParserForCSSALUShowPortDescription",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "Valid Values: Slot:1-11, MDA:1-2, Port:1-40 only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-select",
+                    "variable": "UNI2_SLOT_MDA_PORT",
+                    "label": "UNI Slot/MDA/Port 2",
+                    "required": true,
+                    "regex_name": "slot_mda_port",
+                    "dataCommand": "show port description",
+                    "dataParserName": "DataParserForCSSALUShowPortDescription",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "Valid Values: Slot:1-11, MDA:1-2, Port:1-40 only",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 401,
+            "platform": "CSS-ALU",
+            "category": "Edit",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 3" ],
+            "groups": [ { "name": "XGEN" }, { "name": "ONB" } ],
+            "name": "Edit UNI Port MTU",
+            "approved": true,
+            "snippets": [
+                { "text": "{{/config port <<SLOT_MDA_PORT>> ethernet mtu <<MTU>> }}\n" },
+                { "text": "{{/admin save }}\n" },
+                { "text": "{{exit all }}\n" }
+            ],
+            "variables": [
+                {
+                    "type": "form-select",
+                    "variable": "SLOT_MDA_PORT",
+                    "label": "UNI Slot/MDA/Port",
+                    "required": true,
+                    "regex_name": "slot_mda_port",
+                    "dataCommand": "show port description",
+                    "dataParserName": "DataParserForCSSALUShowPortDescription",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "Valid Values: Slot:1-11, MDA:1-2, Port:1-40 only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-select",
+                    "label": "MTU",
+                    "variable": "MTU",
+                    "values": [ { "value": "" } ],
+                    "required": true,
+                    "options": [
+                        { "label": "9212", "value": "9212" },
+                        { "label": "9150", "value": "9150" }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 402,
+            "platform": "CSS-ALU",
+            "category": "Edit",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 3" ],
+            "groups": [ { "name": "XGEN" }, { "name": "ONB" } ],
+            "name": "Edit UNI Description",
+            "approved": true,
+            "snippets": [
+                { "text": "{{/config port <<SLOT_MDA_PORT>> descr <<CUSTNAME>>::OPER::<<SPEED>><<SPEED_TYPE>>::<<CKT_ID>>::<<PSR>> }}\n" },
+                { "text": "{{/admin save }}\n" },
+                { "text": "{{exit all }}\n" }
+            ],
+            "variables": [
+                {
+                    "type": "form-select",
+                    "variable": "SLOT_MDA_PORT",
+                    "label": "UNI Slot/MDA/Port",
+                    "required": true,
+                    "regex_name": "slot_mda_port",
+                    "dataCommand": "show port description",
+                    "dataParserName": "DataParserForCSSALUShowPortDescription",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "Speed",
+                    "label": "SPEED",
+                    "regex_name": "digits_1to4",
+                    "required": true,
+                    "placeholder": "up to 4 digits only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-select",
+                    "label": "Speed Type",
+                    "variable": "SPEED_TYPE",
+                    "values": [ { "value": "" } ],
+                    "required": true,
+                    "options": [
+                        { "label": "Megabits", "value": "M" },
+                        { "label": "Gigabits", "value": "G" }
+                    ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "CUSTNAME",
+                    "label": "Customer Name",
+                    "regex_name": "customer_name_32",
+                    "required": true,
+                    "placeholder": "up to 32 characters only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "label": "Circuit ID",
+                    "variable": "CKT_ID",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "circuit id",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "PSR",
+                    "label": "PSR",
+                    "regex_name": "any_positive_number",
+                    "required": true,
+                    "placeholder": "digits only",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 501,
+            "platform": "CSS-ALU",
+            "category": "Execute",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 4" ],
+            "groups": [ { "name": "XGEN" }, { "name": "ONB" } ],
+            "name": "Bounce UNI Port",
+            "approved": true,
+            "snippets": [
+                { "text": "{{/config port <<SLOT_MDA_PORT>> shutdown \n}}" },
+                { "text": "{{/config port <<SLOT_MDA_PORT>> no shutdown  \n}}" },
+                { "text": "{{/admin save \n}}" },
+                { "text": "{{exit all }}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-select",
+                    "variable": "SLOT_MDA_PORT",
+                    "label": "UNI Slot/MDA/Port",
+                    "required": true,
+                    "regex_name": "slot_mda_port",
+                    "dataCommand": "show port description",
+                    "dataParserName": "DataParserForCSSALUShowPortDescription",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 502,
+            "platform": "CSS-ALU",
+            "category": "Execute",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 4" ],
+            "groups": [ { "name": "XGEN" }, { "name": "ONB" } ],
+            "name": "Shut UNI Port",
+            "approved": true,
+            "snippets": [
+                { "text": "{{/config port <<SLOT_MDA_PORT>> shutdown \n}}" },
+                { "text": "{{/admin save \n}}" },
+                { "text": "{{exit all }}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-select",
+                    "variable": "SLOT_MDA_PORT",
+                    "label": "UNI Slot/MDA/Port",
+                    "required": true,
+                    "regex_name": "slot_mda_port",
+                    "dataCommand": "show port description",
+                    "dataParserName": "DataParserForCSSALUShowPortDescription",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 503,
+            "platform": "CSS-ALU",
+            "category": "Execute",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 3" ],
+            "groups": [ { "name": "XGEN" }, { "name": "ONB" } ],
+            "name": "No Shut UNI Port",
+            "approved": true,
+            "snippets": [
+                { "text": "{{/config port <<SLOT_MDA_PORT>> no shutdown \n}}" },
+                { "text": "{{/admin save \n}}" },
+                { "text": "{{exit all }}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-select",
+                    "variable": "SLOT_MDA_PORT",
+                    "label": "UNI Slot/MDA/Port",
+                    "required": true,
+                    "regex_name": "slot_mda_port",
+                    "dataCommand": "show port description",
+                    "dataParserName": "DataParserForCSSALUShowPortDescription",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 504,
+            "platform": "CSS-ALU",
+            "category": "Execute",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 2" ],
+            "groups": [ { "name": "XGEN" }, { "name": "ONB" } ],
+            "name": "Clear UNI Port Stats",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{clear port <<SLOT_MDA_PORT>> statistics }}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-select",
+                    "variable": "SLOT_MDA_PORT",
+                    "label": "UNI Slot/MDA/Port",
+                    "required": true,
+                    "regex_name": "slot_mda_port",
+                    "dataCommand": "show port description",
+                    "dataParserName": "DataParserForCSSALUShowPortDescription",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "Valid Values: Slot:1-11, MDA:1-2, Port:1-40 only",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 505,
+            "platform": "CSS-ALU",
+            "category": "Execute",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 2" ],
+            "groups": [ { "name": "XGEN" }, { "name": "ONB" } ],
+            "name": "Clear All Service ID Counters",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{/clear service statistics id <<SVC_ID>> counters }}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "SVC_ID",
+                    "label": "Service ID",
+                    "regex_name": "any_number",
+                    "required": true,
+                    "placeholder": "digits only",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 506,
+            "platform": "CSS-ALU",
+            "category": "Execute",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 3" ],
+            "groups": [ { "name": "ONB" }, { "name": "XGEN" } ],
+            "name": "Clear Counters On Customer SAP",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{/clear service statistics sap <<SAP_ID>> counters \n}}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-select",
+                    "variable": "SAP_ID",
+                    "label": "SAP Id",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show service sap-using",
+                    "dataParserName": "DP_CSSALUSapID",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 521,
+            "platform": "CSS-ALU",
+            "intrusiveness": "Y",
+            "category": "Spirent",
+            "rollbackTag": "Y",
+            "rollbackDef": "2",
+            "access": [ "Command Center Level 4" ],
+            "groups": [ { "name": "XGEN" }, { "name": "ONB" } ],
+            "name": "Put SAP In Loopback",
+            "approved": true,
+            "must_refresh": true,
+            "snippets": [
+                { "text": "{{/tools perform service id <<SVC_ID>> loopback eth sap <<SAP_ID>> start <<MODE>>}}\n" },
+                { "text": "{{exit all }}" }
+            ],
+            "rollback": [
+                { "text": "{{/tools perform service id <<SVC_ID>> loopback eth sap <<SAP_ID>> stop}}\n" },
+                { "text": "{{exit all }}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-combobox",
+                    "variable": "SERVICE_SAP",
+                    "label": "Service or SAP",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show service sap",
+                    "dataParserName": "DPCSS2_SapID",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "SAP_ID",
+                    "label": "SAP Id",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataParserName": "PPCSS2_SAPIDFromService",
+                    "placeholder": "SAP_ID",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "SVC_ID",
+                    "label": "Service ID",
+                    "regex_name": "any_number",
+                    "required": true,
+                    "dataParserName": "PPCSS2_SVCIDFromService",
+                    "placeholder": "digits only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-select",
+                    "label": "Mode",
+                    "variable": "MODE",
+                    "values": [ { "value": "" } ],
+                    "required": true,
+                    "options": [
+                        { "label": "egress (loop facing in)", "value": "egress" },
+                        { "label": "ingress (loop facing out)", "value": "ingress" }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 522,
+            "platform": "CSS-ALU",
+            "category": "Spirent",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 3" ],
+            "groups": [ { "name": "XGEN" }, { "name": "ONB" } ],
+            "name": "Remove Loopback Or MAC-Swap",
+            "approved": true,
+            "must_refresh": true,
+            "snippets": [
+                {
+                    "text": "{{/tools perform service id <<SVC_ID>> loopback eth sap <<LOOPED_SAP>> stop }}\n"
+                },
+                { "text": "{{exit all }}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-select",
+                    "variable": "LOOPED_SAP",
+                    "label": "Looped SAP Id",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "tools dump service loopback",
+                    "dataParserName": "DataParserForCSSALULoopedSapUsing",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "SVC_ID",
+                    "label": "Service ID",
+                    "regex_name": "free_type",
+                    "required": false,
+                    "dataParserName": "PostProcForSVCIDFromLOOPEDSAP",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 523,
+            "platform": "CSS-ALU",
+            "category": "Spirent",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 3" ],
+            "groups": [ { "name": "XGEN" }, { "name": "ONB" } ],
+            "name": "Put a MAC-Swap Loopback on a SAP",
+            "rollbackTag": "Y",
+            "rollbackDef": "2",
+            "approved": true,
+            "must_refresh": true,
+            "snippets": [
+                { "text": "{{/tools perform service id <<SVC_ID>> loopback eth sap <<SAP_ID>> start <<MODE>> mac-swap mac <<MAC_ADDR_COMPUTED>>}}\n" },
+                { "text": "{{exit all }}" }
+            ],
+            "rollback": [
+                { "text": "{{/tools perform service id <<SVC_ID>> loopback eth sap <<SAP_ID>> stop}}\n" },
+                { "text": "{{exit all }}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-combobox",
+                    "variable": "SERVICE_SAP",
+                    "label": "Service or SAP",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show service sap",
+                    "dataParserName": "DPCSS2_SapID",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "SAP_ID",
+                    "label": "SAP Id",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataParserName": "PPCSS2_SAPIDFromService",
+                    "placeholder": "SAP_ID",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "SVC_ID",
+                    "label": "Service ID",
+                    "regex_name": "any_number",
+                    "required": true,
+                    "dataParserName": "PPCSS2_SVCIDFromService",
+                    "placeholder": "digits only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-select",
+                    "label": "Mode",
+                    "variable": "MODE",
+                    "values": [ { "value": "" } ],
+                    "required": true,
+                    "options": [
+                        { "label": "egress (loop facing in)", "value": "egress" },
+                        { "label": "ingress (loop facing out)", "value": "ingress" }
+                    ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "MAC_ADDR",
+                    "label": "MAC Address",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "MAC_ADDR_COMPUTED",
+                    "label": "MAC Address (formatted)",
+                    "regex_name": "ALU7750_mac_address",
+                    "required": true,
+                    "dataParserName": "PostProcForCSSALUComputedMACAddress",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 524,
+            "platform": "CSS-ALU",
+            "intrusiveness": "Y",
+            "category": "Spirent",
+            "rollbackTag": "Y",
+            "rollbackDef": "2",
+            "access": [ "Command Center Level 3" ],
+            "groups": [ { "name": "ONB" } ],
+            "name": "ONB - Connect Spirent Test Interface",
+            "approved": true,
+            "must_refresh": true,
+            "flow_thru_err": "Y",
+            "snippets": [
+                { "text": "{{candidate edit}}\n" },
+                { "text": "{{candidate discard}}\n" },
+                { "text": "{{y}}\n" },
+                { "text": "{{candidate edit}}\n" },
+                { "text": "{{/configure port <<SPIRENT_SLOT_MDA_PORT>> shutdown}}\n" },
+                { "text": "{{/configure port <<SPIRENT_SLOT_MDA_PORT>> ethernet mode access}}\n" },
+                { "text": "{{/configure port <<SPIRENT_SLOT_MDA_PORT>> ethernet encap <<SAP_ENCAP>>}}\n" },
+                { "text": "{{/configure port <<SPIRENT_SLOT_MDA_PORT>> ethernet mtu 9212}}\n" },
+                { "text": "{{/configure port <<SPIRENT_SLOT_MDA_PORT>> ethernet egress-scheduler-policy Access_NNI_Trusted_Prt-Sched_1}}\n" },
+                { "text": "{{/configure port <<SPIRENT_SLOT_MDA_PORT>> ethernet access egress queue-gr Access_NNI_Trusted_Queue-Grp_1 instance 1 create scheduler-pol Access_NNI_Trustd_Sched_Polcy_1}}\n" },
+                { "text": "{{/configure port <<SPIRENT_SLOT_MDA_PORT>> no shutdown}}\n" },
+                { "text": "{{/configure service vpls <<SVC_ID>> customer <<CUST_ID>> sap <<SAP_ID>> shutdown}}\n" },
+                { "text": "{{/configure service vpls <<SVC_ID>> customer <<CUST_ID>> no sap <<SAP_ID>>}}\n" },
+                { "text": "{{/configure service vpls <<SVC_ID>> customer <<CUST_ID>> sap <<SPIRENT_SLOT_MDA_PORT>>}}{{<<SAP_TAGS>>}} {{ create description <<DESCRIPTION>>}}\n" },
+                { "text": "{{/configure service vpls <<SVC_ID>> customer <<CUST_ID>> sap <<SPIRENT_SLOT_MDA_PORT>>}}{{<<SAP_TAGS>>}} {{ no shutdown}}\n" },
+                { "text": "{{/configure service vpls <<SVC_ID>> customer <<CUST_ID>> sap <<SPIRENT_SLOT_MDA_PORT>>}}{{<<SAP_TAGS>>}} {{ ingress qos <<INGRESS_SERVICE_POLICY_ID>>}}\n" },
+                { "text": "{{/configure service vpls <<SVC_ID>> customer <<CUST_ID>> sap <<SPIRENT_SLOT_MDA_PORT>>}}{{<<SAP_TAGS>>}} {{ ingress policer-control-policy UNI_SAP_Ingress_Policer}}\n" },
+                { "text": "{{/configure service vpls <<SVC_ID>> customer <<CUST_ID>> sap <<SPIRENT_SLOT_MDA_PORT>>}}{{<<SAP_TAGS>>}} {{ ingress policer-control-override create max-rate <<KBPS>>}}\n" },
+                { "text": "{{/configure service vpls <<SVC_ID>> customer <<CUST_ID>> sap <<SPIRENT_SLOT_MDA_PORT>>}}{{<<SAP_TAGS>>}} {{ egress qos <<EGRESS_SERVICE_POLICY_ID>>}}\n" },
+                { "text": "{{exit all}}\n" },
+                { "text": "{{candidate view}}\n" },
+                { "text": "{{candidate commit no-checkpoint}}\n" },
+                { "text": "{{#}}\n" },
+                { "text": "{{candidate discard}}\n" },
+                { "text": "{{y}}\n" },
+                { "text": "{{/config serv vpls <<SVC_ID>>}}\n" },
+                { "text": "{{info}}\n" },
+                { "text": "{{exit all}}" }
+            ],
+            "rollback": [
+                { "text": "{{candidate edit}}\n" },
+                { "text": "{{candidate discard}}\n" },
+                { "text": "{{y}}\n" },
+                { "text": "{{candidate edit}}\n" },
+                { "text": "{{/conf serv vpls <<SVC_ID>> cust <<CUST_ID>> sap <<SPIRENT_SLOT_MDA_PORT>>}}{{<<SAP_TAGS>>}}{{ shutdown}}}}\n" },
+                { "text": "{{/conf serv vpls <<SVC_ID>> cust <<CUST_ID>> no sap <<SPIRENT_SLOT_MDA_PORT>>}}{{<<SAP_TAGS>>}}\n" },
+                { "text": "{{/conf serv vpls <<SVC_ID>> cust <<CUST_ID>> sap <<SAP_ID>> create}}\n" },
+                { "text": "{{/conf serv vpls <<SVC_ID>> cust <<CUST_ID>> sap <<SAP_ID>> no shutdown}}\n" },
+                { "text": "{{/conf serv vpls <<SVC_ID>> cust <<CUST_ID>> sap <<SAP_ID>> ingress qos <<INGRESS_SERVICE_POLICY_ID>>}}\n" },
+                { "text": "{{/conf serv vpls <<SVC_ID>> cust <<CUST_ID>> sap <<SAP_ID>> ingress policer-control-policy UNI_SAP_Ingress_Policer}}\n" },
+                { "text": "{{/conf serv vpls <<SVC_ID>> cust <<CUST_ID>> sap <<SAP_ID>> ingress policer-control-override create max-rate <<KBPS>>}}\n" },
+                { "text": "{{/conf serv vpls <<SVC_ID>> cust <<CUST_ID>> sap <<SAP_ID>> egress qos <<EGRESS_SERVICE_POLICY_ID>>}}\n" },
+                { "text": "{{exit all}}\n" },
+                { "text": "{{candidate view}}\n" },
+                { "text": "{{#}}\n" },
+                { "text": "{{candidate commit no-check}}\n" },
+                { "text": "{{candidate discard}}\n" },
+                { "text": "{{y}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-select",
+                    "variable": "SAP_ID",
+                    "label": "SAP Id",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "registerWatcher": true,
+                    "dataCommand": "show service sap-using",
+                    "dataParserName": "DataParserForCSSALUSapUsing",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "SVC_ID",
+                    "label": "Service ID",
+                    "regex_name": "any_number",
+                    "required": true,
+                    "registerWatcher": true,
+                    "dataParserName": "PostProcForSVCIDFromSAPID",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "digits only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "SAP_TAGS",
+                    "label": "SAP Tags",
+                    "regex_name": "free_type",
+                    "required": false,
+                    "dataParserName": "PostProcForSAPTagsFromSAPID",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "SAP_ENCAP",
+                    "label": "SAP Encap",
+                    "regex_name": "free_type",
+                    "required": false,
+                    "dataParserName": "PostProcForSAPEncapFromSAPID",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "CUST_ID",
+                    "label": "Customer ID",
+                    "regex_name": "any_number",
+                    "required": true,
+                    "dataParserName": "PostProcForSVCIDFromSAPID",
+                    "placeholder": "digits only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-select",
+                    "variable": "SPIRENT_SLOT_MDA_PORT",
+                    "label": "Spirent Slot/MDA/Port",
+                    "required": true,
+                    "regex_name": "slot_mda_port",
+                    "dataCommand": "show port description",
+                    "dataParserName": "DataParserForCSSALUShowPortDescriptionSpirentOnly",
+                    "registerWatcher": true,
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-dv-text",
+                    "variable": "SPIRENT_USED",
+                    "label": "Spirent In Use",
+                    "required": true,
+                    "regex_name": "NO",
+                    "placeholder": "",
+                    "dataCommand": "show service sap-using | match \"<<SPIRENT_SLOT_MDA_PORT>>:\"",
+                    "dataParserName": "PostProcEthRing",
+                    "dataPivotVariable": "SPIRENT_SLOT_MDA_PORT",
+                    "dataCommandRefreshFlag": "always",
+                    "registerWatcher": true,
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-dv-text",
+                    "variable": "SPIRENT_UP",
+                    "label": "Spirent Up",
+                    "required": true,
+                    "regex_name": "TRUE",
+                    "placeholder": "",
+                    "dataCommand": "show port | match \"<<SPIRENT_SLOT_MDA_PORT>> \"",
+                    "dataParserName": "PP_CSS2_SpirentUp",
+                    "dataPivotVariable": "SPIRENT_SLOT_MDA_PORT",
+                    "dataCommandRefreshFlag": "always",
+                    "registerWatcher": true,
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "INGRESS_SERVICE_POLICY_ID",
+                    "label": "Ingress Service Policy",
+                    "required": false,
+                    "regex_name": "free_type",
+                    "dataCommand": "/admin display-config | match <<SAP_ID>> context all | match ingress post-lines 5",
+                    "dataPivotVariable": "SAP_ID",
+                    "dataParserName": "PostProcForIngressFromSAPID",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "EGRESS_SERVICE_POLICY_ID",
+                    "label": "Egress Service Policy",
+                    "required": false,
+                    "regex_name": "free_type",
+                    "dataCommand": "/admin display-config | match <<SAP_ID>> context all | match egress post-lines 1",
+                    "dataPivotVariable": "SAP_ID",
+                    "dataParserName": "PostProcForEgressFromSAPID",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "KBPS",
+                    "label": "KBPS",
+                    "required": false,
+                    "regex_name": "free_type",
+                    "dataCommand": "/admin display-config | match <<SAP_ID>> context all | match max-rate",
+                    "dataPivotVariable": "SAP_ID",
+                    "dataParserName": "PostProcForKbpsFromSAPID",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "DESCRIPTION",
+                    "label": "Description",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "dataParserName": "PostProcForCSSALUDescriptionAutoPopulation",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-dv-text",
+                    "variable": "ETHRING",
+                    "label": "Ring SAP",
+                    "required": true,
+                    "regex_name": "NO",
+                    "placeholder": "",
+                    "dataCommand": "/admin display-config | match \"<<SAP_ID>> eth-ring\"",
+                    "dataParserName": "PostProcEthRing",
+                    "dataPivotVariable": "SAP_ID",
+                    "dataCommandRefreshFlag": "always",
+                    "registerWatcher": true,
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-dv-text",
+                    "variable": "EPIPE_VLS",
+                    "label": "Service Type",
+                    "required": true,
+                    "regex_name": "VPLS",
+                    "placeholder": "",
+                    "dataCommand": "/show service service-using | match <<SVC_ID>>",
+                    "dataParserName": "PostProcEpipeVpls",
+                    "dataPivotVariable": "SVC_ID",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 525,
+            "platform": "CSS-ALU",
+            "category": "Spirent",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 3" ],
+            "groups": [ { "name": "ONB" } ],
+            "name": "ONB - Disconnect Test and Restore To Normal",
+            "approved": true,
+            "must_refresh": true,
+            "flow_thru_err": "Y",
+            "snippets": [
+                { "text": "{{candidate edit}}\n" },
+                { "text": "{{candidate discard}}\n" },
+                { "text": "{{y}}\n" },
+                { "text": "{{candidate edit}}\n" },
+                { "text": "{{/configure service vpls <<SVC_ID>> customer <<CUST_ID>> sap <<SPIRENT_SLOT_MDA_PORT>>}}{{<<SAP_TAGS>>}}{{ shutdown}}\n" },
+                { "text": "{{/configure service vpls <<SVC_ID>> customer <<CUST_ID>> no sap <<SPIRENT_SLOT_MDA_PORT>>}}{{<<SAP_TAGS>>}}\n" },
+                { "text": "{{/configure service vpls <<SVC_ID>> customer <<CUST_ID>> sap <<SAPID>> create}}\n" },
+                { "text": "{{/configure service vpls <<SVC_ID>> customer <<CUST_ID>> sap <<SAPID>> no shutdown}}\n" },
+                { "text": "{{/configure service vpls <<SVC_ID>> customer <<CUST_ID>> sap <<SAPID>> ingress qos <<INGRESS_SERVICE_POLICY_ID>>}}\n" },
+                { "text": "{{/configure service vpls <<SVC_ID>> customer <<CUST_ID>> sap <<SAPID>> ingress policer-control-policy UNI_SAP_Ingress_Policer}}\n" },
+                { "text": "{{/configure service vpls <<SVC_ID>> customer <<CUST_ID>> sap <<SAPID>> ingress policer-control-override create max-rate <<KBPS>>}}\n" },
+                { "text": "{{/configure service vpls <<SVC_ID>> customer <<CUST_ID>> sap <<SAPID>> egress qos <<EGRESS_SERVICE_POLICY_ID>>}}\n" },
+                { "text": "{{exit all }}\n" },
+                { "text": "{{candidate view}}\n" },
+                { "text": "{{candidate commit no-checkpoint}}\n" },
+                { "text": "{{#}}\n" },
+                { "text": "{{candidate discard}}\n" },
+                { "text": "{{y}}\n" },
+                { "text": "{{/config serv vpls <<SVC_ID>>}}\n" },
+                { "text": "{{info}}\n" },
+                { "text": "{{exit all}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-select",
+                    "variable": "SAP_ID",
+                    "label": "SAP Id",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show service sap-using description | match CnC post-lines 1",
+                    "dataParserName": "DataParserForCSSALUSapUsingCnCOnly",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "SAPID",
+                    "label": "SAP ID",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "registerWatcher": true,
+                    "dataParserName": "DataParserForCSSALUSapIDCnCOnly",
+                    "placeholder": "SAP ID",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "SVC_ID",
+                    "label": "Service ID",
+                    "regex_name": "any_number",
+                    "required": true,
+                    "registerWatcher": true,
+                    "dataCommandRefreshFlag": "always",
+                    "dataParserName": "PostProcForSVCIDFromSAPIDCnCOnly",
+                    "placeholder": "digits only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "SAP_TAGS",
+                    "label": "SAP Tags",
+                    "regex_name": "free_type",
+                    "required": false,
+                    "dataParserName": "PostProcForSAPTagsFromSAPIDCnCOnly",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "CUST_ID",
+                    "label": "Customer ID",
+                    "regex_name": "any_number",
+                    "required": true,
+                    "dataParserName": "PostProcForSVCIDFromSAPIDCnCOnly",
+                    "placeholder": "digits only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "SPIRENT_SLOT_MDA_PORT",
+                    "label": "Spirent Slot/MDA/Port",
+                    "required": false,
+                    "regex_name": "free_type",
+                    "dataParserName": "PostProcForSpirentPortFromSAPIDCnCOnly",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "INGRESS_SERVICE_POLICY_ID",
+                    "label": "Ingress Service Policy",
+                    "required": false,
+                    "regex_name": "free_type",
+                    "dataParserName": "PostProcForIngressFromSAPIDCnCOnly",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "EGRESS_SERVICE_POLICY_ID",
+                    "label": "Egress Service Policy",
+                    "required": false,
+                    "regex_name": "free_type",
+                    "dataParserName": "PostProcForEgressFromSAPIDCnCOnly",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "KBPS",
+                    "label": "KBPS",
+                    "required": false,
+                    "regex_name": "free_type",
+                    "dataCommand": "/admin display-config | match <<SAP_ID>> context all | match max-rate",
+                    "dataPivotVariable": "SAP_ID",
+                    "dataParserName": "PostProcForKbpsFromSAPID",
+                    "placeholder": "autoselected kbps from first on list",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-dv-text",
+                    "variable": "EPIPE_VLS",
+                    "label": "Service Type",
+                    "required": true,
+                    "regex_name": "VPLS",
+                    "placeholder": "",
+                    "dataCommand": "/show service service-using | match <<SVC_ID>>",
+                    "dataParserName": "PostProcEpipeVpls",
+                    "dataPivotVariable": "SVC_ID",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 526,
+            "platform": "CSS-ALU",
+            "intrusiveness": "Y",
+            "category": "Spirent",
+            "rollbackTag": "Y",
+            "rollbackDef": "2",
+            "access": [ "Command Center Level 3" ],
+            "groups": [ { "name": "ONB" } ],
+            "name": "XGEN - Local Connect - Connect Spirent Test Interface",
+            "approved": true,
+            "must_refresh": true,
+            "flow_thru_err": "Y",
+            "snippets": [
+                { "text": "{{candidate edit}}\n" },
+                { "text": "{{candidate discard}}\n" },
+                { "text": "{{y}}\n" },
+                { "text": "{{candidate edit}}\n" },
+                { "text": "{{/configure port <<SPIRENT_SLOT_MDA_PORT>> shutdown }}\n" },
+                { "text": "{{/configure port <<SPIRENT_SLOT_MDA_PORT>> ethernet mode access }}\n" },
+                { "text": "{{/configure port <<SPIRENT_SLOT_MDA_PORT>> ethernet encap <<SAP_ENCAP>> }}\n" },
+                { "text": "{{/configure port <<SPIRENT_SLOT_MDA_PORT>> ethernet mtu 9212 }}\n" },
+                { "text": "{{/configure port <<SPIRENT_SLOT_MDA_PORT>> ethernet egress-scheduler-policy Access_NNI_Trusted_Prt-Sched_1}}\n" },
+                { "text": "{{/configure port <<SPIRENT_SLOT_MDA_PORT>> ethernet access egress queue-gr Access_NNI_Trusted_Queue-Grp_1 instance 1 create scheduler-pol Access_NNI_Trustd_Sched_Polcy_1}}\n" },
+                { "text": "{{/configure port <<SPIRENT_SLOT_MDA_PORT>> no shutdown }}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<SAP_ID>> shutdown}}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> no sap <<SAP_ID>>}}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<SPIRENT_SLOT_MDA_PORT>>}}{{<<SAP_TAGS>>}} {{ create description <<DESCRIPTION>>}}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<SPIRENT_SLOT_MDA_PORT>>}}{{<<SAP_TAGS>>}} {{ no shutdown}}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<SPIRENT_SLOT_MDA_PORT>>}}{{<<SAP_TAGS>>}} {{ ingress qos <<INGRESS_SERVICE_POLICY_ID>>}}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<SPIRENT_SLOT_MDA_PORT>>}}{{<<SAP_TAGS>>}} {{ ingress policer-control-policy UNI_SAP_Ingress_Policer}}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<SPIRENT_SLOT_MDA_PORT>>}}{{<<SAP_TAGS>>}} {{ ingress policer-control-override create max-rate <<KBPS>>}}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<SPIRENT_SLOT_MDA_PORT>>}}{{<<SAP_TAGS>>}} {{ egress qos <<EGRESS_SERVICE_POLICY_ID>>}}\n" },
+                { "text": "{{exit all}}\n" },
+                { "text": "{{candidate view}}\n" },
+                { "text": "{{candidate commit no-checkpoint}}\n" },
+                { "text": "{{#}}\n" },
+                { "text": "{{candidate discard}}\n" },
+                { "text": "{{y}}\n" },
+                { "text": "{{/config serv epipe <<SVC_ID>>}}\n" },
+                { "text": "{{info}}\n" },
+                { "text": "{{exit all}}" }
+            ],
+            "rollback": [
+                { "text": "{{candidate edit}}\n" },
+                { "text": "{{candidate discard}}\n" },
+                { "text": "{{y}}\n" },
+                { "text": "{{candidate edit}}\n" },
+                { "text": "{{/conf serv epipe <<SVC_ID>> cust <<CUST_ID>> sap <<SPIRENT_SLOT_MDA_PORT>>}}{{<<SAP_TAGS>>}}{{ shutdown}}\n" },
+                { "text": "{{/conf serv epipe <<SVC_ID>> cust <<CUST_ID>> no sap <<SPIRENT_SLOT_MDA_PORT>>}}{{<<SAP_TAGS>>}}\n" },
+                { "text": "{{/conf serv epipe <<SVC_ID>> cust <<CUST_ID>> sap <<SAP_ID>> create}}\n" },
+                { "text": "{{/conf serv epipe <<SVC_ID>> cust <<CUST_ID>> sap <<SAP_ID>> no shutdown}}\n" },
+                { "text": "{{/conf serv epipe <<SVC_ID>> cust <<CUST_ID>> sap <<SAP_ID>> ingress qos <<INGRESS_SERVICE_POLICY_ID>>}}\n" },
+                { "text": "{{/conf serv epipe <<SVC_ID>> cust <<CUST_ID>> sap <<SAP_ID>> ingress policer-control-policy UNI_SAP_Ingress_Policer}}\n" },
+                { "text": "{{/conf serv epipe <<SVC_ID>> cust <<CUST_ID>> sap <<SAP_ID>> ingress policer-control-override create max-rate <<KBPS>>}}\n" },
+                { "text": "{{/conf serv epipe <<SVC_ID>> cust <<CUST_ID>> sap <<SAP_ID>> ingress policer-control-override max-rate <<KBPS>>}}\n" },
+                { "text": "{{/conf serv epipe <<SVC_ID>> cust <<CUST_ID>> sap <<SAP_ID>> egress qos <<EGRESS_SERVICE_POLICY_ID>>}}\n" },
+                { "text": "{{exit all}}\n" },
+                { "text": "{{candidate view}}\n" },
+                { "text": "{{#}}\n" },
+                { "text": "{{candidate commit no-check}}\n" },
+                { "text": "{{candidate discard}}\n" },
+                { "text": "{{y}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-select",
+                    "variable": "SAP_ID",
+                    "label": "SAP Id",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "registerWatcher": true,
+                    "dataCommand": "show service sap-using",
+                    "dataParserName": "DataParserForCSSALUSapUsing",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "SVC_ID",
+                    "label": "Service ID",
+                    "regex_name": "any_number",
+                    "required": true,
+                    "registerWatcher": true,
+                    "dataCommandRefreshFlag": "always",
+                    "dataParserName": "PostProcForSVCIDFromSAPID",
+                    "placeholder": "digits only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "SAP_TAGS",
+                    "label": "SAP Tags",
+                    "required": false,
+                    "dataParserName": "PostProcForSAPTagsFromSAPID",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "SAP_ENCAP",
+                    "label": "SAP Encap",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "dataParserName": "PostProcForSAPEncapFromSAPID",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "CUST_ID",
+                    "label": "Customer ID",
+                    "regex_name": "any_number",
+                    "required": true,
+                    "dataParserName": "PostProcForSVCIDFromSAPID",
+                    "placeholder": "digits only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-select",
+                    "variable": "SPIRENT_SLOT_MDA_PORT",
+                    "label": "Spirent Slot/MDA/Port",
+                    "required": true,
+                    "regex_name": "slot_mda_port",
+                    "dataCommand": "show port description",
+                    "dataParserName": "DataParserForCSSALUShowPortDescriptionSpirentOnly",
+                    "registerWatcher": true,
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-dv-text",
+                    "variable": "SPIRENT_USED",
+                    "label": "Spirent In Use",
+                    "required": true,
+                    "regex_name": "NO",
+                    "placeholder": "",
+                    "dataCommand": "show service sap-using | match \"<<SPIRENT_SLOT_MDA_PORT>>:\"",
+                    "dataParserName": "PostProcEthRing",
+                    "dataPivotVariable": "SPIRENT_SLOT_MDA_PORT",
+                    "dataCommandRefreshFlag": "always",
+                    "registerWatcher": true,
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-dv-text",
+                    "variable": "SPIRENT_UP",
+                    "label": "Spirent Up",
+                    "required": true,
+                    "regex_name": "TRUE",
+                    "placeholder": "",
+                    "dataCommand": "show port | match \"<<SPIRENT_SLOT_MDA_PORT>> \"",
+                    "dataParserName": "PP_CSS2_SpirentUp",
+                    "dataPivotVariable": "SPIRENT_SLOT_MDA_PORT",
+                    "dataCommandRefreshFlag": "always",
+                    "registerWatcher": true,
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "INGRESS_SERVICE_POLICY_ID",
+                    "label": "Ingress Service Policy",
+                    "required": false,
+                    "regex_name": "free_type",
+                    "dataCommand": "/admin display-config | match <<SAP_ID>> context all | match ingress post-lines 5",
+                    "dataPivotVariable": "SAP_ID",
+                    "dataParserName": "PostProcForIngressFromSAPID",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "EGRESS_SERVICE_POLICY_ID",
+                    "label": "Egress Service Policy",
+                    "required": false,
+                    "regex_name": "free_type",
+                    "dataCommand": "/admin display-config | match <<SAP_ID>> context all | match egress post-lines 1",
+                    "dataPivotVariable": "SAP_ID",
+                    "dataParserName": "PostProcForEgressFromSAPID",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "KBPS",
+                    "label": "KBPS",
+                    "required": false,
+                    "regex_name": "free_type",
+                    "dataCommand": "/admin display-config | match <<SAP_ID>> context all | match max-rate",
+                    "dataPivotVariable": "SAP_ID",
+                    "dataParserName": "PostProcForKbpsFromSAPID",
+                    "placeholder": "autoselected kbps from first on list",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "DESCRIPTION",
+                    "label": "Description",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "dataParserName": "PostProcForCSSALUDescriptionAutoPopulation",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-dv-text",
+                    "variable": "EPIPE_VLS",
+                    "label": "Service Type",
+                    "required": true,
+                    "regex_name": "EPIPE",
+                    "placeholder": "",
+                    "dataCommand": "/show service service-using | match <<SVC_ID>>",
+                    "dataParserName": "PostProcEpipeVpls",
+                    "dataPivotVariable": "SVC_ID",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 527,
+            "platform": "CSS-ALU",
+            "category": "Spirent",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 3" ],
+            "groups": [ { "name": "XGEN" } ],
+            "name": "XGEN - Local Connect - Disconnect Test And Restore To Normal",
+            "approved": true,
+            "must_refresh": true,
+            "flow_thru_err": "Y",
+            "snippets": [
+                { "text": "{{candidate edit}}\n" },
+                { "text": "{{candidate discard}}\n" },
+                { "text": "{{y}}\n" },
+                { "text": "{{candidate edit}}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<SPIRENT_SLOT_MDA_PORT>>}}{{<<SAP_TAGS>>}}{{ shutdown}}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> no sap <<SPIRENT_SLOT_MDA_PORT>>}}{{<<SAP_TAGS>>}}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<SAPID>> create}}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<SAPID>> ingress qos <<INGRESS_SERVICE_POLICY_ID>>}}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<SAPID>> ingress policer-control-policy UNI_SAP_Ingress_Policer}}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<SAPID>> ingress policer-control-override create max-rate <<KBPS>>}}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<SAPID>> egress qos <<EGRESS_SERVICE_POLICY_ID>>}}\n" },
+                { "text": "{{/configure service epipe <<SVC_ID>> customer <<CUST_ID>> sap <<SAPID>> no shutdown}}\n" },
+                { "text": "{{exit all }}\n" },
+                { "text": "{{candidate view}}\n" },
+                { "text": "{{candidate commit no-checkpoint}}\n" },
+                { "text": "{{#}}\n" },
+                { "text": "{{candidate discard}}\n" },
+                { "text": "{{y}}\n" },
+                { "text": "{{/config serv epipe <<SVC_ID>>}}\n" },
+                { "text": "{{info}}\n" },
+                { "text": "{{exit all}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-select",
+                    "variable": "SAP_ID",
+                    "label": "SAP Selector",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show service sap-using description | match CnC post-lines 1",
+                    "dataParserName": "DataParserForCSSALUSapUsingCnCOnly",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "SAPID",
+                    "label": "SAP ID",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "registerWatcher": true,
+                    "dataParserName": "DataParserForCSSALUSapIDCnCOnly",
+                    "placeholder": "SAP ID",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "SVC_ID",
+                    "label": "Service ID",
+                    "regex_name": "any_number",
+                    "required": true,
+                    "registerWatcher": true,
+                    "dataCommandRefreshFlag": "always",
+                    "dataParserName": "PostProcForSVCIDFromSAPIDCnCOnly",
+                    "placeholder": "digits only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "SAP_TAGS",
+                    "label": "SAP Tags",
+                    "required": false,
+                    "dataParserName": "PostProcForSAPTagsFromSAPIDCnCOnly",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "CUST_ID",
+                    "label": "Customer ID",
+                    "regex_name": "any_number",
+                    "required": true,
+                    "dataParserName": "PostProcForSVCIDFromSAPIDCnCOnly",
+                    "placeholder": "digits only",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "SPIRENT_SLOT_MDA_PORT",
+                    "label": "Spirent Slot/MDA/Port",
+                    "required": false,
+                    "regex_name": "free_type",
+                    "dataParserName": "PostProcForSpirentPortFromSAPIDCnCOnly",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "INGRESS_SERVICE_POLICY_ID",
+                    "label": "Ingress Service Policy",
+                    "required": false,
+                    "regex_name": "free_type",
+                    "dataParserName": "PostProcForIngressFromSAPIDCnCOnly",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "EGRESS_SERVICE_POLICY_ID",
+                    "label": "Egress Service Policy",
+                    "required": false,
+                    "regex_name": "free_type",
+                    "dataParserName": "PostProcForEgressFromSAPIDCnCOnly",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "KBPS",
+                    "label": "KBPS",
+                    "required": false,
+                    "regex_name": "free_type",
+                    "dataCommand": "/admin display-config | match <<SAPID>> context all | match max-rate",
+                    "dataPivotVariable": "SAP_ID",
+                    "dataParserName": "PostProcForKbpsFromSAPID",
+                    "placeholder": "autoselected kbps from first on list",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-dv-text",
+                    "variable": "EPIPE_VLS",
+                    "label": "Service Type",
+                    "required": true,
+                    "regex_name": "EPIPE",
+                    "placeholder": "",
+                    "dataCommand": "/show service service-using | match <<SVC_ID>>",
+                    "dataParserName": "PostProcEpipeVpls",
+                    "dataPivotVariable": "SVC_ID",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 529,
+            "platform": "CSS-ALU",
+            "category": "Spirent",
+            "intrusiveness": "N",
+            "access": [ "Command Center Level 3" ],
+            "groups": [ { "name": "XGEN" }, { "name": "ONB" } ],
+            "name": "Check For Loopback Or MAC-SWAP",
+            "approved": true,
+            "must_refresh": true,
+            "snippets": [
+                { "text": "{{/tools dump service loopback}}\n" },
+                { "text": "{{exit all }}" }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 530,
+            "platform": "CSS-ALU",
+            "category": "Spirent",
+            "intrusiveness": "N",
+            "access": [ "Command Center Level 2" ],
+            "groups": [ { "name": "XGEN" }, { "name": "ONB" } ],
+            "name": "Check For Existing Spirent SAPs",
+            "approved": true,
+            "must_refresh": true,
+            "snippets": [
+                { "text": "{{/show service sap-using description | match CnC post-lines 1}}\n" },
+                { "text": "{{exit all }}" }
+            ],
+            "variables": [
+
+            ]
+        }
+    ]
+}

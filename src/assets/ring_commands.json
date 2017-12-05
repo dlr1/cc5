@@ -1,0 +1,56 @@
+﻿{
+    "commands": [
+        {
+            "platforms": [ "ELN" ],
+            "name": "All MetaData Commands for ELN Ring Validation",
+            "runCommands": [
+                {
+                    "name": "showport25",
+                    "dataCommand": "show port 1/1/25 | match \"Transceiver Digital\" post-lines 10"
+                },
+                {
+                    "name": "showport26",
+                    "dataCommand": "show port 1/1/26 | match \"Transceiver Digital\" post-lines 10"
+                },
+                {
+                    "name": "vpls",
+                    "dataCommand": "show service service-using vpls"
+                },
+                {
+                    "name": "servicesaps",
+                    "dataCommand": "show service sap-using eth-ring"
+                },               
+                {
+                    "name": "showcustomer",
+                    "dataCommand": "show service customer <<CustServiceId>>"
+                },
+                {
+                    "name": "showcustomerbase",
+                    "dataCommand": "show service id <<CustServiceId>> base"
+                }
+
+            ]
+        },
+         {
+            "platforms": [ "CSS" ],
+            "name": "All MetaData Commands for CSS Ring Validation",         
+            "runCommands": [
+                {
+                    "name": "showethring",
+                    "dataCommand": "show ethernet ring g8032 status XO-PhysicalRing-<<ringname>>",
+                    "responseData": null
+                },
+                {
+                    "name": "showcontrollers00",
+                    "dataCommand": "show controllers <<port>> phy | inc Power",
+                    "responseData": null
+                },
+                {
+                    "name": "showbridge",
+                    "dataCommand": "show l2vpn bridge-domain br | inc <<device>>",
+                    "responseData": null
+                }
+            ]
+        }
+    ]
+}

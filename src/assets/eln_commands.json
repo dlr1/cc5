@@ -1,0 +1,1189 @@
+﻿{
+    "commands": [
+        {
+            "id": 2,
+            "platform": "ELN",
+            "category": "Show",
+            "intrusiveness": "",
+            "approved": true,
+            "access": [ "Command Center Level 1" ],
+            "name": "Admin Display Config",
+            "snippets": [
+                {
+                    "text": "{{admin display-config}}"
+                }
+
+            ],
+            "variables": []
+        },
+        {
+            "id": 3,
+            "platform": "ELN",
+            "category": "Show",
+            "intrusiveness": "",
+            "approved": true,
+            "access": [ "Command Center Level 1" ],
+            "name": "Show Service ID Brief",
+            "snippets": [
+                {
+                    "text": "{{show service service-using vpls}}"
+                }
+
+            ],
+            "variables": [ ]
+        },
+        {
+            "id": 4,
+            "platform": "ELN",
+            "category": "Show",
+            "intrusiveness": "",
+            "approved": true,
+            "access": [ "Command Center Level 1" ],
+            "name": "Show SAP Brief",
+            "snippets": [
+                {
+                    "text": "{{show service sap-using}}"
+                }
+            ],
+            "variables": [ ]
+        },
+        {
+            "id": 5,
+            "platform": "ELN",
+            "category": "Show",
+            "intrusiveness": "",
+            "approved": true,
+            "access": [ "Command Center Level 1" ],
+            "name": "Show Ring",
+            "snippets": [
+                {
+                    "text": "{{show eth-ring <<RING_ID>>}}"
+                }
+            ],
+            "variables": [
+                { "field": "RING_ID" }
+            ]
+        },
+        {
+            "id": 6,
+            "platform": "ELN",
+            "category": "Show",
+            "intrusiveness": "",
+            "approved": true,
+            "access": [ "Command Center Level 1" ],
+            "name": "Show SAPs on ONB Ring",
+            "snippets": [
+                {
+                    "text": "{{show service sap-using eth-ring}}"
+                }
+            ],
+            "variables": [ ]
+        },
+        {
+            "id": 7,
+            "platform": "ELN",
+            "category": "Show",
+            "intrusiveness": "",
+            "approved": true,
+            "access": [ "Command Center Level 1" ],
+            "name": "Show All Customer IDs",
+            "snippets": [
+                {
+                    "text": "{{admin display-config | match \"customer\"}}"
+                }
+            ],
+            "variables": [ ]
+        },
+        {
+            "id": 8,
+            "platform": "ELN",
+            "category": "Show",
+            "intrusiveness": "",
+            "approved": true,
+            "access": [ "Command Center Level 1" ],
+            "name": "Show UNI Port",
+            "snippets": [
+                {
+                    "text": "{{show port 1/1/<<UNI_PORT_20>>}}"
+                }
+            ],
+            "variables": [
+                { "field": "UNI_PORT_20" }
+            ]
+        },
+        {
+            "id": 9,
+            "platform": "ELN",
+            "category": "Show",
+            "intrusiveness": "",
+            "approved": true,
+            "access": [ "Command Center Level 1" ],
+            "name": "Show Port 1/1/25",
+            "snippets": [
+                {
+                    "text": "{{show port 1/1/25}}"
+                }
+            ],
+            "variables": [ ]
+        },
+        {
+            "id": 10,
+            "platform": "ELN",
+            "category": "Show",
+            "intrusiveness": "",
+            "approved": true,
+            "access": [ "Command Center Level 1" ],
+            "name": "Show Port 1/1/26",
+            "snippets": [
+                {
+                    "text": "{{show port 1/1/26}}"
+                }
+            ],
+            "variables": [ ]
+        },
+        {
+            "id": 11,
+            "platform": "ELN",
+            "category": "Show",
+            "intrusiveness": "",
+            "approved": true,
+            "access": [ "Command Center Level 1" ],
+            "name": "Show UNI Port Detail",
+            "snippets": [
+                {
+                    "text": "{{show port 1/1/<<UNI_PORT_20>> detail}}"
+                }
+            ],
+            "variables": [
+                { "field": "UNI_PORT_20" }
+            ]
+        },
+        {
+            "id": 13,
+            "platform": "ELN",
+            "category": "Show",
+            "intrusiveness": "",
+            "approved": true,
+            "access": [ "Command Center Level 1" ],
+            "name": "Show Port 1/1/25 Detail",
+            "snippets": [
+                {
+                    "text": "{{show service id <<SRVC_ID>> sap 1/1/25:<<RING_VLAN>> detail}}"
+                }
+            ],
+            "variables": [
+                { "field": "SRVC_ID" },
+                { "field": "RING_VLAN" }
+            ]
+        },
+        {
+            "id": 13,
+            "platform": "ELN",
+            "category": "Show",
+            "intrusiveness": "",
+            "approved": true,
+            "access": [ "Command Center Level 1" ],
+            "name": "Show Port 1/1/26 Detail",
+            "snippets": [
+                {
+                    "text": "{{show service id <<SRVC_ID>> sap 1/1/26:<<RING_VLAN>> detail}}"
+                }
+            ],
+            "variables": [
+                { "field": "SRVC_ID" },
+                { "field": "RING_VLAN" }
+            ]
+        },
+        {
+            "id": 14,
+            "platform": "ELN",
+            "category": "Show",
+            "intrusiveness": "",
+            "approved": true,
+            "access": [ "Command Center Level 1" ],
+            "name": "Show QOS Policies Built",
+            "snippets": [
+                {
+                    "text": "{{show qos sap-ingress}}"
+                }
+            ],
+            "variables": [ ]
+        },
+        {
+            "id": 15,
+            "platform": "ELN",
+            "category": "Show",
+            "intrusiveness": "",
+            "approved": true,
+            "access": [ "Command Center Level 1" ],
+            "name": "Show Config For UNI QOS Policy",
+            "snippets": [
+                {
+                    "text": "{{show qos sap-ingress <<QOS>> detail}}"
+                }
+            ],
+            "variables": [
+                { "field": "QOS" }
+            ]
+        },
+        {
+            "id": 16,
+            "platform": "ELN",
+            "category": "Show",
+            "intrusiveness": "",
+            "approved": true,
+            "access": [ "Command Center Level 1" ],
+            "name": "Show l2pt for Service ID",
+            "snippets": [
+                {
+                    "text": "{{show service id <<SRVC_ID>> l2pt}}"
+                }
+            ],
+            "variables": [
+                { "field": "SRVC_ID" }
+            ]
+        },
+        {
+            "id": 17,
+            "platform": "ELN",
+            "category": "Show",
+            "intrusiveness": "",
+            "approved": true,
+            "access": [ "Command Center Level 1" ],
+            "name": "Show SAP for Service ID",
+            "snippets": [
+                {
+                    "text": "{{show service id <<SRVC_ID>> sap}}"
+                }
+            ],
+            "variables": [
+                { "field": "SRVC_ID" }
+            ]
+        },
+        {
+            "id": 18,
+            "platform": "ELN",
+            "category": "Show",
+            "intrusiveness": "",
+            "approved": true,
+            "access": [ "Command Center Level 1" ],
+            "name": "Show Config for Service ID",
+            "snippets": [
+                {
+                    "text": "{{show service id <<SRVC_ID>> base}}"
+                }
+            ],
+            "variables": [
+                { "field": "SRVC_ID" }
+            ]
+        },
+        {
+            "id": 19,
+            "platform": "ELN",
+            "category": "Spirent",
+            "intrusiveness": "Y",
+            "approved": true,
+            "access": [ "Command Center Level 2" ],
+            "name": "Show Active ELN Loops",
+            "snippets": [
+
+                { "text": "{{show system internal-loopback-ports detail}}" }
+            ],
+            "variables": [ ]
+        },
+        {
+            "id": 20,
+            "platform": "ELN",
+            "category": "Show",
+            "intrusiveness": "",
+            "approved": true,
+            "access": [ "Command Center Level 1" ],
+            "name": "Show Cust Stats on 1/1/25",
+            "snippets": [
+                {
+                    "text": "{{show service id <<SRVC_ID>> sap sap-stats 1/1/25:<<RING_VLAN>>}}"
+                }
+            ],
+            "variables": [
+                { "field": "SRVC_ID" },
+                { "field": "RING_VLAN" }
+            ]
+        },
+        {
+            "id": 21,
+            "platform": "ELN",
+            "category": "Show",
+            "intrusiveness": "",
+            "approved": true,
+            "access": [ "Command Center Level 1" ],
+            "name": "Show Cust Stats on 1/1/26",
+            "snippets": [
+                {
+                    "text": "{{show service id <<SRVC_ID>> sap sap-stats 1/1/26:<<RING_VLAN>>}}"
+                }
+            ],
+            "variables": [
+                { "field": "SRVC_ID" },
+                { "field": "RING_VLAN" }
+            ]
+        },
+        {
+            "id": 201,
+            "platform": "ELN",
+            "category": "Spirent",
+            "intrusiveness": "Y",
+            "approved": true,
+            "access": [ "Command Center Level 4" ],
+            "name": "Loop Up UNI Port",
+            "snippets": [
+                { "text": "{{/config port 1/1/<<UNI_PORT_20>> ethernet loopback internal}}\n" },
+                { "text": "{{/admin save}}" }
+            ],
+            "variables": [
+                { "field": "UNI_PORT_20" }
+            ]
+        },
+        {
+            "id": 2011,
+            "platform": "ELN",
+            "category": "Build",
+            "intrusiveness": "Y",
+            "approved": true,
+            "access": [ "Command Center Level 3" ],
+            "name": "Configure Customer UNI Port",
+            "snippets": [
+                { "text": "{{/config port 1/1/<<UNI_PORT_20>> shutdown}}\n" },
+                { "text": "{{/config port 1/1/<<UNI_PORT_20>> ethernet mode access}}\n" },
+                { "text": "{{/config port 1/1/<<UNI_PORT_20>> ethernet encap-type null}}\n" },
+                { "text": "{{/config port 1/1/<<UNI_PORT_20>> ethernet mtu 9212}}\n" },
+                { "text": "{{/config port 1/1/<<UNI_PORT_20>> descr <<CUST_NAME>>::OPER::<<MSPEED>><<UNIT>>::<<CKT_ID>>::<<PSR_UD>>}}\n" },
+                { "text": "{{/config port 1/1/<<UNI_PORT_20>> no shutdown}}\n" },
+                { "text": "{{/admin save}}\n" },
+                { "text": "{{exit all}}" }
+            ],
+            "variables": [
+                { "field": "UNI_PORT_20" },
+                { "field": "CUST_NAME" },
+                { "field": "MSPEED" },
+                { "field": "UNIT" },
+                { "field": "CKT_ID" },
+                { "field": "PSR_UD" }
+            ]
+        },
+        {
+            "id": 2012,
+            "platform": "ELN",
+            "category": "Edit",
+            "intrusiveness": "Y",
+            "approved": true,
+            "access": [ "Command Center Level 3" ],
+            "name": "Edit UNI Port MTU",
+            "snippets": [
+                { "text": "{{/config port 1/1/<<UNI_PORT_20>> ethernet mtu <<MTU_9212>>\n}}" },
+                { "text": "{{/admin save}}\n" },
+                { "text": "{{exit all}}" }
+            ],
+            "variables": [
+                { "field": "UNI_PORT_20" },
+                { "field": "MTU_9212" }
+            ]
+        },
+        {
+            "id": 2013,
+            "platform": "ELN",
+            "category": "Edit",
+            "intrusiveness": "Y",
+            "approved": true,
+            "access": [ "Command Center Level 3" ],
+            "name": "Edit Service ID MTU",
+            "snippets": [
+                { "text": "{{/conf serv vpls <<SRVC_ID_CUST>> customer <<CUST_ID>> service-mtu <<MTU_9150>>}}\n" },
+                { "text": "{{/admin save}}\n" },
+                { "text": "{{exit all}}" }
+            ],
+            "variables": [
+                { "field": "CUST_ID" },
+                { "field": "SRVC_ID_CUST" },
+                { "field": "MTU_9150" }
+            ]
+        },
+        {
+            "id": 2014,
+            "platform": "ELN",
+            "category": "Edit",
+            "intrusiveness": "Y",
+            "approved": true,
+            "access": [ "Command Center Level 3" ],
+            "name": "Edit UNI Description",
+            "snippets": [
+                { "text": "{{/config port 1/1/<<UNI_PORT_20>> descr <<CUST_NAME>>::OPER::<<MSPEED>><<UNIT>>::<<CKT_ID>>::<<PSR_UD>>}}\n" },
+                { "text": "{{/admin save}}\n" },
+                { "text": "{{exit all}}" }
+            ],
+            "variables": [
+                { "field": "UNI_PORT_20" },
+                { "field": "CUST_NAME" },
+                { "field": "MSPEED" },
+                { "field": "UNIT" },
+                { "field": "CKT_ID" },
+                { "field": "PSR_UD" }
+            ]
+        },
+        {
+            "id": 2015,
+            "platform": "ELN",
+            "category": "Edit",
+            "intrusiveness": "Y",
+            "approved": true,
+            "access": [ "Command Center Level 3" ],
+            "name": "Add a UNI port to existing VPLS Service",
+            "snippets": [
+                { "text": "{{/conf serv vpls <<SRVC_ID_CUST>> customer <<CUST_ID>> sap 1/1/<<UNI_PORT_20>> create}}\n" },
+                { "text": "{{/conf serv vpls <<SRVC_ID_CUST>> customer <<CUST_ID>> sap 1/1/<<UNI_PORT_20>> no shutdown}}\n" },
+                { "text": "{{/conf serv vpls <<SRVC_ID_CUST>> customer <<CUST_ID>> sap 1/1/<<UNI_PORT_20>> ingress qos <<QOS_noBorder>>}}\n" },
+                { "text": "{{/conf serv vpls <<SRVC_ID_CUST>> customer <<CUST_ID>> sap 1/1/<<UNI_PORT_20>> ingress meter-override}}\n" },
+                { "text": "{{/conf serv vpls <<SRVC_ID_CUST>> customer <<CUST_ID>> sap 1/1/<<UNI_PORT_20>> ingress meter-over meter 1 create}}\n" },
+                { "text": "{{/conf serv vpls <<SRVC_ID_CUST>> customer <<CUST_ID>> sap 1/1/<<UNI_PORT_20>> ingress meter-override meter 1 adaptation-rule cir min pir min}}\n" },
+                { "text": "{{/conf serv vpls <<SRVC_ID_CUST>> customer <<CUST_ID>> sap 1/1/<<UNI_PORT_20>> ingress meter-override meter 1 rate cir <<KSPEED>> pir <<PIR_KSPEED>>}}\n" },
+                { "text": "{{/admin save}}\n" },
+                { "text": "{{exit all}}" }
+            ],
+            "variables": [
+                { "field": "CUST_ID" },
+                { "field": "SRVC_ID_CUST" },
+                { "field": "UNI_PORT_20" },
+                { "field": "QOS_noBorder" },
+                { "field": "KSPEED" },
+                { "field": "PIR_KSPEED" }
+            ]
+        },
+        {
+            "id": 2016,
+            "platform": "ELN",
+            "category": "Edit",
+            "intrusiveness": "Y",
+            "approved": true,
+            "access": [ "Command Center Level 3" ],
+            "name": "Update QoS on existing VPLS drop port with pre-built policy",
+            "snippets": [
+                { "text": "{{/conf serv vpls <<SRVC_ID_CUST>> customer <<CUST_ID>> sap 1/1/<<UNI_PORT_20>> shutdown}}\n" },
+                { "text": "{{/conf serv vpls <<SRVC_ID_CUST>> customer <<CUST_ID>> no sap 1/1/<<UNI_PORT_20>>}}\n" },
+                { "text": "{{/conf serv vpls <<SRVC_ID_CUST>> customer <<CUST_ID>> sap 1/1/<<UNI_PORT_20>> create}}\n" },
+                { "text": "{{/conf serv vpls <<SRVC_ID_CUST>> customer <<CUST_ID>> sap 1/1/<<UNI_PORT_20>> no shutdown}}\n" },
+                { "text": "{{/conf serv vpls <<SRVC_ID_CUST>> customer <<CUST_ID>> sap 1/1/<<UNI_PORT_20>> ingress qos <<QOS_noBorder>>}}\n" },
+                { "text": "{{/conf serv vpls <<SRVC_ID_CUST>> customer <<CUST_ID>> sap 1/1/<<UNI_PORT_20>> ingress meter-override}}\n" },
+                { "text": "{{/conf serv vpls <<SRVC_ID_CUST>> customer <<CUST_ID>> sap 1/1/<<UNI_PORT_20>> ingress meter-over meter 1 create}}\n" },
+                { "text": "{{/conf serv vpls <<SRVC_ID_CUST>> customer <<<CUST_ID>>> sap 1/1/<<UNI_PORT_20>> ingress meter-override meter 1 adaptation-rule cir min pir min}}\n" },
+                { "text": "{{/conf serv vpls <<SRVC_ID_CUST>> customer <<<CUST_ID>>> sap 1/1/<<UNI_PORT_20>> ingress meter-override meter 1 rate cir <<KSPEED>> pir <<PIR_KSPEED>>}}\n" },
+                { "text": "{{/admin save}}\n" },
+                { "text": "{{exit all}}" }
+            ],
+            "variables": [
+                { "field": "CUST_ID" },
+                { "field": "SRVC_ID_CUST" },
+                { "field": "UNI_PORT_20" },
+                { "field": "QOS_noBorder" },
+                { "field": "KSPEED" },
+                { "field": "PIR_KSPEED" }
+            ]
+        },
+        {
+            "id": 2018,
+            "platform": "ELN",
+            "category": "Build",
+            "intrusiveness": "Y",
+            "approved": true,
+            "access": [ "Command Center Level 3" ],
+            "name": "Configure Terminating ELN with Pre-Built QOS",
+            "snippets": [
+                { "text": "{{/config service customer <<CUST_ID>> create}}\n" },
+                { "text": "{{/config service customer <<CUST_ID>> description <<CUST_NAME>>::TBS_ACCT<<TBS_ACCT>>}}\n" },
+                { "text": "{{/conf serv vpls <<SRVC_ID_CUST>> customer <<CUST_ID>> create }}\n" },
+                { "text": "{{/conf serv vpls <<SRVC_ID_CUST>> customer <<CUST_ID>> description <<PSR>>_<<CKT_ID_NSPACE>>_<<RING_VLAN>>}}\n" },
+                { "text": "{{/conf serv vpls <<SRVC_ID_CUST>> customer <<CUST_ID>> stp shutdown}}\n" },
+                { "text": "{{/conf serv vpls <<SRVC_ID_CUST>> customer <<CUST_ID>> service-mtu 9150}}\n" },
+                { "text": "{{/conf serv vpls <<SRVC_ID_CUST>> customer <<CUST_ID>> sap 1/1/<<UNI_PORT_20>> create }}\n" },
+                { "text": "{{/conf serv vpls <<SRVC_ID_CUST>> customer <<CUST_ID>> sap 1/1/<<UNI_PORT_20>> no shutdown}}\n" },
+                { "text": "{{/conf serv vpls <<SRVC_ID_CUST>> customer <<CUST_ID>> sap 1/1/<<UNI_PORT_20>> ingress qos <<QOS_noBorder>>}}\n" },
+                { "text": "{{/conf serv vpls <<SRVC_ID_CUST>> customer <<CUST_ID>> sap 1/1/<<UNI_PORT_20>> ingress meter-override}}\n" },
+                { "text": "{{/conf serv vpls <<SRVC_ID_CUST>> customer <<CUST_ID>> sap 1/1/<<UNI_PORT_20>> ingress meter-over meter 1 create}}\n" },
+                { "text": "{{/conf serv vpls <<SRVC_ID_CUST>> customer <<CUST_ID>> sap 1/1/<<UNI_PORT_20>> ingress meter-override meter 1 adaptation-rule cir min pir min}}\n" },
+                { "text": "{{/conf serv vpls <<SRVC_ID_CUST>> customer <<CUST_ID>> sap 1/1/<<UNI_PORT_20>> ingress meter-override meter 1 rate cir <<KSPEED>> pir <<PIR_KSPEED>>}}\n" },
+                { "text": "{{/conf serv vpls <<SRVC_ID_CUST>> customer <<CUST_ID>> sap 1/1/25:<<RING_VLAN>> eth-ring <<RING_ID_DV>> create }}\n" },
+                { "text": "{{/conf serv vpls <<SRVC_ID_CUST>> customer <<CUST_ID>> sap 1/1/25:<<RING_VLAN>> eth-ring <<RING_ID_DV>> no shut}}\n" },
+                { "text": "{{/conf serv vpls <<SRVC_ID_CUST>> customer <<CUST_ID>> sap 1/1/25:<<RING_VLAN>> ingress qos 100}}\n" },
+                { "text": "{{/conf serv vpls <<SRVC_ID_CUST>> customer <<CUST_ID>> sap 1/1/26:<<RING_VLAN>> eth-ring <<RING_ID_DV>> create}}\n" },
+                { "text": "{{/conf serv vpls <<SRVC_ID_CUST>> customer <<CUST_ID>> sap 1/1/26:<<RING_VLAN>> eth-ring <<RING_ID_DV>> no shut}}\n" },
+                { "text": "{{/conf serv vpls <<SRVC_ID_CUST>> customer <<CUST_ID>> sap 1/1/26:<<RING_VLAN>> ingress qos 100}}\n" },
+                { "text": "{{/conf serv vpls <<SRVC_ID_CUST>> customer <<CUST_ID>> no shut}}\n" },
+                { "text": "{{/admin save}}\n" },
+                { "text": "{{exit all}}" }
+            ],
+            "variables": [
+                { "field": "CUST_ID" },
+                { "field": "CUST_NAME" },
+                { "field": "TBS_ACCT" },
+                { "field": "SRVC_ID_CUST" },
+                { "field": "PSR" },
+                { "field": "CKT_ID_NSPACE" },
+                { "field": "RING_VLAN" },
+                { "field": "UNI_PORT_20" },
+                { "field": "QOS_noBorder" },
+                { "field": "KSPEED" },
+                { "field": "PIR_KSPEED" },
+                { "field": "RING_ID_DV" }
+            ]
+        },
+        {
+            "id": 2019,
+            "platform": "ELN",
+            "category": "Build",
+            "intrusiveness": "Y",
+            "approved": true,
+            "access": [ "Command Center Level 3" ],
+            "name": "Configure Pass-Through ELN with Pre-Built QOS",
+            "snippets": [
+                { "text": "{{/config service customer <<CUST_ID>> create}}\n" },
+                { "text": "{{/config service customer <<CUST_ID>> description <<CUST_NAME>>::TBS_ACCT<<TBS_ACCT>>}}\n" },
+                { "text": "{{/conf serv vpls <<SRVC_ID_CUST>> customer <<CUST_ID>> create }}\n" },
+                { "text": "{{/conf serv vpls <<SRVC_ID_CUST>> customer <<CUST_ID>> description <<PSR>>_<<CKT_ID_NSPACE>>_<<RING_VLAN>>}}\n" },
+                { "text": "{{/conf serv vpls <<SRVC_ID_CUST>> customer <<CUST_ID>> service-mtu 9194}}\n" },
+                { "text": "{{/conf serv vpls <<SRVC_ID_CUST>> customer <<CUST_ID>> sap 1/1/25:<<RING_VLAN>> eth-ring <<RING_ID_DV>> create }}\n" },
+                { "text": "{{/conf serv vpls <<SRVC_ID_CUST>> customer <<CUST_ID>> sap 1/1/25:<<RING_VLAN>> eth-ring <<RING_ID_DV>> no shut}}\n" },
+                { "text": "{{/conf serv vpls <<SRVC_ID_CUST>> customer <<CUST_ID>> sap 1/1/25:<<RING_VLAN>> ingress qos 100}}\n" },
+                { "text": "{{/conf serv vpls <<SRVC_ID_CUST>> customer <<CUST_ID>> sap 1/1/26:<<RING_VLAN>> eth-ring <<RING_ID_DV>> create}}\n" },
+                { "text": "{{/conf serv vpls <<SRVC_ID_CUST>> customer <<CUST_ID>> sap 1/1/26:<<RING_VLAN>> eth-ring <<RING_ID_DV>> no shut}}\n" },
+                { "text": "{{/conf serv vpls <<SRVC_ID_CUST>> customer <<CUST_ID>> sap 1/1/26:<<RING_VLAN>> ingress qos 100}}\n" },
+                { "text": "{{/conf serv vpls <<SRVC_ID_CUST>> customer <<CUST_ID>> no shut}}\n" },
+                { "text": "{{/admin save}}\n" },
+                { "text": "{{exit all}}" }
+            ],
+            "variables": [
+                { "field": "CUST_ID" },
+                { "field": "CUST_NAME" },
+                { "field": "TBS_ACCT" },
+                { "field": "SRVC_ID_CUST" },
+                { "field": "PSR" },
+                { "field": "CKT_ID_NSPACE" },
+                { "field": "RING_VLAN" },
+                { "field": "RING_ID_DV" }
+            ]
+        },
+        {
+            "id": 2020,
+            "platform": "ELN",
+            "category": "Delete",
+            "intrusiveness": "Y",
+            "approved": true,
+            "access": [ "Command Center Level 5" ],
+            "name": "Delete Customer UNI Port Config",
+            "snippets": [
+                { "text": "{{/conf serv vpls <<SRVC_ID>> customer <<CUSTR_ID>> sap <<UNI_PORT_20>> shutdown}}\n" },
+                { "text": "{{/conf serv vpls <<SRVC_ID>> customer <<CUSTR_ID>> no sap <<UNI_PORT_20>>}}\n" },
+                { "text": "{{/config port 1/1/<<UNI_PORT_20>> shutdown}}\n" },
+                { "text": "{{/config port 1/1/<<UNI_PORT_20>> no description}}\n" },
+                { "text": "{{/config qos no sap-ingress <<QOS_ID>>}}\n" },
+                { "text": "{{/admin save}}\n" },
+                { "text": "{{exit all}}" }
+            ],
+            "variables": [
+                { "field": "UNI_PORT_20" },
+                { "field": "SRVC_ID" },
+                { "field": "CUSTR_ID" },
+                { "field": "QOS_ID" }
+            ]
+        },
+        {
+            "id": 2022,
+            "platform": "ELN",
+            "category": "Delete",
+            "intrusiveness": "Y",
+            "approved": true,
+            "access": [ "Command Center Level 4" ],
+            "name": "Delete Terminating ELN Config",
+            "snippets": [
+                { "text": "{{/conf serv vpls <<SVCD_ID_2>> customer <<CUSTD_ID_2>> sap 1/1/25:<<RING_VLAN_OF_SVCD_2>> shutdown}}\n" },
+                { "text": "{{/conf serv vpls <<SVCD_ID_2>> customer <<CUSTD_ID_2>> no sap 1/1/25:<<RING_VLAN_OF_SVCD_2>>}}\n" },
+                { "text": "{{/conf serv vpls <<SVCD_ID_2>> customer <<CUSTD_ID_2>> sap 1/1/26:<<RING_VLAN_OF_SVCD_2>> shutdown}}\n" },
+                { "text": "{{/conf serv vpls <<SVCD_ID_2>> customer <<CUSTD_ID_2>> no sap 1/1/26:<<RING_VLAN_OF_SVCD_2>>}}\n" },
+                { "text": "{{/conf serv vpls <<SVCD_ID_2>> customer <<CUSTD_ID_2>> sap <<UNIPORT_2>> shutdown}}\n" },
+                { "text": "{{/conf serv vpls <<SVCD_ID_2>> customer <<CUSTD_ID_2>> no sap <<UNIPORT_2>>}}\n" },
+                { "text": "{{/conf serv vpls <<SVCD_ID_2>> shutdown}}\n" },
+                { "text": "{{/conf serv no vpls <<SVCD_ID_2>>}}\n" },
+                { "text": "{{/config service no customer <<CUSTD_ID_2>>}}\n" },
+                { "text": "{{/config port <<UNIPORT_2>> shutdown }}\n" },
+                { "text": "{{/config port <<UNIPORT_2>> no description}}\n" },
+                { "text": "{{/config qos no sap-ingress <<QOS_ID>>}}\n" },
+                { "text": "{{/admin save}}\n" },
+                { "text": "{{exit all}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-dv-dropdown",
+                    "variable": "UNIPORT_2",
+                    "label": "Port",
+                    "intrusiveness": "",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "placeholder": "UNIPORT",
+                    "dataCommand": "show service sap-using",
+                    "dataParserName": "DP-ELN_UNIPORT_2",
+                    "dataCommandRefreshFlag": "always",
+                    "registerWatcher": true,
+                    "values": [{ "value": "" }]
+                },
+                { 
+                    "type": "form_linked_text",
+                    "variable": "SVCD_ID_2",
+                    "label": "Service ID",
+                    "intrusiveness": "",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "placeholder": "Service ID #",
+                    "dataPivotVariable": "UNIPORT_2",
+                    "dataParserName": "PostProcForExitInterface2",
+                    "values": [{ "value": "" }]
+                },
+                { 
+                    "type": "form_linked_text",
+                    "variable": "CUSTD_ID_2",
+                    "label": "Customer ID",
+                    "intrusiveness": "",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "placeholder": "Customer ID #",
+                    "dataPivotVariable": "UNIPORT_2",
+                    "dataParserName": "PostProcForExitInterface2",
+                    "values": [{ "value": "" }]
+                },
+                { 
+                    "type": "form_linked_text",
+                    "variable": "RING_VLAN_OF_SVCD_2",
+                    "label": "Ring VLAN",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "placeholder": "PortID for SvcID",
+                    "dataPivotVariable": "UNIPORT_2",
+                    "dataParserName": "PostProcForExitInterface2vlan",
+                    "values": [{ "value": "" }]
+                },
+                { "field": "QOS_ID" }
+            ]
+        },
+        {
+            "id": 2023,
+            "platform": "ELN",
+            "category": "Delete",
+            "intrusiveness": "Y",
+            "approved": true,
+            "access": [ "Command Center Level 4" ],
+            "name": "Delete Pass-Through ELN Config",
+            "snippets": [
+                { "text": "{{/conf serv vpls <<SVC_ID>> customer <<CUSTO_ID>> sap 1/1/25:<<RING_VLAN_OF_SVCID>> shutdown}}\n" },
+                { "text": "{{/conf serv vpls <<SVC_ID>> customer <<CUSTO_ID>> no sap 1/1/25:<<RING_VLAN_OF_SVCID>>}}\n" },
+                { "text": "{{/conf serv vpls <<SVC_ID>> customer <<CUSTO_ID>> sap 1/1/26:<<RING_VLAN_OF_SVCID>> shutdown}}\n" },
+                { "text": "{{/conf serv vpls <<SVC_ID>> customer <<CUSTO_ID>> no sap 1/1/26:<<RING_VLAN_OF_SVCID>>}}\n" },
+                { "text": "{{/conf serv vpls <<SVC_ID>> shutdown}}\n" },
+                { "text": "{{/conf serv no vpls <<SVC_ID>>}}\n" },
+                { "text": "{{/config service no customer <<CUSTO_ID>>}}\n" },
+                { "text": "{{/admin save}}\n" },
+                { "text": "{{exit all}}" }
+            ],
+            "variables": [
+                { "field": "SVC_ACCESS_PTS" },
+                { "field": "SVC_ID" },
+                { "field": "CUSTO_ID" },
+                { "field": "RING_VLAN_OF_SVCID" }
+            ]
+        },
+        {
+            "id": 2024,
+            "platform": "ELN",
+            "category": "Delete",
+            "intrusiveness": "Y",
+            "approved": true,
+            "access": [ "Command Center Level 4" ],
+            "name": "Delete Customer Specific QoS",
+            "snippets": [
+                { "text": "{{/config qos no sap-ingress <<QOS_ID>>}}\n" },
+                { "text": "{{/admin save}}\n" },
+                { "text": "{{exit all}}" }
+            ],
+            "variables": [
+                { "field": "QOS_ID_SAPINGRESSS_1K" }
+            ]
+        },
+        {
+            "id": 301,
+            "platform": "ELN",
+            "category": "Spirent",
+            "intrusiveness": "Y",
+            "approved": true,
+            "access": [ "Command Center Level 3" ],
+            "name": "Loop Down UNI Port",
+            "snippets": [
+                { "text": "{{/config port 1/1/<<UNI_PORT_20>> ethernet no loopback}}\n" },
+                { "text": "{{/admin save}}" }
+            ],
+            "variables": [
+                { "field": "UNI_PORT_20" }
+            ]
+        },
+        {
+            "id": 302,
+            "platform": "ELN",
+            "category": "Execute",
+            "intrusiveness": "Y",
+            "approved": true,
+            "access": [ "Command Center Level 4" ],
+            "name": "Bounce UNI Port",
+            "snippets": [
+                { "text": "{{/config port 1/1/<<UNI_PORT_20>> shutdown\n}}" },
+                { "text": "{{/config port 1/1/<<UNI_PORT_20>> no shutdown\n}}" },
+                { "text": "{{/admin save\n}}" },
+                { "text": "{{exit all}}" }
+            ],
+            "variables": [
+                { "field": "UNI_PORT_20" }
+            ]
+        },
+        {
+            "id": 303,
+            "platform": "ELN",
+            "category": "Execute",
+            "intrusiveness": "Y",
+            "approved": true,
+            "access": [ "Command Center Level 4" ],
+            "name": "Shut UNI Port",
+            "snippets": [
+                { "text": "{{/config port 1/1/<<UNI_PORT_20>> shutdown\n}}" },
+                { "text": "{{/admin save\n}}" },
+                { "text": "{{exit all}}" }
+            ],
+            "variables": [
+                { "field": "UNI_PORT_20" }
+            ]
+        },
+        {
+            "id": 3031,
+            "platform": "ELN",
+            "category": "Execute",
+            "intrusiveness": "N",
+            "approved": true,
+            "access": [ "Command Center Level 2" ],
+            "name": "Clear UNI Port Stats",
+            "snippets": [
+                { "text": "{{clear port 1/1/<<UNI_PORT>> statistics}}" }
+            ],
+            "variables": [
+                { "field": "UNI_PORT" }
+            ]
+        },
+        {
+            "id": 30319,
+            "platform": "ELN",
+            "category": "Execute",
+            "intrusiveness": "N",
+            "approved": true,
+            "access": [ "Command Center Level 2" ],
+            "name": "Clear Drop Port Stats",
+            "snippets": [
+                { "text": "{{clear port 1/1/<<UNI_PORT_20>> statistics}}" }
+            ],
+            "variables": [
+                { "field": "UNI_PORT_20" }
+            ]
+        },
+        {
+            "id": 3032,
+            "platform": "ELN",
+            "category": "Execute",
+            "intrusiveness": "N",
+            "approved": true,
+            "access": [ "Command Center Level 3" ],
+            "name": "Clear Customer Counters on Ring Port 25",
+            "snippets": [
+                { "text": "{{clear service statistics sap 1/1/25:<<VLAN>> counters}}" }
+            ],
+            "variables": [
+                { "field": "VLAN" }
+            ]
+        },
+        {
+            "id": 3033,
+            "platform": "ELN",
+            "category": "Execute",
+            "intrusiveness": "N",
+            "approved": true,
+            "access": [ "Command Center Level 3" ],
+            "name": "Clear Customer Counters on Ring Port 26",
+            "snippets": [
+                { "text": "{{clear service statistics sap 1/1/26:<<VLAN>> counters}}" }
+            ],
+            "variables": [
+                { "field": "VLAN" }
+            ]
+        },
+        {
+            "id": 3034,
+            "platform": "ELN",
+            "category": "Execute",
+            "intrusiveness": "N",
+            "approved": true,
+            "access": [ "Command Center Level 3" ],
+            "name": "Clear Customer Counters on UNI Port",
+            "snippets": [
+                { "text": "{{clear service statistics sap 1/1/<<UNI_PORT_20>> counters}}" }
+            ],
+            "variables": [
+                { "field": "UNI_PORT_20" }
+            ]
+        },
+        {
+            "id": 303,
+            "platform": "ELN",
+            "category": "Execute",
+            "intrusiveness": "Y",
+            "approved": true,
+            "access": [ "Command Center Level 3" ],
+            "name": "No Shut UNI Port",
+            "snippets": [
+                { "text": "{{/config port 1/1/<<UNI_PORT_20>> no shutdown\n}}" },
+                { "text": "{{/admin save\n}}" },
+                { "text": "{{exit all}}" }
+            ],
+            "variables": [
+                { "field": "UNI_PORT_20" }
+            ]
+        },
+        {
+            "id": 304,
+            "platform": "ELN",
+            "category": "Execute",
+            "intrusiveness": "",
+            "approved": true,
+            "access": [ "Command Center Level 3" ],
+            "name": "Clear All Service ID Counters",
+            "snippets": [
+                { "text": "{{clear service statistics id <<SVC_UD>> counters}}" }
+            ],
+            "variables": [
+                { "field": "SVC_UD" }
+            ]
+        },
+        {
+            "id": 20113,
+            "platform": "ELN",
+            "category": "Build",
+            "intrusiveness": "Y",
+            "approved": true,
+            "access": [ "Command Center Level 3" ],
+            "name": "Build Universal Ring QOS",
+            "snippets": [
+                { "text": "{{/config qos sap-ingress 100 create\n}}" },
+                { "text": "{{/config qos sap-ingress 100 description SAP-Policy_for_Ring:Applied_per_Customer_on_Ring\n}}" },
+                { "text": "{{/config qos sap-ingress 100 scope template\n}}" },
+                { "text": "{{/config qos sap-ingress 100 num-qos-classifiers 6\n}}" },
+                { "text": "{{/config qos sap-ingress 100 mac-criteria dot1p-only\n}}" },
+                { "text": "{{/config qos sap-ingress 100 mac-criteria entry 1 create\n}}" },
+                { "text": "{{/config qos sap-ingress 100 mac-criteria entry 1 match dot1p 7\n}}" },
+                { "text": "{{/config qos sap-ingress 100 mac-criteria entry 1 action fc \"nc\"\n}}" },
+                { "text": "{{/config qos sap-ingress 100 mac-criteria entry 2 create\n}}" },
+                { "text": "{{/config qos sap-ingress 100 mac-criteria entry 2 match dot1p 5\n}}" },
+                { "text": "{{/config qos sap-ingress 100 mac-criteria entry 2 action fc \"ef\"\n}}" },
+                { "text": "{{/config qos sap-ingress 100 mac-criteria entry 3 create\n}}" },
+                { "text": "{{/config qos sap-ingress 100 mac-criteria entry 3 match dot1p 3\n}}" },
+                { "text": "{{/config qos sap-ingress 100 mac-criteria entry 3 action fc \"l1\"\n}}" },
+                { "text": "{{/config qos sap-ingress 100 mac-criteria entry 4 create\n}}" },
+                { "text": "{{/config qos sap-ingress 100 mac-criteria entry 4 match dot1p 0\n}}" },
+                { "text": "{{/config qos sap-ingress 100 mac-criteria entry 4 action fc \"be\"\n}}" },
+                { "text": "{{/config qos sap-ingress 100 mac-criteria entry 5 create\n}}" },
+                { "text": "{{/config qos sap-ingress 100 mac-criteria entry 5 match dot1p 6\n}}" },
+                { "text": "{{/config qos sap-ingress 100 mac-criteria entry 5 action fc \"h1\"\n}}" },
+                { "text": "{{/admin save\n}}" },
+                { "text": "{{exit all}}" }
+            ],
+            "variables": [ ]
+        },
+        {
+            "id": 20114,
+            "platform": "ELN",
+            "category": "Build",
+            "intrusiveness": "Y",
+            "approved": true,
+            "access": [ "Command Center Level 3" ],
+            "name": "Build Generic Best Effort QoS (ex:DIA)",
+            "snippets": [
+                { "text": "{{/config qos sap-ingress 2001 create\n}}" },
+                { "text": "{{/config qos sap-ingress 2001 descr Generic_Best_Effort_Policy\n}}" },
+                { "text": "{{/config qos sap-ingress 2001 scope template\n}}" },
+                { "text": "{{/config qos sap-ingress 2001 num-qos-classifiers 2\n}}" },
+                { "text": "{{/config qos sap-ingress 2001 meter 1 create\n}}" },
+                { "text": "{{/config qos sap-ingress 2001 meter 1 mode trtcm1\n}}" },
+                { "text": "{{/config qos sap-ingress 2001 meter 1 adaptation-rule cir min pir min\n}}" },
+                { "text": "{{/config qos sap-ingress 2001 meter 1 rate cir max pir max\n}}" },
+                { "text": "{{/config qos sap-ingress 2001 default-fc be\n}}" },
+                { "text": "{{/config qos sap-ingress 2001 fc be create\n}}" },
+                { "text": "{{/config qos sap-ingress 2001 meter 1\n}}" },
+                { "text": "{{/admin save\n}}" },
+                { "text": "{{exit all}}" }
+            ],
+            "variables": [ ]
+        },
+        {
+            "id": 20115,
+            "platform": "ELN",
+            "category": "Build",
+            "intrusiveness": "Y",
+            "approved": true,
+            "access": [ "Command Center Level 3" ],
+            "name": "Build Generic Circuit Class QoS (ex:EPL)",
+            "snippets": [
+                { "text": "{{/config qos sap-ingress 2401 create\n}}" },
+                { "text": "{{/config qos sap-ingress 2401 descr Generic_Circuit_Class_Policy\n}}" },
+                { "text": "{{/config qos sap-ingress 2401 scope template\n}}" },
+                { "text": "{{/config qos sap-ingress 2401 num-qos-classifiers 2\n}}" },
+                { "text": "{{/config qos sap-ingress 2401 meter 1 create\n}}" },
+                { "text": "{{/config qos sap-ingress 2401 meter 1 mode trtcm1\n}}" },
+                { "text": "{{/config qos sap-ingress 2401 meter 1 adaptation-rule cir min pir min\n}}" },
+                { "text": "{{/config qos sap-ingress 2401 meter 1 rate cir max pir max\n}}" },
+                { "text": "{{/config qos sap-ingress 2401 default-fc h1\n}}" },
+                { "text": "{{/config qos sap-ingress 2401 fc h1 create\n}}" },
+                { "text": "{{/config qos sap-ingress 2401 meter 1\n}}" },
+                { "text": "{{/admin save\n}}" },
+                { "text": "{{exit all}}" }
+            ],
+            "variables": [ ]
+        },
+        {
+            "id": 20116,
+            "platform": "ELN",
+            "category": "Build",
+            "intrusiveness": "Y",
+            "approved": true,
+            "access": [ "Command Center Level 3" ],
+            "name": "Build Generic Basic VOIP QoS (ex:Flex)",
+            "snippets": [
+                { "text": "{{/config qos sap-ingress 2301 create\n}}" },
+                { "text": "{{/config qos sap-ingress 2301 description Generic_Basic_DSCP_VoIP_Policy\n}}" },
+                { "text": "{{/config qos sap-ingress 2301 scope template\n}}" },
+                { "text": "{{/config qos sap-ingress 2301 num-qos-classifiers 6\n}}" },
+                { "text": "{{/config qos sap-ingress 2301 meter 1 create\n}}" },
+                { "text": "{{/config qos sap-ingress 2301 meter 1 mode trtcm1\n}}" },
+                { "text": "{{/config qos sap-ingress 2301 meter 1 adaptation-rule cir min pir min\n}}" },
+                { "text": "{{/config qos sap-ingress 2301 meter 1 rate cir max pir max\n}}" },
+                { "text": "{{/config qos sap-ingress 2301 default-fc be\n}}" },
+                { "text": "{{/config qos sap-ingress 2301 fc \"be\" create\n}}" },
+                { "text": "{{/config qos sap-ingress 2301 fc \"be\" meter 1\n}}" },
+                { "text": "{{/config qos sap-ingress 2301 fc \"ef\" create\n}}" },           
+                { "text": "{{/config qos sap-ingress 2301 fc \"ef\" meter 1\n}}" },
+                { "text": "{{/config qos sap-ingress 2301 fc \"l1\" create\n}}" },           
+                { "text": "{{/config qos sap-ingress 2301 fc \"l1\" meter 1\n}}" },
+                { "text": "{{/config qos sap-ingress 2301 fc \"l2\" create\n}}" },          
+                { "text": "{{/config qos sap-ingress 2301 fc \"l2\" meter 1\n}}" },
+                { "text": "{{/config qos sap-ingress 2301 ip-criteria dscp-only\n}}" },
+                { "text": "{{/config qos sap-ingress 2301 ip-criteria entry 1 create\n}}" },
+                { "text": "{{/config qos sap-ingress 2301 ip-criteria entry 1 match dscp ef\n}}" },
+                { "text": "{{/config qos sap-ingress 2301 ip-criteria entry 1 action fc \"ef\"\n}}" },
+                { "text": "{{/config qos sap-ingress 2301 ip-criteria entry 2 create\n}}" },
+                { "text": "{{/config qos sap-ingress 2301 ip-criteria entry 2 match dscp af31\n}}" },
+                { "text": "{{/config qos sap-ingress 2301 ip-criteria entry 2 action fc \"l1\"\n}}" },
+                { "text": "{{/config qos sap-ingress 2301 ip-criteria entry 3 create\n}}" },
+                { "text": "{{/config qos sap-ingress 2301 ip-criteria entry 3 match dscp af11\n}}" },
+                { "text": "{{/config qos sap-ingress 2301 ip-criteria entry 3 action fc \"l2\"\n}}" },
+                { "text": "{{/config qos sap-ingress 2301 ip-criteria entry 4 create\n}}" },
+                { "text": "{{/config qos sap-ingress 2301 ip-criteria entry 4 match dscp be\n}}" },
+                { "text": "{{/config qos sap-ingress 2301 ip-criteria entry 4 action fc \"be\"\n}}" },
+                { "text": "{{/admin save\n}}" },
+                { "text": "{{exit all}}" }
+            ],
+            "variables": [ ]
+        },
+        {
+            "id": 20117,
+            "platform": "ELN",
+            "category": "Build",
+            "intrusiveness": "Y",
+            "approved": true,
+            "access": [ "Command Center Level 3" ],
+            "name": "Build Generic Basic IPVPN QoS (ex:IPVPN)",
+            "snippets": [
+                { "text": "{{/config qos sap-ingress 2101 create\n}}" },
+                { "text": "{{/config qos sap-ingress 2101 description Generic_Basic_DSCP_IPVPN_Policy\n}}" },
+                { "text": "{{/config qos sap-ingress 2101 scope template\n}}" },
+                { "text": "{{/config qos sap-ingress 2101 num-qos-classifiers 6\n}}" },
+                { "text": "{{/config qos sap-ingress 2101 meter 1 create\n}}" },
+                { "text": "{{/config qos sap-ingress 2101 meter 1 mode trtcm1\n}}" },
+                { "text": "{{/config qos sap-ingress 2101 meter 1 adaptation-rule cir min pir min\n}}" },
+                { "text": "{{/config qos sap-ingress 2101 meter 1 rate cir max pir max\n}}" },
+                { "text": "{{/config qos sap-ingress 2101 default-fc be\n}}" },
+                { "text": "{{/config qos sap-ingress 2101 fc \"be\" create\n}}" },
+                { "text": "{{/config qos sap-ingress 2101 fc \"be\" meter 1\n}}" },
+                { "text": "{{/config qos sap-ingress 2101 fc \"ef\" create\n}}" },
+                { "text": "{{/config qos sap-ingress 2101 fc \"ef\" meter 1\n}}" },
+                { "text": "{{/config qos sap-ingress 2101 fc \"l1\" create\n}}" },
+                { "text": "{{/config qos sap-ingress 2101 fc \"l1\" meter 1\n}}" },
+                { "text": "{{/config qos sap-ingress 2101 fc \"l2\" create\n}}" },
+                { "text": "{{/config qos sap-ingress 2101 fc \"l2\" meter 1\n}}" },
+                { "text": "{{/config qos sap-ingress 2101 ip-criteria dscp-only\n}}" },
+                { "text": "{{/config qos sap-ingress 2101 ip-criteria entry 1 create\n}}" },
+                { "text": "{{/config qos sap-ingress 2101 ip-criteria entry 1 match dscp ef\n}}" },
+                { "text": "{{/config qos sap-ingress 2101 ip-criteria entry 1 action fc \"ef\"\n}}" },
+                { "text": "{{/config qos sap-ingress 2101 ip-criteria entry 2 create\n}}" },
+                { "text": "{{/config qos sap-ingress 2101 ip-criteria entry 2 match dscp af31\n}}" },
+                { "text": "{{/config qos sap-ingress 2101 ip-criteria entry 2 action fc \"l1\"\n}}" },
+                { "text": "{{/config qos sap-ingress 2101 ip-criteria entry 3 create\n}}" },
+                { "text": "{{/config qos sap-ingress 2101 ip-criteria entry 3 match dscp af11\n}}" },
+                { "text": "{{/config qos sap-ingress 2101 ip-criteria entry 3 action fc \"l2\"\n}}" },
+                { "text": "{{/config qos sap-ingress 2101 ip-criteria entry 4 create\n}}" },
+                { "text": "{{/config qos sap-ingress 2101 ip-criteria entry 4 match dscp be\n}}" },
+                { "text": "{{/config qos sap-ingress 2101 ip-criteria entry 4 action fc \"be\"\n}}" },
+                { "text": "{{/admin save\n}}" },
+                { "text": "{{exit all}}" }
+            ],
+            "variables": [ ]
+        },
+        {
+            "id": 20118,
+            "platform": "ELN",
+            "category": "Build",
+            "intrusiveness": "Y",
+            "approved": true,
+            "access": [ "Command Center Level 3" ],
+            "name": "Build Generic P-Bit Mapped QoS (ex:VPLS)",
+            "snippets": [
+                { "text": "{{/config qos sap-ingress 2501 create\n}}" },
+                { "text": "{{/config qos sap-ingress 2501 description Generic_P-Bit_Mapped_Policy\n}}" },
+                { "text": "{{/config qos sap-ingress 2501 scope template\n}}" },
+                { "text": "{{/config qos sap-ingress 2501 num-qos-classifiers 10\n}}" },
+                { "text": "{{/config qos sap-ingress 2501 meter 1 create\n}}" },
+                { "text": "{{/config qos sap-ingress 2501 meter 1 mode trtcm1\n}}" },
+                { "text": "{{/config qos sap-ingress 2501 meter 1 adaptation-rule cir min pir min\n}}" },
+                { "text": "{{/config qos sap-ingress 2501 meter 1 rate cir max pir max\n}}" },
+                { "text": "{{/config qos sap-ingress 2501 mac-criteria dot1p-only\n}}" },
+                { "text": "{{/config qos sap-ingress 2501 mac-criteria entry 1 create\n}}" },
+                { "text": "{{/config qos sap-ingress 2501 mac-criteria entry 1 match dot1p 7 7\n}}" },
+                { "text": "{{/config qos sap-ingress 2501 mac-criteria entry 1 action fc \"ef\"\n}}" },
+                { "text": "{{/config qos sap-ingress 2501 mac-criteria entry 2 create\n}}" },
+                { "text": "{{/config qos sap-ingress 2501 mac-criteria entry 2 match dot1p 6 7\n}}" },
+                { "text": "{{/config qos sap-ingress 2501 mac-criteria entry 2 action fc \"ef\"\n}}" },
+                { "text": "{{/config qos sap-ingress 2501 mac-criteria entry 3 create\n}}" },
+                { "text": "{{/config qos sap-ingress 2501 mac-criteria entry 3 match dot1p 5 7\n}}" },
+                { "text": "{{/config qos sap-ingress 2501 mac-criteria entry 3 action fc \"l1\"\n}}" },
+                { "text": "{{/config qos sap-ingress 2501 mac-criteria entry 4 create\n}}" },
+                { "text": "{{/config qos sap-ingress 2501 mac-criteria entry 4 match dot1p 4 7\n}}" },
+                { "text": "{{/config qos sap-ingress 2501 mac-criteria entry 4 action fc \"l1\"\n}}" },
+                { "text": "{{/config qos sap-ingress 2501 mac-criteria entry 5 create\n}}" },
+                { "text": "{{/config qos sap-ingress 2501 mac-criteria entry 5 match dot1p 3 7\n}}" },
+                { "text": "{{/config qos sap-ingress 2501 mac-criteria entry 5 action fc \"l2\"\n}}" },
+                { "text": "{{/config qos sap-ingress 2501 mac-criteria entry 6 create\n}}" },
+                { "text": "{{/config qos sap-ingress 2501 mac-criteria entry 6 match dot1p 2 7\n}}" },
+                { "text": "{{/config qos sap-ingress 2501 mac-criteria entry 6 action fc \"l2\"\n}}" },
+                { "text": "{{/config qos sap-ingress 2501 mac-criteria entry 7 create\n}}" },
+                { "text": "{{/config qos sap-ingress 2501 mac-criteria entry 7 match dot1p 1 7\n}}" },
+                { "text": "{{/config qos sap-ingress 2501 mac-criteria entry 7 action fc \"be\"\n}}" },
+                { "text": "{{/config qos sap-ingress 2501 mac-criteria entry 8 create\n}}" },
+                { "text": "{{/config qos sap-ingress 2501 mac-criteria entry 8 match dot1p 0 7\n}}" },
+                { "text": "{{/config qos sap-ingress 2501 mac-criteria entry 8 action fc \"be\"\n}}" },
+                { "text": "{{/admin save\n}}" },
+                { "text": "{{exit all}}" }
+            ],
+            "variables": [ ]
+        },
+        {
+            "id": 20119,
+            "platform": "ELN",
+            "category": "Build",
+            "intrusiveness": "Y",
+            "approved": true,
+            "access": [ "Command Center Level 3" ],
+            "name": "Build Generic Enhanced QoS (ex:customer requested)",
+            "snippets": [
+                { "text": "{{/config qos sap-ingress 2201 create\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 description Generic_Enchanced_DSCP_Classifier_Policy\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 scope template\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 num-qos-classifiers 22\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 meter 1 create\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 meter 1 mode trtcm1\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 meter 1 adaptation-rule cir min pir min\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 meter 1 rate cir max pir max\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 default-fc be\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 fc \"be\" create\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 fc \"be\" meter 1\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 fc \"ef\" create\n}}" },           
+                { "text": "{{/config qos sap-ingress 2201 fc \"ef\" meter 1\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 fc \"l1\" create\n}}" },           
+                { "text": "{{/config qos sap-ingress 2201 fc \"l1\" meter 1\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 fc \"l2\" create\n}}" },          
+                { "text": "{{/config qos sap-ingress 2201 fc \"l2\" meter 1\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria dscp-only\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 1 create\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 1 match dscp ef\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 1 action fc \"ef\"\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 2 create\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 2 match dscp cs5\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 2 action fc \"ef\"\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 3 create\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 3 match dscp af41\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 3 action fc \"l1\"\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 4 create\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 4 match dscp af42\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 4 action fc \"l1\"\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 5 create\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 5 match dscp af43\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 5 action fc \"l1\"\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 6 create\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 6 match dscp cs4\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 6 action fc \"l1\"\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 7 create\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 7 match dscp af31\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 7 action fc \"l1\"\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 8 create\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 8 match dscp af32\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 8 action fc \"l1\"\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 9 create\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 9 match dscp af33\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 9 action fc \"l1\"\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 10 create\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 10 match dscp cs3\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 10 action fc \"l1\"\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 11 create\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 11 match dscp nc1\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 11 action fc \"l1\"\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 12 create\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 12 match dscp nc2\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 12 action fc \"l1\"\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 13 create\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 13 match dscp af21\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 13 action fc \"l2\"\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 14 create\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 14 match dscp af22\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 14 action fc \"l2\"\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 15 create\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 15 match dscp af23\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 15 action fc \"l2\"\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 16 create\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 16 match dscp cs2\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 16 action fc \"l2\"\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 17 create\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 17 match dscp af11\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 17 action fc \"l2\"\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 18 create\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 18 match dscp af12\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 18 action fc \"l2\"\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 19 create\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 19 match dscp af13\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 19 action fc \"l2\"\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 20 create\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 20 match dscp cs1\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 20 action fc \"l2\"\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 21 create\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 21 match dscp be\n}}" },
+                { "text": "{{/config qos sap-ingress 2201 ip-criteria entry 21 action fc \"be\"\n}}" },
+                { "text": "{{/admin save\n}}" },
+                { "text": "{{exit all}}" }
+            ],
+            "variables": [ ]
+        }
+    ]
+}

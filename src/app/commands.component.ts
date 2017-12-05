@@ -17,12 +17,60 @@ export class CommandsComponent {
     groupedCategories: Array<{name:string, count:number}>=[];
     selectedCategory:{name:string, count:number};
     selectedCommand: Command;
-    @Input() device: Device;
+
+    private _device: Device;
+    @Input() 
+    set device(device: Device){
+        this._device = device
+    }
+    populateCommands(){
+
+    }
+
+    get device(){
+        return this._device;
+    }
+
     constructor(private http: HttpClient, private modalService: NgbModal) {
 
     }
     ngOnInit() {
-        this.http.get<Array<Command>>('assets/mcr-data.json').subscribe(x => {
+        let url: string;
+        
+        switch (this.device.device_type) {
+            case "ELN":
+                url = 'assets/eln_commands.json';
+                break;
+            case "AES":
+                url = 'assets/aes_commands.json';
+                break;
+            case "MCR":
+                url = 'assets/mcr_commands.json';
+                break;
+            case "CIR":
+                url = 'assets/cir_commands.json';
+                break;
+            case "CSS":
+                url = 'assets/css_commands.json';
+                break;
+            case "CSS-ALU":
+                url = 'assets/css2_commands.json';
+                break;
+            case "EXA":
+                url = 'assets/exa_commands.json';
+                break;
+            case "ELS":
+                url = 'assets/311V_commands.json';
+                break;
+            case "CSR":
+                url = 'assets/csr_commands.json';
+                break;
+            case "CTR":
+                url = 'assets/ctr_commands.json';
+                break;
+        }
+       
+        this.http.get<Array<Command>>(url).subscribe(x => {
             this.commands = x["commands"];
             let categories = {};
             this.commands.forEach((c, i) => {

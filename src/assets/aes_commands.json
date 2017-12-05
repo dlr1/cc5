@@ -1,0 +1,1897 @@
+﻿{
+    "commands": [
+        {
+            "id": 101,
+            "platform": "AES",
+            "category": "Show",
+            "intrusiveness": "",
+            "groups": [ { "name": "Layer 3 (L3) Test" } ],
+            "access": [ "Command Center Level 2" ],
+            "name": "Show IP Route",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show ip route <<IPADDR>>}}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "IPADDR",
+                    "label": "IP Address",
+                    "required": true,
+                    "regex_name": "ip_v4",
+                    "placeholder": "IP Address v4",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 102,
+            "platform": "AES",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 2" ],
+            "name": "Show Run | Customer VLAN",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show run | b vlan <<CUSTVLAN>>}}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "CUSTVLAN",
+                    "label": "VLAN",
+                    "required": true,
+                    "regex_name": "digits_2to4",
+                    "placeholder": "2 to 4 digits",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 103,
+            "platform": "AES",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 2" ],
+            "name": "Show Run",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{sho run}} {{<<VLANS>>}}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-checkbox",
+                    "variable": "VLANS",
+                    "label": "Limit to",
+                    "required": false,
+                    "values": [ { "value": "" } ],
+                    "options": [
+                        { "label": "Limit to VLANs", "value": "vlan" }
+                    ],
+                    "checked": "vlan",
+                    "unchecked": ""
+
+                }
+            ]
+
+        },
+        {
+            "id": 104,
+            "platform": "AES",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 2" ],
+            "name": "Show VLANs",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{sho vlan}}"
+                }
+            ],
+            "variables": [ ]
+        },
+        {
+            "id": 1045,
+            "platform": "AES",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 2" ],
+            "name": "Show Interface Brief",
+            "snippets": [
+                {
+                    "text": "{{sho int br}}"
+                }
+            ],
+            "variables": [ ]
+        },
+        {
+            "id": 106,
+            "platform": "AES",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 2" ],
+            "groups": [ { "name": "Broadband" } ],
+            "name": "Show Backbone and Uplink Interfaces",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{sh int br | i [bB][aA][cC][kK][bB][oO][nN][eE]|[uU][pP][lL][iI][nN][kK]}}"
+                }
+            ],
+            "variables": [ ]
+        },
+        {
+            "id": 107,
+            "platform": "AES",
+            "category": "Show",
+            "intrusiveness": "",
+            "groups": [ { "name": "Layer 3 (L3) Test" } ],
+            "access": [ "Command Center Level 2" ],
+            "name": "Show MAC Address VLAN",
+            "snippets": [
+                {
+                    "text": "{{show mac-address vlan <<VLAN>>}}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "VLAN",
+                    "label": "VLAN",
+                    "required": true,
+                    "regex_name": "digits_2to4",
+                    "placeholder": "2 to 4 digits",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 1071,
+            "platform": "AES",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 2" ],
+            "name": "Show MAC Ethernet",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show mac-address ethe <<SLOTPORT>>}}"
+                }
+            ],
+            "variables": [
+                {
+                    "variable": "SLOTPORT",
+                    "label": "Slot/Port",
+                    "values": [ { "value": "" } ],
+                    "type": "form-text",
+                    "required": true,
+                    "intrusiveness": "",
+                    "regex_name": "slot_slash_port",
+                    "placeholder": "Slot/Port"
+                }
+            ]
+        },
+        {
+            "id": 108,
+            "platform": "AES",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 2" ],
+            "name": "Show Run VLAN",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show run vlan}}"
+                }
+            ],
+            "variables": [ ]
+        },
+        {
+            "id": 109,
+            "platform": "AES",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "name": "Show Run Tag Type",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show run | i tag-type}}"
+                }
+            ],
+            "variables": [ ]
+        },
+        {
+            "id": 109,
+            "platform": "AES",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "name": "Show Run IVE",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show run | i ive}}"
+                }
+            ],
+            "variables": [ ]
+        },
+        {
+            "id": 110,
+            "platform": "AES",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 2" ],
+            "name": "Show Optic Slot",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show optic <<SLOT>>}}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "SLOT",
+                    "label": "Slot",
+                    "required": true,
+                    "regex_name": "digits_1thru8",
+                    "placeholder": "1 or 2 digits",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 111,
+            "platform": "AES",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 2" ],
+            "name": "Show Lag Brief",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show lag brief}}"
+                }
+            ],
+            "variables": [ ]
+        },
+        {
+            "id": 112,
+            "platform": "AES",
+            "category": "Show",
+            "intrusiveness": "",
+            "groups": [ { "name": "Layer 3 (L3) Test" } ],
+            "access": [ "Command Center Level 2" ],
+            "name": "Show VLAN",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show vlan <<VLAN>>}}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "VLAN",
+                    "label": "VLAN",
+                    "required": true,
+                    "regex_name": "digits_2to4",
+                    "placeholder": "2 to 4 digits",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 113,
+            "platform": "AES",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 2" ],
+            "name": "Show VLAN on Ethernet Port",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show vlan eth <<SLOTPORT>>}}"
+                }
+            ],
+            "variables": [
+                {
+                    "variable": "SLOTPORT",
+                    "label": "Slot/Port",
+                    "values": [ { "value": "" } ],
+                    "type": "form-text",
+                    "required": true,
+                    "intrusiveness": "",
+                    "regex_name": "slot_slash_port",
+                    "placeholder": "Slot/Port"
+                }
+            ]
+        },
+        {
+            "id": 114,
+            "platform": "AES",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 2" ],
+            "name": "Show Ethernet Port Info & Status",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show int eth <<SLOTPORT>>}}"
+                }
+            ],
+            "variables": [
+                {
+                    "variable": "SLOTPORT",
+                    "label": "Slot/Port",
+                    "values": [ { "value": "" } ],
+                    "type": "form-text",
+                    "required": true,
+                    "intrusiveness": "",
+                    "regex_name": "slot_slash_port",
+                    "placeholder": "Slot/Port"
+                }
+            ]
+        },
+        {
+            "id": 115,
+            "platform": "AES",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 2" ],
+            "name": "Show Ethernet Port Configuration",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show run int eth <<SLOTPORT>>}}"
+                }
+            ],
+            "variables": [
+                {
+                    "variable": "SLOTPORT",
+                    "label": "Slot/Port",
+                    "values": [ { "value": "" } ],
+                    "type": "form-text",
+                    "required": true,
+                    "intrusiveness": "",
+                    "regex_name": "slot_slash_port",
+                    "placeholder": "Slot/Port"
+                }
+            ]
+        },
+        {
+            "id": 116,
+            "platform": "AES",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 2" ],
+            "name": "Show Media",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show media}}"
+                }
+            ],
+            "variables": [ ]
+        },
+        {
+            "id": 117,
+            "platform": "AES",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 2" ],
+            "name": "Show All Interface Tag Types",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show run |  i tag-type}}"
+                }
+            ],
+            "variables": [ ]
+        },
+        {
+            "id": 118,
+            "platform": "AES",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 2" ],
+            "groups": [ { "name": "Layer 3 (L3) Test" } ],
+            "name": "Show Interface for VE",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{sho int ve <<VIN>> }}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "VIN",
+                    "label": "Virtual Interface Number",
+                    "required": true,
+                    "regex_name": "digits_1to2",
+                    "placeholder": "1-99",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 201,
+            "platform": "AES",
+            "category": "Build",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 4" ],
+            "name": "Configure VLAN with Shared Ports",
+            "approved": true,
+            "snippets": [
+                { "text": "{{config t}}\n" },
+                { "text": "{{vlan <<STAG>> name \"<<PSR>>::<<CUSTNAME>>}}\"\n" },
+                { "text": "{{tagged ethernet <<CUSTSLOPO>> ethernet <<NETSLOPO>>}}\n" },
+                { "text": "{{end}}" }
+            ],
+            "variables": [
+                {
+                    "variable": "STAG",
+                    "label": "VLAN",
+                    "values": [ { "value": "" } ],
+                    "type": "form-text",
+                    "required": true,
+                    "intrusiveness": "",
+                    "regex_name": "digits_2to4",
+                    "placeholder": "2 to 4 digits"
+                },
+                {
+                    "variable": "PSR",
+                    "label": "PSR #",
+                    "values": [ { "value": "" } ],
+                    "type": "form-text",
+                    "required": true,
+                    "intrusiveness": "",
+                    "regex_name": "alphanum_nspaces",
+                    "placeholder": "Valid PSR #"
+                },
+                {
+                    "variable": "CUSTNAME",
+                    "label": "Customer Name",
+                    "values": [ { "value": "" } ],
+                    "type": "form-text",
+                    "required": true,
+                    "intrusiveness": "",
+                    "regex_name": "free_type",
+                    "placeholder": "Customer Name"
+                },
+                {
+                    "variable": "CUSTSLOPO",
+                    "label": "Customer Slot/Port",
+                    "values": [ { "value": "" } ],
+                    "type": "form-text",
+                    "required": true,
+                    "intrusiveness": "",
+                    "allow_blocked": true,
+                    "regex_name": "slot_slash_port",
+                    "placeholder": "Slot/Port"
+                },
+                {
+                    "variable": "NETSLOPO",
+                    "label": "Network Slot/Port",
+                    "values": [ { "value": "" } ],
+                    "type": "form-text",
+                    "required": true,
+                    "intrusiveness": "",
+                    "allow_blocked": true,
+                    "regex_name": "slot_slash_port",
+                    "placeholder": "Slot/Port"
+                }
+            ]
+        },
+        {
+            "id": 2011,
+            "platform": "AES",
+            "category": "Build",
+            "groups": [ { "name": "Layer 3 (L3) Test" } ],
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 4" ],
+            "name": "Assign Virtual Ethernet Interface",
+            "approved": true,
+            "snippets": [
+                { "text": "{{config t}}\n" },
+                { "text": "{{vlan <<STAG>>}}\n" },
+                { "text": "{{router-interface ve <<VE>>}}\n" },
+                { "text": "{{exit}}\n" },
+                { "text": "{{exit}}" }
+            ],
+            "variables": [
+                {
+                    "variable": "STAG",
+                    "label": "VLAN",
+                    "values": [ { "value": "" } ],
+                    "type": "form-text",
+                    "required": true,
+                    "intrusiveness": "",
+                    "regex_name": "digits_2to5",
+                    "placeholder": "2 to 5 digits"
+                },
+                {
+                    "variable": "VE",
+                    "label": "VE #",
+                    "values": [ { "value": "" } ],
+                    "type": "form-text",
+                    "required": true,
+                    "intrusiveness": "",
+                    "regex_name": "range_1_255",
+                    "placeholder": "1 to 255"
+                }
+            ]
+        },
+        {
+            "id": 20111,
+            "platform": "AES",
+            "category": "Build",
+            "groups": [ { "name": "Layer 3 (L3) Test" } ],
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 4" ],
+            "name": "IP Virtual Ethernet Interface",
+            "approved": true,
+            "snippets": [
+                { "text": "{{config t}}\n" },
+                { "text": "{{interface ve <<VE>>}}\n" },
+                { "text": "{{ip address <<IPADDR>>/<<CIDR>>}}\n" },
+                { "text": "{{exit}}\n" },
+                { "text": "{{exit}}" }
+            ],
+            "variables": [
+                {
+                    "variable": "VE",
+                    "label": "VE #",
+                    "values": [ { "value": "" } ],
+                    "type": "form-text",
+                    "required": true,
+                    "intrusiveness": "",
+                    "regex_name": "range_1_255",
+                    "placeholder": "number from 1 to 255"
+                },
+                {
+                    "type": "form-text",
+                    "variable": "IPADDR",
+                    "label": "IP Address",
+                    "required": true,
+                    "regex_name": "ip_v4",
+                    "placeholder": "IP Address v4",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "CIDR",
+                    "label": "CIDR",
+                    "required": true,
+                    "regex_name": "cidr",
+                    "placeholder": "CIDR",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 20119,
+            "platform": "AES",
+            "category": "Build",
+            "groups": [ { "name": "Layer 3 (L3) Test" } ],
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 4" ],
+            "name": "Build Virtual Ethernet Interface",
+            "approved": true,
+            "snippets": [
+                { "text": "{{config t}}\n" },
+                { "text": "{{vlan <<STAG>>}}\n" },
+                { "text": "{{router-interface ve <<VE>>}}\n" },
+                { "text": "{{exit}}\n" },
+                { "text": "{{interface ve <<VE>>}}\n" },
+                { "text": "{{ip address <<IPADDR>>/<<CIDR>>}}\n" },
+                { "text": "{{exit}}\n" },
+                { "text": "{{exit}}" }
+            ],
+            "variables": [
+                {
+                    "variable": "STAG",
+                    "label": "VLAN",
+                    "values": [ { "value": "" } ],
+                    "type": "form-text",
+                    "required": true,
+                    "intrusiveness": "",
+                    "regex_name": "digits_2to5",
+                    "placeholder": "2 to 5 digits"
+                },
+                {
+                    "variable": "VE",
+                    "label": "VE #",
+                    "values": [ { "value": "" } ],
+                    "type": "form-text",
+                    "required": true,
+                    "intrusiveness": "",
+                    "regex_name": "range_1_255",
+                    "placeholder": "1 to 255"
+                },
+                {
+                    "type": "form-text",
+                    "variable": "IPADDR",
+                    "label": "IP Address",
+                    "required": true,
+                    "regex_name": "ip_v4",
+                    "placeholder": "IP Address v4",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "CIDR",
+                    "label": "CIDR",
+                    "required": true,
+                    "regex_name": "cidr",
+                    "placeholder": "CIDR",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 202,
+            "platform": "AES",
+            "category": "Build",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 4" ],
+            "name": "Configure 100MB Customer Interfacing Trunk",
+            "approved": true,
+            "snippets": [
+                { "text": "{{config t}}\n" },
+                { "text": "{{interface ethernet <<SLOTPORT>>}}\n" },
+                { "text": "{{port-name <<TYPE>>::<<SPEED>>::<<CUSTNAME>>::<<CIRCUITID>>}}\n" },
+                { "text": "{{speed-duplex 100-full}}\n" },
+                { "text": "{{qos-tos}}\n" },
+                { "text": "{{qos-tos trust cos}}\n" },
+                { "text": "{{disable}}\n" },
+                { "text": "{{rate-limit input <<CIR>> 512624}}\n" },
+                { "text": "{{end}}" }
+            ],
+            "variables": [
+                {
+                    "variable": "SLOTPORT",
+                    "label": "Slot/Port",
+                    "values": [ { "value": "" } ],
+                    "type": "form-text",
+                    "required": true,
+                    "intrusiveness": "",
+                    "regex_name": "slot_slash_port",
+                    "placeholder": "Slot/Port"
+                },
+                {
+                    "type": "form-select",
+                    "label": "Type",
+                    "variable": "TYPE",
+                    "values": [ { "value": "" } ],
+                    "required": true,
+                    "intrusiveness": "",
+                    "default": "Full",
+                    "options": [
+                        { "label": "Customer", "value": "CUST" },
+                        { "label": "Uplink", "value": "UPLINK" },
+                        { "label": "Backbone", "value": "BACKBONE" }
+                    ]
+                },
+                {
+                    "variable": "SPEED",
+                    "label": "Speed",
+                    "values": [ { "value": "" } ],
+                    "type": "form-text",
+                    "required": true,
+                    "intrusiveness": "",
+                    "regex_name": "free_type",
+                    "placeholder": "Speed"
+                },
+                {
+                    "variable": "CUSTNAME",
+                    "label": "Customer Name",
+                    "values": [ { "value": "" } ],
+                    "type": "form-text",
+                    "required": true,
+                    "intrusiveness": "",
+                    "regex_name": "free_type",
+                    "placeholder": "Customer Name"
+                },
+                {
+                    "variable": "CIRCUITID",
+                    "label": "Circuit Id",
+                    "values": [ { "value": "" } ],
+                    "type": "form-text",
+                    "required": true,
+                    "intrusiveness": "",
+                    "regex_name": "free_type",
+                    "placeholder": "Circuit Id"
+                },
+                {
+                    "type": "radio-cir",
+                    "label": "Is a commit input rate needed?",
+                    "variable": "POLICYOUT",
+                    "values": [ { "value": "" } ],
+                    "required": true,
+                    "intrusiveness": "",
+                    "default": "Full",
+                    "options": [
+                        { "label": "Yes", "value": "Yes" },
+                        { "label": "No", "value": "No" }
+                    ]
+                },
+                {
+                    "type": "aes-select-mbps",
+                    "label": "Desired MB Per Sec",
+                    "variable": "MBPS",
+                    "values": [ { "value": "" } ],
+                    "required": false,
+                    "intrusiveness": "",
+                    "options": [
+                        { "label": "3", "value": "3075744" },
+                        { "label": "4.5", "value": "4613616" },
+                        { "label": "5", "value": "5126240" },
+                        { "label": "6", "value": "6151488" },
+                        { "label": "10", "value": "10252480" },
+                        { "label": "15", "value": "15378720" },
+                        { "label": "20", "value": "20504960" },
+                        { "label": "30", "value": "30244816" },
+                        { "label": "40", "value": "40497296" },
+                        { "label": "44", "value": "44085664" },
+                        { "label": "50", "value": "50237152" },
+                        { "label": "60", "value": "60489632" },
+                        { "label": "70", "value": "70229488" },
+                        { "label": "80", "value": "80481968" },
+                        { "label": "88", "value": "88171328" },
+                        { "label": "90", "value": "90221824" },
+                        { "label": "100", "value": "100474304" },
+                        { "label": "150", "value": "150198832" },
+                        { "label": "200", "value": "200435984" },
+                        { "label": "250", "value": "250160512" },
+                        { "label": "300", "value": "300397664" },
+                        { "label": "350", "value": "350122192" },
+                        { "label": "400", "value": "400359344" },
+                        { "label": "450", "value": "450083872" },
+                        { "label": "500", "value": "500321024" },
+                        { "label": "550", "value": "550045552" },
+                        { "label": "600", "value": "600282704" },
+                        { "label": "650", "value": "650007232" },
+                        { "label": "700", "value": "700244384" },
+                        { "label": "750", "value": "750481536" },
+                        { "label": "800", "value": "800206064" },
+                        { "label": "850", "value": "850443216" },
+                        { "label": "900", "value": "900167744" },
+                        { "label": "950", "value": "950404896" }
+                    ]
+                },
+                {
+                    "variable": "CIR",
+                    "label": "CIR",
+                    "values": [ { "value": "" } ],
+                    "type": "aes-text-cir",
+                    "required": false,
+                    "intrusiveness": "",
+                    "regex_name": "free_type",
+                    "placeholder": "Commit Input Rate"
+                }
+
+            ]
+        },
+        {
+            "id": 203,
+            "platform": "AES",
+            "category": "Build",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 4" ],
+            "name": "Configure 1GB Interface Customer Facing Trunk",
+            "approved": true,
+            "snippets": [
+                { "text": "{{config t}}\n" },
+                { "text": "{{interface gigabit <<SLOTPORT>>}}\n" },
+                { "text": "{{port-name <<TYPE>>::<<SPEED>>::<<CUSTNAME>>::<<CIRCUITID>>}}\n" },
+                { "text": "{{gig-default neg-off}}\n" },
+                { "text": "{{qos-tos}}\n" },
+                { "text": "{{qos-tos trust cos}}\n" },
+                { "text": "{{rate-limit input <<CIR>> 512624}}\n" },
+                { "text": "{{disable}}\n" },
+                { "text": "{{end}}" }
+            ],
+            "variables": [
+                {
+                    "variable": "SLOTPORT",
+                    "label": "Slot/Port",
+                    "values": [ { "value": "" } ],
+                    "type": "form-text",
+                    "required": true,
+                    "intrusiveness": "",
+                    "regex_name": "slot_slash_port",
+                    "placeholder": "Slot/Port"
+                },
+                {
+                    "type": "form-select",
+                    "label": "Type",
+                    "variable": "TYPE",
+                    "values": [ { "value": "" } ],
+                    "required": true,
+                    "intrusiveness": "",
+                    "default": "Full",
+                    "options": [
+                        { "label": "Customer", "value": "CUST" },
+                        { "label": "Uplink", "value": "UPLINK" },
+                        { "label": "Backbone", "value": "BACKBONE" }
+                    ]
+                },
+                {
+                    "variable": "SPEED",
+                    "label": "Speed",
+                    "values": [ { "value": "" } ],
+                    "type": "form-text",
+                    "required": true,
+                    "intrusiveness": "",
+                    "regex_name": "free_type",
+                    "placeholder": "Speed"
+                },
+                {
+                    "variable": "CUSTNAME",
+                    "label": "Customer Name",
+                    "values": [ { "value": "" } ],
+                    "type": "form-text",
+                    "required": true,
+                    "intrusiveness": "",
+                    "regex_name": "free_type",
+                    "placeholder": "Customer Name"
+                },
+                {
+                    "variable": "CIRCUITID",
+                    "label": "Circuit Id",
+                    "values": [ { "value": "" } ],
+                    "type": "form-text",
+                    "required": true,
+                    "intrusiveness": "",
+                    "regex_name": "free_type",
+                    "placeholder": "Circuit Id"
+                },
+                {
+                    "variable": "CIR",
+                    "label": "CIR",
+                    "values": [ { "value": "" } ],
+                    "type": "form-text",
+                    "required": true,
+                    "intrusiveness": "",
+                    "regex_name": "endswith_5zeros",
+                    "placeholder": "Commit Input Rate"
+                }
+            ]
+        },
+        {
+            "id": 204,
+            "platform": "AES",
+            "category": "Build",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 4" ],
+            "name": "Configure Shared GE Interface",
+            "approved": true,
+            "snippets": [
+                { "text": "{{config t}}\n" },
+                { "text": "{{interface ethernet <<SLOTPORT>>}}\n" },
+                { "text": "{{port-name <<TYPE>>::<<SPEED>>::<<CUSTNAME>>::<<CIRCUITID>>}}\n" },
+                { "text": "{{gig-default neg-off}}\n" },
+                { "text": "{{qos-tos}}\n" },
+                { "text": "{{qos-tos trust cos}}\n" },
+                { "text": "{{disable}}\n" },
+                { "text": "{{end}}" }
+            ],
+            "variables": [
+                {
+                    "variable": "SLOTPORT",
+                    "label": "Slot/Port",
+                    "values": [ { "value": "" } ],
+                    "type": "form-text",
+                    "required": true,
+                    "intrusiveness": "",
+                    "regex_name": "slot_slash_port",
+                    "placeholder": "Slot/Port"
+                },
+                {
+                    "type": "form-select",
+                    "label": "Type",
+                    "variable": "TYPE",
+                    "values": [ { "value": "" } ],
+                    "required": true,
+                    "intrusiveness": "",
+                    "default": "Full",
+                    "options": [
+                        { "label": "Customer", "value": "CUST" },
+                        { "label": "Uplink", "value": "UPLINK" },
+                        { "label": "Backbone", "value": "BACKBONE" }
+                    ]
+                },
+                {
+                    "variable": "SPEED",
+                    "label": "Speed",
+                    "values": [ { "value": "" } ],
+                    "type": "form-text",
+                    "required": true,
+                    "intrusiveness": "",
+                    "regex_name": "free_type",
+                    "placeholder": "Speed"
+                },
+                {
+                    "variable": "CUSTNAME",
+                    "label": "Customer Name",
+                    "values": [ { "value": "" } ],
+                    "type": "form-text",
+                    "required": true,
+                    "intrusiveness": "",
+                    "regex_name": "free_type",
+                    "placeholder": "Customer Name"
+                },
+                {
+                    "variable": "CIRCUITID",
+                    "label": "Circuit Id",
+                    "values": [ { "value": "" } ],
+                    "type": "form-text",
+                    "required": true,
+                    "intrusiveness": "",
+                    "regex_name": "free_type",
+                    "placeholder": "Circuit Id"
+                }
+            ]
+        },
+        {
+            "id": 205,
+            "platform": "AES",
+            "category": "Build",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 4" ],
+            "name": "Configure VLAN with Dedicated Customer Facing Port",
+            "approved": true,
+            "snippets": [
+                { "text": "{{config t}}\n" },
+                { "text": "{{vlan <<STAG>> name \"<<PSR>>::<<CUSTNAME>>}}\"\n" },
+                { "text": "{{untagged ethernet <<CUSTSLOPO>>}}\n" },
+                { "text": "{{tagged ethernet <<SLOTPORT>>}}\n" },
+                { "text": "{{end}}" }
+            ],
+            "variables": [
+                {
+                    "variable": "PSR",
+                    "label": "PSR #",
+                    "values": [ { "value": "" } ],
+                    "type": "form-text",
+                    "required": true,
+                    "intrusiveness": "",
+                    "regex_name": "alphanum_nspaces",
+                    "placeholder": "Valid PSR #"
+                },
+                {
+                    "variable": "CUSTNAME",
+                    "label": "Customer Name",
+                    "values": [ { "value": "" } ],
+                    "type": "form-text",
+                    "required": true,
+                    "intrusiveness": "",
+                    "regex_name": "free_type",
+                    "placeholder": "Customer Name"
+                },
+                {
+                    "variable": "CUSTSLOPO",
+                    "label": "Customer Slot/Port",
+                    "values": [ { "value": "" } ],
+                    "type": "form-text",
+                    "required": true,
+                    "allow_blocked": true,
+                    "intrusiveness": "",
+                    "regex_name": "slot_slash_port",
+                    "placeholder": "Slot/Port"
+                },
+                {
+                    "variable": "SLOTPORT",
+                    "label": "Slot/Port",
+                    "values": [ { "value": "" } ],
+                    "type": "form-text",
+                    "required": true,
+                    "intrusiveness": "",
+                    "regex_name": "slot_slash_port",
+                    "placeholder": "Slot/Port"
+                },
+                {
+                    "type": "form-text",
+                    "variable": "STAG",
+                    "label": "VLAN",
+                    "required": true,
+                    "regex_name": "digits_2to4",
+                    "placeholder": "2 to 4 digits",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 206,
+            "platform": "AES",
+            "category": "Build",
+            "access": [ "Command Center Level 4" ],
+            "intrusiveness": "Y",
+            "name": "Configure 10MB  Interface Customer Facing Trunk",
+            "approved": true,
+            "snippets": [
+                { "text": "{{config t}}\n" },
+                { "text": "{{interface ethernet <<SLOTPORT>>}}\n" },
+                { "text": "{{port-name <<TYPE>>::<<SPEED>>::<<CUSTNAME>>::<<CIRCUITID>>}}\n" },
+                { "text": "{{speed-duplex 10-full}}\n" },
+                { "text": "{{qos-tos}}\n" },
+                { "text": "{{qos-tos trust cos}}\n" },
+                { "text": "{{disable}}\n" },
+                { "text": "{{rate-limit input <<CIR>> 512624}}\n" },
+                { "text": "{{end}}" }
+            ],
+            "variables": [
+                {
+                    "variable": "SLOTPORT",
+                    "label": "Slot/Port",
+                    "values": [ { "value": "" } ],
+                    "type": "form-text",
+                    "required": true,
+                    "intrusiveness": "",
+                    "regex_name": "slot_slash_port",
+                    "placeholder": "Slot/Port"
+                },
+                {
+                    "type": "form-select",
+                    "label": "Type",
+                    "variable": "TYPE",
+                    "values": [ { "value": "" } ],
+                    "required": true,
+                    "intrusiveness": "",
+                    "default": "Full",
+                    "options": [
+                        { "label": "Customer", "value": "CUST" },
+                        { "label": "Uplink", "value": "UPLINK" },
+                        { "label": "Backbone", "value": "BACKBONE" }
+                    ]
+                },
+                {
+                    "variable": "SPEED",
+                    "label": "Speed",
+                    "values": [ { "value": "" } ],
+                    "type": "form-text",
+                    "required": true,
+                    "intrusiveness": "",
+                    "regex_name": "free_type",
+                    "placeholder": "Speed"
+                },
+                {
+                    "variable": "CUSTNAME",
+                    "label": "Customer Name",
+                    "values": [ { "value": "" } ],
+                    "type": "form-text",
+                    "required": true,
+                    "intrusiveness": "",
+                    "regex_name": "free_type",
+                    "placeholder": "Customer Name"
+                },
+                {
+                    "variable": "CIRCUITID",
+                    "label": "Circuit Id",
+                    "values": [ { "value": "" } ],
+                    "type": "form-text",
+                    "required": true,
+                    "intrusiveness": "",
+                    "regex_name": "free_type",
+                    "placeholder": "Circuit Id"
+                },
+                {
+                    "type": "radio-cir",
+                    "label": "Is a commit input rate needed?",
+                    "variable": "POLICYOUT",
+                    "values": [ { "value": "" } ],
+                    "required": true,
+                    "intrusiveness": "",
+                    "default": "Full",
+                    "options": [
+                        { "label": "Yes", "value": "Yes" },
+                        { "label": "No", "value": "No" }
+                    ]
+                },
+                {
+                    "type": "aes-select-mbps",
+                    "label": "Desired MB Per Sec",
+                    "variable": "MBPS",
+                    "values": [ { "value": "" } ],
+                    "required": true,
+                    "intrusiveness": "",
+                    "options": [
+                        { "label": "3", "value": "3075744" },
+                        { "label": "4.5", "value": "4613616" },
+                        { "label": "5", "value": "5126240" },
+                        { "label": "6", "value": "6151488" },
+                        { "label": "10", "value": "10252480" },
+                        { "label": "15", "value": "15378720" },
+                        { "label": "20", "value": "20504960" },
+                        { "label": "30", "value": "30244816" },
+                        { "label": "40", "value": "40497296" },
+                        { "label": "44", "value": "44085664" },
+                        { "label": "50", "value": "50237152" },
+                        { "label": "60", "value": "60489632" },
+                        { "label": "70", "value": "70229488" },
+                        { "label": "80", "value": "80481968" },
+                        { "label": "88", "value": "88171328" },
+                        { "label": "90", "value": "90221824" },
+                        { "label": "100", "value": "100474304" },
+                        { "label": "150", "value": "150198832" },
+                        { "label": "200", "value": "200435984" },
+                        { "label": "250", "value": "250160512" },
+                        { "label": "300", "value": "300397664" },
+                        { "label": "350", "value": "350122192" },
+                        { "label": "400", "value": "400359344" },
+                        { "label": "450", "value": "450083872" },
+                        { "label": "500", "value": "500321024" },
+                        { "label": "550", "value": "550045552" },
+                        { "label": "600", "value": "600282704" },
+                        { "label": "650", "value": "650007232" },
+                        { "label": "700", "value": "700244384" },
+                        { "label": "750", "value": "750481536" },
+                        { "label": "800", "value": "800206064" },
+                        { "label": "850", "value": "850443216" },
+                        { "label": "900", "value": "900167744" },
+                        { "label": "950", "value": "950404896" }
+                    ]
+                },
+                {
+                    "variable": "CIR",
+                    "label": "CIR",
+                    "values": [ { "value": "" } ],
+                    "type": "aes-text-cir",
+                    "required": false,
+                    "intrusiveness": "",
+                    "placeholder": "Commit Input Rate"
+                }
+
+            ]
+        },
+        {
+            "id": 301,
+            "platform": "AES",
+            "category": "Delete",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 4" ],
+            "name": "Remove VLAN",
+            "approved": true,
+            "snippets": [
+                { "text": "{{config t}}\n" },
+                { "text": "{{no vlan <<VLAN>>}}\n" },
+                { "text": "{{end}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "VLAN",
+                    "label": "VLAN",
+                    "required": true,
+                    "regex_name": "digits_2to4",
+                    "placeholder": "2 to 4 digits",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 302,
+            "platform": "AES",
+            "category": "Delete",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 4", "Command Center Repair" ],
+            "name": "Remove Tagged Port(s) from VLAN",
+            "approved": true,
+            "snippets": [
+                { "text": "{{config t}}\n" },
+                { "text": "{{vlan <<STAG>>}}\n" },
+                { "text": "{{no tagg eth <<SLOTPORT>>}}\n" },
+                { "text": "{{end}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "STAG",
+                    "label": "VLAN",
+                    "required": true,
+                    "regex_name": "digits_2to4",
+                    "placeholder": "2 to 4 digits",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "variable": "SLOTPORT",
+                    "label": "Slot/Port",
+                    "values": [ { "value": "" } ],
+                    "type": "text-repeatable",
+                    "required": true,
+                    "allow_blocked": true,
+                    "intrusiveness": "",
+                    "regex_name": "slot_slash_port",
+                    "placeholder": "Slot/Port"
+                }
+            ]
+        },
+        {
+            "id": 3021,
+            "platform": "AES",
+            "category": "Delete",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 4" ],
+            "groups": [ { "name": "Layer 3 (L3) Test" } ],
+            "name": "Delete Virtual Ethernet Interface",
+            "approved": true,
+            "snippets": [
+                { "text": "{{config t}}\n" },
+                { "text": "{{vlan <<STAG>>}}\n" },
+                { "text": "{{no router-interface ve <<VE>>}}\n" },
+                { "text": "{{exit}}\n" },
+                { "text": "{{exit}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "STAG",
+                    "label": "VLAN",
+                    "required": true,
+                    "regex_name": "digits_2to5",
+                    "placeholder": "2 to 5 digits",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "VE",
+                    "label": "VE #",
+                    "required": true,
+                    "regex_name": "digits_1to5",
+                    "placeholder": "1 to 5 digits",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 303,
+            "platform": "AES",
+            "category": "Delete",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 4", "Command Center Repair" ],
+            "name": "Remove Untagged Port from VLAN",
+            "approved": false,
+            "snippets": [
+                { "text": "{{config t}}\n" },
+                { "text": "{{vlan <<STAG>>}}\n" },
+                { "text": "{{no untagg eth <<CUSTSLOPO>>}}\n" },
+                { "text": "{{end}}" }
+            ],
+            "variables": [
+                {
+                    "variable": "CUSTSLOPO",
+                    "label": "Customer Slot/Port",
+                    "values": [ { "value": "" } ],
+                    "type": "form-text",
+                    "required": true,
+                    "allow_blocked": true,
+                    "intrusiveness": "",
+                    "regex_name": "slot_slash_port",
+                    "placeholder": "Slot/Port"
+                },
+                {
+                    "type": "form-text",
+                    "variable": "STAG",
+                    "label": "VLAN",
+                    "required": true,
+                    "regex_name": "digits_2to4",
+                    "placeholder": "2 to 4 digits",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 401,
+            "platform": "AES",
+            "category": "Edit",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 4", "Command Center Repair" ],
+            "name": "Add Tagged Port(s) to VLAN",
+            "approved": true,
+            "snippets": [
+                { "text": "{{config t}}\n" },
+                { "text": "{{vlan <<STAG>>}}\n" },
+                { "text": "{{tagged eth <<SLOTPORT>>}}\n" },
+                { "text": "{{end}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "STAG",
+                    "label": "VLAN",
+                    "required": true,
+                    "regex_name": "digits_2to4",
+                    "placeholder": "2 to 4 digits",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "variable": "SLOTPORT",
+                    "label": "Slot/Port",
+                    "values": [ { "value": "" } ],
+                    "type": "text-repeatable",
+                    "required": true,
+                    "intrusiveness": "",
+                    "allow_blocked": true,
+                    "regex_name": "slot_slash_port",
+                    "placeholder": "Slot/Port"
+                }
+            ]
+        },
+        {
+            "id": 402,
+            "platform": "AES",
+            "category": "Edit",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 4", "Command Center Repair" ],
+            "name": "Add Single Untagged Port to VLAN",
+            "approved": true,
+            "snippets": [
+                { "text": "{{config t}}\n" },
+                { "text": "{{vlan <<STAG>>}}\n" },
+                { "text": "{{untagged eth <<CUSTSLOPO>>}}\n" },
+                { "text": "{{end}}" }
+            ],
+            "variables": [
+                {
+                    "variable": "CUSTSLOPO",
+                    "label": "Customer Slot/Port",
+                    "values": [ { "value": "" } ],
+                    "type": "form-text",
+                    "required": true,
+                    "intrusiveness": "",
+                    "regex_name": "slot_slash_port",
+                    "placeholder": "Slot/Port"
+                },
+                {
+                    "type": "form-text",
+                    "variable": "STAG",
+                    "label": "VLAN",
+                    "required": true,
+                    "regex_name": "digits_2to4",
+                    "placeholder": "2 to 4 digits",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 403,
+            "platform": "AES",
+            "category": "Edit",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 4" ],
+            "name": "Enable Ethernet Port",
+            "approved": true,
+            "snippets": [
+                { "text": "{{config t}}\n" },
+                { "text": "{{interface ethernet <<SLOTPORT>>}}\n" },
+                { "text": "{{enable}}\n" },
+                { "text": "{{end}}" }
+            ],
+            "variables": [
+                {
+                    "variable": "SLOTPORT",
+                    "label": "Ethernet Slot/Port",
+                    "values": [ { "value": "" } ],
+                    "type": "form-text",
+                    "required": true,
+                    "intrusiveness": "",
+                    "regex_name": "slot_slash_port",
+                    "placeholder": "Slot/Port"
+                }
+            ]
+        },
+        {
+            "id": 404,
+            "platform": "AES",
+            "category": "Edit",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 4" ],
+            "name": "Change Gigabit Default Port Negotiation",
+            "approved": true,
+            "snippets": [
+                { "text": "{{config t}}\n" },
+                { "text": "{{interface ethernet <<SLOTPORT>>}}\n" },
+                { "text": "{{gig-default neg-<<DEFAULT>>}}\n" },
+                { "text": "{{end}}" }
+            ],
+            "variables": [
+                {
+                    "variable": "SLOTPORT",
+                    "label": "Slot/Port",
+                    "values": [ { "value": "" } ],
+                    "type": "form-text",
+                    "required": true,
+                    "intrusiveness": "",
+                    "regex_name": "slot_slash_port",
+                    "placeholder": "Slot/Port"
+                },
+                {
+                    "variable": "DEFAULT",
+                    "label": "Default",
+                    "values": [ { "value": "" } ],
+                    "type": "form-select",
+                    "options": [
+                        { "label": "On", "value": "on" },
+                        { "label": "Off", "value": "off" }
+                    ],
+                    "required": true
+                }
+            ]
+        },
+        {
+            "id": 405,
+            "platform": "AES",
+            "category": "Edit",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 4" ],
+            "name": "Disable Ethernet Port",
+            "approved": true,
+            "snippets": [
+                { "text": "{{config t}}\n" },
+                { "text": "{{interface ethernet <<SLOTPORT>>}}\n" },
+                { "text": "{{disable}}\n" },
+                { "text": "{{end}}" }
+            ],
+            "variables": [
+                {
+                    "variable": "SLOTPORT",
+                    "label": "Ethernet Slot/Port",
+                    "values": [ { "value": "" } ],
+                    "type": "form-text",
+                    "required": true,
+                    "intrusiveness": "",
+                    "regex_name": "slot_slash_port",
+                    "placeholder": "Slot/Port"
+                }
+            ]
+        },
+        {
+            "id": 501,
+            "platform": "AES",
+            "category": "Execute",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 4" ],
+            "name": "End",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{end}}"
+                }
+            ],
+            "variables": [ ]
+        },
+        {
+            "id": 409,
+            "name": "Ping",
+            "platform": "AES",
+            "category": "Execute",
+            "groups": [ { "name": "Layer 3 (L3) Test" } ],
+            "access": [ "Command Center Level 4" ],
+            "intrusiveness": "",
+            "approved:": true,
+            "snippets": [
+                { "text": "{{ping <<destinationip>>}}" },
+                { "text": "{{ count <<count>>}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "destinationip",
+                    "label": "Destination IP",
+                    "regex_name": "ip_v4",
+                    "required": true,
+                    "placeholder": "ex. 255.255.255.255",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "count",
+                    "label": "Ping Count",
+                    "regex_name": "range_1_1000",
+                    "required": false,
+                    "placeholder": "numeric - upto 1000",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 133,
+            "platform": "AES",
+            "category": "Edit",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 4" ],
+            "name": "Edit VLAN Name",
+            "approved": true,
+            "snippets": [
+                { "text": "{{config t}}\n" },
+                { "text": "{{vlan <<VLAN>> name <<PSR>>:<<VLAN>>}}\n" },
+                { "text": "{{exit}}\n" },
+                { "text": "{{exit}}" }
+            ],
+            "variables": [
+                {
+                    "variable": "VLAN",
+                    "label": "VLAN",
+                    "values": [ { "value": "" } ],
+                    "type": "form-text",
+                    "required": true,
+                    "intrusiveness": "",
+                    "regex_name": "digits_2to4",
+                    "placeholder": "2 to 4 digits"
+                },
+                {
+                    "variable": "PSR",
+                    "label": "PSR",
+                    "values": [ { "value": "" } ],
+                    "type": "form-text",
+                    "required": true,
+                    "intrusiveness": "",
+                    "regex_name": "free_type",
+                    "placeholder": "PSR"
+                }
+            ]
+        },
+        {
+            "id": 133,
+            "platform": "AES",
+            "category": "Edit",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 4" ],
+            "name": "Edit Port Name",
+            "approved": true,
+            "snippets": [
+                { "text": "{{config t}}\n" },
+                { "text": "{{interface ethernet <<SLOTPORT>>}}\n" },
+                { "text": "{{port-name <<PORTNAME>>}}\n" },
+                { "text": "{{exit}}\n" },
+                { "text": "{{exit}}" }
+            ],
+            "variables": [
+                {
+                    "variable": "SLOTPORT",
+                    "label": "Slot/Port",
+                    "values": [ { "value": "" } ],
+                    "type": "form-text",
+                    "required": true,
+                    "intrusiveness": "",
+                    "regex_name": "slot_slash_port",
+                    "placeholder": "Slot/Port"
+                },
+                {
+                    "variable": "PORTNAME",
+                    "label": "Port Name",
+                    "values": [ { "value": "" } ],
+                    "type": "form-text",
+                    "required": true,
+                    "intrusiveness": "",
+                    "regex_name": "free_type",
+                    "placeholder": "Port Name"
+                }
+            ]
+        },
+        {
+            "id": 901,
+            "platform": "AES",
+            "category": "Spirent",
+            "intrusiveness": "Y",
+            "rollbackTag": "Y",
+            "rollbackDef": "2",
+            "access": [ "Command Center Level 4" ],
+            "name": "Map a VLAN to Spirent (dedicated)",
+            "approved": true,
+            "must_refresh": true,
+            "snippets": [
+                { "text": "{{ show vlan <<VLAN>> }}\n" },
+                { "text": "{{ config t }}\n" },
+                { "text": "{{ vlan <<VLAN>> name CCTEST::<<PSR>>::<<CUSTNAME>> }}\n" },
+                { "text": "{{ no untagged ethernet <<DEDICATED_PORT>> }}\n" },
+                { "text": "{{ tagged ethernet <<SPIRENT_PORT>> }}\n" },
+                { "text": "{{ end }}\n" },
+                { "text": "{{ wr mem }}\n" },
+                { "text": "{{ show vlan <<VLAN>> }}" }
+            ],
+            "rollback": [
+                { "text": "{{ show vlan <<VLAN>> }}\n" },
+                { "text": "{{ config t }}\n" },
+                { "text": "{{ vlan <<VLAN>> name <<PSR>>::<<CUSTNAME>> }}\n" },
+                { "text": "{{ no tagged ethernet <<SPIRENT_PORT>> }}\n" },
+                { "text": "{{ untagged ethernet <<DEDICATED_PORT>> }}\n" },
+                { "text": "{{ end }}\n" },
+                { "text": "{{ wr mem }}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "VLAN",
+                    "label": "VLAN",
+                    "required": true,
+                    "regex_name": "range_2_4096",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "VLAN",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "PSR",
+                    "label": "PSR",
+                    "required": true,
+                    "regex_name": "alphanum_nspaces",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "PSR",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "CUSTNAME",
+                    "label": "CUSTOMER NAME",
+                    "required": true,
+                    "regex_name": "customer_name_50",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "CUSTOMER NAME",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "DEDICATED_PORT",
+                    "label": "DEDICATED PORT",
+                    "required": true,
+                    "regex_name": "num_slash_num",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "DEDICATED PORT",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-dropdown",
+                    "variable": "SPIRENT_PORT",
+                    "label": "SPIRENT PORT",
+                    "required": true,
+                    "regex_name": "num_slash_num",
+                    "dataCommandRefreshFlag": "always",
+                    "dataCommand": "show int br wide",
+                    "dataParserName": "DP_AES_Spirents",
+                    "placeholder": "SPIRENT PORT",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 902,
+            "platform": "AES",
+            "category": "Spirent",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 4" ],
+            "name": "Unmap a VLAN from Spirent & Normalize (dedicated)",
+            "approved": true,
+            "must_refresh": true,
+            "snippets": [
+                { "text": "{{ show vlan <<VLAN>> }}\n" },
+                { "text": "{{ config t }}\n" },
+                { "text": "{{ vlan <<VLAN>> name <<PSR>>::<<CUSTNAME>> }}\n" },
+                { "text": "{{ no tagged ethernet <<SPIRENT_PORT>> }}\n" },
+                { "text": "{{ untagged ethernet <<DEDICATED_PORT>> }}\n" },
+                { "text": "{{ end }}\n" },
+                { "text": "{{ wr mem }}\n" },
+                { "text": "{{ show vlan <<VLAN>> }}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "VLAN",
+                    "label": "VLAN",
+                    "required": true,
+                    "regex_name": "range_2_4096",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "VLAN",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "PSR",
+                    "label": "PSR",
+                    "required": true,
+                    "regex_name": "alphanum_nspaces",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "PSR",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "CUSTNAME",
+                    "label": "CUSTOMER NAME",
+                    "required": true,
+                    "regex_name": "customer_name_50",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "CUSTOMER NAME",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "DEDICATED_PORT",
+                    "label": "DEDICATED PORT",
+                    "required": true,
+                    "regex_name": "num_slash_num",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "DEDICATED PORT",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "SPIRENT_PORT",
+                    "label": "SPIRENT PORT",
+                    "required": true,
+                    "regex_name": "num_slash_num",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "SPIRENT PORT",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 903,
+            "platform": "AES",
+            "category": "Spirent",
+            "intrusiveness": "Y",
+            "rollbackTag": "Y",
+            "rollbackDef": "2",
+            "access": [ "Command Center Level 4" ],
+            "name": "Map a VLAN to Spirent (shared)",
+            "approved": true,
+            "must_refresh": true,
+            "snippets": [
+                { "text": "{{ show vlan <<VLAN>> }}\n" },
+                { "text": "{{ config t }}\n" },
+                { "text": "{{ vlan <<VLAN>> name CCTEST::<<PSR>>::<<CUSTNAME>> }}\n" },
+                { "text": "{{ no tagged ethernet <<UPLINK_PORT>> }}\n" },
+                { "text": "{{ tagged ethernet <<SPIRENT_PORT>> }}\n" },
+                { "text": "{{ end }}\n" },
+                { "text": "{{ wr mem }}\n" },
+                { "text": "{{ show vlan <<VLAN>> }}" }
+            ],
+            "rollback": [
+                { "text": "{{ show vlan <<VLAN>> }}\n" },
+                { "text": "{{ config t }}\n" },
+                { "text": "{{ vlan <<VLAN>> name <<PSR>>::<<CUSTNAME>> }}\n" },
+                { "text": "{{ no tagged ethernet <<SPIRENT_PORT>> }}\n" },
+                { "text": "{{ tagged ethernet <<UPLINK_PORT>> }}\n" },
+                { "text": "{{ end }}\n" },
+                { "text": "{{ wr mem }}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "VLAN",
+                    "label": "VLAN",
+                    "required": true,
+                    "regex_name": "range_2_4096",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "VLAN",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "PSR",
+                    "label": "PSR",
+                    "required": true,
+                    "regex_name": "alphanum_nspaces",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "PSR",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "CUSTNAME",
+                    "label": "CUSTOMER NAME",
+                    "required": true,
+                    "regex_name": "customer_name_50",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "CUSTOMER NAME",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "UPLINK_PORT",
+                    "label": "UPLINK PORT",
+                    "required": true,
+                    "regex_name": "num_slash_num",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "UPLINK PORT",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-dropdown",
+                    "variable": "SPIRENT_PORT",
+                    "label": "SPIRENT PORT",
+                    "required": true,
+                    "regex_name": "num_slash_num",
+                    "dataCommandRefreshFlag": "always",
+                    "dataCommand": "show int br wide",
+                    "dataParserName": "DP_AES_Spirents",
+                    "placeholder": "SPIRENT PORT",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 904,
+            "platform": "AES",
+            "category": "Spirent",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 4" ],
+            "name": "Unmap a VLAN from Spirent & Normalize (shared)",
+            "approved": true,
+            "must_refresh": true,
+            "snippets": [
+                { "text": "{{ show vlan <<VLAN>> }}\n" },
+                { "text": "{{ config t }}\n" },
+                { "text": "{{ vlan <<VLAN>> name <<PSR>>::<<CUSTNAME>> }}\n" },
+                { "text": "{{ no tagged ethernet <<SPIRENT_PORT>> }}\n" },
+                { "text": "{{ tagged ethernet <<UPLINK_PORT>> }}\n" },
+                { "text": "{{ end }}\n" },
+                { "text": "{{ wr mem }}\n" },
+                { "text": "{{ show vlan <<VLAN>> }}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "VLAN",
+                    "label": "VLAN",
+                    "required": true,
+                    "regex_name": "range_2_4096",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "VLAN",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "PSR",
+                    "label": "PSR",
+                    "required": true,
+                    "regex_name": "alphanum_nspaces",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "PSR",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "CUSTNAME",
+                    "label": "CUSTOMER NAME",
+                    "required": true,
+                    "regex_name": "customer_name_50",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "CUSTOMER NAME",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "UPLINK_PORT",
+                    "label": "UPLINK PORT",
+                    "required": true,
+                    "regex_name": "num_slash_num",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "UPLINK PORT",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "SPIRENT_PORT",
+                    "label": "SPIRENT PORT",
+                    "required": true,
+                    "regex_name": "num_slash_num",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "SPIRENT PORT",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        }
+    ]
+}
+

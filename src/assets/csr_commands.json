@@ -1,0 +1,3838 @@
+﻿{
+  "commands": [
+    {
+      "id": 101,
+      "platform": "CSR",
+      "category": "Show",
+      "intrusiveness": "",
+      "access": [ "Command Center Level 2" ],
+      "name": "Retrieve VRF BGP Config",
+      "approved": true,
+      "snippets": [
+        {
+          "text": "{{show run | beg address-family ipv4 vrf <<VRF_NAME>>}}"
+        }
+      ],
+      "variables": [
+        {
+          "type": "form-combobox",
+          "variable": "VRF_NAME",
+          "label": "VRF Name",
+          "regex_name": "vrf",
+          "required": true,
+          "placeholder": "VRF",
+          "dataCommand": "show run",
+          "dataParserName": "DataParserForCSRVRF",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 102,
+      "platform": "CSR",
+      "category": "Show",
+      "intrusiveness": "",
+      "access": [ "Command Center Level 2" ],
+      "name": "Retrieve VRF BGP Route Table",
+      "approved": true,
+      "snippets": [
+        {
+          "text": "{{show ip bgp vpnv4 vrf <<VRF_NAME>>}}"
+        }
+      ],
+      "variables": [
+        {
+          "type": "form-combobox",
+          "variable": "VRF_NAME",
+          "label": "VRF Name",
+          "regex_name": "vrf",
+          "required": true,
+          "placeholder": "VRF",
+          "dataCommand": "show run",
+          "dataParserName": "DataParserForCSRVRF",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 103,
+      "platform": "CSR",
+      "category": "Show",
+      "intrusiveness": "",
+      "access": [ "Command Center Level 2" ],
+      "name": "Retrieve VRF BGP neighbor Advertised Routes",
+      "approved": true,
+      "snippets": [
+        {
+          "text": "{{show ip bgp vpnv4 vrf <<VRF_NAME>> neighbor <<NEIGHBOR_IP>> advertised}}"
+        }
+      ],
+      "variables": [
+        {
+          "type": "form-combobox",
+          "variable": "VRF_NAME",
+          "label": "VRF Name",
+          "regex_name": "vrf",
+          "required": true,
+          "placeholder": "VRF",
+          "dataCommand": "show run",
+          "dataParserName": "DataParserForCSRVRF",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-combobox",
+          "variable": "NEIGHBOR_IP",
+          "label": "Neighbor IP",
+          "regex_name": "ip_v4",
+          "required": true,
+          "placeholder": "ex. 255.255.255.255",
+          "dataCommand": "show run | beg router bgp 65500",
+          "dataParserName": "DataParserForNeighborIP",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 104,
+      "platform": "CSR",
+      "category": "Show",
+      "intrusiveness": "",
+      "access": [ "Command Center Level 2" ],
+      "name": "Retrieve VRF BGP neighbor Learned Routes",
+      "approved": true,
+      "snippets": [
+        {
+          "text": "{{show ip bgp vpnv4 vrf <<VRF_NAME>> neighbor <<NEIGHBOR_IP>> routes}}"
+        }
+      ],
+      "variables": [
+        {
+          "type": "form-combobox",
+          "variable": "VRF_NAME",
+          "label": "VRF Name",
+          "regex_name": "vrf",
+          "required": true,
+          "placeholder": "VRF",
+          "dataCommand": "show run",
+          "dataParserName": "DataParserForCSRVRF",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-combobox",
+          "variable": "NEIGHBOR_IP",
+          "label": "Neighbor IP",
+          "regex_name": "ip_v4",
+          "required": true,
+          "placeholder": "ex. 255.255.255.255",
+          "dataCommand": "show run | beg router bgp 65500",
+          "dataParserName": "DataParserForNeighborIP",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 105,
+      "platform": "CSR",
+      "category": "Show",
+      "intrusiveness": "",
+      "access": [ "Command Center Level 2" ],
+      "name": "Retrieve VRF Neighbor Info",
+      "approved": true,
+      "snippets": [
+        {
+          "text": "{{show ip bgp vpnv4 vrf <<VRF_NAME>> neighbor <<NEIGHBOR_IP>>}}"
+        }
+      ],
+      "variables": [
+        {
+          "type": "form-combobox",
+          "variable": "VRF_NAME",
+          "label": "VRF Name",
+          "regex_name": "vrf",
+          "required": true,
+          "placeholder": "VRF",
+          "dataCommand": "show run",
+          "dataParserName": "DataParserForCSRVRF",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-combobox",
+          "variable": "NEIGHBOR_IP",
+          "label": "Neighbor IP",
+          "regex_name": "ip_v4",
+          "required": true,
+          "placeholder": "ex. 255.255.255.255",
+          "dataCommand": "show run | beg router bgp 65500",
+          "dataParserName": "DataParserForNeighborIP",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 106,
+      "platform": "CSR",
+      "category": "Show",
+      "intrusiveness": "",
+      "access": [ "Command Center Level 2" ],
+      "name": "Retrieve DIA BGP neighbor Config",
+      "approved": true,
+      "snippets": [
+        {
+          "text": "{{show run | inc neighbor <<NEIGHBOR_IP>>}}"
+        }
+      ],
+      "variables": [
+        {
+          "type": "form-combobox",
+          "variable": "NEIGHBOR_IP",
+          "label": "Neighbor IP",
+          "regex_name": "ip_v4",
+          "required": true,
+          "placeholder": "ex. 255.255.255.255",
+          "dataCommand": "show run | beg router bgp 65500",
+          "dataParserName": "DataParserForNeighborIP",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 107,
+      "platform": "CSR",
+      "category": "Show",
+      "intrusiveness": "",
+      "access": [ "Command Center Level 2" ],
+      "name": "Retrieve DIA BGP neighbor Advertised Routes",
+      "approved": true,
+      "snippets": [
+        {
+          "text": "{{show ip bgp neighbor <<NEIGHBOR_IP>> advertised}}"
+        }
+      ],
+      "variables": [
+        {
+          "type": "form-combobox",
+          "variable": "NEIGHBOR_IP",
+          "label": "Neighbor IP",
+          "regex_name": "ip_v4",
+          "required": true,
+          "placeholder": "ex. 255.255.255.255",
+          "dataCommand": "show run | beg router bgp 65500",
+          "dataParserName": "DataParserForNeighborIP",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 108,
+      "platform": "CSR",
+      "category": "Show",
+      "intrusiveness": "",
+      "access": [ "Command Center Level 2" ],
+      "name": "Retrieve DIA BGP neighbor Learned Routes",
+      "approved": true,
+      "snippets": [
+        {
+          "text": "{{show ip bgp neighbor <<NEIGHBOR_IP>> routes}}"
+        }
+      ],
+      "variables": [
+        {
+          "type": "form-combobox",
+          "variable": "NEIGHBOR_IP",
+          "label": "Neighbor IP",
+          "regex_name": "ip_v4",
+          "required": true,
+          "placeholder": "ex. 255.255.255.255",
+          "dataCommand": "show run | beg router bgp 65500",
+          "dataParserName": "DataParserForNeighborIP",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 109,
+      "platform": "CSR",
+      "category": "Show",
+      "intrusiveness": "",
+      "access": [ "Command Center Level 2" ],
+      "name": "Retrieve DIA BGP neighbor Info",
+      "approved": true,
+      "snippets": [
+        {
+          "text": "{{show ip bgp neighbor <<NEIGHBOR_IP>>}}"
+        }
+      ],
+      "variables": [
+        {
+          "type": "form-combobox",
+          "variable": "NEIGHBOR_IP",
+          "label": "Neighbor IP",
+          "regex_name": "ip_v4",
+          "required": true,
+          "placeholder": "ex. 255.255.255.255",
+          "dataCommand": "show run | beg router bgp 65500",
+          "dataParserName": "DataParserForNeighborIP",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 110,
+      "platform": "CSR",
+      "category": "Show",
+      "intrusiveness": "",
+      "access": [ "Command Center Level 2" ],
+      "name": "Check for DIA Static Route",
+      "approved": true,
+      "snippets": [
+        {
+          "text": "{{show run | inc <<NEIGHBOR_IP>>}}"
+        }
+      ],
+      "variables": [
+        {
+          "type": "form-text",
+          "variable": "NEIGHBOR_IP",
+          "label": "Network IP",
+          "regex_name": "ip_v4",
+          "required": true,
+          "placeholder": "ex. 255.255.255.255",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 111,
+      "platform": "CSR",
+      "category": "Show",
+      "intrusiveness": "",
+      "access": [ "Command Center Level 2" ],
+      "name": "Check for MPLS/IPVPN Static Route",
+      "approved": true,
+      "snippets": [
+        {
+          "text": "{{show run vrf <<VRF_NAME>> | inc <<NEIGHBOR_IP>>}}"
+        }
+      ],
+      "variables": [
+        {
+          "type": "form-combobox",
+          "variable": "VRF_NAME",
+          "label": "VRF Name",
+          "regex_name": "vrf",
+          "required": true,
+          "placeholder": "VRF",
+          "dataCommand": "show run",
+          "dataParserName": "DataParserForCSRVRF",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "NEIGHBOR_IP",
+          "label": "Neighbor IP",
+          "regex_name": "ip_v4",
+          "required": true,
+          "placeholder": "ex. 255.255.255.255",
+          "dataCommand": "show run | beg router bgp 65500",
+          "dataParserName": "DataParserForNeighborIP",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 112,
+      "platform": "CSR",
+      "category": "Show",
+      "intrusiveness": "",
+      "access": [ "Command Center Level 2" ],
+      "name": "Retrieve a PPP Interface Configuration",
+      "approved": true,
+      "snippets": [
+        {
+          "text": "{{show run interface serial <<SERIAL_INT>>}}"
+        }
+      ],
+      "variables": [
+        {
+          "type": "form-combobox",
+          "variable": "SERIAL_INT",
+          "label": "FRAME RELAY INTERFACE",
+          "regex_name": "free_type",
+          "required": true,
+          "placeholder": "#/#/#/#:0 or #/#/#",
+          "dataCommand": "show ip interface brief",
+          "dataParserName": "DataParserForCSRSerialIP",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 113,
+      "platform": "CSR",
+      "category": "Show",
+      "intrusiveness": "",
+      "access": [ "Command Center Level 2" ],
+      "name": "Retrieve a Frame Relay Interface Configuration",
+      "approved": true,
+      "snippets": [
+        {
+          "text": "{{show run interface serial <<SERIAL_INT>>.<<DLCI>>}}"
+        }
+      ],
+      "variables": [
+        {
+          "type": "form-combobox",
+          "variable": "SERIAL_INT",
+          "label": "FRAME RELAY INTERFACE",
+          "regex_name": "free_type",
+          "required": true,
+          "placeholder": "#/#/#/#:0 or #/#/#",
+          "dataCommand": "show ip interface brief",
+          "dataParserName": "DataParserForCSRSerialIP",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "DLCI",
+          "label": "DLCI",
+          "regex_name": "range_16_1007",
+          "required": true,
+          "placeholder": "DLCI",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 114,
+      "platform": "CSR",
+      "category": "Show",
+      "intrusiveness": "",
+      "access": [ "Command Center Level 2" ],
+      "name": "Retrieve a Multilink Interface Configuration",
+      "approved": true,
+      "snippets": [
+        {
+          "text": "{{show run interface multilink <<MULTI_GROUP>>}}"
+        }
+      ],
+      "variables": [
+        {
+          "type": "form-combobox",
+          "variable": "MULTI_GROUP",
+          "label": "MULTILINK GROUP #",
+          "regex_name": "digits_5",
+          "required": true,
+          "placeholder": "Multilink Group # - 5 digits",
+          "dataCommand": "show ip interface brief",
+          "dataParserName": "DataParserForCSRMultilink",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 115,
+      "platform": "CSR",
+      "category": "Show",
+      "intrusiveness": "",
+      "access": [ "Command Center Level 2" ],
+      "name": "Retrieve Multilink PPP Interface Information & Status",
+      "approved": true,
+      "snippets": [
+        {
+          "text": "{{show ppp multilink interface  multilink <<MULTI_GROUP>>}}"
+        }
+      ],
+      "variables": [
+        {
+          "type": "form-combobox",
+          "variable": "MULTI_GROUP",
+          "label": "MULTILINK GROUP #",
+          "regex_name": "digits_5",
+          "required": true,
+          "placeholder": "Multilink Group # - 5 digits",
+          "dataCommand": "show ip interface brief",
+          "dataParserName": "DataParserForCSRMultilink",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 116,
+      "platform": "CSR",
+      "category": "Show",
+      "intrusiveness": "",
+      "access": [ "Command Center Level 2" ],
+      "name": "Retrieve PPP Interface Information & Status",
+      "approved": true,
+      "snippets": [
+        {
+          "text": "{{show ppp interface serial<<SERIAL_INT>>}}"
+        }
+      ],
+      "variables": [
+        {
+          "type": "form-combobox",
+          "variable": "SERIAL_INT",
+          "label": "PPP INTERFACE",
+          "regex_name": "free_type",
+          "required": true,
+          "placeholder": "#/#/#/#:0 or #/#/#",
+          "dataCommand": "show ip interface brief",
+          "dataParserName": "DataParserForCSRSerialIP",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 117,
+      "platform": "CSR",
+      "category": "Show",
+      "intrusiveness": "",
+      "access": [ "Command Center Level 2" ],
+      "name": "Retrieve Frame Relay Interface Information & Status",
+      "approved": true,
+      "snippets": [
+        {
+          "text": "{{show interface serial<<SERIAL_INT>>.<<DLCI>>}}"
+        }
+      ],
+      "variables": [
+        {
+          "type": "form-combobox",
+          "variable": "SERIAL_INT",
+          "label": "FRAME RELAY INTERFACE",
+          "regex_name": "free_type",
+          "required": true,
+          "placeholder": "#/#/#/#:0 or #/#/#",
+          "dataCommand": "show ip interface brief",
+          "dataParserName": "DataParserForCSRSerialIP",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "DLCI",
+          "label": "DLCI",
+          "regex_name": "range_16_1007",
+          "required": true,
+          "placeholder": "DLCI",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 118,
+      "platform": "CSR",
+      "category": "Show",
+      "intrusiveness": "",
+      "access": [ "Command Center Level 2" ],
+      "name": "Retrieve Multilink Interface Information & Status",
+      "approved": true,
+      "snippets": [
+        {
+          "text": "{{show interface multilink <<MULTI_GROUP>>}}"
+        }
+      ],
+      "variables": [
+        {
+          "type": "form-combobox",
+          "variable": "MULTI_GROUP",
+          "label": "MULTILINK GROUP #",
+          "regex_name": "digits_5",
+          "required": true,
+          "placeholder": "Multilink Group # - 5 digits",
+          "dataCommand": "show ip interface brief",
+          "dataParserName": "DataParserForCSRMultilink",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 119,
+      "platform": "CSR",
+      "category": "Show",
+      "intrusiveness": "",
+      "access": [ "Command Center Level 2" ],
+      "name": "Retrieve VRF BGP Config - with VRF",
+      "approved": true,
+      "snippets": [
+        {
+          "text": "{{show run vrf <<VRF_NAME>> | begin address-family ipv4 vrf <<VRF_NAME>>}}"
+        }
+      ],
+      "variables": [
+        {
+          "type": "form-combobox",
+          "variable": "VRF_NAME",
+          "label": "VRF Name",
+          "regex_name": "vrf",
+          "required": true,
+          "placeholder": "VRF",
+          "dataCommand": "show run",
+          "dataParserName": "DataParserForCSRVRF",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 120,
+      "platform": "CSR",
+      "category": "Show",
+      "intrusiveness": "",
+      "access": [ "Command Center Level 2" ],
+      "name": "Show Run VRF",
+      "approved": true,
+      "snippets": [
+        {
+          "text": "{{show run vrf <<VRF_NAME>>}}"
+        }
+      ],
+      "variables": [
+        {
+          "type": "form-combobox",
+          "variable": "VRF_NAME",
+          "label": "VRF Name",
+          "regex_name": "vrf",
+          "required": true,
+          "placeholder": "VRF",
+          "dataCommand": "show run",
+          "dataParserName": "DataParserForCSRVRF",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 121,
+      "name": "Show Interface Brief",
+      "platform": "CSR",
+      "category": "Show",
+      "access": [ "Command Center Level 2" ],
+      "intrusiveness": "",
+      "approved": true,
+      "snippets": [
+        { "text": "{{ show ip int brief }}" }
+      ],
+      "variables": []
+    },
+    {
+      "id": 201,
+      "platform": "CSR",
+      "category": "Build",
+      "intrusiveness": "Y",
+      "access": [ "Command Center Level 4" ],
+      "name": "Build MPLS/IPVPN BGP neighbor",
+      "approved": true,
+      "snippets": [
+        { "text": "{{config terminal\n}}" },
+        { "text": "{{router bgp 65500\n}}" },
+        { "text": "{{address-family ipv4 vrf <<VRF_NAME>>\n}}" },
+        { "text": "{{redistribute static\n}}" },
+        { "text": "{{<<XO_MANAGED_CPE>>\n}}" },
+        { "text": "{{neighbor <<neighbor_ip>> remote-as <<asnumber>>\n}}" },
+        { "text": "{{neighbor <<neighbor_ip>>  <<ActivateDeactivate>>\n}}" },
+        { "text": "{{neighbor <<neighbor_ip>> send-community\n}}" },
+        { "text": "{{neighbor <<neighbor_ip>> soft-reconfiguration inbound\n}}" },
+        { "text": "{{neighbor <<neighbor_ip>> as-override\n}}" },
+        { "text": "{{neighbor <<neighbor_ip>> maximum-prefix <<maximum-prefix>>\n}}" },
+        { "text": "{{neighbor <<neighbor_ip>> route-map STD-2828-VPN-CUST-IN in\n}}" },
+        { "text": "{{end}}" }
+      ],
+      "variables": [
+        {
+          "type": "form-radio",
+          "label": "Activate/Deactivate",
+          "variable": "ActivateDeactivate",
+          "required": true,
+          "intrusiveness": "",
+          "values": [ { "value": "shutdown" } ],
+          "options": [
+            {
+              "label": "Deactivate",
+              "value": "shutdown"
+            },
+            {
+              "label": "Activate",
+              "value": "activate"
+            }
+          ]
+        },
+        {
+          "type": "form-combobox",
+          "variable": "VRF_NAME",
+          "label": "VRF",
+          "regex_name": "vrf",
+          "required": true,
+          "placeholder": "VRF",
+          "dataCommand": "show run",
+          "dataParserName": "DataParserForCSRVRF",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-combobox",
+          "variable": "neighbor_ip",
+          "label": "Neighbor IP",
+          "regex_name": "free_type",
+          "required": true,
+          "placeholder": "Neighbor IP",
+          "dataCommand": "show run | beg router bgp 65500",
+          "dataParserName": "DataParserForCSRNeighborIP",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-radio",
+          "variable": "XO_MANAGED_CPE",
+          "label": "Is XO is providing the CPE?",
+          "required": true,
+          "values": [ { "value": "" } ],
+          "options": [
+            {
+              "label": "Yes",
+              "value": "redistribute connected route-map SET-MGMT-RT"
+            },
+            {
+              "label": "No",
+              "value": "redistribute connected"
+            }
+          ]
+        },
+        {
+          "type": "form-text",
+          "variable": "maximum-prefix",
+          "label": "Maximum Prefix",
+          "regex_name": "digits_1to5",
+          "required": true,
+          "placeholder": "AS Number",
+          "values": [ { "value": "1000" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "asnumber",
+          "label": "AS Number",
+          "regex_name": "digits_1to5",
+          "required": true,
+          "placeholder": "AS Number",
+
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 203,
+      "platform": "CSR",
+      "category": "Build",
+      "intrusiveness": "Y",
+      "access": [ "Command Center Level 4" ],
+      "name": "Build New Mesh VRF",
+      "approved": true,
+      "snippets": [
+        { "text": "{{config t\n}}" },
+        { "text": "{{vrf definition <<VRF_NAME>>\n}}" },
+        { "text": "{{rd 2828:<<RD>><<VPNID>>\n}}" },
+        { "text": "{{route-target  import 2828:1<<VPNID>>\n}}" },
+        { "text": "{{route-target  export 2828:1<<VPNID>>\n}}" },
+        { "text": "{{<<XO_MANAGED_CPE>>\n}}" },
+        { "text": "{{end\n}}" }
+      ],
+      "variables": [
+        {
+          "type": "form-combobox",
+          "variable": "VRF_NAME",
+          "label": "VRF Name",
+          "regex_name": "vrf",
+          "required": true,
+          "placeholder": "VRF",
+          "dataCommand": "show run",
+          "dataParserName": "DataParserForCSRVRF",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "RD",
+          "label": "RD",
+          "regex_name": "free_type",
+          "required": true,
+          "placeholder": "ex. 65000:100",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form_linked_text",
+          "variable": "VPNID",
+          "label": "VPNID",
+          "regex_name": "free_type",
+          "required": true,
+          "placeholder": "",
+          "dataParserName": "PostProcForVPNId",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-checkbox",
+          "variable": "XO_MANAGED_CPE",
+          "label": "Is XO is providing the CPE?",
+          "required": true,
+          "values": [ { "value": "" } ],
+          "options": [
+            {
+              "label": "Yes",
+              "value": ""
+            }
+          ],
+          "checked": "route-target import 2828:92\naddress-family ipv4\nexport map SET-VPN-CONNECT-COMM\nexit-address-family\naddress-family ipv6\nexit-address-family",
+          "unchecked": ""
+        }
+      ]
+    },
+    {
+      "id": 204,
+      "platform": "CSR",
+      "category": "Build",
+      "intrusiveness": "Y",
+      "access": [ "Command Center Level 4" ],
+      "name": "Set DIA Authentication Key",
+      "approved": true,
+      "snippets": [
+        { "text": "{{config terminal\n}}" },
+        { "text": "{{router bgp 65500\n}}" },
+        { "text": "{{neighbor <<neighbor_ip>> password <<password>>\n}}" },
+        { "text": "{{end\n}}" }
+      ],
+      "variables": [
+        {
+          "type": "form-combobox",
+          "variable": "neighbor_ip",
+          "label": "Neighbor IP",
+          "regex_name": "free_type",
+          "required": true,
+          "placeholder": "Neighbor IP",
+          "dataCommand": "show run | beg router bgp 65500",
+          "dataParserName": "DataParserForCSRNeighborIP",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form_repository_check",
+          "variable": "repository_check",
+          "label": "Did you log BGP password into key respository",
+          "required": true,
+          "values": [ { "value": "no" } ],
+          "options": [
+            {
+              "label": "Yes",
+              "value": "yes"
+            },
+            {
+              "label": "No",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "type": "form_hidden_text",
+          "variable": "dummy",
+          "label": "dummy",
+          "regex_name": "free_type",
+          "required": true,
+          "dataParserName": "PostProcForRepositoryCheck",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "password",
+          "label": "Password",
+          "required": true,
+          "regex_name": "free_type",
+          "placeholder": "Password",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 205,
+      "platform": "CSR",
+      "category": "Build",
+      "intrusiveness": "Y",
+      "access": [ "Command Center Level 4" ],
+      "name": "Set MPLS/IPVPN Authentication Key",
+      "approved": true,
+      "snippets": [
+        { "text": "{{config terminal\n}}" },
+        { "text": "{{router bgp 65500\n}}" },
+        { "text": "{{address-family ipv4 vrf <<VRF_NAME>>\n}}" },
+        { "text": "{{neighbor <<neighbor_ip>> password <<password>>\n}}" },
+        { "text": "{{end\n}}" }
+      ],
+      "variables": [
+        {
+          "type": "form-combobox",
+          "variable": "VRF_NAME",
+          "label": "VRF Name",
+          "regex_name": "vrf",
+          "required": true,
+          "placeholder": "VRF",
+          "dataCommand": "show run",
+          "dataParserName": "DataParserForCSRVRF",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-combobox",
+          "variable": "neighbor_ip",
+          "label": "Neighbor IP",
+          "regex_name": "free_type",
+          "required": true,
+          "placeholder": "Neighbor IP",
+          "dataCommand": "show run | beg router bgp 65500",
+          "dataParserName": "DataParserForCSRNeighborIP",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form_repository_check",
+          "variable": "repository_check",
+          "label": "Did you log BGP password into key respository",
+          "required": true,
+          "values": [ { "value": "no" } ],
+          "options": [
+            {
+              "label": "Yes",
+              "value": "yes"
+            },
+            {
+              "label": "No",
+              "value": "no"
+            }
+          ]
+        },
+        {
+          "type": "form_hidden_text",
+          "variable": "dummy",
+          "label": "dummy",
+          "regex_name": "free_type",
+          "required": true,
+          "dataParserName": "PostProcForRepositoryCheck",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "password",
+          "label": "Password",
+          "required": true,
+          "regex_name": "free_type",
+          "placeholder": "Password",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 206,
+      "platform": "CSR",
+      "category": "Build",
+      "intrusiveness": "Y",
+      "access": [ "Command Center Level 4" ],
+      "name": "Add DIA Static Route",
+      "approved": true,
+      "snippets": [
+        { "text": "{{config terminal\n}}" },
+        { "text": "{{Ip route <<network_ip>> <<subnet>> <<next_hop_address>>\n}}" },
+        { "text": "{{end\n}}" }
+      ],
+      "variables": [
+        {
+          "type": "form-text",
+          "variable": "network_ip",
+          "label": "Neighbor IP",
+          "regex_name": "ip_v4",
+          "required": true,
+          "placeholder": "ex. 255.255.255.255",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form_grouped_combobox",
+          "variable": "subnet",
+          "label": "Subnet Mask",
+          "regex_name": "free_type",
+          "required": true,
+          "placeholder": "",
+          "dataCommand": "",
+          "dataParserName": "SubnetDataForDIAStaticRoute",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "next_hop_address",
+          "label": "Next-Hop",
+          "regex_name": "ip_v4",
+          "required": true,
+          "placeholder": "ex. 255.255.255.255",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 207,
+      "platform": "CSR",
+      "category": "Build",
+      "intrusiveness": "Y",
+      "access": [ "Command Center Level 4" ],
+      "name": "Add MPLS/IPVPN Static Route",
+      "approved": true,
+      "snippets": [
+        { "text": "{{config terminal\n}}" },
+        { "text": "{{Ip route vrf <<VRF_NAME>> <<network_ip>> <<subnet>> <<next_hop_address>>\n}}" },
+        { "text": "{{end\n}}" }
+      ],
+      "variables": [
+        {
+          "type": "form-combobox",
+          "variable": "VRF_NAME",
+          "label": "VRF Name",
+          "regex_name": "vrf",
+          "required": true,
+          "placeholder": "VRF",
+          "dataCommand": "show run",
+          "dataParserName": "DataParserForCSRVRF",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "network_ip",
+          "label": "Neighbor IP",
+          "regex_name": "ip_v4",
+          "required": true,
+          "placeholder": "ex. 255.255.255.255",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form_grouped_combobox",
+          "variable": "subnet",
+          "label": "Subnet Mask",
+          "regex_name": "free_type",
+          "required": true,
+          "placeholder": "",
+          "dataCommand": "",
+          "dataParserName": "SubnetDataForDIAStaticRoute",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "next_hop_address",
+          "label": "Next-Hop",
+          "regex_name": "ip_v4",
+          "required": true,
+          "placeholder": "ex. 255.255.255.255",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 208,
+      "platform": "CSR",
+      "category": "Build",
+      "intrusiveness": "Y",
+      "access": [ "Command Center Level 4" ],
+      "name": "Build Single MPLS Interface",
+      "approved": true,
+      "snippets": [
+        { "text": "{{config terminal\n}}" },
+        { "text": "{{interface Serial<<Serial_Interface>>\n}}" },
+        { "text": "{{description <<PSR>>:<<NSR>>:<<CKTID>>:<CUST_NAME>>\n}}" },
+        { "text": "{{vrf forwarding <<VRF_NAME>>\n}}" },
+        { "text": "{{ip address <<WAN_IP>> <<WAN_SUBNET_MASK>>\n}}" },
+        { "text": "{{no ip redirects\n}}" },
+        { "text": "{{no ip unreachables\n}}" },
+        { "text": "{{encapsulation ppp\n}}" },
+        { "text": "{{service-policy input <<XXX-INPUT-POLICY>>\n}}" },
+        { "text": "{{service-policy output <<XXX-OUT-POLICY>>\n}}" },
+        { "text": "{{end\n}}" }
+      ],
+      "variables": [
+        {
+          "type": "form-combobox",
+          "variable": "Serial_Interface",
+          "label": "Serial Interface",
+          "regex_name": "csr_interface",
+          "required": true,
+          "placeholder": "ex: 0/1/0/3:0 or 1/0/3",
+          "dataCommand": "show ip interface brief",
+          "dataParserName": "DataParserForCSRSerialIP",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "PSR",
+          "label": "PSR",
+          "regex_name": "free_type",
+          "required": true,
+          "placeholder": "",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "NSR",
+          "label": "NSR",
+          "regex_name": "free_type",
+          "required": true,
+          "placeholder": "",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "CKTID",
+          "label": "CKT ID",
+          "regex_name": "free_type",
+          "required": false,
+          "placeholder": "",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "CUST_NAME",
+          "label": "CUST NAME",
+          "regex_name": "free_type",
+          "required": false,
+          "placeholder": "",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-combobox",
+          "variable": "VRF_NAME",
+          "label": "VRF Name",
+          "regex_name": "vrf",
+          "required": true,
+          "placeholder": "VRF",
+          "dataCommand": "show run",
+          "dataParserName": "DataParserForCSRVRF",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "WAN_IP",
+          "label": "WAN IP",
+          "regex_name": "ip_v4",
+          "required": true,
+          "placeholder": "ex. 255.255.255.255",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "WAN_SUBNET_MASK",
+          "label": "WAN SUBNET MASK",
+          "regex_name": "ip_v4",
+          "required": true,
+          "placeholder": "ex. 255.255.255.255",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "XXX-INPUT-POLICY",
+          "label": "Service-policy input",
+          "regex_name": "string_no_spaces",
+          "required": false,
+          "placeholder": "",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "XXX-OUT-POLICY",
+          "label": "Service-policy output",
+          "regex_name": "string_no_spaces",
+          "required": true,
+          "placeholder": "",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 209,
+      "platform": "CSR",
+      "category": "Build",
+      "intrusiveness": "Y",
+      "access": [ "Command Center Level 4" ],
+      "name": "Build Multilink Group (ALL products)",
+      "approved": true,
+      "snippets": [
+        { "text": "{{ config terminal }}\n" },
+        { "text": "{{ ! }}\n" },
+        { "text": "{{ interface Serial <<serial_interface1>> }}\n" },
+        { "text": "{{ description \"<<PSR>>:<<NSR>>:<<CKTID1>>:<<CUST_NAME>>\" }}\n" },
+        { "text": "{{ mtu 1590 }}\n" },
+        { "text": "{{ no ip address }}\n" },
+        { "text": "{{ no ip redirects }}\n" },
+        { "text": "{{ encapsulation ppp }}\n" },
+        { "text": "{{ ppp multilink }}\n" },
+        { "text": "{{ ppp multilink group <<multilink_group>> }}\n" },
+        { "text": "{{ ppp multilink fragment size 1590 }}\n" },
+        { "text": "{{ ! }}\n" },
+        { "text": "{{ interface Serial <<serial_interface2>> }}\n" },
+        { "text": "{{ description \"<<PSR>>:<<NSR>>:<<CKTID2>>:<<CUST_NAME>>\" }}\n" },
+        { "text": "{{ mtu 1590 }}\n" },
+        { "text": "{{ no ip address }}\n" },
+        { "text": "{{ no ip redirects }}\n" },
+        { "text": "{{ encapsulation ppp }}\n" },
+        { "text": "{{ ppp multilink }}\n" },
+        { "text": "{{ ppp multilink group <<multilink_group>> }}\n" },
+        { "text": "{{ ppp multilink fragment size 1590 }}\n" },
+        { "text": "{{ ! \n interface Serial <<serial_interface3>> \ndescription \"<<PSR>>:<<NSR>>:<<CKTID3>>:<<CUST_NAME>>\" \n mtu 1590 \n no ip address \n no ip redirects \n encapsulation ppp \n ppp multilink \n ppp multilink group <<multilink_group>> \n ppp multilink fragment size 1590 }}\n" },
+        { "text": "{{ ! \n interface Serial <<serial_interface4>> \ndescription \"<<PSR>>:<<NSR>>:<<CKTID4>>:<<CUST_NAME>>\" \n mtu 1590 \n no ip address \n no ip redirects \n encapsulation ppp \n ppp multilink \n ppp multilink group <<multilink_group>> \n ppp multilink fragment size 1590 }}\n" },
+        { "text": "{{ ! }}\n" },
+        { "text": "{{ interface Multilink <<multilink_group>> }}\n" },
+        { "text": "{{ no shut }}\n" },
+        { "text": "{{ description \"<<PSR>>:<<NSR>>:<<CKTID1>>:<<CUST_NAME>>\" }}\n" },
+        { "text": "{{ ip address <<PE_WAN_IP>> <<PE_WAN_SUBNET>> }}\n" },
+        { "text": "{{ vrf forwarding <<VRF_NAME>> }}\n" },
+        { "text": "{{ no ip redirects }}\n" },
+        { "text": "{{ no ip unreachables }}\n" },
+        { "text": "{{ ip verify unicast source reachable-via rx }}\n" },
+        { "text": "{{ ppp multilink }}\n" },
+        { "text": "{{ ppp multilink group <<multilink_group>> }}\n" },
+        { "text": "{{ service-policy input <<XXX-INPUT-POLICY>> }}\n" },
+        { "text": "{{ service-policy output <<XXX-OUT-POLICY>> }}\n" },
+        { "text": "{{ ! }}\n" },
+        { "text": "{{ end }}\n" },
+        { "text": "{{ wr mem }}" }
+      ],
+      "variables": [
+        {
+          "type": "form-text",
+          "variable": "multilink_group",
+          "label": "Group #",
+          "regex_name": "digits_5",
+          "required": true,
+          "placeholder": "10000 - 99999",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "PSR",
+          "label": "PSR",
+          "regex_name": "free_type",
+          "required": true,
+          "placeholder": "",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "NSR",
+          "label": "NSR",
+          "regex_name": "free_type",
+          "required": true,
+          "placeholder": "",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "CUST_NAME",
+          "label": "CUST NAME",
+          "regex_name": "free_type",
+          "required": true,
+          "placeholder": "",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "VRF_NAME",
+          "label": "VRF Name",
+          "regex_name": "free_type",
+          "required": false,
+          "placeholder": "",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "PE_WAN_IP",
+          "label": "PE WAN IP",
+          "regex_name": "ip_v4",
+          "required": true,
+          "placeholder": "ex. 255.255.255.255",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "PE_WAN_SUBNET",
+          "label": "PE WAN SUBNET",
+          "regex_name": "ip_v4",
+          "required": true,
+          "placeholder": "ex. 255.255.255.255",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-dropdown",
+          "variable": "XXX-INPUT-POLICY",
+          "label": "Input Policy",
+          "regex_name": "string_no_spaces",
+          "required": false,
+          "placeholder": "",
+          "dataCommandRefreshFlag": "always",
+          "dataCommand": "show run policy-map | inc IN",
+          "dataParserName": "DP_CSR_POLICY_IN",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-dropdown",
+          "variable": "XXX-OUT-POLICY",
+          "label": "Output Policy",
+          "regex_name": "string_no_spaces",
+          "required": true,
+          "placeholder": "",
+          "dataCommandRefreshFlag": "always",
+          "dataCommand": "show run policy-map | inc OUT",
+          "dataParserName": "DP_CSR_POLICY_OUT",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-combobox",
+          "variable": "serial_interface1",
+          "label": "Serial Interface 1",
+          "regex_name": "free_type",
+          "required": true,
+          "placeholder": "ex: 0/1/0/3:0 or 1/0/3",
+          "dataCommand": "show ip interface brief",
+          "dataParserName": "DataParserForCSRSerialIP",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "CKTID1",
+          "label": "CKT ID 1",
+          "regex_name": "free_type",
+          "required": true,
+          "placeholder": "",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-combobox",
+          "variable": "serial_interface2",
+          "label": "Serial Interface 2",
+          "regex_name": "free_type",
+          "required": true,
+          "placeholder": "ex: 0/1/0/3:0 or 1/0/3",
+          "dataCommand": "show ip interface brief",
+          "dataParserName": "DataParserForCSRSerialIP",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "CKTID2",
+          "label": "CKT ID 2",
+          "regex_name": "free_type",
+          "required": true,
+          "placeholder": "",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-combobox",
+          "variable": "serial_interface3",
+          "label": "Serial Interface 3",
+          "regex_name": "free_type",
+          "required": false,
+          "placeholder": "ex: 0/1/0/3:0 or 1/0/3",
+          "dataCommand": "show ip interface brief",
+          "dataParserName": "DataParserForCSRSerialIP",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "CKTID3",
+          "label": "CKT ID 3",
+          "regex_name": "free_type",
+          "required": false,
+          "placeholder": "",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-combobox",
+          "variable": "serial_interface4",
+          "label": "Serial Interface 4",
+          "regex_name": "free_type",
+          "required": false,
+          "placeholder": "ex: 0/1/0/3:0 or 1/0/3",
+          "dataCommand": "show ip interface brief",
+          "dataParserName": "DataParserForCSRSerialIP",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "CKTID4",
+          "label": "CKT ID 4",
+          "regex_name": "free_type",
+          "required": false,
+          "placeholder": "",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 210,
+      "platform": "CSR",
+      "category": "Build",
+      "intrusiveness": "Y",
+      "access": [ "Command Center Level 4" ],
+      "name": "Build Frame-Relay Interface (ALL products)",
+      "approved": true,
+      "snippets": [
+        { "text": "{{config terminal}}\n" },
+        { "text": "{{interface Serial<<SERIAL_INT>>}}\n" },
+        { "text": "{{description \"<<PSR>>:<<NSR>>:<<CKTID>>:<<CUSTNAME>>\"}}\n" },
+        { "text": "{{no ip address}}\n" },
+        { "text": "{{encapsulation frame-relay IETF}}\n" },
+        { "text": "{{frame-relay lmi-type ansi}}\n" },
+        { "text": "{{frame-relay intf-type dce}}\n" },
+        { "text": "{{service-policy output <<XXX-OUT-POLICY>>}}\n" },
+        { "text": "{{exit}}\n" },
+        { "text": "{{interface Serial<<SERIAL_INT>>.<<VRF_DLCI>> point-to-point}}\n" },
+        { "text": "{{description \"<<PSR>>:<<NSR>>:<<CKTID>>:<<CUSTNAME>>\"}}\n" },
+        { "text": "{{vrf forwarding <<VRF_NAME>>}}\n" },
+        { "text": "{{ip address <<PE_VRF_WAN_IP>> <<PE_VRF_WAN_SUBNET>>}}\n" },
+        { "text": "{{no ip redirects}}\n" },
+        { "text": "{{no ip unreachables}}\n" },
+        { "text": "{{frame-relay interface-dlci <<VRF_DLCI>>}}\n" },
+        { "text": "{{service-policy input <<XXX-IN-POLICY>>}}\n" },
+        { "text": "{{exit}}\n" },
+        { "text": "{{interface Serial<<SERIAL_INT>>.<<DIA_DLCI>> point-to-point}}\n" },
+        { "text": "{{description \"<<PSR>>:<<NSR>>:<<CKTID>>:<<CUSTNAME>>\"}}\n" },
+        { "text": "{{ip address <<PE_DIA_WAN_IP>> <<PE_DIA_WAN_SUBNET>>}}\n" },
+        { "text": "{{no ip redirects}}\n" },
+        { "text": "{{no ip unreachables}}\n" },
+        { "text": "{{ip verify unicast source reachable-via rx}}\n" },
+        { "text": "{{frame-relay interface-dlci <<DIA_DLCI>>}}\n" },
+        { "text": "{{service-policy input <<DIA-IN-POLICY>>}}\n" },
+        { "text": "{{end}}" }
+      ],
+      "variables": [
+        {
+          "type": "form-combobox",
+          "variable": "SERIAL_INT",
+          "label": "Serial Interface",
+          "regex_name": "csr_interface",
+          "required": true,
+          "placeholder": "ex: 0/1/0/3:0 or 1/0/3",
+          "dataCommand": "show ip interface brief",
+          "dataParserName": "DataParserForCSRSerialIP",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "PSR",
+          "label": "PSR",
+          "regex_name": "numeric_only",
+          "required": true,
+          "placeholder": "PSR",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "NSR",
+          "label": "NSR",
+          "regex_name": "num-dash",
+          "required": true,
+          "placeholder": "NSR",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "CKTID",
+          "label": "Circuit ID",
+          "regex_name": "free_type",
+          "required": true,
+          "placeholder": "Circuit ID",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "CUSTNAME",
+          "label": "Customer Name",
+          "regex_name": "free_type",
+          "required": true,
+          "placeholder": "Customer Name",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-dropdown",
+          "variable": "XXX-OUT-POLICY",
+          "label": "Service-policy output",
+          "regex_name": "string_no_spaces",
+          "required": true,
+          "placeholder": "",
+          "dataCommandRefreshFlag": "always",
+          "dataCommand": "show run policy-map | inc OUT",
+          "dataParserName": "DP_CSR_POLICY_OUT",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "VRF_DLCI",
+          "label": "VRF DLCI",
+          "regex_name": "numeric_only",
+          "required": true,
+          "placeholder": "VRF DLCI",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-combobox",
+          "variable": "VRF_NAME",
+          "label": "VRF Name",
+          "regex_name": "vrf",
+          "required": true,
+          "placeholder": "VRF",
+          "dataCommand": "show run",
+          "dataParserName": "DataParserForCSRVRF",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "PE_VRF_WAN_IP",
+          "label": "PE VRF WAN IP",
+          "regex_name": "free_type",
+          "required": true,
+          "placeholder": "PE VRF WAN IP",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "PE_VRF_WAN_SUBNET",
+          "label": "PE VRF WAN SUBNET",
+          "regex_name": "free_type",
+          "required": true,
+          "placeholder": "PE VRF WAN SUBNET",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-dropdown",
+          "variable": "XXX-IN-POLICY",
+          "label": "VRF Service-policy input",
+          "regex_name": "string_no_spaces",
+          "required": false,
+          "placeholder": "",
+          "dataCommandRefreshFlag": "always",
+          "dataCommand": "show run policy-map | inc IN",
+          "dataParserName": "DP_CSR_POLICY_IN",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "DIA_DLCI",
+          "label": "DIA DLCI",
+          "regex_name": "numeric_only",
+          "required": true,
+          "placeholder": "DIA DLCI",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-dropdown",
+          "variable": "DIA-IN-POLICY",
+          "label": "DIA Service-policy input",
+          "regex_name": "string_no_spaces",
+          "required": false,
+          "placeholder": "",
+          "dataCommandRefreshFlag": "always",
+          "dataCommand": "show run policy-map | inc IN",
+          "dataParserName": "DP_CSR_POLICY_IN",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "PE_DIA_WAN_IP",
+          "label": "PE DIA WAN IP",
+          "regex_name": "free_type",
+          "required": true,
+          "placeholder": "PE VRF WAN IP",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "PE_DIA_WAN_SUBNET",
+          "label": "PE VRF WAN SUBNET",
+          "regex_name": "free_type",
+          "required": true,
+          "placeholder": "PE DIA WAN SUBNET",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 211,
+      "platform": "CSR",
+      "category": "Build",
+      "intrusiveness": "Y",
+      "access": [ "Command Center Level 4" ],
+      "name": "Build Single PPP Interface (ALL products)",
+      "approved": true,
+      "snippets": [
+        { "text": "{{config terminal\n}}" },
+        { "text": "{{interface Serial<<Serial_Interface>>\n}}" },
+        { "text": "{{description <<PSR>>:<<NSR>>:<<CKTID>>:<<CUST_NAME>>\n}}" },
+        { "text": "{{vrf forwarding <<VRF_NAME>>\n}}" },
+        { "text": "{{ip address <<WAN_IP>> <<WAN_SUBNET_MASK>>\n}}" },
+        { "text": "{{no ip redirects\n}}" },
+        { "text": "{{no ip unreachables\n}}" },
+        { "text": "{{encapsulation ppp\n}}" },
+        { "text": "{{service-policy input <<XXX-INPUT-POLICY>>\n}}" },
+        { "text": "{{service-policy output <<XXX-OUT-POLICY>>\n}}" },
+        { "text": "{{end}}" }
+      ],
+      "variables": [
+        {
+          "type": "form-combobox",
+          "variable": "Serial_Interface",
+          "label": "Serial Interface",
+          "regex_name": "csr_interface",
+          "required": true,
+          "placeholder": "ex: 0/1/0/3:0 or 1/0/3",
+          "dataCommand": "show ip interface brief",
+          "dataParserName": "DataParserForCSRSerialIP",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "PSR",
+          "label": "PSR",
+          "regex_name": "free_type",
+          "required": true,
+          "placeholder": "",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "NSR",
+          "label": "NSR",
+          "regex_name": "free_type",
+          "required": true,
+          "placeholder": "",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "CKTID",
+          "label": "CKT ID",
+          "regex_name": "free_type",
+          "required": false,
+          "placeholder": "",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "CUST_NAME",
+          "label": "CUST NAME",
+          "regex_name": "free_type",
+          "required": false,
+          "placeholder": "",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-combobox",
+          "variable": "VRF_NAME",
+          "label": "VRF Name",
+          "regex_name": "vrf",
+          "required": false,
+          "placeholder": "VRF",
+          "dataCommand": "show run",
+          "dataParserName": "DataParserForCSRVRF",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "WAN_IP",
+          "label": "WAN IP",
+          "regex_name": "ip_v4",
+          "required": true,
+          "placeholder": "ex. 255.255.255.255",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "WAN_SUBNET_MASK",
+          "label": "WAN SUBNET MASK",
+          "regex_name": "ip_v4",
+          "required": true,
+          "placeholder": "ex. 255.255.255.255",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-dropdown",
+          "variable": "XXX-INPUT-POLICY",
+          "label": "Service-policy input",
+          "regex_name": "free_type",
+          "required": false,
+          "placeholder": "",
+          "dataCommandRefreshFlag": "always",
+          "dataCommand": "show run policy-map | inc IN",
+          "dataParserName": "DP_CSR_POLICY_IN",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-dropdown",
+          "variable": "XXX-OUT-POLICY",
+          "label": "Service-policy output",
+          "regex_name": "free_type",
+          "required": true,
+          "placeholder": "",
+          "dataCommandRefreshFlag": "always",
+          "dataCommand": "show run policy-map | inc OUT",
+          "dataParserName": "DP_CSR_POLICY_OUT",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 301,
+      "platform": "CSR",
+      "category": "Delete",
+      "intrusiveness": "Y",
+      "access": [ "Command Center Level 4" ],
+      "name": "Remove MPLS/IPVPN BGP neighbor Configuration",
+      "approved": true,
+      "snippets": [
+        { "text": "{{config terminal\n}}" },
+        { "text": "{{router bgp 65500\n}}" },
+        { "text": "{{address-family ipv4 vrf <<VRF_NAME>>\n}}" },
+        { "text": "{{no neighbor <<neighbor_ip>>\n}}" },
+        { "text": "{{end\n}}" }
+
+      ],
+      "variables": [
+        {
+          "type": "form-combobox",
+          "variable": "VRF_NAME",
+          "label": "VRF Name",
+          "regex_name": "vrf",
+          "required": true,
+          "placeholder": "VRF",
+          "dataCommand": "show run",
+          "dataParserName": "DataParserForCSRVRF",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-combobox",
+          "variable": "neighbor_ip",
+          "label": "Neighbor IP",
+          "regex_name": "free_type",
+          "required": true,
+          "placeholder": "Neighbor IP",
+          "dataCommand": "show run | beg router bgp 65500",
+          "dataParserName": "DataParserForCSRNeighborIP",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 302,
+      "platform": "CSR",
+      "category": "Delete",
+      "intrusiveness": "Y",
+      "access": [ "Command Center Level 4" ],
+      "name": "Remove DIA BGP neighbor Configuration",
+      "approved": true,
+      "snippets": [
+        { "text": "{{config terminal\n}}" },
+        { "text": "{{router bgp 65500\n}}" },
+        { "text": "{{address-family ipv4\n}}" },
+        { "text": "{{no neighbor <<neighbor_ip>>\n}}" },
+        { "text": "{{end\n}}" }
+
+      ],
+      "variables": [
+        {
+          "type": "form-combobox",
+          "variable": "neighbor_ip",
+          "label": "Neighbor IP",
+          "regex_name": "free_type",
+          "required": true,
+          "placeholder": "Neighbor IP",
+          "dataCommand": "show run | beg router bgp 65500",
+          "dataParserName": "DataParserForCSRNeighborIP",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 303,
+      "platform": "CSR",
+      "category": "Delete",
+      "intrusiveness": "Y",
+      "access": [ "Command Center Level 4" ],
+      "name": "Remove DIA Static Route",
+      "approved": true,
+      "snippets": [
+        { "text": "{{config terminal\n}}" },
+        { "text": "{{no ip route <<network_ip>> <<subnet>> <<next_hop_address>>\n}}" },
+        { "text": "{{end\n}}" }
+
+      ],
+      "variables": [
+        {
+          "type": "form-text",
+          "variable": "network_ip",
+          "label": "Network IP",
+          "regex_name": "ip_v4",
+          "required": true,
+          "placeholder": "ex. 255.255.255.255",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form_grouped_combobox",
+          "variable": "subnet",
+          "label": "Subnet Mask",
+          "regex_name": "free_type",
+          "required": true,
+          "placeholder": "",
+          "dataCommand": "",
+          "dataParserName": "SubnetDataForDIAStaticRoute",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "next_hop_address",
+          "label": "Next-Hop",
+          "regex_name": "ip_v4",
+          "required": true,
+          "placeholder": "ex. 255.255.255.255",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 304,
+      "platform": "CSR",
+      "category": "Delete",
+      "intrusiveness": "Y",
+      "access": [ "Command Center Level 4" ],
+      "name": "Remove MPLS/IPVPN Static Route",
+      "approved": true,
+      "snippets": [
+        { "text": "{{config terminal\n}}" },
+        { "text": "{{no ip route vrf <<VRF_NAME>> <<network_ip>> <<subnet>> <<next_hop_address>>\n}}" },
+        { "text": "{{end\n}}" }
+
+      ],
+      "variables": [
+        {
+          "type": "form-combobox",
+          "variable": "VRF_NAME",
+          "label": "VRF Name",
+          "regex_name": "vrf",
+          "required": true,
+          "placeholder": "VRF",
+          "dataCommand": "show run",
+          "dataParserName": "DataParserForCSRVRF",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "network_ip",
+          "label": "Network IP",
+          "regex_name": "ip_v4",
+          "required": true,
+          "placeholder": "ex. 255.255.255.255",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form_grouped_combobox",
+          "variable": "subnet",
+          "label": "Subnet Mask",
+          "regex_name": "free_type",
+          "required": true,
+          "placeholder": "",
+          "dataCommand": "",
+          "dataParserName": "SubnetDataForDIAStaticRoute",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "next_hop_address",
+          "label": "Next-Hop",
+          "regex_name": "ip_v4",
+          "required": true,
+          "placeholder": "ex. 255.255.255.255",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 305,
+      "platform": "CSR",
+      "category": "Delete",
+      "intrusiveness": "Y",
+      "access": [ "Command Center Level 4" ],
+      "name": "Delete Single standard Interface",
+      "approved": true,
+      "snippets": [
+        { "text": "{{config terminal\n}}" },
+        { "text": "{{default interface Serial<<serial_interface>>\n}}" },
+        { "text": "{{end\n}}" }
+
+      ],
+      "variables": [
+        {
+          "type": "form-combobox",
+          "variable": "serial_interface",
+          "label": "Serial Interface",
+          "regex_name": "csr_interface",
+          "required": true,
+          "placeholder": "ex: 0/1/0/3:0 or 1/0/3",
+          "dataCommand": "show ip interface brief",
+          "dataParserName": "DataParserForCSRSerialIP",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 306,
+      "platform": "CSR",
+      "category": "Delete",
+      "intrusiveness": "Y",
+      "access": [ "Command Center Level 4" ],
+      "name": "Delete Single Frame Relay Interface",
+      "approved": true,
+      "snippets": [
+        { "text": "{{config terminal\n}}" },
+        { "text": "{{ no interface Serial<<serial_interface>>.<<DIA_DLCI>> point-to-point \n}}" },
+        { "text": "{{end\n}}" }
+
+      ],
+      "variables": [
+        {
+          "type": "form-combobox",
+          "variable": "serial_interface",
+          "label": "Frame Relay Interface",
+          "regex_name": "csr_interface",
+          "required": true,
+          "placeholder": "ex: 0/1/0/3:0 or 1/0/3",
+          "dataCommand": "show ip interface brief",
+          "dataParserName": "DataParserForCSRSerialIP",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "DIA_DLCI",
+          "label": "DLCI",
+          "regex_name": "range_16_1007",
+          "required": true,
+          "placeholder": "",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 307,
+      "platform": "CSR",
+      "category": "Delete",
+      "intrusiveness": "Y",
+      "access": [ "Command Center Level 4" ],
+      "name": "Delete Multilink Interface Bundle",
+      "approved": true,
+      "device": null,
+      "resource_hog": false,
+      "snippets": [
+        { "text": "{{config terminal}}\n" },
+        { "text": "{{default int s<<interface1>>}}\n" },
+        { "text": "{{default int s<<interface2>>}}\n" },
+        { "text": "{{default int s<<interface3>>}}\n" },
+        { "text": "{{no interface Multilink <<multilink_group>>}}\n" },
+        { "text": "{{end}}" }
+      ],
+      "variables": [
+        {
+          "type": "form-text",
+          "variable": "interface1",
+          "label": "DEFAULT  INTERFACE",
+          "regex_name": "csr_interface",
+          "required": true,
+          "placeholder": "#/#/#/#:0 or #/#/#",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "interface2",
+          "label": "DEFAULT  INTERFACE",
+          "regex_name": "csr_interface",
+          "required": false,
+          "placeholder": "#/#/#/#:0 or #/#/#",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "interface3",
+          "label": "DEFAULT  INTERFACE",
+          "regex_name": "csr_interface",
+          "required": false,
+          "placeholder": "#/#/#/#:0 or #/#/#",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "multilink_group",
+          "label": "Multilink Group #",
+          "regex_name": "digits_5",
+          "required": true,
+          "placeholder": "",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 401,
+      "platform": "CSR",
+      "category": "Edit",
+      "intrusiveness": "Y",
+      "access": [ "Command Center Level 4" ],
+      "name": "Activate existing MPLS/IPVPN BGP neighbor",
+      "approved": true,
+      "device": null,
+      "resource_hog": false,
+      "snippets": [
+        { "text": "{{config terminal}}\n" },
+        { "text": "{{router bgp 65500}}\n" },
+        { "text": "{{address-family ipv4 vrf <<VRF_NAME>>}}\n" },
+        { "text": "{{neighbor <<NEIGHBOR_IP>> activate}}\n" },
+        { "text": "{{end}}" }
+      ],
+      "variables": [
+        {
+          "type": "form-combobox",
+          "variable": "NEIGHBOR_IP",
+          "label": "Neighbor IP",
+          "regex_name": "ip_v4",
+          "required": true,
+          "placeholder": "ex. 255.255.255.255",
+          "dataCommand": "show run | beg router bgp 65500",
+          "dataParserName": "DataParserForNeighborIP",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-combobox",
+          "variable": "VRF_NAME",
+          "label": "VRF Name",
+          "regex_name": "vrf",
+          "required": true,
+          "placeholder": "VRF",
+          "dataCommand": "show run",
+          "dataParserName": "DataParserForCSRVRF",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 4011,
+      "platform": "CSR",
+      "category": "Edit",
+      "intrusiveness": "Y",
+      "access": [ "Command Center Level 4" ],
+      "name": "Deactivate existing MPLS/IPVPN BGP neighbor",
+      "approved": true,
+      "device": null,
+      "resource_hog": false,
+      "snippets": [
+        { "text": "{{config terminal}}\n" },
+        { "text": "{{router bgp 65500}}\n" },
+        { "text": "{{address-family ipv4 vrf <<VRF_NAME>>}}\n" },
+        { "text": "{{neighbor <<NEIGHBOR_IP>> shutdown}}\n" },
+        { "text": "{{end}}" }
+      ],
+      "variables": [
+        {
+          "type": "form-combobox",
+          "variable": "VRF_NAME",
+          "label": "VRF Name",
+          "regex_name": "vrf",
+          "required": true,
+          "placeholder": "VRF",
+          "dataCommand": "show run",
+          "dataParserName": "DataParserForCSRVRF",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-combobox",
+          "variable": "NEIGHBOR_IP",
+          "label": "Neighbor IP",
+          "regex_name": "ip_v4",
+          "required": true,
+          "placeholder": "ex. 255.255.255.255",
+          "dataCommand": "show run | beg router bgp 65500",
+          "dataParserName": "DataParserForNeighborIP",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 402,
+      "platform": "CSR",
+      "category": "Edit",
+      "intrusiveness": "Y",
+      "access": [ "Command Center Level 4" ],
+      "name": "Activate existing DIA BGP neighbor",
+      "approved": true,
+      "device": null,
+      "resource_hog": false,
+      "snippets": [
+        { "text": "{{config terminal}}\n" },
+        { "text": "{{router bgp 65500}}\n" },
+        { "text": "{{address-family ipv4}}\n" },
+        { "text": "{{neighbor <<NEIGHBOR_IP>> activate}}\n" },
+        { "text": "{{end}}" }
+      ],
+      "variables": [
+        {
+          "type": "form-combobox",
+          "variable": "NEIGHBOR_IP",
+          "label": "Neighbor IP",
+          "regex_name": "ip_v4",
+          "required": true,
+          "placeholder": "ex. 255.255.255.255",
+          "dataCommand": "show run | beg router bgp 65500",
+          "dataParserName": "DataParserForNeighborIP",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 4021,
+      "platform": "CSR",
+      "category": "Edit",
+      "intrusiveness": "Y",
+      "access": [ "Command Center Level 4" ],
+      "name": "Deactivate existing DIA BGP neighbor",
+      "approved": true,
+      "device": null,
+      "resource_hog": false,
+      "snippets": [
+        { "text": "{{config terminal}}\n" },
+        { "text": "{{router bgp 65500}}\n" },
+        { "text": "{{address-family ipv4}}\n" },
+        { "text": "{{neighbor <<NEIGHBOR_IP>> shutdown}}\n" },
+        { "text": "{{end}}" }
+      ],
+      "variables": [
+        {
+          "type": "form-combobox",
+          "variable": "NEIGHBOR_IP",
+          "label": "Neighbor IP",
+          "regex_name": "ip_v4",
+          "required": true,
+          "placeholder": "ex. 255.255.255.255",
+          "dataCommand": "show run | beg router bgp 65500",
+          "dataParserName": "DataParserForNeighborIP",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 403,
+      "platform": "CSR",
+      "category": "Edit",
+      "intrusiveness": "Y",
+      "access": [ "Command Center Level 4" ],
+      "name": "Edit AS# of MPLS/IPVPN BGP Neighbor",
+      "approved": true,
+      "device": null,
+      "resource_hog": false,
+      "snippets": [
+        { "text": "{{config terminal}}\n" },
+        { "text": "{{router bgp 65500}}\n" },
+        { "text": "{{address-family ipv4 vrf <<VRF_NAME>>}}\n" },
+        { "text": "{{neighbor <<NEIGHBOR_IP>> shutdown}}\n" },
+        { "text": "{{neighbor <<NEIGHBOR_IP>> remote-as <<AS_NUMBER>>}}\n" },
+        { "text": "{{no neighbor <<NEIGHBOR_IP>> shutdown}}\n" },
+        { "text": "{{end}}" }
+      ],
+      "variables": [
+        {
+          "type": "form-combobox",
+          "variable": "VRF_NAME",
+          "label": "VRF Name",
+          "regex_name": "vrf",
+          "required": true,
+          "placeholder": "VRF",
+          "dataCommand": "show run",
+          "dataParserName": "DataParserForCSRVRF",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-combobox",
+          "variable": "NEIGHBOR_IP",
+          "label": "Neighbor IP",
+          "regex_name": "ip_v4",
+          "required": true,
+          "placeholder": "ex. 255.255.255.255",
+          "dataCommand": "show run | beg router bgp 65500",
+          "dataParserName": "DataParserForNeighborIP",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "AS_NUMBER",
+          "label": "ASN",
+          "regex_name": "free_type",
+          "required": true,
+          "placeholder": "AS Number",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 404,
+      "platform": "CSR",
+      "category": "Edit",
+      "intrusiveness": "Y",
+      "access": [ "Command Center Level 4" ],
+      "name": "Edit AS# of DIA BGP Neighbor",
+      "approved": true,
+      "device": null,
+      "resource_hog": false,
+      "snippets": [
+        { "text": "{{config terminal}}\n" },
+        { "text": "{{router bgp 65500}}\n" },
+        { "text": "{{neighbor <<NEIGHBOR_IP>> shutdown}}\n" },
+        { "text": "{{neighbor <<NEIGHBOR_IP>> remote-as <<AS_NUMBER>>}}\n" },
+        { "text": "{{no neighbor <<NEIGHBOR_IP>> shutdown}}\n" },
+        { "text": "{{end}}" }
+      ],
+      "variables": [
+        {
+          "type": "form-combobox",
+          "variable": "NEIGHBOR_IP",
+          "label": "Neighbor IP",
+          "regex_name": "ip_v4",
+          "required": true,
+          "placeholder": "ex. 255.255.255.255",
+          "dataCommand": "show run | beg router bgp 65500",
+          "dataParserName": "DataParserForNeighborIP",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "AS_NUMBER",
+          "label": "ASN",
+          "regex_name": "free_type",
+          "required": true,
+          "placeholder": "AS Number",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 405,
+      "platform": "CSR",
+      "category": "Edit",
+      "intrusiveness": "Y",
+      "access": [ "Command Center Level 4" ],
+      "name": "Add Interface to Multilink Group",
+      "approved": true,
+      "device": null,
+      "resource_hog": false,
+      "snippets": [
+        { "text": "{{config terminal}}\n" },
+        { "text": "{{int serial <<SERIAL_INT>>}}\n" },
+        { "text": "{{description \"<<PSR>>:<<NSR>>:<<CKTID>>:<<CUSTNAME>>\" }}\n" },
+        { "text": "{{no ip address}}\n" },
+        { "text": "{{no ip redirects}}\n" },
+        { "text": "{{no ip unreachables}}\n" },
+        { "text": "{{encapsulation ppp}}\n" },
+        { "text": "{{ppp multilink}}\n" },
+        { "text": "{{ppp multilink group <<MULTI_GROUP>>}}\n" },
+        { "text": "{{end }}" }
+      ],
+      "variables": [
+        {
+          "type": "form-combobox",
+          "variable": "SERIAL_INT",
+          "label": "PPP INTERFACE",
+          "regex_name": "free_type",
+          "required": true,
+          "placeholder": "#/#/#/#:0 or #/#/#",
+          "dataCommand": "show ip interface brief",
+          "dataParserName": "DataParserForCSRSerialIP",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-combobox",
+          "variable": "MULTI_GROUP",
+          "label": "MULTILINK GROUP #",
+          "regex_name": "digits_5",
+          "required": true,
+          "placeholder": "Multilink Group # - 5 digits",
+          "dataCommand": "show ip interface brief",
+          "dataParserName": "DataParserForCSRMultilink",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "PSR",
+          "label": "PSR",
+          "regex_name": "free_type",
+          "required": true,
+          "placeholder": "PSR",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "NSR",
+          "label": "NSR",
+          "regex_name": "free_type",
+          "required": true,
+          "placeholder": "NSR",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "CKTID",
+          "label": "Circuit ID",
+          "regex_name": "free_type",
+          "required": true,
+          "placeholder": "Circuit ID",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "CUSTNAME",
+          "label": "Customer Name",
+          "regex_name": "free_type",
+          "required": true,
+          "placeholder": "Customer Name",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 406,
+      "platform": "CSR",
+      "category": "Edit",
+      "intrusiveness": "Y",
+      "access": [ "Command Center Level 4" ],
+      "name": "Change Interface Multilink Unicast Mode",
+      "approved": true,
+      "device": null,
+      "resource_hog": false,
+      "snippets": [
+        { "text": "{{config terminal}}\n" },
+        { "text": "{{interface Multilink <<MULTI_GROUP>>}}\n" },
+        { "text": "{{ip verify unicast source reachable-via <<UNICAST_MODE>>}}\n" },
+        { "text": "{{end}}" }
+      ],
+      "variables": [
+        {
+          "type": "form-combobox",
+          "variable": "MULTI_GROUP",
+          "label": "MULTILINK GROUP #",
+          "regex_name": "digits_5",
+          "required": true,
+          "placeholder": "Multilink Group # - 5 digits",
+          "dataCommand": "show ip interface brief",
+          "dataParserName": "DataParserForCSRMultilink",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-select",
+          "variable": "UNICAST_MODE",
+          "label": "UNICAST MODE",
+          "regex_name": "free_type",
+          "required": true,
+          "placeholder": "UNICAST MODE",
+          "values": [ { "value": "" } ],
+          "options": [
+            {
+              "label": "any",
+              "value": "any"
+            },
+            {
+              "label": "rx",
+              "value": "rx"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 407,
+      "platform": "CSR",
+      "category": "Edit",
+      "intrusiveness": "Y",
+      "access": [ "Command Center Level 4" ],
+      "name": "Change Single Interface Unicast Mode",
+      "approved": true,
+      "device": null,
+      "resource_hog": false,
+      "snippets": [
+        { "text": "{{config terminal}}\n" },
+        { "text": "{{interface Serial<<SERIAL_INT>>}}\n" },
+        { "text": "{{ip verify unicast source reachable-via <<UNICAST_MODE>>}}\n" },
+        { "text": "{{end}}" }
+      ],
+      "variables": [
+        {
+          "type": "form-combobox",
+          "variable": "SERIAL_INT",
+          "label": "INTERFACE",
+          "regex_name": "csr_interface",
+          "required": true,
+          "placeholder": "#/#/#/#:0 or #/#/#",
+          "dataCommand": "show ip interface brief",
+          "dataParserName": "DataParserForCSRSerialIP",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-select",
+          "variable": "UNICAST_MODE",
+          "label": "UNICAST MODE",
+          "regex_name": "free_type",
+          "required": true,
+          "placeholder": "UNICAST MODE",
+          "values": [ { "value": "" } ],
+          "options": [
+            {
+              "label": "any",
+              "value": "any"
+            },
+            {
+              "label": "rx",
+              "value": "rx"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 408,
+      "platform": "CSR",
+      "category": "Edit",
+      "intrusiveness": "Y",
+      "access": [ "Command Center Level 4" ],
+      "name": "Change Frame-Relay Interface Unicast Mode",
+      "approved": true,
+      "device": null,
+      "resource_hog": false,
+      "snippets": [
+        { "text": "{{config terminal}}\n" },
+        { "text": "{{interface Serial<<SERIAL_INT>>.<<DLCI>> point-to-point}}\n" },
+        { "text": "{{ip verify unicast source reachable-via <<UNICAST_MODE>>}}\n" },
+        { "text": "{{end}}" }
+      ],
+      "variables": [
+        {
+          "type": "form-combobox",
+          "variable": "SERIAL_INT",
+          "label": "INTERFACE",
+          "regex_name": "csr_interface",
+          "required": true,
+          "placeholder": "#/#/#/#:0 or #/#/#",
+          "dataCommand": "show ip interface brief",
+          "dataParserName": "DataParserForCSRSerialIP",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "DLCI",
+          "label": "DLCI",
+          "regex_name": "range_16_1007",
+          "required": true,
+          "placeholder": "DLCI",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-select",
+          "variable": "UNICAST_MODE",
+          "label": "UNICAST MODE",
+          "regex_name": "free_type",
+          "required": true,
+          "placeholder": "UNICAST MODE",
+          "values": [ { "value": "" } ],
+          "options": [
+            {
+              "label": "any",
+              "value": "any"
+            },
+            {
+              "label": "rx",
+              "value": "rx"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 409,
+      "platform": "CSR",
+      "category": "Edit",
+      "intrusiveness": "Y",
+      "access": [ "Command Center Level 4" ],
+      "name": "Update Serial Interface IP Address",
+      "approved": true,
+      "device": null,
+      "resource_hog": false,
+      "snippets": [
+        { "text": "{{config terminal}}\n" },
+        { "text": "{{interface Serial<<SERIAL_INT>>}}\n" },
+        { "text": "{{description \"<<PSR>>:<<NSR>>:<<CKTID>>:<<CUSTNAME>>\" }}\n" },
+        { "text": "{{ip address <<PE_VRF_WAN_IP>> <<PE_VRF_WAN_SUBNET>>}}\n" },
+        { "text": "{{end}}" }
+      ],
+      "variables": [
+        {
+          "type": "form-combobox",
+          "variable": "SERIAL_INT",
+          "label": "INTERFACE",
+          "regex_name": "csr_interface",
+          "required": true,
+          "placeholder": "#/#/#/#:0 or #/#/#",
+          "dataCommand": "show ip interface brief",
+          "dataParserName": "DataParserForCSRSerialIP",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "PSR",
+          "label": "PSR",
+          "regex_name": "free_type",
+          "required": true,
+          "placeholder": "PSR",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "NSR",
+          "label": "NSR",
+          "regex_name": "free_type",
+          "required": true,
+          "placeholder": "NSR",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "CKTID",
+          "label": "Circuit ID",
+          "regex_name": "free_type",
+          "required": true,
+          "placeholder": "Circuit ID",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "CUSTNAME",
+          "label": "Customer Name",
+          "regex_name": "free_type",
+          "required": true,
+          "placeholder": "Customer Name",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "PE_VRF_WAN_IP",
+          "label": "PE VRF WAN IP",
+          "regex_name": "free_type",
+          "required": true,
+          "placeholder": "PE VRF WAN IP",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "PE_VRF_WAN_SUBNET",
+          "label": "PE VRF WAN SUBNET",
+          "regex_name": "free_type",
+          "required": true,
+          "placeholder": "PE VRF WAN SUBNET",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 410,
+      "platform": "CSR",
+      "category": "Edit",
+      "intrusiveness": "Y",
+      "access": [ "Command Center Level 4" ],
+      "name": "Edit maximum prefix",
+      "approved": true,
+      "snippets": [
+        { "text": "{{config terminal\n}}" },
+        { "text": "{{router bgp 65500\n}}" },
+        { "text": "{{address-family ipv4 vrf <<VRF_NAME>>\n}}" },
+        { "text": "{{neighbor <<neighbor_ip>> maximum-prefix <<maximum-prefix>>\n}}" },
+        { "text": "{{end}}" }
+      ],
+      "variables": [
+        {
+          "type": "form-combobox",
+          "variable": "VRF_NAME",
+          "label": "VRF",
+          "regex_name": "vrf",
+          "required": true,
+          "placeholder": "VRF",
+          "dataCommand": "show run",
+          "dataParserName": "DataParserForCSRVRF",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-combobox",
+          "variable": "neighbor_ip",
+          "label": "Neighbor IP",
+          "regex_name": "free_type",
+          "required": true,
+          "placeholder": "Neighbor IP",
+          "dataCommand": "show run | beg router bgp 65500",
+          "dataParserName": "DataParserForCSRNeighborIP",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "maximum-prefix",
+          "label": "Maximum Prefix",
+          "regex_name": "digits_1000to10000",
+          "required": true,
+          "placeholder": "Max prefix",
+          "values": [ { "value": "1000" } ]
+        }
+      ]
+    },
+    {
+      "id": 411,
+      "platform": "CSR",
+      "category": "Edit",
+      "intrusiveness": "Y",
+      "access": [ "Command Center Level 4" ],
+      "name": "No Shut existing MPLS/IPVPN BGP neighbor",
+      "approved": true,
+      "device": null,
+      "resource_hog": false,
+      "snippets": [
+        { "text": "{{config terminal}}\n" },
+        { "text": "{{router bgp 65500}}\n" },
+        { "text": "{{address-family ipv4 vrf <<VRF_NAME>>}}\n" },
+        { "text": "{{no neighbor <<NEIGHBOR_IP>> shutdown}}\n" },
+        { "text": "{{end}}" }
+      ],
+      "variables": [
+        {
+          "type": "form-combobox",
+          "variable": "NEIGHBOR_IP",
+          "label": "Neighbor IP",
+          "regex_name": "ip_v4",
+          "required": true,
+          "placeholder": "ex. 255.255.255.255",
+          "dataCommand": "show run | beg router bgp 65500",
+          "dataParserName": "DataParserForNeighborIP",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-combobox",
+          "variable": "VRF_NAME",
+          "label": "VRF Name",
+          "regex_name": "vrf",
+          "required": true,
+          "placeholder": "VRF",
+          "dataCommand": "show run",
+          "dataParserName": "DataParserForCSRVRF",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 412,
+      "platform": "CSR",
+      "category": "Edit",
+      "intrusiveness": "Y",
+      "access": [ "Command Center Level 4" ],
+      "name": "No Shut existing DIA BGP neighbor",
+      "approved": true,
+      "device": null,
+      "resource_hog": false,
+      "snippets": [
+        { "text": "{{config terminal}}\n" },
+        { "text": "{{router bgp 65500}}\n" },
+        { "text": "{{address-family ipv4}}\n" },
+        { "text": "{{no neighbor <<NEIGHBOR_IP>> shutdown}}\n" },
+        { "text": "{{end}}" }
+      ],
+      "variables": [
+        {
+          "type": "form-combobox",
+          "variable": "NEIGHBOR_IP",
+          "label": "Neighbor IP",
+          "regex_name": "ip_v4",
+          "required": true,
+          "placeholder": "ex. 255.255.255.255",
+          "dataCommand": "show run | beg router bgp 65500",
+          "dataParserName": "DataParserForNeighborIP",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 413,
+      "platform": "CSR",
+      "category": "Edit",
+      "intrusiveness": "Y",
+      "access": [ "Command Center Level 4" ],
+      "name": "Shut PPP Interface",
+      "approved": true,
+      "device": null,
+      "resource_hog": false,
+      "snippets": [
+        { "text": "{{config terminal}}\n" },
+        { "text": "{{interface <<INT>>}}\n" },
+        { "text": "{{shut}}\n" },
+        { "text": "{{exit}}\n" },
+        { "text": "{{wr mem}}" }
+      ],
+      "variables": [
+        {
+          "type": "form-text",
+          "variable": "INT",
+          "label": "Interface",
+          "regex_name": "csr_interface_2",
+          "required": true,
+          "placeholder": "Interface",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 413,
+      "platform": "CSR",
+      "category": "Edit",
+      "intrusiveness": "Y",
+      "access": [ "Command Center Level 4" ],
+      "name": "Shut MLPPP Interface",
+      "approved": true,
+      "device": null,
+      "resource_hog": false,
+      "snippets": [
+        { "text": "{{config terminal}}\n" },
+        { "text": "{{interface <<GROUP>>}}\n" },
+        { "text": "{{shut}}\n" },
+        { "text": "{{exit}}\n" },
+        { "text": "{{wr mem}}" }
+      ],
+      "variables": [
+        {
+          "type": "form-text",
+          "variable": "GROUP",
+          "label": "Group Number",
+          "regex_name": "csr_group",
+          "required": true,
+          "placeholder": "Group",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 414,
+      "platform": "CSR",
+      "category": "Edit",
+      "intrusiveness": "Y",
+      "access": [ "Command Center Level 4" ],
+      "name": "Shut Frame-Relay Interface",
+      "approved": true,
+      "device": null,
+      "resource_hog": false,
+      "snippets": [
+        { "text": "{{config terminal}}\n" },
+        { "text": "{{interface <<INT>>.<<DLCI>>}}\n" },
+        { "text": "{{shut}}\n" },
+        { "text": "{{exit}}\n" },
+        { "text": "{{wr mem}}" }
+      ],
+      "variables": [
+        {
+          "type": "form-text",
+          "variable": "INT",
+          "label": "Interface",
+          "regex_name": "csr_interface_2",
+          "required": true,
+          "placeholder": "Interface",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "DLCI",
+          "label": "DLCI",
+          "regex_name": "csr_dlci",
+          "required": true,
+          "placeholder": "0-195",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 415,
+      "platform": "CSR",
+      "category": "Edit",
+      "intrusiveness": "Y",
+      "access": [ "Command Center Level 4" ],
+      "name": "Add Secondary IP Address to a PPP Interface",
+      "approved": true,
+      "device": null,
+      "resource_hog": false,
+      "snippets": [
+        { "text": "{{config terminal}}\n" },
+        { "text": "{{interface <<INT>>}}\n" },
+        { "text": "{{ip address <<IP_ADD>> <<SUBNET>> secondary}}\n" },
+        { "text": "{{exit}}\n" },
+        { "text": "{{wr mem}}" }
+      ],
+      "variables": [
+        {
+          "type": "form-text",
+          "variable": "INT",
+          "label": "Interface",
+          "regex_name": "csr_interface_2",
+          "required": true,
+          "placeholder": "Interface",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "IP_ADD",
+          "label": "Secondary IP Address",
+          "regex_name": "ip_v4_mod",
+          "required": true,
+          "placeholder": "ex. 255.255.255.255",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "SUBNET",
+          "label": "Secondary IP Subnet",
+          "regex_name": "ip_v4_mod",
+          "required": true,
+          "placeholder": "ex. 255.255.255.255",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 416,
+      "platform": "CSR",
+      "category": "Edit",
+      "intrusiveness": "Y",
+      "access": [ "Command Center Level 4" ],
+      "name": "Add Secondary IP Address to a MLPPP Interface",
+      "approved": true,
+      "device": null,
+      "resource_hog": false,
+      "snippets": [
+        { "text": "{{config terminal}}\n" },
+        { "text": "{{interface <<GROUP>>}}\n" },
+        { "text": "{{ip address <<IP_ADD>> <<SUBNET>> secondary}}\n" },
+        { "text": "{{exit}}\n" },
+        { "text": "{{wr mem}}" }
+      ],
+      "variables": [
+        {
+          "type": "form-text",
+          "variable": "GROUP",
+          "label": "Group Number",
+          "regex_name": "csr_group",
+          "required": true,
+          "placeholder": "Group",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "IP_ADD",
+          "label": "Secondary IP Address",
+          "regex_name": "ip_v4_mod",
+          "required": true,
+          "placeholder": "ex. 255.255.255.255",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "SUBNET",
+          "label": "Secondary IP Subnet",
+          "regex_name": "ip_v4_mod",
+          "required": true,
+          "placeholder": "ex. 255.255.255.255",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 417,
+      "platform": "CSR",
+      "category": "Edit",
+      "intrusiveness": "Y",
+      "access": [ "Command Center Level 4" ],
+      "name": "Add Secondary IP Address to a Frame-Relay Interface",
+      "approved": true,
+      "device": null,
+      "resource_hog": false,
+      "snippets": [
+        { "text": "{{config terminal}}\n" },
+        { "text": "{{interface <<INT>>.<<DLCI>>}}\n" },
+        { "text": "{{ip address <<IP_ADD>> <<SUBNET>> secondary}}\n" },
+        { "text": "{{exit}}\n" },
+        { "text": "{{wr mem}}" }
+      ],
+      "variables": [
+        {
+          "type": "form-text",
+          "variable": "INT",
+          "label": "Interface",
+          "regex_name": "csr_interface_2",
+          "required": true,
+          "placeholder": "Interface",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "DLCI",
+          "label": "DLCI",
+          "regex_name": "csr_dlci",
+          "required": true,
+          "placeholder": "0-195",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "IP_ADD",
+          "label": "Secondary IP Address",
+          "regex_name": "ip_v4_mod",
+          "required": true,
+          "placeholder": "ex. 255.255.255.255",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "SUBNET",
+          "label": "Secondary IP Subnet",
+          "regex_name": "ip_v4_mod",
+          "required": true,
+          "placeholder": "ex. 255.255.255.255",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 505,
+      "platform": "CSR",
+      "category": "Execute",
+      "intrusiveness": "Y",
+      "access": [ "Command Center Level 4" ],
+      "name": "Bounce DIA BGP neighbor",
+      "approved": true,
+      "device": null,
+      "resource_hog": false,
+      "snippets": [
+        { "text": "{{clear bgp ipv4 unicast <<NEIGHBOR_IP>>}}" }
+      ],
+      "variables": [
+        {
+          "type": "form-combobox",
+          "variable": "NEIGHBOR_IP",
+          "label": "Neighbor IP",
+          "regex_name": "ip_v4",
+          "required": true,
+          "placeholder": "ex. 255.255.255.255",
+          "dataCommand": "show run | beg router bgp 65500",
+          "dataParserName": "DataParserForNeighborIP",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 506,
+      "platform": "CSR",
+      "category": "Execute",
+      "intrusiveness": "Y",
+      "access": [ "Command Center Level 4" ],
+      "name": "Bounce MPLS/IPVPN BGP neighbor",
+      "approved": true,
+      "device": null,
+      "resource_hog": false,
+      "snippets": [
+        { "text": "{{clear bgp vrf <<VRF_NAME>> ipv4 unicast <<NEIGHBOR_IP>>}}" }
+      ],
+      "variables": [
+        {
+          "type": "form-combobox",
+          "variable": "NEIGHBOR_IP",
+          "label": "Neighbor IP",
+          "regex_name": "ip_v4",
+          "required": true,
+          "placeholder": "ex. 255.255.255.255",
+          "dataCommand": "show run | beg router bgp 65500",
+          "dataParserName": "DataParserForNeighborIP",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-combobox",
+          "variable": "VRF_NAME",
+          "label": "VRF Name",
+          "regex_name": "vrf",
+          "required": true,
+          "placeholder": "VRF",
+          "dataCommand": "show run",
+          "dataParserName": "DataParserForCSRVRF",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 507,
+      "platform": "CSR",
+      "category": "Execute",
+      "intrusiveness": "Y",
+      "access": [ "Command Center Level 4" ],
+      "name": "Bounce all MPLS/IPVPN BGP neighbors",
+      "approved": false,
+      "device": null,
+      "resource_hog": false,
+      "snippets": [
+        { "text": "{{clear bgp vrf <<VRF_NAME>> ipv4 unicast *}}" }
+      ],
+      "variables": [
+        {
+          "type": "form-combobox",
+          "variable": "VRF_NAME",
+          "label": "VRF Name",
+          "regex_name": "vrf",
+          "required": true,
+          "placeholder": "VRF",
+          "dataCommand": "show run",
+          "dataParserName": "DataParserForCSRVRF",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 508,
+      "platform": "CSR",
+      "category": "Execute",
+      "intrusiveness": "Y",
+      "access": [ "Command Center Level 4" ],
+      "name": "Shut/no shut MPLS/IPVPN BGP neighbor",
+      "approved": true,
+      "device": null,
+      "resource_hog": false,
+      "snippets": [
+        { "text": "{{config terminal}}\n" },
+        { "text": "{{router bgp 65500}}\n" },
+        { "text": "{{address-family ipv4 vrf <<VRF_NAME>>}}\n" },
+        { "text": "{{neighbor <<NEIGHBOR_IP>> shutdown}}\n" },
+        { "text": "{{exit}}\n" },
+        { "text": "{{address-family ipv4 vrf <<VRF_NAME>>}}\n" },
+        { "text": "{{no neighbor <<NEIGHBOR_IP>> shutdown}}\n" },
+        { "text": "{{end}}" }
+      ],
+      "variables": [
+        {
+          "type": "form-combobox",
+          "variable": "NEIGHBOR_IP",
+          "label": "Neighbor IP",
+          "regex_name": "ip_v4",
+          "required": true,
+          "placeholder": "ex. 255.255.255.255",
+          "dataCommand": "show run | beg router bgp 65500",
+          "dataParserName": "DataParserForNeighborIP",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-combobox",
+          "variable": "VRF_NAME",
+          "label": "VRF Name",
+          "regex_name": "vrf",
+          "required": true,
+          "placeholder": "VRF",
+          "dataCommand": "show run",
+          "dataParserName": "DataParserForCSRVRF",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 509,
+      "platform": "CSR",
+      "category": "Execute",
+      "intrusiveness": "Y",
+      "access": [ "Command Center Level 4" ],
+      "name": "Shut/no shut DIA BGP neighbor",
+      "approved": true,
+      "device": null,
+      "resource_hog": false,
+      "snippets": [
+        { "text": "{{config terminal}}\n" },
+        { "text": "{{router bgp 65500}}\n" },
+        { "text": "{{address-family ipv4}}\n" },
+        { "text": "{{neighbor <<NEIGHBOR_IP>> shutdown}}\n" },
+        { "text": "{{no neighbor <<NEIGHBOR_IP>> shutdown}}\n" },
+        { "text": "{{end}}" }
+      ],
+      "variables": [
+        {
+          "type": "form-combobox",
+          "variable": "NEIGHBOR_IP",
+          "label": "Neighbor IP",
+          "regex_name": "ip_v4",
+          "required": true,
+          "placeholder": "ex. 255.255.255.255",
+          "dataCommand": "show run | beg router bgp 65500",
+          "dataParserName": "DataParserForNeighborIP",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 510,
+      "platform": "CSR",
+      "category": "Execute",
+      "intrusiveness": "Y",
+      "access": [ "Command Center Level 4" ],
+      "name": "Enable PPP interface configuration",
+      "approved": true,
+      "device": null,
+      "resource_hog": false,
+      "snippets": [
+        { "text": "{{config terminal}}\n" },
+        { "text": "{{interface serial <<SERIAL_INT>>}}\n" },
+        { "text": "{{no shutdown}}\n" },
+        { "text": "{{end}}" }
+      ],
+      "variables": [
+        {
+          "type": "form-combobox",
+          "variable": "SERIAL_INT",
+          "label": "PPP INTERFACE",
+          "regex_name": "csr_interface",
+          "required": true,
+          "placeholder": "#/#/#/#:0 or #/#/#",
+          "dataCommand": "show ip interface brief",
+          "dataParserName": "DataParserForCSRSerialIP",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 511,
+      "platform": "CSR",
+      "category": "Execute",
+      "intrusiveness": "Y",
+      "access": [ "Command Center Level 4" ],
+      "name": "Enable Frame Relay interface configuration",
+      "approved": true,
+      "device": null,
+      "resource_hog": false,
+      "snippets": [
+        { "text": "{{config terminal}}\n" },
+        { "text": "{{interface serial <<SERIAL_INT>>.<<DLCI>>}}\n" },
+        { "text": "{{no shutdown}}\n" },
+        { "text": "{{end}}" }
+      ],
+      "variables": [
+        {
+          "type": "form-combobox",
+          "variable": "SERIAL_INT",
+          "label": "FRAME RELAY INTERFACE",
+          "regex_name": "csr_interface",
+          "required": true,
+          "placeholder": "#/#/#/#:0 or #/#/#",
+          "dataCommand": "show ip interface brief",
+          "dataParserName": "DataParserForCSRSerialIP",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "DLCI",
+          "label": "DLCI",
+          "regex_name": "range_16_1007",
+          "required": true,
+          "placeholder": "DLCI",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 512,
+      "platform": "CSR",
+      "category": "Execute",
+      "intrusiveness": "Y",
+      "access": [ "Command Center Level 4" ],
+      "name": "Enable Multilink interface configuration",
+      "approved": true,
+      "device": null,
+      "resource_hog": false,
+      "snippets": [
+        { "text": "{{config terminal}}\n" },
+        { "text": "{{interface multilink <<MULTI_GROUP>>}}\n" },
+        { "text": "{{no shutdown}}\n" },
+        { "text": "{{interface serial <<SERIAL_INT>>}}\n" },
+        { "text": "{{no shutdown}}\n" },
+        { "text": "{{!*** repeat as needed ***!}}\n" },
+        { "text": "{{interface serial <<SERIAL_INT>>}}\n" },
+        { "text": "{{no shutdown}}\n" },
+        { "text": "{{end}}" }
+      ],
+      "variables": [
+        {
+          "type": "form-combobox",
+          "variable": "MULTI_GROUP",
+          "label": "MULTILINK GROUP #",
+          "regex_name": "digits_5",
+          "required": true,
+          "placeholder": "Multilink Group # - 5 digits",
+          "dataCommand": "show ip interface brief",
+          "dataParserName": "DataParserForCSRMultilink",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-combobox",
+          "variable": "SERIAL_INT",
+          "label": "MLPP SUB-INTERFACE",
+          "regex_name": "csr_interface",
+          "required": true,
+          "placeholder": "#/#/#/#:0 or #/#/#",
+          "dataCommand": "show ip interface brief",
+          "dataParserName": "DataParserForCSRSerialIP",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 513,
+      "platform": "CSR",
+      "category": "Execute",
+      "intrusiveness": "Y",
+      "access": [ "Command Center Level 4" ],
+      "name": "Ping VRF with Size & Optional Source",
+      "approved": true,
+      "device": null,
+      "resource_hog": false,
+      "snippets": [
+        { "text": "{{ ping vrf <<VRF_NAME>> ip <<DEST_IP>> size <<SIZE>> }}" },
+        { "text": "{{ source <<SRC_IP>> }}" }
+      ],
+      "variables": [
+        {
+          "type": "form-combobox",
+          "variable": "VRF_NAME",
+          "label": "VRF Name",
+          "regex_name": "vrf",
+          "required": true,
+          "placeholder": "VRF",
+          "dataCommand": "show run",
+          "dataParserName": "DataParserForCSRVRF",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "DEST_IP",
+          "label": "Destination IP",
+          "regex_name": "ip_v4_mod",
+          "required": true,
+          "placeholder": "ex. 255.255.255.255",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "SIZE",
+          "label": "SIZE",
+          "regex_name": "range_36_18024",
+          "required": true,
+          "placeholder": "36-18024, defaulting to 1500",
+          "values": [ { "value": "1500" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "SRC_IP",
+          "label": "Source IP",
+          "regex_name": "ip_v4_mod",
+          "required": false,
+          "placeholder": "ex. 255.255.255.255",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 514,
+      "platform": "CSR",
+      "category": "Execute",
+      "intrusiveness": "Y",
+      "access": [ "Command Center Level 4" ],
+      "name": "Global Ping with Size & Optional Source",
+      "approved": true,
+      "device": null,
+      "resource_hog": false,
+      "snippets": [
+        { "text": "{{ ping <<DEST_IP>> size <<SIZE>> }}" },
+        { "text": "{{ source <<SRC_IP>> }}" }
+      ],
+      "variables": [
+        {
+          "type": "form-text",
+          "variable": "DEST_IP",
+          "label": "Destination IP",
+          "regex_name": "ip_v4_mod",
+          "required": true,
+          "placeholder": "ex. 255.255.255.255",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "SIZE",
+          "label": "SIZE",
+          "regex_name": "range_36_18024",
+          "required": true,
+          "placeholder": "36-18024, defaulting to 1500",
+          "values": [ { "value": "1500" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "SRC_IP",
+          "label": "Source IP",
+          "regex_name": "ip_v4_mod",
+          "required": false,
+          "placeholder": "ex. 255.255.255.255",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 1000,
+      "platform": "CSR",
+      "category": "Edit",
+      "intrusiveness": "Y",
+      "access": [ "Command Center Level 2" ],
+      "name": "Edit PPP interface IP address",
+      "approved": true,
+      "device": null,
+      "resource_hog": false,
+      "snippets": [
+        { "text": "{{show run interface <<INT_TYPE>> <<INT>>}}\n" },
+        { "text": "{{config t}}\n" },
+        { "text": "{{interface <<INT_TYPE>> <<INT>>}}\n" },
+        { "text": "{{ip address <<IP_ADD>> <<SUBNET>>}}\n" },
+        { "text": "{{end}}\n" },
+        { "text": "{{wr mem}}\n" },
+        { "text": "{{show run interface <<INT_TYPE>> <<INT>>}}" }
+      ],
+      "variables": [
+        {
+          "type": "form-dropdown",
+          "variable": "INT_TYPE",
+          "label": "Int Type",
+          "required": true,
+          "values": [
+            { "name": "serial" },
+            { "name": "gigabitether" },
+            { "name": "pos" }
+          ]
+        },
+        {
+          "type": "form-text",
+          "variable": "INT",
+          "label": "INT",
+          "regex_name": "csr_interface_2",
+          "required": true,
+          "placeholder": "#/#/#/#:0 or #/#/#",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "IP_ADD",
+          "label": "IP ADD",
+          "regex_name": "ip_v4",
+          "required": true,
+          "placeholder": "Ip Address",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "SUBNET",
+          "label": "SUBNET",
+          "regex_name": "ip_v4",
+          "required": true,
+          "placeholder": "Ip Address",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 1001,
+      "platform": "CSR",
+      "category": "Edit",
+      "intrusiveness": "Y",
+      "access": [ "Command Center Level 2" ],
+      "name": "Edit Multilink interface IP address",
+      "approved": true,
+      "device": null,
+      "resource_hog": false,
+      "snippets": [
+        { "text": "{{show run interface multilink <<GROUP>>}}\n" },
+        { "text": "{{config t}}\n" },
+        { "text": "{{interface multilink <<GROUP>>}}\n" },
+        { "text": "{{ip address <<IP_ADD>> <<SUBNET>>}}\n" },
+        { "text": "{{end}}\n" },
+        { "text": "{{wr mem}}\n" },
+        { "text": "{{show run interface multilink <<GROUP>>}}" }
+      ],
+      "variables": [
+        {
+          "type": "form-text",
+          "variable": "GROUP",
+          "label": "GROUP",
+          "regex_name": "digits_10000to99999",
+          "required": true,
+          "placeholder": "10000 to 99999",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "IP_ADD",
+          "label": "IP ADD",
+          "regex_name": "ip_v4",
+          "required": true,
+          "placeholder": "Ip Address",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "SUBNET",
+          "label": "SUBNET",
+          "regex_name": "ip_v4",
+          "required": true,
+          "placeholder": "Ip Address",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 1002,
+      "platform": "CSR",
+      "category": "Edit",
+      "intrusiveness": "Y",
+      "access": [ "Command Center Level 2" ],
+      "name": "Edit Frame Relay interface IP address",
+      "approved": true,
+      "device": null,
+      "resource_hog": false,
+      "snippets": [
+        { "text": "{{show run interface <<INT_TYPE>> <<INT>>.<<DLCI>>}}\n" },
+        { "text": "{{config t}}\n" },
+        { "text": "{{interface <<INT_TYPE>> <<INT>>.<<DLCI>>}}\n" },
+        { "text": "{{ip address <<IP_ADD>> <<SUBNET>>}}\n" },
+        { "text": "{{end}}\n" },
+        { "text": "{{wr mem}}\n" },
+        { "text": "{{show run interface <<INT_TYPE>> <<INT>>.<<DLCI>>}}" }
+      ],
+      "variables": [
+        {
+          "type": "form-dropdown",
+          "variable": "INT_TYPE",
+          "label": "Int Type",
+          "required": true,
+          "values": [
+            { "name": "serial" },
+            { "name": "gigabitether" },
+            { "name": "pos" }
+          ]
+        },
+        {
+          "type": "form-text",
+          "variable": "INT",
+          "label": "INT",
+          "regex_name": "csr_interface_2",
+          "required": true,
+          "placeholder": "#/#/#/#:0 or #/#/#",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "DLCI",
+          "label": "DLCI",
+          "regex_name": "any_number",
+          "required": true,
+          "placeholder": "",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "IP_ADD",
+          "label": "IP ADD",
+          "regex_name": "ip_v4",
+          "required": true,
+          "placeholder": "Ip Address",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "SUBNET",
+          "label": "SUBNET",
+          "regex_name": "ip_v4",
+          "required": true,
+          "placeholder": "Ip Address",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 1003,
+      "platform": "CSR",
+      "category": "Execute",
+      "intrusiveness": "Y",
+      "access": [ "Command Center Level 2" ],
+      "name": "Traceroute",
+      "approved": true,
+      "device": null,
+      "resource_hog": false,
+      "snippets": [
+        { "text": "{{traceroute <<DST_IP>> ttl <<MIN_HOPS>> <<MAX_HOPS>> probe 1}} {{source <<SRC_IP>>}}" }
+      ],
+      "variables": [
+        {
+          "type": "form-text",
+          "variable": "DST_IP",
+          "label": "DST Ip",
+          "regex_name": "ip_v4",
+          "required": true,
+          "placeholder": "DST Ip",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "MIN_HOPS",
+          "label": "MIN HOPS",
+          "regex_name": "number_between_1_30",
+          "required": true,
+          "placeholder": "Min Hops",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "MAX_HOPS",
+          "label": "MAX HOPS",
+          "regex_name": "number_between_1_30",
+          "required": true,
+          "placeholder": "Max Hops",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "SRC_IP",
+          "label": "SRC Ip",
+          "regex_name": "ip_v4",
+          "required": false,
+          "placeholder": "Src Ip",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 1004,
+      "platform": "CSR",
+      "category": "Execute",
+      "intrusiveness": "Y",
+      "access": [ "Command Center Level 2" ],
+      "name": "VRF traceroute",
+      "approved": true,
+      "device": null,
+      "resource_hog": false,
+      "snippets": [
+        { "text": "{{traceroute vrf <<VRF_NAME>> <<DST_IP>> ttl <<MIN_HOPS>> <<MAX_HOPS>> probe 1}} {{source <<SRC_IP>>}}" }
+      ],
+      "variables": [
+        {
+          "type": "form-combobox",
+          "variable": "VRF_NAME",
+          "label": "VRF Name",
+          "regex_name": "vrf",
+          "required": true,
+          "placeholder": "VRF",
+          "dataCommand": "show run",
+          "dataParserName": "DataParserForCSRVRF",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "DST_IP",
+          "label": "DST Ip",
+          "regex_name": "ip_v4",
+          "required": true,
+          "placeholder": "DST Ip",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "MIN_HOPS",
+          "label": "MIN HOPS",
+          "regex_name": "number_between_1_30",
+          "required": true,
+          "placeholder": "Min Hops",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "MAX_HOPS",
+          "label": "MAX HOPS",
+          "regex_name": "number_between_1_30",
+          "required": true,
+          "placeholder": "Max Hops",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "SRC_IP",
+          "label": "SRC Ip",
+          "regex_name": "ip_v4",
+          "required": false,
+          "placeholder": "Src Ip",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 1005,
+      "platform": "CSR",
+      "category": "Edit",
+      "intrusiveness": "Y",
+      "access": [ "Command Center Level 2" ],
+      "name": "Add ip pim mode to an interface - USPS",
+      "approved": true,
+      "device": null,
+      "resource_hog": false,
+      "snippets": [
+        { "text": "{{show run int <<INT>>}}\n" },
+        { "text": "{{config t}}\n" },
+        { "text": "{{int <<INT>>}}\n" },
+        { "text": "{{ip pim sparse-mode}}\n" },
+        { "text": "{{end}}\n" },
+        { "text": "{{wr mem}}\n" },
+        { "text": "{{show run int <<INT>>}}\n" }
+      ],
+      "variables": [
+        {
+          "type": "form-combobox",
+          "variable": "INT",
+          "label": "Interface",
+          "regex_name": "free_type",
+          "required": true,
+          "allow_all": true,
+          "dataCommand": "",
+          "dataParserName": "DataParserForInterfaceNoBackboneOrUplink",
+          "placeholder": "",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 1006,
+      "platform": "CSR",
+      "category": "Show",
+      "intrusiveness": "N",
+      "access": [ "Command Center Level 1" ],
+      "name": "Show running config from VRF Name",
+      "approved": true,
+      "device": null,
+      "resource_hog": false,
+      "snippets": [
+        { "text": "{{show run vrf <<VRF_NAME>>}}" }
+      ],
+      "variables": [
+        {
+          "type": "form-combobox",
+          "variable": "VRF_NAME",
+          "label": "VRF Name",
+          "regex_name": "vrf",
+          "required": true,
+          "placeholder": "VRF",
+          "dataCommand": "show run",
+          "dataParserName": "DataParserForCSRVRF",
+          "values": [ { "value": "" } ]
+        }
+      ]
+    },
+    {
+      "id": 1007,
+      "platform": "CSR",
+      "category": "Build",
+      "intrusiveness": "Y",
+      "access": [ "Command Center Level 3" ],
+      "name": "Build DIA ipv4 bgp neighbor",
+      "approved": true,
+      "device": null,
+      "resource_hog": false,
+      "snippets": [
+        { "text": "{{config t}}\n" },
+        { "text": "{{ip prefix-list <<CUST_NAME_NO_SPACES>>:AS<<CUST_ASN>> permit <<BGP_ROUTE_1>>/<<BGP_ROUTE_1_CIDR>> le 32}}\n" },
+        { "text": "{{ip prefix-list <<CUST_NAME_NO_SPACES>>:AS<<CUST_ASN>> permit <<BGP_ROUTE_2>>/<<BGP_ROUTE_2_CIDR>> le 32}}\n" },
+        { "text": "{{ip prefix-list <<CUST_NAME_NO_SPACES>>:AS<<CUST_ASN>> permit <<BGP_ROUTE_3>>/<<BGP_ROUTE_3_CIDR>> le 32}}\n" },
+        { "text": "{{!repeat as needed!}}\n" },
+        { "text": "{{!}}\n" },
+        { "text": "{{ip as-path access-list <<AS_PATH_ACL_NUM>> permit ^(<<CUST_ASN>>_)+$}}\n" },
+        { "text": "{{!}}\n" },
+        { "text": "{{router bgp 65500}}\n" },
+        { "text": "{{  neighbor <<CE_WAN_IP>> remote-as <<CUST_ASN>>}}\n" },
+        { "text": "{{  neighbor <<CE_WAN_IP>> description <<CUST_NAME>>}}\n" },
+        { "text": "{{  neighbor <<CE_WAN_IP>> shutdown}}\n" },
+        { "text": "{{  neighbor <<CE_WAN_IP>> password <<MD5_PASSWD>>}}\n" },
+        { "text": "{{!}}\n" },
+        { "text": "{{ address-family ipv4}}\n" },
+        { "text": "{{  neighbor <<CE_WAN_IP>> activate}}\n" },
+        { "text": "{{  neighbor <<CE_WAN_IP>> remove-private-as}}\n" },
+        { "text": "{{  neighbor <<CE_WAN_IP>> soft-reconfiguration inbound}}\n" },
+        { "text": "{{  neighbor <<CE_WAN_IP>> send-community}}\n" },
+        { "text": "{{  neighbor <<CE_WAN_IP>> prefix-list <<CUST_NAME_NO_SPACES>>:AS<<CUST_ASN>> in}}\n" },
+        { "text": "{{  neighbor <<CE_WAN_IP>> route-map <<IN_MAP>> in}}\n" },
+        { "text": "{{  neighbor <<CE_WAN_IP>> maximum-prefix 50}}\n" },
+        { "text": "{{  neighbor <<CE_WAN_IP>> filter-list <<AS_PATH_ACL_NUM>> in}}\n" },
+        { "text": "{{  neighbor <<CE_WAN_IP_DEFAULT>> default-originate  }}\n" },
+        { "text": "{{  neighbor <<CE_WAN_IP>> route-map <<OUT_MAP_VALUE>> out}}\n" },
+        { "text": "{{ ! }}" }
+      ],
+      "variables": [
+        {
+          "type": "form-text",
+          "variable": "CUST_NAME",
+          "label": "Cust Name",
+          "regex_name": "free_type",
+          "required": true,
+          "placeholder": "",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form_hidden_text",
+          "variable": "CUST_NAME_NO_SPACES",
+          "label": "Cust Name",
+          "regex_name": "free_type",
+          "required": true,
+          "placeholder": "",
+          "dataPivotVariable": "CUST_NAME",
+          "dataParserName": "PostProcForCustNameNoSpaces",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "CUST_ASN",
+          "label": "Cust ASN",
+          "regex_name": "csr_cust_asn_range_1_64495_not_2828",
+          "required": true,
+          "placeholder": "ASN",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "BGP_ROUTE_1",
+          "label": "BGP ROUTE 1",
+          "regex_name": "ip_address",
+          "required": true,
+          "placeholder": "BGP ROUTE 1",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "BGP_ROUTE_1_CIDR",
+          "label": "BGP ROUTE 1 CIDR",
+          "regex_name": "range_8_32",
+          "required": true,
+          "placeholder": "BGP ROUTE 1 CIDR",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "BGP_ROUTE_2",
+          "label": "BGP ROUTE 2",
+          "regex_name": "ip_address",
+          "required": false,
+          "placeholder": "BGP ROUTE 2",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "BGP_ROUTE_2_CIDR",
+          "label": "BGP ROUTE 2 CIDR",
+          "regex_name": "range_8_32",
+          "required": false,
+          "placeholder": "BGP ROUTE 2 CIDR",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "BGP_ROUTE_3",
+          "label": "BGP ROUTE 3",
+          "regex_name": "ip_address",
+          "required": false,
+          "placeholder": "BGP ROUTE 3",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "BGP_ROUTE_3_CIDR",
+          "label": "BGP ROUTE 3 CIDR",
+          "regex_name": "range_8_32",
+          "required": false,
+          "placeholder": "BGP ROUTE 3 CIDR",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "CE_WAN_IP",
+          "label": "CE WAN IP",
+          "regex_name": "ip_address",
+          "required": true,
+          "placeholder": "ce wan ip",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form_linked_text",
+          "variable": "AS_PATH_ACL_NUM",
+          "label": "ACL NUM",
+          "regex_name": "free_type",
+          "required": true,
+          "dataCommandRefreshFlag": "always",
+          "dataCommand": "show ip as-path-access-list",
+          "dataPivotVariable": "CUST_ASN",
+          "dataParserName": "CSR_BGP_DIA_Neighbor",
+          "placeholder": "ACL NUM",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-text",
+          "variable": "MD5_PASSWD",
+          "label": "MD5 Password",
+          "regex_name": "free_type",
+          "required": false,
+          "placeholder": "",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form_linked_text",
+          "variable": "IN_MAP",
+          "label": "In MAP",
+          "regex_name": "free_type",
+          "required": true,
+          "dataPivotVariable": "CUST_ASN",
+          "dataParserName": "CSR_BGP_DIA_Neighbor_IN_Map",
+          "placeholder": "",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form_hidden_text",
+          "variable": "CE_WAN_IP_DEFAULT",
+          "label": "dummy",
+          "regex_name": "free_type",
+          "required": false,
+          "dataCommand": null,
+          "dataPivotVariable": "",
+          "dataParserName": "",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form_hidden_text",
+          "variable": "OUT_MAP_VALUE",
+          "label": "dummy",
+          "regex_name": "free_type",
+          "required": true,
+          "dataCommand": null,
+          "dataPivotVariable": "OUT_MAP",
+          "dataParserName": "PostProcForOutMapRoutes",
+          "values": [ { "value": "" } ]
+        },
+        {
+          "type": "form-dropdown",
+          "variable": "OUT_MAP",
+          "label": "OUT MAP",
+          "required": true,
+          "values": [
+            { "name": "Default" },
+            { "name": "XO Routes" },
+            { "name": "Full Routes" }
+          ]
+        }
+      ]
+    }
+   
+
+  ]
+}

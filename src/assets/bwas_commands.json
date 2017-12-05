@@ -1,0 +1,62 @@
+﻿{
+    "commands": [                
+    {
+        "id": 106,
+        "name": "edit cat and dog",
+        "platform": "BWAS",
+        "category": "Edit",
+        "intrusiveness":"",
+            "approved": true,
+        "snippets": [{ "text": "{{does the <<animal1>> looks like the <<animal2>>? <<huh>>}}" }
+        ],
+        "variables": [
+            {
+                "variable": "animal1",
+                "label": "Animal 1",
+                "type": "form-text",
+                "required": true,
+                "placeholder": "Enter a valid IP address dawg!",
+                "regex_name": "ip_v4",
+                "placeholder": "ex. 255.255.255.255"
+            },
+            {
+                "variable": "animal2",
+                "label": "Animal 2",
+                "values": [{ "value": "" }],
+                "type": "form-select",
+                "placeholder": "Pick sumpin dude!",
+                "required": true,
+                "regex_name": "free_type",
+                "options": [{ "label": "butterfly", "value": 1 }, { "label": "bumble bee", "value": 2 }, { "label": "dragon", "value": 3 }]
+            },
+            {
+                "variable": "huh",
+                "label":  "Huh?",
+                "values": [{ "value": "" }],
+                "type": "form-select",
+                "placeholder": "Required!",
+                "required": true,
+                "regex_name": "free_type",
+                "options": [{ "label": "Yes", "value": 1 }, { "label": "No", "value": 2 }]
+            }
+
+        ]
+    },
+    {
+        "id": 108,
+        "platform": "BWAS",
+        "category": "Show",
+        "intrusiveness": "RO",
+            "approved": true,
+        "resource_hog": false,
+        "name": "Run Some Unix Commands",
+        "snippets": [{ "text": "{{uname -a}}\n" },
+            { "text": "{{ls}}\n" },
+            { "text": "{{cd ..}}\n" },
+            { "text": "{{pwdxx}}\n" },
+            { "text": "{{ls -al}}\n" },
+            { "text": "{{ps -ef}}" }
+        ],
+        "variables": []
+    }
+]}

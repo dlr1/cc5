@@ -1,0 +1,2252 @@
+﻿{
+    "commands": [
+        {
+            "id": 201,
+            "platform": "ELS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 2" ],
+            "name": "Show Summary Of All Ports",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{port show }}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 202,
+            "platform": "ELS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "name": "Show Port Configuration",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{port show port <<PORT_NUM>>}}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "PORT_NUM",
+                    "label": "Port Number",
+                    "regex_name": "311V_port_number",
+                    "required": true,
+                    "placeholder": "Valid Values: 1-28",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 203,
+            "platform": "ELS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 2" ],
+            "name": "Show Status Info For Device",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{port show status}}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 204,
+            "platform": "ELS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+
+            "name": "Show Port Stats",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{port show port <<PORT_NUM>> statistics}}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "PORT_NUM",
+                    "label": "Port Number",
+                    "regex_name": "311V_port_number",
+                    "required": true,
+                    "placeholder": "Valid Values: 1-28",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 205,
+            "platform": "ELS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 2" ],
+
+            "name": "Show Summary Of All VLANs",
+            "approved": true,
+            "snippets": [
+                { "text": "{{system shell set more off \n}}" },
+                { "text": "{{vlan show\n}}" }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 206,
+            "platform": "ELS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+
+            "name": "Show VLAN Configuration",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{vlan show vlan <<VLAN>> }}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "VLAN",
+                    "label": "VLAN",
+                    "regex_name": "311V_vlan_number",
+                    "required": true,
+                    "placeholder": "0-4096, but not 99 or 127",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 207,
+            "platform": "ELS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 2" ],
+
+            "name": "Show All Virtual Instances",
+            "approved": true,
+            "snippets": [
+                { "text": "{{configuration save\n }}" },
+                { "text": "{{configuration search string virtual-circuit }}" }
+            ],
+            "variables": [
+            ]
+        },
+        {
+            "id": 208,
+            "platform": "ELS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 2" ],
+
+            "name": "Show Virtual Circuit Statistics",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{virtual-circuit ethernet show statistics }}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 209,
+            "platform": "ELS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 2" ],
+
+            "name": "Show Stats For Specific VC",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{virtual-circuit ethernet show vc <<VC_NAME>> statistics }}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "VC_NAME",
+                    "label": "VC Name",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 210,
+            "platform": "ELS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 2" ],
+
+            "name": "Show Stats For Specific VS",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{virtual-switch ethernet show vs <<VS_NAME>> statistics }}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "VS_NAME",
+                    "label": "VS Name",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 211,
+            "platform": "ELS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 2" ],
+
+            "name": "Show Network-Config For Device",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{port show network-config }}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 212,
+            "platform": "ELS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 2" ],
+
+            "name": "Show Configuration",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{config show }}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 213,
+            "platform": "ELS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 2" ],
+
+            "name": "Show MAC Table",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{flow show mac }}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 214,
+            "platform": "ELS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 2" ],
+
+            "name": "Show Transceiver Status",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{port xcvr show }}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 215,
+            "platform": "ELS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 2" ],
+
+            "name": "Show System",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{system show }}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 216,
+            "platform": "ELS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+
+            "name": "Show MAC For A VLAN",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{flow mac-addr show vlan <<VLAN>> }}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "VLAN",
+                    "label": "VLAN",
+                    "regex_name": "311V_vlan_number",
+                    "required": true,
+                    "placeholder": "0-4096, but not 99 or 127",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 217,
+            "platform": "ELS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 2" ],
+
+            "name": "Show MAC On a Port",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{flow mac-addr show port <<PORT_NUM>>}}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "PORT_NUM",
+                    "label": "Port Number",
+                    "regex_name": "311V_port_number",
+                    "required": true,
+                    "placeholder": "Valid Values: 1-28",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 218,
+            "platform": "ELS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 2" ],
+
+            "name": "Show System Resources ",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{flow show resources }}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 219,
+            "platform": "ELS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 2" ],
+
+            "name": "Show Port Diagnostics",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{port xcvr show port <<PORT_NUM>> diagnostics}}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "PORT_NUM",
+                    "label": "Port Number",
+                    "regex_name": "311V_port_number",
+                    "required": true,
+                    "placeholder": "Valid Values: 1-28",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 220,
+            "platform": "ELS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 2" ],
+
+            "name": "Show Software Version ",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{software show }}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 221,
+            "platform": "ELS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 2" ],
+
+            "name": "Show Flow Service Maps ",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{flow service-mapping show }}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 222,
+            "platform": "ELS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 2" ],
+
+            "name": "Show Flow Service Level ",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{flow service-level show }}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 223,
+            "platform": "ELS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 2" ],
+
+            "name": "Show Logs ",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{log flash view }}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 224,
+            "platform": "ELS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 2" ],
+
+            "name": "Show Chassis",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{chassis show }}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 225,
+            "platform": "ELS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 2" ],
+            "name": "Show Control Protocol Tunneling",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{virtual-switch control-protocol-tunneling show vs <<VS_NAME>> statistics }}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "VS_NAME",
+                    "label": "VS Name",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 226,
+            "platform": "ELS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 2" ],
+
+            "name": "Show The Flow Stats",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{flow service-mapping show statistics }}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 227,
+            "platform": "ELS",
+            "category": "Build",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 3" ],
+
+            "name": "Build single vlan on shared ports",
+            "approved": true,
+            "snippets": [
+                { "text": "{{vlan create vlan <<VLAN>>}}\n" },
+                { "text": "{{vlan add vlan <<VLAN>> port <<AES_UPLINK_PORT>>,<<LEC_CUST_FACING_PORT>>}}\n" },
+                { "text": "{{vlan rename vlan <<VLAN>> name <<ABREVCUSTNAME>>_<<PSR>>}}\n" },
+                { "text": "{{flow service-level create port <<AES_UPLINK_PORT>> slid <<SLID>> cir <<BANDWIDTH_10>> pir <<BANDWIDTH_10>>  name <<PSR>>_<<VLAN>>}}\n" },
+                { "text": "{{flow service-mapping create vlan <<VLAN>> src-port <<LEC_CUST_FACING_PORT>> dst-port <<AES_UPLINK_PORT>> slid <<SLID>>}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "VLAN",
+                    "label": "VLAN",
+                    "regex_name": "311V_vlan_number",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "AES_UPLINK_PORT",
+                    "label": "AES/UPLINK PORT",
+                    "regex_name": "range_1_28",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "LEC_CUST_FACING_PORT",
+                    "label": "LEC/CUST_FACING PORT",
+                    "regex_name": "range_1_24",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "ABREVCUSTNAME",
+                    "label": "Customer Name",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "PSR",
+                    "label": "PSR",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-ro-text",
+                    "variable": "SLID",
+                    "label": "SLID",
+                    "regex_name": "any_number",
+                    "dataCommandRefreshFlag": "always",
+                    "dataCommand": "config save\nconf search string slid",
+                    "dataParserName": "dataParserForSLID",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "BANDWIDTH_10",
+                    "label": "Bandwidth (in kbps)",
+                    "regex_name": "trail2_0",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 228,
+            "platform": "ELS",
+            "category": "Build",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 3" ],
+
+            "name": "Build multiple vlans with 1 shared port and 1 dedicated port",
+            "approved": true,
+            "snippets": [
+                { "text": "{{vlan create vlan <<VLAN1>>,<<VLAN2>>}}\n" },
+                { "text": "{{vlan add vlan <<VLAN1>>,<<VLAN2>> port <<AES_UPLINK_PORT>>,<<LEC_CUST_FACING_PORT>>}}\n" },
+                { "text": "{{vlan remove vlan 127,1 port <<LEC_CUST_FACING_PORT>>}}\n" },
+                { "text": "{{vlan rename vlan <<VLAN1>> name <<ABREVCUSTNAME>>_<<VLAN1>>}}\n" },
+                { "text": "{{vlan rename vlan <<VLAN2>> name <<ABREVCUSTNAME>>_<<VLAN2>>}}\n" },
+                { "text": "{{port set port <<LEC_CUST_FACING_PORT>> vlan-ingress-filter off}}\n" },
+                { "text": "{{port set port <<LEC_CUST_FACING_PORT>> speed <<TEN_OR_HUNDRED>>  duplex full auto-neg off}}\n" },
+                { "text": "{{port set port <<LEC_CUST_FACING_PORT>>max-frame-size 9216 description <<XOCKTID>>}}\n" },
+                { "text": "{{flow service-level create port <<AES_UPLINK_PORT>> slid <<SLID1>> cir <<BANDWIDTH_10>> pir <<BANDWIDTH_10>>  name <<PSR>>_<<VLAN1>>}}\n" },
+                { "text": "{{flow service-mapping create vlan <<VLAN1>> src-port <<LEC_CUST_FACING_PORT>> dst-port <<AES_UPLINK_PORT>> slid <<SLID1>>}}\n" },
+                { "text": "{{flow service-level create port <<AES_UPLINK_PORT>> slid <<SLID2>> cir <<BANDWIDTH_10>> pir <<BANDWIDTH_10>>  name <<PSR>>_<<VLAN2>>}}\n" },
+                { "text": "{{flow service-mapping create vlan <<VLAN2>> src-port <<LEC_CUST_FACING_PORT>> dst-port <<AES_UPLINK_PORT>> slid <<SLID2>>}}" }
+
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "VLAN1",
+                    "label": "VLAN1",
+                    "regex_name": "311V_vlan_number",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "VLAN2",
+                    "label": "VLAN2",
+                    "regex_name": "311V_vlan_number",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "AES_UPLINK_PORT",
+                    "label": "AES/UPLINK PORT",
+                    "regex_name": "range_1_28",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "LEC_CUST_FACING_PORT",
+                    "label": "LEC/CUST_FACING PORT",
+                    "regex_name": "range_1_24",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "ABREVCUSTNAME",
+                    "label": "Customer Name",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "PSR",
+                    "label": "PSR",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-radio",
+                    "label": "TEN or HUNDRED",
+                    "variable": "TEN_OR_HUNDRED",
+                    "required": true,
+                    "values": [ { "value": "" } ],
+                    "options": [
+                        {
+                            "label": "TEN",
+                            "value": "TEN"
+                        },
+                        {
+                            "label": "HUNDRED",
+                            "value": "HUNDRED"
+                        }
+                    ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "XOCKTID",
+                    "label": "XOCKTID",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-ro-text",
+                    "variable": "SLID1",
+                    "label": "SLID1",
+                    "regex_name": "any_number",
+                    "dataCommandRefreshFlag": "always",
+                    "dataCommand": "config save\nconf search string slid",
+                    "dataParserName": "dataParserForSLID",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-ro-text",
+                    "variable": "SLID2",
+                    "label": "SLID2",
+                    "required": true,
+                    "regex_name": "any_number",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "BANDWIDTH_10",
+                    "label": "Bandwidth (in kbps)",
+                    "regex_name": "trail2_0",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 229,
+            "platform": "ELS",
+            "category": "Build",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 3" ],
+
+            "name": "Build single vlan with 1 shared port and 1 dedicated port",
+            "approved": true,
+            "snippets": [
+                { "text": "{{vlan create vlan <<VLAN>>}}\n" },
+                { "text": "{{vlan add vlan <<VLAN>> port <<AES_UPLINK_PORT>>,<<LEC_CUST_FACING_PORT>>}}\n" },
+                { "text": "{{vlan remove vlan 127,1 port <<LEC_CUST_FACING_PORT>>}}\n" },
+                { "text": "{{port set port <<LEC_CUST_FACING_PORT>> acceptable-frame-type all pvid <<VLAN>> egress-untag-vlan <<VLAN>> vlan-ingress-filter off}}\n" },
+                { "text": "{{Port set port <<LEC_CUST_FACING_PORT>> auto-neg off}}\n" },
+                { "text": "{{Port set port <<LEC_CUST_FACING_PORT>> speed <<TEN_OR_HUNDRED>> duplex full auto-neg off}}\n" },
+                { "text": "{{vlan rename vlan <<VLAN>> name <<ABREVCUSTNAME>>_<<PSR>>}}\n" },
+                { "text": "{{port set port <<LEC_CUST_FACING_PORT>> description <<XOCKTID>>}}" }
+
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "VLAN",
+                    "label": "VLAN",
+                    "regex_name": "311V_vlan_number",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "AES_UPLINK_PORT",
+                    "label": "AES/UPLINK PORT",
+                    "regex_name": "range_1_28",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "LEC_CUST_FACING_PORT",
+                    "label": "LEC/CUST_FACING PORT",
+                    "regex_name": "range_1_24",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "ABREVCUSTNAME",
+                    "label": "Customer Name",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "PSR",
+                    "label": "PSR",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-radio",
+                    "label": "TEN or HUNDRED",
+                    "variable": "TEN_OR_HUNDRED",
+                    "required": true,
+                    "values": [ { "value": "" } ],
+                    "options": [
+                        {
+                            "label": "TEN",
+                            "value": "TEN"
+                        },
+                        {
+                            "label": "HUNDRED",
+                            "value": "HUNDRED"
+                        }
+                    ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "XOCKTID",
+                    "label": "XOCKTID",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 230,
+            "platform": "ELS",
+            "category": "Build",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 3" ],
+
+            "name": "Build single vlan with VC/VS on dedicated customer port for ELS/ETS/UES",
+            "approved": true,
+            "snippets": [
+                { "text": "{{vlan show port <<LEC_CUST_FACING_PORT>>}}\n" },
+                { "text": "{{vlan create vlan <<VLAN>>}}\n" },
+                { "text": "{{vlan add vlan <<VLAN>> port <<AES_UPLINK_PORT>>}}\n" },
+                { "text": "{{port set port <<LEC_CUST_FACING_PORT>> acceptable-frame-type all max-frame-size 9216 }}\n" },
+                { "text": "{{Port set port <<LEC_CUST_FACING_PORT>> auto-neg off}}\n" },
+                { "text": "{{Port set port <<LEC_CUST_FACING_PORT>> speed <<TEN_OR_HUNDRED>> duplex full}}\n" },
+                { "text": "{{vlan rename vlan <<VLAN>> name <<ABREVCUSTNAME>>_<<PSR>>}}\n" },
+                { "text": "{{port set port <<LEC_CUST_FACING_PORT>> description <<XOCKTID>>}}\n" },
+                { "text": "{{virtual-circuit ethernet create vc <<VC_NAME>> vlan <<VLAN>>}}\n" },
+                { "text": "{{virtual-switch ethernet create vs <<VS_NAME>> vc <<VC_NAME>> encap-fixed dotpri 6}}\n" },
+                { "text": "{{virtual-switch ethernet add vs <<VS_NAME>> port <<LEC_CUST_FACING_PORT>>}}\n" },
+                { "text": "{{virtual-circuit ethernet set port <<LEC_CUST_FACING_PORT>> vlan-ethertype-policy all}}\n" },
+                { "text": "{{port set port <<LEC_CUST_FACING_PORT>> untagged-data-vs <<VS_NAME>> UNTAGGED-CTRL-VS <<VS_NAME>>}}\n" },
+                { "text": "{{port set port <<LEC_CUST_FACING_PORT>> vlan-ingress-filter off}}\n" },
+                { "text": "{{flow service-level create port <<AES_UPLINK_PORT>> slid <<SLID>> cir <<BANDWIDTH_10>> pir <<BANDWIDTH_10>>  name <<PSR>>_<<VLAN>>}}\n" },
+                { "text": "{{flow service-mapping create vlan <<VLAN>> src-port <<LEC_CUST_FACING_PORT>> dst-port <<AES_UPLINK_PORT>> slid <<SLID>>}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "LEC_CUST_FACING_PORT",
+                    "label": "LEC/CUST_FACING PORT",
+                    "regex_name": "range_1_24",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "VLAN",
+                    "label": "VLAN",
+                    "regex_name": "311V_vlan_number",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "AES_UPLINK_PORT",
+                    "label": "AES/UPLINK PORT",
+                    "regex_name": "range_1_28",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-radio",
+                    "label": "TEN or HUNDRED",
+                    "variable": "TEN_OR_HUNDRED",
+                    "required": true,
+                    "values": [ { "value": "" } ],
+                    "options": [
+                        {
+                            "label": "TEN",
+                            "value": "TEN"
+                        },
+                        {
+                            "label": "HUNDRED",
+                            "value": "HUNDRED"
+                        }
+                    ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "VC_NAME",
+                    "label": "VC Name",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "VS_NAME",
+                    "label": "VS Name",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "ABREVCUSTNAME",
+                    "label": "Customer Name",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "PSR",
+                    "label": "PSR",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "XOCKTID",
+                    "label": "XOCKTID",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-ro-text",
+                    "variable": "SLID",
+                    "label": "SLID",
+                    "regex_name": "any_number",
+                    "dataCommandRefreshFlag": "always",
+                    "dataCommand": "config save\nconf search string slid",
+                    "dataParserName": "dataParserForSLID",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "BANDWIDTH_10",
+                    "label": "Bandwidth (in kbps)",
+                    "regex_name": "trail2_0",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_display_valid",
+                    "variable": "IS_VALID",
+                    "label": "Is Valid",
+                    "required": true,
+                    "regex_name": "TRUE",
+                    "dataCommand": "vlan show port <<LEC_CUST_FACING_PORT>>",
+                    "dataPivotVariable": "LEC_CUST_FACING_PORT",
+                    "dataParserName": "PostProcFor311vLEC_CUST_FACING_PORT",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 231,
+            "platform": "ELS",
+            "category": "Build",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 3" ],
+
+            "name": "build single vlan with VC/VS on dedicated customer port for HUB",
+            "approved": true,
+            "snippets": [
+                { "text": "{{vlan show port <<LEC_CUST_FACING_PORT>>}}\n" },
+                { "text": "{{vlan create vlan <<VLAN>>}}\n" },
+                { "text": "{{vlan add vlan <<VLAN>> port <<AES_UPLINK_PORT>>}}\n" },
+                { "text": "{{vlan rename vlan <<VLAN>> name <<ABREVCUSTNAME>>_<<PSR>>}}\n" },
+                { "text": "{{virtual-circuit ethernet create vc <<VC_NAME>> vlan <<VLAN>>}}\n" },
+                { "text": "{{virtual-switch ethernet create vs <<VS_NAME>> vc <<VC_NAME>> encap-fixed dotpri 6}}\n" },
+                { "text": "{{virtual-switch ethernet add vs <<VS_NAME>> port  <<LEC_CUST_FACING_PORT>>}}\n" },
+                { "text": "{{flow service-level create port <<AES_UPLINK_PORT>> slid <<SLID>> cir <<BANDWIDTH_10>> pir <<BANDWIDTH_10>>  name <<PSR>>_<<VLAN>>}}\n" },
+                { "text": "{{flow service-mapping create vlan <<VLAN>> src-port <<LEC_CUST_FACING_PORT>> dst-port <<AES_UPLINK_PORT>> slid <<SLID>> }}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "LEC_CUST_FACING_PORT",
+                    "label": "LEC/CUST_FACING PORT",
+                    "regex_name": "range_1_24",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "VLAN",
+                    "label": "VLAN",
+                    "regex_name": "311V_vlan_number",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "AES_UPLINK_PORT",
+                    "label": "AES/UPLINK PORT",
+                    "regex_name": "range_1_28",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "VC_NAME",
+                    "label": "VC Name",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "VS_NAME",
+                    "label": "VS Name",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "ABREVCUSTNAME",
+                    "label": "Customer Name",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "PSR",
+                    "label": "PSR",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-ro-text",
+                    "variable": "SLID",
+                    "label": "SLID",
+                    "regex_name": "any_number",
+                    "dataCommandRefreshFlag": "always",
+                    "dataCommand": "config save\nconf search string slid",
+                    "dataParserName": "dataParserForSLID",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "BANDWIDTH_10",
+                    "label": "Bandwidth (in kbps)",
+                    "regex_name": "trail2_0",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_display_valid",
+                    "variable": "IS_VALID",
+                    "label": "Is Valid",
+                    "required": true,
+                    "regex_name": "TRUE",
+                    "dataCommand": "vlan show port <<LEC_CUST_FACING_PORT>>",
+                    "dataPivotVariable": "LEC_CUST_FACING_PORT",
+                    "dataParserName": "PostProcFor311vLEC_CUST_FACING_PORT",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 232,
+            "platform": "ELS",
+            "category": "Build",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 3" ],
+
+            "name": "Build HUB customer with C-Tag validated using VC/VS",
+            "approved": true,
+            "snippets": [
+                { "text": "{{vlan create vlan <<VLAN>>}}\n" },
+                { "text": "{{vlan add vlan <<VLAN>> port <<AES_UPLINK_PORT>>}}\n" },
+                { "text": "{{vlan rename vlan <<VLAN>> name <<ABREVCUSTNAME>>_<<PSR>>}}\n" },
+                { "text": "{{virtual-circuit ethernet create vc <<VC_NAME>> vlan <<VLAN>>}}\n" },
+                { "text": "{{virtual-switch ethernet create vs <<VS_NAME>> vc <<VC_NAME>> encap-fixed dotpri 6}}\n" },
+                { "text": "{{virtual-switch ethernet add vs <<VS_NAME>> port <<LEC_CUST_FACING_PORT>> vlan <<CTAG>>}}\n" },
+                { "text": "{{flow service-level create port <<AES_UPLINK_PORT>> slid <<SLID>> cir <<BANDWIDTH_10>> pir <<BANDWIDTH_10>>  name <<PSR>>_<<VLAN>>}}\n" },
+                { "text": "{{flow service-mapping create vlan <<VLAN>> src-port <<LEC_CUST_FACING_PORT>> dst-port <<AES_UPLINK_PORT>> slid <<SLID>>}}\n" },
+                { "text": "{{port set port <<LEC_CUST_FACING_PORT>> vlan-ingress-filter off}}" }
+
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "LEC_CUST_FACING_PORT",
+                    "label": "LEC/CUST_FACING PORT",
+                    "regex_name": "range_1_24",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "VLAN",
+                    "label": "VLAN",
+                    "regex_name": "311V_vlan_number",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "AES_UPLINK_PORT",
+                    "label": "AES/UPLINK PORT",
+                    "regex_name": "range_1_28",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "VC_NAME",
+                    "label": "VC Name",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "CIRCUIT ID",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "VS_NAME",
+                    "label": "VS Name",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "PSR",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "ABREVCUSTNAME",
+                    "label": "Customer Name",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "PSR",
+                    "label": "PSR",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-ro-text",
+                    "variable": "SLID",
+                    "label": "SLID",
+                    "regex_name": "any_number",
+                    "dataCommandRefreshFlag": "always",
+                    "dataCommand": "config save\nconf search string slid",
+                    "dataParserName": "dataParserForSLID",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "BANDWIDTH_10",
+                    "label": "Bandwidth (in kbps)",
+                    "regex_name": "trail2_0",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "IS_VALID",
+                    "label": "Is Valid",
+                    "required": true,
+                    "regex_name": "TRUE",
+                    "dataCommand": "vlan show port <<LEC_CUST_FACING_PORT>>",
+                    "dataPivotVariable": "LEC_CUST_FACING_PORT",
+                    "dataParserName": "PostProcFor311vLEC_CUST_FACING_PORT",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "CTAG",
+                    "label": "CTAG",
+                    "regex_name": "range_2_4095",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 233,
+            "platform": "ELS",
+            "category": "Build",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 3" ],
+
+            "name": "build vlan translations",
+            "approved": true,
+            "snippets": [
+                { "text": "{{vlan create vlan <<XO_NETWORK_VLAN>>}}\n" },
+                { "text": "{{vlan create vlan <<LEC_CUST_FACING_VLAN>>}}\n" },
+                { "text": "{{vlan rename vlan <<XO_NETWORK_VLAN>> name \"XO_NTWK_FACING_<<PSR>>\"}}\n" },
+                { "text": "{{vlan rename vlan <<LEC_CUST_FACING_VLAN>> name \"LEC/CUST_FACING_<<PSR>>\"}}\n" },
+                { "text": "{{vlan add vlan <<XO_NETWORK_VLAN>> port <<AES_UPLINK_PORT>>}}\n" },
+                { "text": "{{vlan add vlan <<LEC_CUST_FACING_VLAN>> port <<LEC_CUST_FACING_PORT>>}}\n" },
+                { "text": "{{flow learning disable vlan <<LEC_CUST_FACING_VLAN>>}}\n" },
+                { "text": "{{flow learning disable vlan <<XO_NETWORK_VLAN>>}}\n" },
+                { "text": "{{vlan set vlan <<XO_NETWORK_VLAN>> translation-vlan <<LEC_CUST_FACING_VLAN>>}}\n" },
+                { "text": "{{vlan set vlan <<LEC_CUST_FACING_VLAN>> translation-vlan <<XO_NETWORK_VLAN>>}}" }
+
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "LEC_CUST_FACING_PORT",
+                    "label": "LEC/CUST_FACING PORT",
+                    "regex_name": "range_1_24",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "XO_NETWORK_VLAN",
+                    "label": "XO NETWORK VLAN",
+                    "regex_name": "311V_vlan_number",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "LEC_CUST_FACING_VLAN",
+                    "label": "LEC/CUST FACING VLAN",
+                    "regex_name": "311V_vlan_number",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "AES_UPLINK_PORT",
+                    "label": "AES/UPLINK PORT",
+                    "regex_name": "range_1_28",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "PSR",
+                    "label": "PSR",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 233,
+            "platform": "ELS",
+            "category": "Build",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 3" ],
+
+            "name": "build uplink",
+            "approved": true,
+            "snippets": [
+                { "text": "{{mstp disable}}\n" },
+                { "text": "{{virtual-switch add reserved-vlan 3968-4094}}\n" },
+                { "text": "{{vlan remove vlan 127 port 1-28}}\n" },
+                { "text": "{{lldp dis}}\n" },
+                { "text": "{{port set port <<AES_UPLINK_PORT>> acceptable-frame-type all}}\n" },
+                { "text": "{{port set port <<AES_UPLINK_PORT>>  max-frame-size 9216 description <<XOCKTID>>}}\n" },
+                { "text": "{{port set port <<AES_UPLINK_PORT>>  auto-neg off}}\n" },
+                { "text": "{{rstp disable port <<AES_UPLINK_PORT>>}}" }
+
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "AES_UPLINK_PORT",
+                    "label": "AES/UPLINK PORT",
+                    "regex_name": "range_1_28",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "XOCKTID",
+                    "label": "XOCKTID",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 234,
+            "platform": "ELS",
+            "category": "Build",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 3" ],
+
+            "name": "Build single vlan with customer GIG port",
+            "approved": true,
+            "snippets": [
+                { "text": "{{vlan create vlan <<VLAN>>}}\n" },
+                { "text": "{{vlan add vlan <<VLAN>> port <<AES_UPLINK_PORT>>,<<LEC_CUST_FACING_PORT>>}}\n" },
+                { "text": "{{vlan remove vlan 127,1 port <<LEC_CUST_FACING_PORT>>}}\n" },
+                { "text": "{{vlan rename vlan <<VLAN>> name <<ABREVCUSTNAME>>_<<PSR>>}}\n" },
+                { "text": "{{port set port <<LEC_CUST_FACING_PORT>> acceptable-frame-type tagged-only pvid 1 egress-untag-vlan 1}}\n" },
+                { "text": "{{port set port <<LEC_CUST_FACING_PORT>> max-frame-size 9216 description <<XOCKTID>>}}\n" },
+                { "text": "{{port set port <<LEC_CUST_FACING_PORT>> auto-neg off}}\n" },
+                { "text": "{{rstp disable port <<LEC_CUST_FACING_PORT>>}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "VLAN",
+                    "label": "VLAN",
+                    "regex_name": "311V_vlan_number",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "AES_UPLINK_PORT",
+                    "label": "AES/UPLINK PORT",
+                    "regex_name": "range_1_28",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "LEC_CUST_FACING_PORT",
+                    "label": "LEC/CUST_FACING PORT",
+                    "regex_name": "range_1_24",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "ABREVCUSTNAME",
+                    "label": "Customer Name",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "PSR",
+                    "label": "PSR",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "XOCKTID",
+                    "label": "XOCKTID",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 235,
+            "platform": "ELS",
+            "category": "Build",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 3" ],
+
+            "name": "Build multiple vlan with customer GIG port",
+            "approved": true,
+            "snippets": [
+                { "text": "{{vlan create vlan <<VLAN1>>,<<VLAN2>>}}\n" },
+                { "text": "{{vlan add vlan <<VLAN1>>,<<VLAN2>> port <<AES_UPLINK_PORT>>,<<LEC_CUST_FACING_PORT>>}}\n" },
+                { "text": "{{vlan remove vlan 127,1 port <<LEC_CUST_FACING_PORT>>}}\n" },
+                { "text": "{{vlan rename vlan <<VLAN1>> name <<ABREVCUSTNAME>>_<<VLAN1_DESC>>}}\n" },
+                { "text": "{{vlan rename vlan <<VLAN2>> name <<ABREVCUSTNAME>>_<<VLAN2_DESC>>}}\n" },
+                { "text": "{{port set port <<LEC_CUST_FACING_PORT>> acceptable-frame-type tagged-only pvid 1 egress-untag-vlan 1}}\n" },
+                { "text": "{{port set port <<LEC_CUST_FACING_PORT>> max-frame-size 9216 description <<XOCKTID>>}}\n" },
+                { "text": "{{port set port <<LEC_CUST_FACING_PORT>> auto-neg off}}\n" },
+                { "text": "{{rstp disable port <<LEC_CUST_FACING_PORT>>}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "VLAN1",
+                    "label": "VLAN 1",
+                    "regex_name": "311V_vlan_number",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "VLAN2",
+                    "label": "VLAN 2",
+                    "regex_name": "311V_vlan_number",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "AES_UPLINK_PORT",
+                    "label": "AES/UPLINK PORT",
+                    "regex_name": "range_1_28",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "LEC_CUST_FACING_PORT",
+                    "label": "LEC/CUST_FACING PORT",
+                    "regex_name": "range_1_24",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "ABREVCUSTNAME",
+                    "label": "Customer Name",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "VLAN1_DESC",
+                    "label": "VLAN1 Description",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "VLAN2_DESC",
+                    "label": "VLAN2 Description",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "XOCKTID",
+                    "label": "XOCKTID",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 236,
+            "platform": "ELS",
+            "category": "Edit",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 3" ],
+
+            "name": "Add VC/VS to an existing port",
+            "approved": true,
+            "snippets": [
+                { "text": "{{port set port <<LEC_CUST_FACING_PORT>> acceptable-frame-type all pvid 1 egress-untag-vlan 1}}\n" },
+                { "text": "{{virtual-circuit ethernet create vc <<VC_NAME>> vlan <<VLAN>>}}\n" },
+               
+                { "text": "{{virtual-switch ethernet create vs <<VS_NAME>> vc <<VC_NAME>> encap-fixed-dot1dpri 6}}\n" },
+                { "text": "{{virtual-switch ethernet add vs <<VS_NAME>> port <<LEC_CUST_FACING_PORT>>}}\n" },
+                { "text": "{{virtual-circuit ethernet set port <<LEC_CUST_FACING_PORT>> vlan-ethertype-policy all  }}\n" },
+                { "text": "{{port set port <<LEC_CUST_FACING_PORT>> untagged-data-vs <<VS_NAME>>}}\n" },
+                { "text": "{{port set port <<LEC_CUST_FACING_PORT>> vlan-ingress-filter off}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "LEC_CUST_FACING_PORT",
+                    "label": "LEC/CUST_FACING PORT",
+                    "regex_name": "range_1_24",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "VC_NAME",
+                    "label": "VC Name",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "VLAN",
+                    "label": "VLAN",
+                    "regex_name": "311V_vlan_number",
+                    "required": true,
+                    "placeholder": "0-4096, but not 99 or 127",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "VS_NAME",
+                    "label": "VS Name",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 237,
+            "platform": "ELS",
+            "category": "Edit",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 3" ],
+
+            "name": "Add VLAN to an existing HUB port",
+            "approved": true,
+            "snippets": [
+                { "text": "{{virtual-switch ethernet add vs <<VS_NAME>> port <<LEC_CUST_FACING_PORT>> vlan <<CTAG>>}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "LEC_CUST_FACING_PORT",
+                    "label": "LEC/CUST_FACING PORT",
+                    "regex_name": "range_1_24",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "VS_NAME",
+                    "label": "VS Name",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "CTAG",
+                    "label": "CTAG",
+                    "regex_name": "range_2_4095",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 238,
+            "platform": "ELS",
+            "category": "Edit",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 3" ],
+
+            "name": "Remove existing VC/VS",
+            "approved": true,
+            
+            "snippets": [
+                { "text": "{{virtual-switch ethernet delete vs <<VS_NAME>>}}\n" },
+                { "text": "{{virtual-circuit ethernet delete vc <<VC_NAME>>}}\n" },
+                { "text": "{{virtual-circuit ethernet set port <<LEC_CUST_FACING_PORT>> vlan-ethertype-policy encap-only }}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "VS_NAME",
+                    "label": "VS Name",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "VC_NAME",
+                    "label": "VC Name",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                  {
+                    "type": "form-text",
+                    "variable": "LEC_CUST_FACING_PORT",
+                    "label": "LEC/CUST_FACING PORT",
+                    "regex_name": "range_1_24",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 239,
+            "platform": "ELS",
+            "category": "Edit",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 3" ],
+
+            "name": "Enable a port",
+            "approved": true,
+            "snippets": [
+                { "text": "{{port enable port <<PORT>>}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "PORT",
+                    "label": "PORT",
+                    "regex_name": "range_1_28",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 240,
+            "platform": "ELS",
+            "category": "Edit",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 3" ],
+
+            "name": "Disable a port",
+            "approved": true,
+            "snippets": [
+                { "text": "{{port disable port <<PORT>>}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "PORT",
+                    "label": "PORT",
+                    "regex_name": "range_1_28",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 241,
+            "platform": "ELS",
+            "category": "Edit",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 3" ],
+
+            "name": "Change pvid",
+            "approved": true,
+            "snippets": [
+                { "text": "{{port set port <<LEC_CUST_FACING_PORT>> acceptable-frame-type all pvid <<VLAN>> egress-untag-vlan <<VLAN>> vlan-ingress-filter off}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "LEC_CUST_FACING_PORT",
+                    "label": "LEC/CUST_FACING PORT",
+                    "regex_name": "range_1_24",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "VLAN",
+                    "label": "VLAN",
+                    "regex_name": "311V_vlan_number",
+                    "required": true,
+                    "placeholder": "0-4096, but not 99 or 127",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 242,
+            "platform": "ELS",
+            "category": "Edit",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 3" ],
+
+            "name": "Add flow control/ rate limiter",
+            "approved": true,
+            "snippets": [
+
+                { "text": "{{flow service-level create port <<AES_UPLINK_PORT>> slid <<SLID>> cir <<BANDWIDTH_10>> pir <<BANDWIDTH_10>>  name <<PSR>>_<<VLAN>>}}\n" },
+                { "text": "{{flow service-mapping create vlan <<VLAN>> src-port <<LEC_CUST_FACING_PORT>> dst-port <<AES_UPLINK_PORT>> slid <<SLID>>}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "AES_UPLINK_PORT",
+                    "label": "AES/UPLINK PORT",
+                    "regex_name": "range_1_28",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-ro-text",
+                    "variable": "SLID",
+                    "label": "SLID",
+                    "regex_name": "any_number",
+                    "dataCommandRefreshFlag": "always",
+                    "dataCommand": "config save\nconf search string slid",
+                    "dataParserName": "dataParserForSLID",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "BANDWIDTH_10",
+                    "label": "Bandwidth (in kbps)",
+                    "regex_name": "trail2_0",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "PSR",
+                    "label": "PSR",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "VLAN",
+                    "label": "VLAN",
+                    "regex_name": "311V_vlan_number",
+                    "required": true,
+                    "placeholder": "0-4096, but not 99 or 127",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "LEC_CUST_FACING_PORT",
+                    "label": "LEC/CUST_FACING PORT",
+                    "regex_name": "range_1_24",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 243,
+            "platform": "ELS",
+            "category": "Edit",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 3" ],
+
+            "name": "Configure control protocol tunneling",
+            "approved": true,
+            "snippets": [
+                { "text": "{{virtual-switch control-protocol-tunneling enable vs  <<VS_NAME>>}}\n" },
+                { "text": "{{virtual-switch control-protocol-tunneling set vs <<VS_NAME>> <<TUNNEL_TYPE>>  <<TUNNEL_DISPOSITION>>}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "VS_NAME",
+                    "label": "VS Name",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                 {
+                    "type": "form-dropdown",
+                    "variable": "TUNNEL_TYPE",
+                    "label": "TUNNEL TYPE",
+                    "regex_name": "free_type",
+                    "required": true,                  
+                    "dataParserName": "tunnelTypeStaticValues",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-dropdown",
+                    "variable": "TUNNEL_DISPOSITION",
+                    "label": "TUNNEL DISPOSITION",
+                    "regex_name": "free_type",
+                    "required": true,                    
+                    "dataParserName": "tunnelDispositionStaticValues",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 244,
+            "platform": "ELS",
+            "category": "Delete",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 3" ],
+
+            "name": "Delete flow control",
+            "approved": true,
+            "snippets": [
+                { "text": "{{flow service-mapping delete vlan <<VLAN>> src-port <<LEC_CUST_FACING_PORT>> dst-port <<AES_UPLINK_PORT>>}}\n" },
+                { "text": "{{flow service-level delete port <<AES_UPLINK_PORT>> slid <<SLID>>}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "VLAN",
+                    "label": "VLAN",
+                    "regex_name": "311V_vlan_number",
+                    "required": true,
+                    "placeholder": "0-4096, but not 99 or 127",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-dropdown",
+                    "variable": "LEC_CUST_FACING_PORT",
+                    "label": "LEC/CUST_FACING PORT",
+                    "regex_name": "range_1_24",
+                    "required": true,
+                    "dataCommandRefreshFlag": "always",
+                    "dataCommand": "conf search string service-mapping",
+                    "dataParserName": "dataParserForLEC_CUST_FACING_PORTDropdown",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "AES_UPLINK_PORT",
+                    "label": "AES/UPLINK PORT",
+                    "regex_name": "range_1_28",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-dropdown",
+                    "variable": "SLID",
+                    "label": "SLID",
+                    "regex_name": "any_number",
+                    "dataCommandRefreshFlag": "always",
+                    "dataCommand": "conf search string service-mapping",
+                    "dataParserName": "dataParserForSLIDDropdown",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 245,
+            "platform": "ELS",
+            "category": "Delete",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 3" ],
+
+            "name": "Remove an existing vlan entirely",
+            "approved": true,
+            "snippets": [
+                { "text": "{{vlan remove vlan <<VLAN>> port <<AES_UPLINK_PORT>>,<<LEC_CUST_FACING_PORT>>}}\n" },
+                { "text": "{{vlan delete vlan <<VLAN>>}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "VLAN",
+                    "label": "VLAN",
+                    "regex_name": "311V_vlan_number",
+                    "required": true,
+                    "placeholder": "0-4096, but not 99 or 127",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "LEC_CUST_FACING_PORT",
+                    "label": "LEC/CUST_FACING PORT",
+                    "regex_name": "range_1_24",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "AES_UPLINK_PORT",
+                    "label": "AES/UPLINK PORT",
+                    "regex_name": "range_1_28",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 246,
+            "platform": "ELS",
+            "category": "Delete",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 3" ],
+
+            "name": "Remove vlan from a port",
+            "approved": true,
+
+            "snippets": [
+                { "text": "{{vlan remove vlan <<VLAN>> port <<AES_UPLINK_PORT>>,<<LEC_CUST_FACING_PORT>>}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "VLAN",
+                    "label": "VLAN",
+                    "regex_name": "311V_vlan_number",
+                    "required": true,
+                    "placeholder": "0-4096, but not 99 or 127",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "LEC_CUST_FACING_PORT",
+                    "label": "LEC/CUST_FACING PORT",
+                    "regex_name": "range_1_24",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "AES_UPLINK_PORT",
+                    "label": "AES/UPLINK PORT",
+                    "regex_name": "range_1_28",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 247,
+            "platform": "ELS",
+            "category": "Delete",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 3" ],
+
+            "name": "Delete an unattached vlan",
+            "approved": true,
+            "snippets": [
+                { "text": "{{vlan delete vlan <<VLAN>>}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "VLAN",
+                    "label": "VLAN",
+                    "regex_name": "311V_vlan_number",
+                    "required": true,
+                    "placeholder": "0-4096, but not 99 or 127",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 248,
+            "platform": "ELS",
+            "category": "Execute",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 3" ],
+
+            "name": "Clear port stats",
+            "approved": true,
+            "snippets": [
+                { "text": "{{port clear port <<PORT_NUM>> statistics}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "PORT_NUM",
+                    "label": "Port Number",
+                    "regex_name": "311V_port_number",
+                    "required": true,
+                    "placeholder": "Valid Values: 1-28",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 249,
+            "platform": "ELS",
+            "category": "Execute",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 3" ],
+
+            "name": "Clear stats for a specifc VC",
+            "approved": true,
+            "snippets": [
+                { "text": "{{virtual-circuit clear vc <<VC_NAME>> statistics}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "VC_NAME",
+                    "label": "VC Name",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 250,
+            "platform": "ELS",
+            "category": "Execute",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 3" ],
+
+            "name": "Clear stats for a specifc VS",
+            "approved": true,
+            "snippets": [
+                { "text": "{{virtual-switch clear vs <<VS_NAME>> statistics}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "VS_NAME",
+                    "label": "VS Name",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 251,
+            "platform": "ELS",
+            "category": "Execute",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 3" ],
+
+            "name": "Clear mac on vlan",
+            "approved": true,
+            "snippets": [
+                { "text": "{{flow mac-addr flush vlan <<VLAN>>}}" }
+            ],
+            "variables": [
+                 {
+                    "type": "form-text",
+                    "variable": "VLAN",
+                    "label": "VLAN",
+                    "regex_name": "311V_vlan_number",
+                    "required": true,
+                    "placeholder": "0-4096, but not 99 or 127",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 252,
+            "platform": "ELS",
+            "category": "Execute",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 3" ],
+
+            "name": "Turn-off output buffer",
+            "approved": true,
+            "snippets": [
+                { "text": "{{system shell set more off}}" }
+            ],
+            "variables": [
+            ]
+        },
+        {
+            "id": 253,
+            "platform": "ELS",
+            "category": "Spirent",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 3" ],
+            "name": "Remove loop from a port",
+            "approved": true,
+            "snippets": [
+                { "text": "{{port set port <<PORT_NUM>> mac-swap off}}\n" },
+                { "text": "{{port set port <<PORT_NUM>> loopback off}}\n" },
+                { "text": "{{Port show port <<PORT_NUM>>}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "PORT_NUM",
+                    "label": "Port Number",
+                    "regex_name": "range_1_24",
+                    "required": true,
+                    "placeholder": "Valid Values: 1-24",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 254,
+            "platform": "ELS",
+            "category": "Spirent",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 3" ],
+            "name": "Loop on a port",
+            "approved": true,
+            "snippets": [
+                { "text": "{{port set port <<PORT_NUM>> loopback on}}\n" },
+                { "text": "{{port set port <<PORT_NUM>> mac-swap on}}\n" },
+                { "text": "{{Port show port <<PORT_NUM>>}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "PORT_NUM",
+                    "label": "Port Number",
+                    "regex_name": "range_1_24",
+                    "required": true,
+                    "placeholder": "Valid Values: 1-24",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 255,
+            "platform": "ELS",
+            "category": "Edit",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 3" ],
+
+            "name": "Move vlan to a new port",
+            "approved": true,
+            
+
+            "snippets": [
+                { "text": "{{vlan remove vlan <<VLAN>> port <<LEC_CUST_FACING_PORT1>>}}\n" },
+                { "text": "{{vlan add vlan <<VLAN>> port  <<LEC_CUST_FACING_PORT2>>}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "VLAN",
+                    "label": "VLAN",
+                    "regex_name": "311V_vlan_number",
+                    "required": true,
+                    "placeholder": "0-4096, but not 99 or 127",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "LEC_CUST_FACING_PORT1",
+                    "label": "LEC/CUST_FACING PORT1",
+                    "regex_name": "range_1_24",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "LEC_CUST_FACING_PORT2",
+                    "label": "LEC/CUST_FACING PORT2",
+                    "regex_name": "range_1_24",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        }
+    ]
+}

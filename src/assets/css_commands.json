@@ -1,0 +1,4043 @@
+﻿{
+    "commands": [
+        {
+            "id": 101,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" },{ "name": "XGEN"} ],
+            "name": "Show Run Interface",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show run interface <<INTERFACE>> }}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "INTERFACE",
+                    "label": "Interface",
+                    "regex_name": "free_type",
+                    "required": false,
+                    "placeholder": "Interface ex. Te0/4/0/13.3006",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },    
+        {
+            "id": 104,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "XGEN"} ],
+            "name": "XGEN - Show CFM Configuration  ",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show run ethernet cfm}}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 105,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" },{ "name": "XGEN"} ],
+            "name": "Search Interfaces by Description",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show int des | inc <<partial_description>>}}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "partial_description",
+                    "label": "Partial Description",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "Partial Description",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 106,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "XGEN"} ],
+            "name": "XGEN - Show Run Ethernet SLA",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show run ethernet sla}}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 107,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" },{ "name": "XGEN"} ],
+            "name": "Show Running Config",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show running-config}}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 111,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" },{ "name": "XGEN"} ],
+            "name": "Show Interfaces",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show interfaces description | include up | exclude \"\\\\.89 |\\\\.88 |\\\\.99 |backbone|Backbone|HUB|Lo0|Mg0|Nu0|RAPSVID|RSP|tp\"}}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 131,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "XGEN"} ],
+            "name": "XGEN - Show Run Ethernet cfm",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show run ethernet cfm}}"
+                }
+            ],
+            "variables": [
+                
+            ]
+        },
+        {
+            "id": 132,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" },{ "name": "XGEN"} ],
+            "name": "Show Run Int",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show run int <<INTTYPE>> <<INTERFACE>>}}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-select",
+                    "label": "Interface Type",
+                    "variable": "INTTYPE",
+                    "values": [ { "value": "" } ],
+                    "required": true,
+                    "intrusiveness": "",
+                    "options": [
+                        { "label": "TenGigE", "value": "TenGigE" },
+                        { "label": "Bundle-Ether", "value": "Bundle-Ether" },
+                        { "label": "GigabitEthernet", "value": "GigabitEthernet" }
+                    ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "INTERFACE",
+                    "label": "Interface",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "rack/slot/instance/port or Bundle#",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 133,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "XGEN"} ],
+            "name": "XGEN - Show Ethernet cfm local meps int",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show ethernet cfm local meps int <<INTTYPE>> <<INTERFACE>>}}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-select",
+                    "label": "Interface Type",
+                    "variable": "INTTYPE",
+                    "values": [ { "value": "" } ],
+                    "required": true,
+                    "intrusiveness": "",
+                    "options": [
+                        { "label": "TenGigE", "value": "TenGigE" },
+                        { "label": "Bundle-Ether", "value": "Bundle-Ether" },
+                        { "label": "GigabitEthernet", "value": "GigabitEthernet" }
+                    ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "INTERFACE",
+                    "label": "Interface",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "rack/slot/instance/port or Bundle#",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 134,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "XGEN"} ],
+            "name": "XGEN - show ethernet cfm peer meps int",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show ethernet cfm peer meps int <<INTTYPE>> <<INTERFACE>>}}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-select",
+                    "label": "Interface Type",
+                    "variable": "INTTYPE",
+                    "values": [ { "value": "" } ],
+                    "required": true,
+                    "intrusiveness": "",
+                    "options": [
+                        { "label": "TenGigE", "value": "TenGigE" },
+                        { "label": "Bundle-Ether", "value": "Bundle-Ether" },
+                        { "label": "GigabitEthernet", "value": "GigabitEthernet" }
+                    ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "INTERFACE",
+                    "label": "Interface",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "rack/slot/instance/port or Bundle#",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 135,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "XGEN"} ],
+            "name": "XGEN - Show Ethernet cfm configuration errors",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show ethernet cfm configuration-errors}}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 136,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "XGEN"} ],
+            "name": "XGEN - Show Ethernet cfm ccm-learning database",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show ethernet cfm ccm-learning-database | inc <<CFMSERVICENAME>> }}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "CFMSERVICENAME",
+                    "label": "CFM Service Name",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },     
+        {
+            "id": 138,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "XGEN"} ],
+            "name": "XGEN - Show Ethernet sla probes interface",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show ethernet sla probes interface <<INTTYPE>> <<INTERFACE>> }}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-select",
+                    "label": "Interface Type",
+                    "variable": "INTTYPE",
+                    "values": [ { "value": "" } ],
+                    "required": true,
+                    "intrusiveness": "",
+                    "options": [
+                        { "label": "TenGigE", "value": "TenGigE" },
+                        { "label": "Bundle-Ether", "value": "Bundle-Ether" },
+                        { "label": "GigabitEthernet", "value": "GigabitEthernet" }
+                    ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "INTERFACE",
+                    "label": "Interface",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "rack/slot/instance/port or Bundle#",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 139,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "XGEN"} ],
+            "name": "XGEN - Show Ethernet sla statistics int",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show ethernet sla statistics int <<INTTYPE>> <<INTERFACE>> }}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-select",
+                    "label": "Interface Type",
+                    "variable": "INTTYPE",
+                    "values": [ { "value": "" } ],
+                    "required": true,
+                    "intrusiveness": "",
+                    "options": [
+                        { "label": "TenGigE", "value": "TenGigE" },
+                        { "label": "Bundle-Ether", "value": "Bundle-Ether" },
+                        { "label": "GigabitEthernet", "value": "GigabitEthernet" }
+                    ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "INTERFACE",
+                    "label": "Interface",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "rack/slot/instance/port or Bundle#",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 140,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "XGEN"} ],
+            "name": "XGEN - Show Run Ethernet OAM Profile",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show run ethernet oam profile <<OAMLINK>> }}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "OAMLINK",
+                    "label": "OAM Link",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 141,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "XGEN"} ],
+            "name": "XGEN - Show Ethernet oam discovery int",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show ethernet oam discovery int <<INTTYPE>> <<INTERFACE>> }}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-select",
+                    "label": "Interface Type",
+                    "variable": "INTTYPE",
+                    "values": [ { "value": "" } ],
+                    "required": true,
+                    "intrusiveness": "",
+                    "options": [
+                        { "label": "TenGigE", "value": "TenGigE" },
+                        { "label": "Bundle-Ether", "value": "Bundle-Ether" },
+                        { "label": "GigabitEthernet", "value": "GigabitEthernet" }
+                    ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "INTERFACE",
+                    "label": "Interface",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "rack/slot/instance/port or Bundle#",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 142,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" },{ "name": "XGEN"} ],
+            "name": "Show Specific Interface Info",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show int <<INTTYPE>> <<INTERFACE>> }}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-select",
+                    "label": "Interface Type",
+                    "variable": "INTTYPE",
+                    "values": [ { "value": "" } ],
+                    "required": true,
+                    "intrusiveness": "",
+                    "options": [
+                        { "label": "TenGigE", "value": "TenGigE" },
+                        { "label": "Bundle-Ether", "value": "Bundle-Ether" },
+                        { "label": "GigabitEthernet", "value": "GigabitEthernet" }
+                    ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "INTERFACE",
+                    "label": "Interface",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "rack/slot/instance/port or Bundle#",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 143,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" },{ "name": "XGEN"} ],
+            "name": "Show ip Interface Brief",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show ip int br }}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+         {
+            "id": 1430,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" },{ "name": "XGEN"} ],
+            "name": "Show Interface Brief",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show int br }}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 144,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "XGEN"} ],
+            "name": "XGEN - Show MPLS traffic-eng tp global",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show mpls traffic-eng tp global }}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 145,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "XGEN"} ],
+            "name": "XGEN - Show MPLS traffic-eng tp link",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show mpls traffic-eng tp link }}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 146,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "XGEN"} ],
+            "name": "XGEN - Show MPLS Traffic Eng TP Tunnel Detail",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show mpls traffic-eng tp tunnel <<TUNNELNUM>> detail}}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "TUNNELNUM",
+                    "label": "Tunnel #",
+                    "regex_name": "any_number",
+                    "required": true,
+                    "placeholder": "0-65535",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 147,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "XGEN"} ],
+            "name": "XGEN - Show Specific Tunnel TP",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show int tunnel-tp <<TUNNELNUM>> }}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "TUNNELNUM",
+                    "label": "Tunnel #",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "0-65535",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 148,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "XGEN"} ],
+            "name": "XGEN - Show run mpls oam",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show run mpls oam }}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 149,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "XGEN"} ],
+            "name": "XGEN - Show MPLS traffic-eng tp mid detail",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show mpls traffic-eng tp mid detail }}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 150,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "XGEN"} ],
+            "name": "XGEN - Show All MPLS Forwarding Labels",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show mpls forwarding }}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+         {
+            "id": 151,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "XGEN"} ],
+            "name": "XGEN - Show Detail For Specific MPLS Forwarding Label",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show mpls forwarding labels <<LABEL>> detail }}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "LABEL",
+                    "label": "LABEL",
+                    "regex_name": "any_number",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 152,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "XGEN"} ],
+            "name": "XGEN - Show BFD Summary",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show bfd summary }}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 153,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "XGEN"} ],
+            "name": "XGEN - Show BFD Label Session",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show bfd label session }}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 154,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "XGEN"} ],
+            "name": "XGEN - Show BFD Label Session Interface tunnel-tp detail",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show bfd label session interface tunnel-tp <<TUNNELNUM>> detail }}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "TUNNELNUM",
+                    "label": "Tunnel #",
+                    "regex_name": "any_number",
+                    "required": true,
+                    "placeholder": "0-65535",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 155,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "XGEN"} ],
+            "name": "XGEN - Show BFD Label Session In-Label detail",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show bfd label session in-label <<LABEL>> detail }}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "LABEL",
+                    "label": "Label #",
+                    "regex_name": "any_number",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 156,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "XGEN"} ],
+            "name": "XGEN - Show All XGEN XCONs",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show run l2vpn xconnect group CMS }}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 157,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "XGEN"} ],
+            "name": "XGEN - show specfic XGEN XCON config",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show run l2vpn xconnect group CMS p2p <<CMSXCNAME>> }}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "CMSXCNAME",
+                    "label": "CMS XC Name",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 158,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" },{ "name": "XGEN"} ],
+            "name": "Show All l2vpn configs",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show run l2vpn}}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },        
+        {
+            "id": 160,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "XGEN"} ],
+            "name": "XGEN - show specifc l2vpn XGEN XCON",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show l2vpn xconnect group CMS xc-name <<CMSXCNAME>>}}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "CMSXCNAME",
+                    "label": "CMS XC Name",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 161,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" } ],
+            "name": "ONB - Show Ethernet Ring g8032",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show ethernet ring g8032 status}}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 162,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" } ],
+            "name": "ONB - View All Ring Names",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show ethernet ring g8032 brief}}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 163,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" } ],
+            "name": "ONB - view physical ring details",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show ethernet ring g8032 status XO-PhysicalRing-<<RINGCLI>>}}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "RINGCLI",
+                    "label": "Ring Name",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 164,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" },{ "name": "XGEN"} ],
+            "name": "Find Policy Map Based on Speed",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show run policy-map | inc <<MSPEED>><<SPEED_TYPE>>}}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "MSPEED",
+                    "label": "Speed",
+                    "regex_name": "any_number",
+                    "required": false,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                 {
+                    "type": "form-select",
+                    "label": "Speed Type",
+                    "variable": "SPEED_TYPE",
+                    "values": [ { "value": "" } ],
+                    "required": true,
+                    "intrusiveness": "",
+                    "options": [
+                        { "label": "GigaBits", "value": "G" },
+                        { "label": "MegaBits", "value": "MB" }                        
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 165,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" } ],
+            "name": "ONB - Show Run l2vpn Bridge Group",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show run l2vpn bridge group <<BRIDGEGROUP>> bridge-domain <<BRIDGEDOMAIN>>}}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "BRIDGEGROUP",
+                    "label": "Bridge Group",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "BRIDGEDOMAIN",
+                    "label": "Bridge Domain",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 166,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" } ],
+            "name": "ONB - Show l2vpn ring protection detail of parent interfaces",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show l2vpn protection main-interface}}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 167,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" } ],
+            "name": "ONB - Show l2vpn ring protection summary of parent interfaces",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show l2vpn protection main-interface brief}}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 168,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" } ],
+            "name": "ONB - View Details for all Bridge Domains",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show l2vpn bridge-domain detail}}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 169,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" } ],
+            "name": "ONB - View Summary for all Bridge Domains",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show l2vpn bridge-domain brief}}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 170,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" } ],
+            "name": "ONB - View All Bridge Domains",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show l2vpn bridge-domain}}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 171,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" } ],
+            "name": "ONB - View Specific Bridge Domain Detail",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show l2vpn bridge-domain bd-name <<BRIDGEDOMAIN>> detail}}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "BRIDGEDOMAIN",
+                    "label": "Bridge Domain",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 172,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" } ],
+            "name": "ONB - View Specific Bridge Domain Summary",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show l2vpn bridge-domain bd-name <<BRIDGEDOMAIN>> brief}}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "BRIDGEDOMAIN",
+                    "label": "Bridge Domain",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 173,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" } ],
+            "name": "ONB - View Specific Bridge Domain",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show l2vpn bridge-domain bd-name <<BRIDGEDOMAIN>>}}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "BRIDGEDOMAIN",
+                    "label": "Bridge Domain",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 174,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" } ],
+            "name": "ONB - View Specific Bridge Group Summary",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show l2vpn bridge-domain group <<BRIDGEGROUP>> brief}}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "BRIDGEGROUP",
+                    "label": "Bridge Group",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 175,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" } ],
+            "name": "ONB - View Specific Bridge Group",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show l2vpn bridge-domain group <<BRIDGEGROUP>>}}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "BRIDGEGROUP",
+                    "label": "Bridge Group",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 176,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" } ],
+            "name": "ONB - Find Parent RING Bridge Domains & CLLIs",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show l2vpn bridge-domain group XO-ERP-RING bd-name ?}}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 177,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" } ],
+            "name": "ONB - Show Parent Bridge Domain",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show l2vpn bridge-domain group XO-ERP-RING bd-name <<PARENTRINGBRIDGEDOMAIN>>}}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-select",
+                    "variable": "PARENTRINGBRIDGEDOMAIN",
+                    "label": "Parent Ring Bridge Domain",
+                    "regex_name": "free_type",
+                    "required": false,
+                    "placeholder": "",
+                    "dataCommand": "show l2vpn bridge-domain group XO-ERP-RING bd-name ?",
+                    "dataParserName": "DataParserForPARENTRINGBRIDGEDOMAIN",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },      
+        {
+            "id": 179,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" },{ "name": "XGEN"} ],
+            "name": "Show Parent Interface",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show int <<INTTYPE>> <<INTERFACE>>}}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-select",
+                    "label": "Interface Type",
+                    "variable": "INTTYPE",
+                    "values": [ { "value": "" } ],
+                    "required": true,
+                    "intrusiveness": "",
+                    "options": [
+                        { "label": "TenGigE", "value": "TenGigE" },
+                        { "label": "Bundle-Ether", "value": "Bundle-Ether" },
+                        { "label": "GigabitEthernet", "value": "GigabitEthernet" }
+                    ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "INTERFACE",
+                    "label": "Rack Slot Interface Port",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "Rack/Slot/Interface/Port",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 180,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" },{ "name": "XGEN"} ],
+            "name": "Show Parent Interface configuration",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show run int <<INTTYPE>> <<INTERFACE>>}}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-select",
+                    "label": "Interface Type",
+                    "variable": "INTTYPE",
+                    "values": [ { "value": "" } ],
+                    "required": true,
+                    "intrusiveness": "",
+                    "options": [
+                        { "label": "TenGigE", "value": "TenGigE" },
+                        { "label": "Bundle-Ether", "value": "Bundle-Ether" },
+                        { "label": "GigabitEthernet", "value": "GigabitEthernet" }
+                    ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "INTERFACE",
+                    "label": "Rack Slot Interface Port",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "Rack/Slot/Interface/Port",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+    
+        {
+            "id": 183,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" },{ "name": "XGEN"} ],
+            "name": "Show Customer Interface",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show int <<INTTYPE>> <<EXITINTERFACE>>.<<EXITVLAN>>}}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-select",
+                    "label": "Interface Type",
+                    "variable": "INTTYPE",
+                    "values": [ { "value": "" } ],
+                    "required": true,
+                    "intrusiveness": "",
+                    "options": [
+                        { "label": "TenGigE", "value": "TenGigE" },
+                        { "label": "Bundle-Ether", "value": "Bundle-Ether" },
+                        { "label": "GigabitEthernet", "value": "GigabitEthernet" }
+                    ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "EXITINTERFACE",
+                    "label": "Interface",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "Rack/Slot/Interface/Port or Bundle#",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "EXITVLAN",
+                    "label": "VLAN/Unit",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "VLAN",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 184,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" },{ "name": "XGEN"} ],
+            "name": "Show Customer Interface Configuration",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show run int <<INTTYPE>> <<EXITINTERFACE>>.<<EXITVLAN>>}}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-select",
+                    "label": "Interface Type",
+                    "variable": "INTTYPE",
+                    "values": [  { "value": "TenGigE" } ],
+                    "required": true,
+                    "intrusiveness": "",
+                    "options": [
+                        { "label": "TenGigE", "value": "TenGigE" },
+                        { "label": "Bundle-Ether", "value": "Bundle-Ether" },
+                        { "label": "GigabitEthernet", "value": "GigabitEthernet" }
+                    ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "EXITINTERFACE",
+                    "label": "Interface",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "Rack/Slot/Interface/Port or Bundle#",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "EXITVLAN",
+                    "label": "VLAN/Unit",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "VLAN",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 185,
+            "platform": "CSS",
+            "category": "Spirent",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" },{ "name": "XGEN"} ],
+            "name": "Show Existing Spirent sub-interfaces",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show interface description | inc <<SPIRENT_INST>> }}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-dropdown",
+                    "variable": "SPIRENT_INST",
+                    "label": "Spirent to Search",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show interfaces description | include up | exclude \"SPRNTRLBK|\\\\.89 |\\\\.88 |\\\\.99 |backbone|Backbone|HUB|Lo0|Mg0|Nu0|RAPSVID|RSP|tp\"",
+                    "dataParserName": "DataParserForSpirentInterfaceRestricted",
+                    "placeholder": "SPIRENT_Rack/Slot/Instance/Port",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },    
+        {
+            "id": 185,
+            "platform": "CSS",
+            "category": "Execute",
+            "intrusiveness": "Yes",
+            "access": [ "Command Center Level 3" ],
+            "groups": [ { "name": "ONB" } ],
+            "name": "ONB - Shutdown Customer Bridge Domain",
+            "approved": true,
+            "snippets": [
+                { "text": "{{config t}}\n" },
+                { "text": "{{l2vpn}}\n" },
+                { "text": "{{bridge group <<BRIDGEGROUP>>}}\n" },
+                { "text": "{{bridge-domain <<BRIDGEDOMAIN>>}}\n" },
+                { "text": "{{shutdown}}\n" },
+                { "text": "{{root}}\n" },
+                { "text": "{{commit}}\n" },
+                { "text": "{{exit}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "BRIDGEGROUP",
+                    "label": "Bridge Group",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "BRIDGEDOMAIN",
+                    "label": "Bridge Domain",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 186,
+            "platform": "CSS",
+            "category": "Execute",
+            "intrusiveness": "Yes",
+            "access": [ "Command Center Level 3" ],
+            "groups": [ { "name": "ONB" } ],
+            "name": "ONB - No Shutdown Customer Bridge Domain",
+            "approved": true,
+            "snippets": [
+                { "text": "{{config t}}\n" },
+                { "text": "{{l2vpn}}\n" },
+                { "text": "{{bridge group <<BRIDGEGROUP>>}}\n" },
+                { "text": "{{bridge-domain <<BRIDGEDOMAIN>>}}\n" },
+                { "text": "{{no shutdown}}\n" },
+                { "text": "{{root}}\n" },
+                { "text": "{{commit}}\n" },
+                { "text": "{{exit}}" }
+                
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "BRIDGEGROUP",
+                    "label": "Bridge Group",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "BRIDGEDOMAIN",
+                    "label": "Bridge Domain",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 951,
+            "platform": "CSS",
+            "category": "Build",
+            "intrusiveness": "Yes",
+            "access": [ "Command Center Level 4" ],
+            "groups": [ { "name": "ONB" } ],
+            "name": "ONB - Configure Terminating CSS",
+            "approved": true,
+            "snippets": [
+                { "text": "{{config t}}\n" },
+                { "text": "{{interface <<GIGEPRESELECTINTONE>> <<RINGINTERFACEONE>>.<<RINGVLAN>> l2transport}}\n" },
+                { "text": "{{encapsulation dot1q <<RINGVLAN>>}}\n" },
+                { "text": "{{description CUST::OPER::<<MSPEED>><<SPEED_TYPE>>::<<CUSTOMERNAME>>::<<CKTID>>::<<PSR>>}}\n" },
+                { "text": "{{interface <<GIGEPRESELECTINTTWO>> <<RINGINTERFACETWO>>.<<RINGVLAN>> l2transport}}\n" },
+                { "text": "{{encapsulation dot1q <<RINGVLAN>>}}\n" },
+                { "text": "{{description CUST::OPER::<<MSPEED>><<SPEED_TYPE>>::<<CUSTOMERNAME>>::<<CKTID>>::<<PSR>>}}\n" },
+                { "text": "{{interface <<GIGEPRESELECTINTEXIT>> <<RINGEXITINTERFACE>>.<<NETPROVSTAG>> l2transport}}\n" },
+                { "text": "{{encapsulation dot1q <<NETPROVSTAG>>}}\n" },
+                { "text": "{{description CUST::OPER::<<MSPEED><<SPEED_TYPE>>>::<<CUSTOMERNAME>>::<<CKTID>>::<<PSR>>}}\n" },
+                { "text": "{{service-policy input <<QOSPOLICY>>}}\n" },
+                { "text": "{{rewrite ingress tag translate 1-to-1 dot1q <<RINGVLAN>> symmetric}}\n" },
+                { "text": "{{l2vpn}}\n" },
+                { "text": "{{bridge group <<BRIDGEGROUP>>}}\n" },
+                { "text": "{{bridge-domain <<BRIDGEDOMAIN>>}}\n" },
+                { "text": "{{interface <<GIGEPRESELECTINTONE>> <<RINGINTERFACEONE>>.<<RINGVLAN>>}}\n" },
+                { "text": "{{interface <<GIGEPRESELECTINTTWO>> <<RINGINTERFACETWO>>.<<RINGVLAN>>}}\n" },
+                { "text": "{{interface <<GIGEPRESELECTINTEXIT>> <<RINGEXITINTERFACE>>.<<NETPROVSTAG>>}}\n" },
+                { "text": "{{root}}\n" },
+                { "text": "{{commit}}\n" },
+                { "text": "{{exit}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-select",
+                    "label": "Ring Interface One Type",
+                    "variable": "GIGEPRESELECTINTONE",
+                    "values": [
+                        { "value": "TenGigE" }
+                    ],
+                    "required": true,
+                    "intrusiveness": "",
+                    "options": [
+                        { "label": "TenGigE", "value": "TenGigE" },
+                        { "label": "Bundle-Ether", "value": "Bundle-Ether" },
+                        { "label": "GigabitEthernet", "value": "GigabitEthernet" }
+                    ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "RINGINTERFACEONE",
+                    "label": "Ring Interface One",
+                    "regex_name": "Rack_Slot_Instance_Port_or_Bundle",
+                    "required": true,
+                    "placeholder": "Rack/Slot/Instance/Port or Bundle#",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-select",
+                    "label": "Ring Interface Two Type",
+                    "variable": "GIGEPRESELECTINTTWO",
+                    "values": [
+                        { "value": "TenGigE" }
+                    ],
+                    "required": true,
+                    "intrusiveness": "",
+                    "options": [
+                        { "label": "TenGigE", "value": "TenGigE" },
+                        { "label": "Bundle-Ether", "value": "Bundle-Ether" },
+                        { "label": "GigabitEthernet", "value": "GigabitEthernet" }
+                    ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "RINGINTERFACETWO",
+                    "label": "Ring Interface Two",
+                    "regex_name": "Rack_Slot_Instance_Port_or_Bundle",
+                    "required": true,
+                    "placeholder": "Rack/Slot/Instance/Port or Bundle#",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-select",
+                    "label": "Ring Exit Interface Type",
+                    "variable": "GIGEPRESELECTINTEXIT",
+                    "values": [
+                        { "value": "TenGigE" }
+                    ],
+                    "required": true,
+                    "intrusiveness": "",
+                    "options": [
+                        { "label": "TenGigE", "value": "TenGigE" },
+                        { "label": "Bundle-Ether", "value": "Bundle-Ether" },
+                        { "label": "GigabitEthernet", "value": "GigabitEthernet" }
+                    ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "RINGEXITINTERFACE",
+                    "label": "Ring Exit Interface",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "RINGVLAN",
+                    "label": "Ring VLAN",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "NETPROVSTAG",
+                    "label": "NetProv S-TAG",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-combobox",
+                    "variable": "QOSPOLICY",
+                    "label": "Qos Policy",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "dataCommand": "show run policy-map ?",
+                    "dataParserName": "DataParserForQOSPOLICY",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "BRIDGEGROUP",
+                    "label": "Bridge Group",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "BRIDGEDOMAIN",
+                    "label": "Bridge Domain",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+
+                {
+                    "type": "form-text",
+                    "variable": "MSPEED",
+                    "label": "Speed",
+                    "regex_name": "any_number",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-select",
+                    "label": "Speed Type",
+                    "variable": "SPEED_TYPE",
+                    "values": [ { "value": "" } ],
+                    "required": true,
+                    "intrusiveness": "",
+                    "options": [
+                        { "label": "GigaBits", "value": "G" },
+                        { "label": "MegaBits", "value": "MB" }                        
+                    ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "CUSTOMERNAME",
+                    "label": "Customer Name",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "CKTID",
+                    "label": "Circuit ID",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "PSR",
+                    "label": "PSR",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 952,
+            "platform": "CSS",
+            "category": "Delete",
+            "intrusiveness": "Yes",
+            "access": [ "Command Center Level 4" ],
+            "groups": [ { "name": "ONB" } ],
+            "name": "ONB - Remove Configuration on Terminating CSS",
+            "approved": true,
+            "snippets": [
+                { "text": "{{config t}}\n" },
+                { "text": "{{no interface <<GIGEPRESELECTINTONE>> <<RINGINTERFACEONE>>.<<RINGVLAN>> l2transport}}\n" },
+                { "text": "{{no interface <<GIGEPRESELECTINTTWO>> <<RINGINTERFACETWO>>.<<RINGVLAN>> l2transport}}\n" },
+                { "text": "{{no interface <<GIGEPRESELECTINTEXIT>> <<RINGEXITINTERFACE>>.<<NETPROVSTAG>> l2transport}}\n" },
+                { "text": "{{l2vpn}}\n" },
+                { "text": "{{bridge group <<BRIDGEGROUP>>}}\n" },
+                { "text": "{{no bridge-domain <<BRIDGEDOMAIN>>}}\n" },
+                { "text": "{{root}}\n" },
+                { "text": "{{show}}\n" },
+                { "text": "{{commit}}\n" },
+                { "text": "{{exit}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-select",
+                    "label": "Ring Interface One Type",
+                    "variable": "GIGEPRESELECTINTONE",
+                    "values": [
+                        { "value": "TenGigE" }
+                    ],
+                    "required": true,
+                    "intrusiveness": "",
+                    "options": [
+                        { "label": "TenGigE", "value": "TenGigE" },
+                        { "label": "Bundle-Ether", "value": "Bundle-Ether" },
+                        { "label": "GigabitEthernet", "value": "GigabitEthernet" }
+                    ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "RINGINTERFACEONE",
+                    "label": "Ring Interface One",
+                    "regex_name": "Rack_Slot_Instance_Port_or_Bundle",
+                    "required": true,
+                    "placeholder": "Rack/Slot/Instance/Port or Bundle#",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-select",
+                    "label": "Ring Interface Two Type",
+                    "variable": "GIGEPRESELECTINTTWO",
+                    "values": [
+                        { "value": "TenGigE" }
+                    ],
+                    "required": true,
+                    "intrusiveness": "",
+                    "options": [
+                        { "label": "TenGigE", "value": "TenGigE" },
+                        { "label": "Bundle-Ether", "value": "Bundle-Ether" },
+                        { "label": "GigabitEthernet", "value": "GigabitEthernet" }
+                    ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "RINGINTERFACETWO",
+                    "label": "Ring Interface Two",
+                    "regex_name": "Rack_Slot_Instance_Port_or_Bundle",
+                    "required": true,
+                    "placeholder": "Rack/Slot/Instance/Port or Bundle#",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-select",
+                    "label": "Ring Exit Interface Type",
+                    "variable": "GIGEPRESELECTINTEXIT",
+                    "values": [
+                        { "value": "TenGigE" }
+                    ],
+                    "required": true,
+                    "intrusiveness": "",
+                    "options": [
+                        { "label": "TenGigE", "value": "TenGigE" },
+                        { "label": "Bundle-Ether", "value": "Bundle-Ether" },
+                        { "label": "GigabitEthernet", "value": "GigabitEthernet" }
+                    ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "RINGEXITINTERFACE",
+                    "label": "Ring Exit Interface",
+                    "regex_name": "Rack_Slot_Instance_Port_or_Bundle",
+                    "required": true,
+                    "placeholder": "Rack/Slot/Instance/Port or Bundle#",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "RINGVLAN",
+                    "label": "Ring VLAN",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "NETPROVSTAG",
+                    "label": "Netprov S-TAG",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "BRIDGEGROUP",
+                    "label": "Bridge Group",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "BRIDGEDOMAIN",
+                    "label": "Bridge Domain",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 953,
+            "platform": "CSS",
+            "category": "Build",
+            "intrusiveness": "Yes",
+            "access": [ "Command Center Level 4" ],
+            "groups": [ { "name": "ONB" } ],
+            "name": "ONB - Configure Passthrough CSS",
+            "approved": true,
+            "snippets": [
+                { "text": "{{config t}}\n" },
+                { "text": "{{interface <<GIGEPRESELECTINTONE>> <<RINGINTERFACEONE>>.<<RINGVLAN>> l2transport}}\n" },
+                { "text": "{{encapsulation dot1q <<RINGVLAN>>}}\n" },
+                { "text": "{{description CUST::OPER::<<MSPEED>><<SPEED_TYPE>>::<<CUSTOMERNAME>>::<<CKTID>>::<<PSR>>}}\n" },
+                { "text": "{{interface <<GIGEPRESELECTINTTWO>> <<RINGINTERFACETWO>>.<<RINGVLAN>> l2transport}}\n" },
+                { "text": "{{encapsulation dot1q <<RINGVLAN>>}}\n" },
+                { "text": "{{description CUST::OPER::<<MSPEED>><<SPEED_TYPE>>::<<CUSTOMERNAME>>::<<CKTID>>::<<PSR>>}}\n" },
+                { "text": "{{l2vpn}}\n" },
+                { "text": "{{bridge group <<BRIDGEGROUP>>}}\n" },
+                { "text": "{{bridge-domain <<BRIDGEDOMAIN>>}}\n" },
+                { "text": "{{interface <<GIGEPRESELECTINTONE>> <<RINGINTERFACEONE>>.<<RINGVLAN>>}}\n" },
+                { "text": "{{interface <<GIGEPRESELECTINTTWO>> <<RINGINTERFACETWO>>.<<RINGVLAN>>}}\n" },
+                { "text": "{{root}}\n" },
+                { "text": "{{commit}}\n" },
+                { "text": "{{exit}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-select",
+                    "label": "Ring Interface One Type",
+                    "variable": "GIGEPRESELECTINTONE",
+                    "values": [
+                        { "value": "TenGigE" }
+                    ],
+                    "required": true,
+                    "intrusiveness": "",
+                    "options": [
+                        { "label": "TenGigE", "value": "TenGigE" },
+                        { "label": "Bundle-Ether", "value": "Bundle-Ether" },
+                        { "label": "GigabitEthernet", "value": "GigabitEthernet" }
+                    ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "RINGINTERFACEONE",
+                    "label": "Ring Interface One",
+                    "regex_name": "Rack_Slot_Instance_Port_or_Bundle",
+                    "required": true,
+                    "placeholder": "Rack/Slot/Instance/Port or Bundle#",
+                    "values": [ { "value": "" } ]
+                },
+                 {
+                    "type": "form-select",
+                    "label": "Ring Interface Two Type",
+                    "variable": "GIGEPRESELECTINTTWO",
+                    "values": [
+                        { "value": "TenGigE" }
+                    ],
+                    "required": true,
+                    "intrusiveness": "",
+                    "options": [
+                        { "label": "TenGigE", "value": "TenGigE" },
+                        { "label": "Bundle-Ether", "value": "Bundle-Ether" },
+                        { "label": "GigabitEthernet", "value": "GigabitEthernet" }
+                    ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "RINGINTERFACETWO",
+                    "label": "Ring Interface Two",
+                    "regex_name": "Rack_Slot_Instance_Port_or_Bundle",
+                    "required": true,
+                    "placeholder": "Rack/Slot/Instance/Port or Bundle#",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "RINGVLAN",
+                    "label": "Ring VLAN",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "BRIDGEGROUP",
+                    "label": "Bridge Group",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "BRIDGEDOMAIN",
+                    "label": "Bridge Domain",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+
+                {
+                    "type": "form-text",
+                    "variable": "MSPEED",
+                    "label": "Speed",
+                    "regex_name": "any_number",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-select",
+                    "label": "Speed Type",
+                    "variable": "SPEED_TYPE",
+                    "values": [ { "value": "" } ],
+                    "required": true,
+                    "intrusiveness": "",
+                    "options": [
+                        { "label": "GigaBits", "value": "G" },
+                        { "label": "MegaBits", "value": "MB" }                        
+                    ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "CUSTOMERNAME",
+                    "label": "Customer Name",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "CKTID",
+                    "label": "Circuit ID",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "PSR",
+                    "label": "PSR",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 954,
+            "platform": "CSS",
+            "category": "Delete",
+            "intrusiveness": "Yes",
+            "access": [ "Command Center Level 4" ],
+            "groups": [ { "name": "ONB" } ],
+            "name": "ONB - Remove Passthrough CSS Configuration",
+            "approved": true,
+            "snippets": [
+                { "text": "{{config t}}\n" },
+                { "text": "{{no interface <<GIGEPRESELECTINTONE>> <<RINGINTERFACEONE>>.<<RINGVLAN>> l2transport}}\n" },
+                { "text": "{{no interface <<GIGEPRESELECTINTTWO>> <<RINGINTERFACETWO>>.<<RINGVLAN>> l2transport}}\n" },
+                { "text": "{{l2vpn}}\n" },
+                { "text": "{{bridge group <<BRIDGEGROUP>>}}\n" },
+                { "text": "{{no bridge-domain <<BRIDGEDOMAIN>>}}\n" },
+                { "text": "{{root}}\n" },
+                { "text": "{{show}}\n" },
+                { "text": "{{commit}}\n" },
+                { "text": "{{exit}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-select",
+                    "label": "Ring Interface One Type",
+                    "variable": "GIGEPRESELECTINTONE",
+                    "values": [
+                        { "value": "TenGigE" }
+                    ],
+                    "required": true,
+                    "intrusiveness": "",
+                    "options": [
+                        { "label": "TenGigE", "value": "TenGigE" },
+                        { "label": "Bundle-Ether", "value": "Bundle-Ether" },
+                        { "label": "GigabitEthernet", "value": "GigabitEthernet" }
+                    ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "RINGINTERFACEONE",
+                    "label": "Ring Interface One",
+                    "regex_name": "Rack_Slot_Instance_Port_or_Bundle",
+                    "required": true,
+                    "placeholder": "Rack/Slot/Instance/Port or Bundle#",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-select",
+                    "label": "Ring Interface Two Type",
+                    "variable": "GIGEPRESELECTINTTWO",
+                    "values": [
+                        { "value": "TenGigE" }
+                    ],
+                    "required": true,
+                    "intrusiveness": "",
+                    "options": [
+                        { "label": "TenGigE", "value": "TenGigE" },
+                        { "label": "Bundle-Ether", "value": "Bundle-Ether" },
+                        { "label": "GigabitEthernet", "value": "GigabitEthernet" }
+                    ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "RINGINTERFACETWO",
+                    "label": "Ring Interface Two",
+                    "regex_name": "Rack_Slot_Instance_Port_or_Bundle",
+                    "required": true,
+                    "placeholder": "Rack/Slot/Instance/Port or Bundle#",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "RINGVLAN",
+                    "label": "Ring VLAN",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "BRIDGEGROUP",
+                    "label": "Bridge Group",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "BRIDGEDOMAIN",
+                    "label": "Bridge Domain",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 955,
+            "platform": "CSS",
+            "category": "Edit",
+            "intrusiveness": "Yes",
+            "access": [ "Command Center Level 4" ],
+            "groups": [ { "name": "ONB" } ],
+            "name": "ONB - Add Interface VLAN Translations",
+            "approved": true,
+            "snippets": [
+                { "text": "{{config t}}\n" },
+                { "text": "{{interface <<INTTYPE> <<SPIRENTINTERFACE>>.<<NETPROVSTAG>>}}\n" },
+                { "text": "{{rewrite ingress tag translate 1-to-1 dot1q <<RINGVLAN>> symmetric}}\n" },
+                { "text": "{{root}}\n" },
+                { "text": "{{commit}}\n" },
+                { "text": "{{exit}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-select",
+                    "label": "Interface Type",
+                    "variable": "INTTYPE",
+                    "values": [ { "value": "" } ],
+                    "required": true,
+                    "intrusiveness": "",
+                    "options": [
+                        { "label": "TenGigE", "value": "TenGigE" },
+                        { "label": "Bundle-Ether", "value": "Bundle-Ether" },
+                        { "label": "GigabitEthernet", "value": "GigabitEthernet" }
+                    ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "SPIRENTINTERFACE",
+                    "label": "Spirent Interface",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "Rack/Slot/Instance/Port or Bundle#",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "NETPROVSTAG",
+                    "label": "Netprov S-TAG",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "RINGVLAN",
+                    "label": "Ring VLAN",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 956,
+            "platform": "CSS",
+            "category": "Edit",
+            "intrusiveness": "Yes",
+            "access": [ "Command Center Level 4" ],
+            "groups": [ { "name": "ONB" } ],
+            "name": "ONB - Remove Interface VLAN Translations",
+            "approved": true,
+            "snippets": [
+                { "text": "{{config t}}\n" },
+                { "text": "{{interface <<INTTYPE>> <<SPIRENTINTERFACE>>.<<NETPROVSTAG>>}}\n" },
+                { "text": "{{no rewrite ingress tag translate 1-to-1 dot1q <<RINGVLAN>> symmetric}}\n" },
+                { "text": "{{root}}\n" },
+                { "text": "{{commit}}\n" },
+                { "text": "{{exit}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-select",
+                    "label": "Interface Type",
+                    "variable": "INTTYPE",
+                    "values": [ { "value": "" } ],
+                    "required": true,
+                    "intrusiveness": "",
+                    "options": [
+                        { "label": "TenGigE", "value": "TenGigE" },
+                        { "label": "Bundle-Ether", "value": "Bundle-Ether" },
+                        { "label": "GigabitEthernet", "value": "GigabitEthernet" }
+                    ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "SPIRENTINTERFACE",
+                    "label": "Spirent Interface",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "Rack/Slot/Instance/Port or Bundle#",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "NETPROVSTAG",
+                    "label": "Netprov S-TAG",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "RINGVLAN",
+                    "label": "Ring VLAN",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 957,
+            "platform": "CSS",
+            "category": "Edit",
+            "intrusiveness": "Yes",
+            "access": [ "Command Center Level 4" ],
+            "groups": [ { "name": "ONB" } ],
+            "name": "ONB - Update Interface VLAN Translations",
+            "approved": true,
+            "snippets": [
+                { "text": "{{config t}}\n" },
+                { "text": "{{interface <<INTTYPE>> <<SPIRENTINTERFACE>>.<<NETPROVSTAG>>}}\n" },
+                { "text": "{{rewrite ingress tag translate 1-to-1 dot1q <<RINGVLAN>> symmetric}}\n" },
+                { "text": "{{root}}\n" },
+                { "text": "{{commit}}\n" },
+                { "text": "{{exit}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-select",
+                    "label": "Interface Type",
+                    "variable": "INTTYPE",
+                    "values": [ { "value": "" } ],
+                    "required": true,
+                    "intrusiveness": "",
+                    "options": [
+                        { "label": "TenGigE", "value": "TenGigE" },
+                        { "label": "Bundle-Ether", "value": "Bundle-Ether" },
+                        { "label": "GigabitEthernet", "value": "GigabitEthernet" }
+            ]
+        },
+        {
+                    "type": "form-text",
+                    "variable": "SPIRENTINTERFACE",
+                    "label": "Spirent Interface",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "Rack/Slot/Instance/Port or Bundle#",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "NETPROVSTAG",
+                    "label": "Netprov S-TAG",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "RINGVLAN",
+                    "label": "Ring VLAN",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 193,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" },{ "name": "XGEN"} ],
+            "name": "Show Platform Info",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show platform}}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 194,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" },{ "name": "XGEN"} ],
+            "name": "Show Controllers NP Ports All Location",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show controllers np ports all location <<location>>}}"
+                }
+            ],
+            "variables": [
+                 {
+                    "type": "form-select",
+                    "variable": "location",
+                    "label": "Location",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "",
+                    "dataCommand": "show controllers np ports all location ?",
+                    "dataParserName": "DataParserForLocations",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 195,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" } ],
+            "name": "ONB - Show Redundancy",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show redundancy}}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 196,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" },{ "name": "XGEN"} ],
+            "name": "Show System Log",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show log}}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 197,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" },{ "name": "XGEN"} ],
+            "name": "Show Device Version",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show version}}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 199,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" },{ "name": "XGEN"} ],
+            "name": "Show Device Inventory",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show inventory}}"
+                }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 901,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" } ],
+            "name": "ONB - Check Policy Map as Applied to the ELN Rings",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show policy-map interface <<INTTYPE>> <<RINGINTERFACE>>}}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-select",
+                    "label": "Interface Type",
+                    "variable": "INTTYPE",
+                    "values": [ { "value": "" } ],
+                    "required": true,
+                    "intrusiveness": "",
+                    "options": [
+                        { "label": "TenGigE", "value": "TenGigE" },
+                        { "label": "Bundle-Ether", "value": "Bundle-Ether" },
+                        { "label": "GigabitEthernet", "value": "GigabitEthernet" }
+                    ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "RINGINTERFACE",
+                    "label": "Ring Interface",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "Rack/Slot/Interface/Port",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 902,
+            "platform": "CSS",
+            "category": "Execute",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 3" ],
+            "groups": [ { "name": "ONB" },{ "name": "XGEN"} ],
+            "name": "Clear command for the policy map check",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{clear qos counters interface <<INTTYPE>> <<RINGINTERFACE>>}}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-select",
+                    "label": "Interface Type",
+                    "variable": "INTTYPE",
+                    "values": [ { "value": "" } ],
+                    "required": true,
+                    "intrusiveness": "",
+                    "options": [
+                        { "label": "TenGigE", "value": "TenGigE" },
+                        { "label": "Bundle-Ether", "value": "Bundle-Ether" },
+                        { "label": "GigabitEthernet", "value": "GigabitEthernet" }
+                    ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "RINGINTERFACE",
+                    "label": "Rack Slot Interface Port",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "Rack/Slot/Interface/Port",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 903,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" },{ "name": "XGEN"} ],
+            "name": "Show SFP specs",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show controllers <<INTTYPE>> <<INTERFACE>> phy}}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-select",
+                    "label": "Interface Type",
+                    "variable": "INTTYPE",
+                    "values": [ { "value": "" } ],
+                    "required": true,
+                    "intrusiveness": "",
+                    "options": [
+                        { "label": "TenGigE", "value": "TenGigE" },
+                        { "label": "Bundle-Ether", "value": "Bundle-Ether" },
+                        { "label": "GigabitEthernet", "value": "GigabitEthernet" }
+                    ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "INTERFACE",
+                    "label": "Interface",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "interface",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 904,
+            "platform": "CSS",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 1" ],
+            "groups": [ { "name": "ONB" },{ "name": "XGEN"} ],
+            "name": "Show abbreviated SFP light levels only",
+            "approved": true,
+            "snippets": [
+                {
+                    "text": "{{show controllers dwdm <<INTERFACE>> optics}}"
+                }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "INTERFACE",
+                    "label": "Interface",
+                    "regex_name": "free_type",
+                    "required": true,
+                    "placeholder": "Rack/Slot/Interface/Port",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 201,
+            "platform": "CSS",
+            "category": "Spirent",
+            "rollbackTag": "Y",
+            "rollbackDef": "2",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 4" ],
+            "groups": [ { "name": "XGEN"} ],
+            "name": "XGEN - Local Connect - Connect Spirent test interface",
+            "approved": true,
+            "must_refresh": true,
+            "snippets": [
+                { "text": "{{sh run l2vpn xconnect group CMS p2p <<EVC>>}}\n" },
+                { "text": "{{!}}\n" },
+                { "text": "{{configure term}}\n" },
+                { "text": "{{interface <<SPIRENTINT>>.<<CUSTOMER_SUB_INT>> l2transport}}\n" },
+                { "text": "{{description SPRNTRLBK-<<UPLINKINT>>|<<COMMIT_LABEL>> }}\n" },
+                { "text": "{{<<CUSTOMER_TREATMENT>>}}" },
+                { "text": "{{root}}\n" },
+                { "text": "{{l2vpn xconnect group CMS}}\n" },
+                { "text": "{{p2p <<EVC>>\n}}" },
+                { "text": "{{no interface <<UPLINKINT>>}}\n" },
+                { "text": "{{interface <<SPIRENTINT>>.<<CUSTOMER_SUB_INT>>}}\n" },
+                { "text": "{{root}}\n" },
+                { "text": "{{commit label CC-<<COMMIT_LABEL>>}}\n" },
+                { "text": "{{end}}\n" },
+                { "text": "{{sh run interface <<SPIRENTINT>>.<<CUSTOMER_SUB_INT>>}}\n" },
+                { "text": "{{sh run l2vpn xconnect group CMS p2p <<EVC>>}}" }
+            ],
+            "rollback": [
+                { "text": "{{conf t}}\n" },
+                { "text": "{{load rollback changes CC-<<COMMIT_LABEL>>}}\n" },
+                { "text": "{{commit}}\n" },
+                { "text": "{{end}}\n" }
+            ],
+            "variables": [
+                {
+                    "type": "form-combobox",
+                    "variable": "UPLINKINT",
+                    "label": "Customer Uplink Interface",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show interfaces description | include up | exclude \"\\\\.89 |\\\\.88 |\\\\.99 |backbone|Backbone|HUB|Lo0|Mg0|Nu0|RAPSVID|RSP|tp\"",
+                    "dataParserName": "DataParserForUplinkInterfaceInclAll",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "Customer Interface",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-dropdown",
+                    "variable": "SPIRENTINT",
+                    "label": "Spirent Interface",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show interfaces description | include up | exclude \"SPRNTRLBK|\\\\.89 |\\\\.88 |\\\\.99 |backbone|Backbone|HUB|Lo0|Mg0|Nu0|RAPSVID|RSP|tp\"",
+                    "dataParserName": "DataParserForSpirentInterfaceRestricted",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "Spirent Interface",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "CUSTOMER_SUB_INT",
+                    "label": "Sub Interface",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataParserName": "PostProcForVLANFromUplinkInterface",
+                    "placeholder": "Customer Sub Interface",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "CKTID",
+                    "label": "Circuit Description",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataParserName": "PostProcForCircuitFromUplinkInterfaceInclAll",
+                    "placeholder": "Circuit ID",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "EVC",
+                    "label": "P2P XCON Name",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show l2vpn xconnect interface <<UPLINKINT>>",
+                    "dataPivotVariable": "UPLINKINT",
+                    "dataParserName": "PostProcForEVCFromUplinkInterface",
+                    "placeholder": "P2P XCON Name",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "COMMIT_LABEL",
+                    "label": "Commit Label",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataParserName": "PostProcForCommitLabel",
+                    "placeholder": "Commit Label",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_treatment",
+                    "variable": "CUSTOMER_TREATMENT",
+                    "label": "VLAN Treatment & Policy",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show run interface <<UPLINKINT>>",
+                    "dataPivotVariable": "UPLINKINT",
+                    "dataParserName": "PostProcForTreatmentFromUplinkInterface",
+                    "placeholder": "Customer Treatment",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 2011,
+            "rollbackTag": "Y",
+            "rollbackDef": "2",
+            "platform": "CSS",
+            "category": "Spirent",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 4" ],
+            "groups": [ { "name": "ONB" } ],
+            "name": "ONB - Connect Spirent test interface - Dedicated Customer",
+            "approved": true,
+            "must_refresh": true,
+            "snippets": [
+                { "text": "{{show run l2vpn bridge group <<BRIDGE_GROUP>> bridge-domain <<BRIDGE_DOMAIN>>}}\n" },
+                { "text": "{{!}}\n" },
+                { "text": "{{configure term}}\n" },
+                { "text": "{{interface <<SPIRENTINT>>.<<CUSTOMER_SUB_INT>> l2transport}}\n" },
+                { "text": "{{description SPRNTRLBK-<<UPLINKINT>>|<<COMMIT_LABEL>>}}\n" },
+                { "text": "{{encapsulation dot1q <<CUSTOMER_SUB_INT>>}}\n" },
+                { "text": "{{rewrite ingress tag pop 1 symmetric}}\n" },
+                { "text": "{{!}}\n" },
+                { "text": "{{root}}\n" },
+                { "text": "{{l2vpn}}\n" },
+                { "text": "{{bridge group <<BRIDGE_GROUP>>}}\n" },
+                { "text": "{{bridge-domain <<BRIDGE_DOMAIN>>}}\n" },
+                { "text": "{{no interface <<UPLINKINT>>}}\n" },
+                { "text": "{{interface <<SPIRENTINT>>.<<CUSTOMER_SUB_INT>>}}\n" },
+                { "text": "{{root}}\n" },
+                { "text": "{{show}}\n" },
+                { "text": "{{commit label CC-<<COMMIT_LABEL>>}}\n" },
+                { "text": "{{end}}\n" },
+                { "text": "{{sh run interface <<SPIRENTINT>>.<<CUSTOMER_SUB_INT>>}}\n" },
+                { "text": "{{show run l2vpn bridge group <<BRIDGE_GROUP>> bridge-domain <<BRIDGE_DOMAIN>>}}" }
+            ],
+            "rollback": [
+                { "text": "{{conf t}}\n" },
+                { "text": "{{load rollback changes CC-<<COMMIT_LABEL>>}}\n" },
+                { "text": "{{commit}}\n" },
+                { "text": "{{end}}\n" }
+            ],
+            "variables": [
+                {
+                    "type": "form-dv-dropdown",
+                    "variable": "BRIDGE_DOMAIN",
+                    "label": "Bridge Domain",
+                    "required": true,
+                    "regex_name": "bridge_domain",
+                    "registerWatcher": true,
+                    "dataCommand": "show running-config l2vpn | include \"bridge-domain\" | exclude \"Management|MGMT|mgmt|management|APS|ONB\"",
+                    "dataParserName": "DataParserForBridgeDomain",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "Bridge Domain",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-dv-text",
+                    "variable": "BRIDGE_GROUP",
+                    "label": "Bridge Group",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show l2vpn bridge-domain bd-name <<BRIDGE_DOMAIN>>",
+                    "dataPivotVariable": "BRIDGE_DOMAIN",
+                    "dataParserName": "DataParserForBGFromBD",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "Bridge Group",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-dv-combobox",
+                    "variable": "UPLINKINT",
+                    "label": "Exit Interface",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "registerWatcher": true,
+                    "dataCommand": "show l2vpn bridge-domain bd-name <<BRIDGE_DOMAIN>>",
+                    "dataPivotVariable": "BRIDGE_DOMAIN",
+                    "dataParserName": "PostProcForExitInterface",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "ExitInterface",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "CUSTOMER_SUB_INT",
+                    "label": "Test VLAN",
+                    "required": true,
+                    "regex_name": "range_2_4094",
+                    "placeholder": "VLAN 2-4094",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "DEF_ENCAPSULATION",
+                    "label": "Default Encapsulation",
+                    "required": true,
+                    "regex_name": "DEDICATED",
+                    "dataCommand": "show run interface <<UPLINKINT>>",
+                    "dataPivotVariable": "UPLINKINT",
+                    "dataParserName": "CSS_IsEncapDefault",
+                    "placeholder": "Default Encapsulation",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-dropdown",
+                    "variable": "SPIRENTINT",
+                    "label": "Spirent Interface",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show interfaces description | include up | exclude \"SPRNTRLBK|\\\\.89 |\\\\.88 |\\\\.99 |backbone|Backbone|HUB|Lo0|Mg0|Nu0|RAPSVID|RSP|tp\"",
+                    "dataParserName": "DataParserForSpirentInterfaceRestricted",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "Spirent Interface",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "COMMIT_LABEL",
+                    "label": "Commit Label",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataParserName": "PostProcForCommitLabel",
+                    "placeholder": "Commit Label",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_treatment",
+                    "variable": "CUSTOMER_TREATMENT",
+                    "label": "Policy",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show run interface <<UPLINKINT>>",
+                    "dataPivotVariable": "UPLINKINT",
+                    "dataParserName": "PolicyFromUplinkInterface",
+                    "placeholder": "Customer Treatment",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 2012,
+            "platform": "CSS",
+            "category": "Spirent",
+            "rollbackTag": "Y",
+            "rollbackDef": "2",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 4" ],
+            "groups": [ { "name": "XGEN"} ],
+            "name": "XGEN - Pseudowire - Connect Spirent test interface - Dedicated Customer",
+            "approved": true,
+            "must_refresh": true,
+            "snippets": [
+                { "text": "{{sh run l2vpn xconnect group CMS p2p <<EVC>>}}\n" },
+                { "text": "{{!}}\n" },
+                { "text": "{{configure term}}\n" },
+                { "text": "{{interface <<SPIRENTINT>>.<<CUSTOMER_SUB_INT>> l2transport}}\n" },
+                { "text": "{{description SPRNTRLBK-<<UPLINKINT>>|<<COMMIT_LABEL>> }}\n" },
+                { "text": "{{encapsulation dot1q <<CUSTOMER_SUB_INT>>}}\n" },
+                { "text": "{{rewrite ingress tag pop 1 symmetric}}\n" },
+                { "text": "{{<<CUSTOMER_TREATMENT>>}}\n" },
+                { "text": "{{!}}\n" },
+                { "text": "{{root}}\n" },
+                { "text": "{{l2vpn xconnect group CMS}}\n" },
+                { "text": "{{p2p <<EVC>>\n}}" },
+                { "text": "{{no interface <<UPLINKINT>>}}\n" },
+                { "text": "{{interface <<SPIRENTINT>>.<<CUSTOMER_SUB_INT>>}}\n" },
+                { "text": "{{root}}\n" },
+                { "text": "{{show}}\n" },
+                { "text": "{{commit label CC-<<COMMIT_LABEL>>}}\n" },
+                { "text": "{{end}}\n" },
+                { "text": "{{sh run interface <<SPIRENTINT>>.<<CUSTOMER_SUB_INT>>}}\n" },
+                { "text": "{{sh run l2vpn xconnect group CMS p2p <<EVC>>}}" }
+            ],
+            "rollback": [
+                { "text": "{{conf t}}\n" },
+                { "text": "{{load rollback changes CC-<<COMMIT_LABEL>>}}\n" },
+                { "text": "{{commit}}\n" },
+                { "text": "{{end}}\n" }
+            ],
+            "variables": [
+                {
+                    "type": "form-combobox",
+                    "variable": "UPLINKINT",
+                    "label": "Customer Dedicated Interface",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show interfaces description | exclude \"\\\\.89 |\\\\.88 |\\\\.99 |backbone|Backbone|HUB|Lo0|Mg0|Nu0|RAPSVID|RSP|tp\"",
+                    "dataParserName": "DataParserForUplinkInterfaceInclAll",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "Customer Interface",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "Seg2_Nbr",
+                    "label": "Segment 2",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "sh running-config l2vpn xconnect group CMS p2p <<EVC>>",
+                    "dataPivotVariable": "UPLINKINT",
+                    "dataParserName": "PostProcForSeg2Nbr",
+                    "placeholder": "Segment 2 Neighbor",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-dropdown",
+                    "variable": "SPIRENTINT",
+                    "label": "Spirent Interface",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show interfaces description | include up | exclude \"SPRNTRLBK|\\\\.89 |\\\\.88 |\\\\.99 |backbone|Backbone|HUB|Lo0|Mg0|Nu0|RAPSVID|RSP|tp\"",
+                    "dataParserName": "DataParserForSpirentInterfaceRestricted",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "Spirent Interface",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "CUSTOMER_SUB_INT",
+                    "label": "Test VLAN",
+                    "required": true,
+                    "regex_name": "range_2_4094",
+                    "placeholder": "VLAN 2-4094",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "CKTID",
+                    "label": "Circuit Description",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataParserName": "PostProcForCircuitFromUplinkInterfaceInclAll",
+                    "placeholder": "Circuit ID",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "EVC",
+                    "label": "P2P XCON Name",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show l2vpn xconnect interface <<UPLINKINT>>",
+                    "dataPivotVariable": "UPLINKINT",
+                    "dataParserName": "PostProcForEVCFromUplinkInterface",
+                    "placeholder": "P2P XCON Name",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "COMMIT_LABEL",
+                    "label": "Commit Label",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataParserName": "PostProcForCommitLabel",
+                    "placeholder": "Commit Label",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "DEF_ENCAPSULATION",
+                    "label": "Default Encapsulation",
+                    "required": true,
+                    "regex_name": "DEDICATED",
+                    "dataCommand": "show run interface <<UPLINKINT>>",
+                    "dataPivotVariable": "UPLINKINT",
+                    "dataParserName": "CSS_IsEncapDefault",
+                    "placeholder": "Default Encapsulation",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_treatment",
+                    "variable": "CUSTOMER_TREATMENT",
+                    "label": "Policy",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show run interface <<UPLINKINT>>",
+                    "dataPivotVariable": "UPLINKINT",
+                    "dataParserName": "PolicyFromUplinkInterface",
+                    "placeholder": "Customer Treatment",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 2092,
+            "platform": "CSS",
+            "category": "Spirent",
+            "rollbackTag": "Y",
+            "rollbackDef": "2",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 4" ],
+            "groups": [ { "name": "XGEN"} ],
+            "name": "XGEN - Pseudowire - Connect Spirent test interface",
+            "approved": true,
+            "must_refresh": true,
+            "snippets": [
+                { "text": "{{sh run l2vpn xconnect group CMS p2p <<EVC>>}}\n" },
+                { "text": "{{!}}\n" },
+                { "text": "{{conf t}}\n" },
+                { "text": "{{interface <<SPIRENTINT>>.<<CUSTOMER_SUB_INT>> l2transport}}\n" },
+                { "text": "{{description SPRNTRLBK-<<UPLINKINT>>|<<COMMIT_LABEL>> }}\n" },
+                { "text": "{{<<CUSTOMER_TREATMENT>>}}" },
+                { "text": "{{root}}\n" },
+                { "text": "{{l2vpn xconnect group CMS}}\n" },
+                { "text": "{{p2p <<EVC>>\n}}" },
+                { "text": "{{<<SEGMENTTOREMOVE>>}}\n" },
+                { "text": "{{interface <<SPIRENTINT>>.<<CUSTOMER_SUB_INT>>}}\n" },
+                { "text": "{{root}}\n" },
+                { "text": "{{commit label CC-<<COMMIT_LABEL>>}}\n" },
+                { "text": "{{end}}\n" },
+                { "text": "{{sh run interface <<SPIRENTINT>>.<<CUSTOMER_SUB_INT>>}}\n" },
+                { "text": "{{sh run l2vpn xconnect group CMS p2p <<EVC>>}}" }
+            ],
+            "rollback": [
+                { "text": "{{conf t}}\n" },
+                { "text": "{{load rollback changes CC-<<COMMIT_LABEL>>}}\n" },
+                { "text": "{{commit}}\n" },
+                { "text": "{{end}}\n" }
+            ],
+            "variables": [
+                {
+                    "type": "form-combobox",
+                    "variable": "UPLINKINT",
+                    "label": "Segment 1",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show interfaces description | exclude \"\\\\.89 |\\\\.88 |\\\\.99 |backbone|Backbone|HUB|Lo0|Mg0|Nu0|RAPSVID|RSP|tp\"",
+                    "dataParserName": "DataParserForUplinkInterfaceInclAll",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "Customer Interface",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "Seg2_Nbr",
+                    "label": "Segment 2",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "sh running-config l2vpn xconnect group CMS p2p <<EVC>>",
+                    "dataPivotVariable": "UPLINKINT",
+                    "dataParserName": "PostProcForSeg2Nbr",
+                    "placeholder": "Segment 2 Neighbor",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "EVC",
+                    "label": "P2P XCON Name",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show l2vpn xconnect interface <<UPLINKINT>>",
+                    "dataPivotVariable": "UPLINKINT",
+                    "dataParserName": "PostProcForEVCFromUplinkInterface",
+                    "placeholder": "P2P XCON Name",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-radio",
+                    "variable": "SEGMENTTOREMOVE",
+                    "label": "Segment to Remove",
+                    "required": true,
+                    "values": [ { "value": "" } ],
+                    "options": [
+                        { "label": "Segment 1", "value": "no interface <<UPLINKINT>>" },
+                        { "label": "Segment 2", "value": "no <<Seg2_Nbr>>" }
+                    ]
+                },
+                {
+                    "type": "form-dropdown",
+                    "variable": "SPIRENTINT",
+                    "label": "Spirent Interface",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show interfaces description | include up | exclude \"SPRNTRLBK|\\\\.89 |\\\\.88 |\\\\.99 |backbone|Backbone|HUB|Lo0|Mg0|Nu0|RAPSVID|RSP|tp\"",
+                    "dataParserName": "DataParserForSpirentInterfaceRestricted",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "Spirent Interface",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "CUSTOMER_SUB_INT",
+                    "label": "Sub Interface",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataParserName": "PostProcForVLANFromUplinkInterface",
+                    "placeholder": "Customer Sub Interface",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "CKTID",
+                    "label": "Circuit Description",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataParserName": "PostProcForCircuitFromUplinkInterfaceInclAll",
+                    "placeholder": "Circuit ID",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "COMMIT_LABEL",
+                    "label": "Commit Label",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataParserName": "PostProcForCommitLabel",
+                    "placeholder": "Commit Label",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_treatment",
+                    "variable": "CUSTOMER_TREATMENT",
+                    "label": "VLAN Treatment & Policy",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show run interface <<UPLINKINT>>",
+                    "dataPivotVariable": "UPLINKINT",
+                    "dataParserName": "PostProcForTreatmentFromUplinkInterface",
+                    "placeholder": "Customer Treatment",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 2093,
+            "platform": "CSS",
+            "category": "Spirent",
+            "rollbackTag": "Y",
+            "rollbackDef": "2",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 4" ],
+            "groups": [ { "name": "XGEN"} ],
+            "name": "XGEN - Local Connect - Connect Spirent test interface - Dedicated Customer",
+            "approved": true,
+            "must_refresh": true,
+            "snippets": [
+                { "text": "{{sh run l2vpn xconnect group CMS p2p <<EVC>>}}\n" },
+                { "text": "{{!}}\n" },
+                { "text": "{{conf t}}\n" },
+                { "text": "{{interface <<SPIRENTINT>>.<<CUSTOMER_SUB_INT>> l2transport}}\n" },
+                { "text": "{{description SPRNTRLBK-<<UPLINKINT>>|<<COMMIT_LABEL>> }}\n" },
+                { "text": "{{encapsulation dot1q <<CUSTOMER_SUB_INT>>}}\n" },
+                { "text": "{{rewrite ingress tag pop 1 symmetric}}\n" },
+                { "text": "{{<<CUSTOMER_TREATMENT>>}}\n" },
+                { "text": "{{!}}\n" },
+                { "text": "{{root}}\n" },
+                { "text": "{{show}}\n" },
+                { "text": "{{l2vpn xconnect group CMS}}\n" },
+                { "text": "{{p2p <<EVC>>\n}}" },
+                { "text": "{{no interface <<UPLINKINT>>}}\n" },
+                { "text": "{{interface <<SPIRENTINT>>.<<CUSTOMER_SUB_INT>>}}\n" },
+                { "text": "{{root}}\n" },
+                { "text": "{{show}}\n" },
+                { "text": "{{commit label CC-<<COMMIT_LABEL>>}}\n" },
+                { "text": "{{end}}\n" },
+                { "text": "{{sh run interface <<SPIRENTINT>>.<<CUSTOMER_SUB_INT>>}}\n" },
+                { "text": "{{sh run l2vpn xconnect group CMS p2p <<EVC>>}}" }
+            ],
+            "rollback": [
+                { "text": "{{conf t}}\n" },
+                { "text": "{{load rollback changes CC-<<COMMIT_LABEL>>}}\n" },
+                { "text": "{{commit}}\n" },
+                { "text": "{{end}}\n" }
+            ],
+            "variables": [
+                {
+                    "type": "form-combobox",
+                    "variable": "UPLINKINT",
+                    "label": "Dedicated Customer Port",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show interfaces description | exclude \"\\\\.89 |\\\\.88 |\\\\.99 |backbone|Backbone|HUB|Lo0|Mg0|Nu0|RAPSVID|RSP|tp\"",
+                    "dataParserName": "DataParserForUplinkInterfaceInclAll",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "Customer Interface",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "EVC",
+                    "label": "P2P XCON Name",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show l2vpn xconnect interface <<UPLINKINT>>",
+                    "dataPivotVariable": "UPLINKINT",
+                    "dataParserName": "PostProcForEVCFromUplinkInterface",
+                    "placeholder": "P2P XCON Name",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-dropdown",
+                    "variable": "SPIRENTINT",
+                    "label": "Spirent Interface",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show interfaces description | include up | exclude \"SPRNTRLBK|\\\\.89 |\\\\.88 |\\\\.99 |backbone|Backbone|HUB|Lo0|Mg0|Nu0|RAPSVID|RSP|tp\"",
+                    "dataParserName": "DataParserForSpirentInterfaceRestricted",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "Spirent Interface",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "CUSTOMER_SUB_INT",
+                    "label": "Test VLAN",
+                    "required": true,
+                    "regex_name": "range_2_4094",
+                    "placeholder": "VLAN 2-4094",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "CKTID",
+                    "label": "Circuit Description",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataParserName": "PostProcForCircuitFromUplinkInterfaceInclAll",
+                    "placeholder": "Circuit ID",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "COMMIT_LABEL",
+                    "label": "Commit Label",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataParserName": "PostProcForCommitLabel",
+                    "placeholder": "Commit Label",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "DEF_ENCAPSULATION",
+                    "label": "Default Encapsulation",
+                    "required": true,
+                    "regex_name": "DEDICATED",
+                    "dataCommand": "show run interface <<UPLINKINT>>",
+                    "dataPivotVariable": "UPLINKINT",
+                    "dataParserName": "CSS_IsEncapDefault",
+                    "placeholder": "Default Encapsulation",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_treatment",
+                    "variable": "CUSTOMER_TREATMENT",
+                    "label": "Policy",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show run interface <<UPLINKINT>>",
+                    "dataPivotVariable": "UPLINKINT",
+                    "dataParserName": "PolicyFromUplinkInterface",
+                    "placeholder": "Customer Treatment",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 202,
+            "platform": "CSS",
+            "category": "Build",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 4" ],
+            "groups": [ { "name": "ONB" } ],
+            "name": "ONB - Remove Exit Sub-Interface from Bridge-Domain",
+            "approved": true,
+            "snippets": [
+
+                { "text": "{{show l2vpn bridge-domain}}\n" },
+                { "text": "{{!}}\n" },
+                { "text": "{{l2vpn}}\n" },
+                { "text": "{{bridge group <ONB_BRIDGE_GROUP>}}\n" },
+                { "text": "{{bridge-domain <BRIDGE_DOMAIN>}}\n" },
+                { "text": "{{no interface TenGigE <UPLINKINT>>}}\n" },
+                { "text": "{{root}}\n" },
+                { "text": "{{!}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-combobox",
+                    "variable": "ONB_BRIDGE_GROUP",
+                    "label": "ONB Bridge Group",
+                    "intrusiveness": "",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "registerWatcher": true,
+                    "dataCommand": "show running-config l2vpn | include \"bridge group CUST\"",
+                    "dataParserName": "DataParserForBridgeGroup",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "ONB Bridge Group",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-linked-combobox",
+                    "variable": "BRIDGE_DOMAIN",
+                    "label": "Bridge Domain",
+                    "intrusiveness": "",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show running-config l2vpn bridge group <<ONB_BRIDGE_GROUP>>",
+                    "dataParserName": "PostProcForBridgeGroup",
+                    "placeholder": "Bridge Domain",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-combobox",
+                    "variable": "UPLINKINT",
+                    "label": "Ring Exit Sub Interface",
+                    "intrusiveness": "",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show interfaces description | include up | exclude \"\\\\.89 |\\\\.88 |\\\\.99 |backbone|Backbone|HUB|Lo0|Mg0|Nu0|RAPSVID|RSP|tp\"",
+                    "dataParserName": "DataParserForUplinkInterface",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "Ring Exit Sub Interface",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 205,
+            "rollbackTag": "Y",
+            "rollbackDef": "2",
+            "platform": "CSS",
+            "category": "Spirent",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 4" ],
+            "groups": [ { "name": "ONB" } ],
+            "name": "ONB - Connect Spirent test interface",
+            "approved": true,
+            "must_refresh": true,
+            "snippets": [
+                { "text": "{{show run l2vpn bridge group <<BRIDGE_GROUP>> bridge-domain <<BRIDGE_DOMAIN>>}}\n" },
+                { "text": "{{!}}\n" },
+                { "text": "{{configure term}}\n" },
+                { "text": "{{interface <<SPIRENTINT>>.<<CUSTOMER_SUB_INT>> l2transport}}\n" },
+                { "text": "{{description SPRNTRLBK-<<UPLINKINT>>|<<COMMIT_LABEL>>}}\n" },
+                { "text": "{{<<CUSTOMER_TREATMENT>>}}" },
+                { "text": "{{root}}\n" },
+                { "text": "{{l2vpn}}\n" },
+                { "text": "{{bridge group <<BRIDGE_GROUP>>}}\n" },
+                { "text": "{{bridge-domain <<BRIDGE_DOMAIN>>}}\n" },
+                { "text": "{{no interface <<UPLINKINT>>}}\n" },
+                { "text": "{{interface <<SPIRENTINT>>.<<CUSTOMER_SUB_INT>>}}\n" },
+                { "text": "{{root}}\n" },
+                { "text": "{{commit label CC-<<COMMIT_LABEL>>}}\n" },
+                { "text": "{{end}}\n" },
+                { "text": "{{sh run interface <<SPIRENTINT>>.<<CUSTOMER_SUB_INT>>}}\n" },
+                { "text": "{{show run l2vpn bridge group <<BRIDGE_GROUP>> bridge-domain <<BRIDGE_DOMAIN>>}}" }
+            ],
+            "rollback": [
+                { "text": "{{conf t}}\n" },
+                { "text": "{{load rollback changes CC-<<COMMIT_LABEL>>}}\n" },
+                { "text": "{{commit}}\n" },
+                { "text": "{{end}}\n" }
+            ],
+            "variables": [
+                {
+                    "type": "form-dv-dropdown",
+                    "variable": "BRIDGE_DOMAIN",
+                    "label": "Bridge Domain",
+                    "required": true,
+                    "regex_name": "bridge_domain",
+                    "registerWatcher": true,
+                    "dataCommand": "show running-config l2vpn | include \"bridge-domain\" | exclude \"Management|MGMT|mgmt|management|APS|ONB\"",
+                    "dataParserName": "DataParserForBridgeDomain",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "Bridge Domain",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-dv-text",
+                    "variable": "BRIDGE_GROUP",
+                    "label": "Bridge Group",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show l2vpn bridge-domain bd-name <<BRIDGE_DOMAIN>>",
+                    "dataPivotVariable": "BRIDGE_DOMAIN",
+                    "dataParserName": "DataParserForBGFromBD",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "Bridge Group",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-dv-combobox",
+                    "variable": "UPLINKINT",
+                    "label": "Exit Interface",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "registerWatcher": true,
+                    "dataCommand": "show l2vpn bridge-domain bd-name <<BRIDGE_DOMAIN>>",
+                    "dataPivotVariable": "BRIDGE_DOMAIN",
+                    "dataParserName": "PostProcForExitInterface",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "ExitInterface",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "CUSTOMER_SUB_INT",
+                    "label": "Sub Interface",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataParserName": "PostProcForVLANFromUplinkInterface",
+                    "placeholder": "Customer Sub Interface",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-dropdown",
+                    "variable": "SPIRENTINT",
+                    "label": "Spirent Interface",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show interfaces description | include up | exclude \"SPRNTRLBK|\\\\.89 |\\\\.88 |\\\\.99 |backbone|Backbone|HUB|Lo0|Mg0|Nu0|RAPSVID|RSP|tp\"",
+                    "dataParserName": "DataParserForSpirentInterfaceRestricted",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "Spirent Interface",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "COMMIT_LABEL",
+                    "label": "Commit Label",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataParserName": "PostProcForCommitLabel",
+                    "placeholder": "Commit Label",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_treatment",
+                    "variable": "CUSTOMER_TREATMENT",
+                    "label": "Encapsulation",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show run interface <<UPLINKINT>>",
+                    "dataPivotVariable": "UPLINKINT",
+                    "dataParserName": "PostProcForTreatmentFromUplinkInterface",
+                    "placeholder": "Customer Treatment",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 204,
+            "platform": "CSS",
+            "category": "Build",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 4" ],
+            "groups": [ { "name": "ONB" } ],
+            "name": "ONB - Multi CSS - Build Bridge Domain between PW1 & PW2",
+            "approved": true,
+            "onSuccess": "MultiCSSBuildBridgeDomainSuccess",
+            "formSize": "lg",
+            "snippets": [
+                { "text": "{{configure}}\n" },
+                { "text": "{{l2vpn}}\n" },
+                { "text": "{{xconnect group CMS}}\n" },
+                { "text": "{{p2p <<XCONNECT1>> }}\n" },
+                { "text": "{{description ROLLBACK::CC_TEST_FOR_MULTI_CSS::<<USER_ID>>}}\n" },
+                { "text": "{{no <<NEIGHBOR1_TREATMENT>>}}\n" },
+                { "text": "{{commit}}\n" },
+                { "text": "{{exit}}\n" },
+                { "text": "{{p2p <<XCONNECT2>> }}\n" },
+                { "text": "{{no <<NEIGHBOR2_TREATMENT>>}}\n" },
+                { "text": "{{commit}}\n" },
+                { "text": "{{exit}}\n" },
+                { "text": "{{exit}}\n" },
+                { "text": "{{bridge group Spirent_Testing}}\n" },
+                { "text": "{{bridge-domain <<PSR>>_XCON_Spirent}}\n" },
+                { "text": "{{<<NEIGHBOR1_LOG>>}}\n" },
+                { "text": "{{commit}}\n" },
+                { "text": "{{exit}}\n" },
+                { "text": "{{<<NEIGHBOR2_LOG>>}}\n" },
+                { "text": "{{commit}}\n" },
+                { "text": "{{exit}}\n" },
+                { "text": "{{exit}}\n" },
+                { "text": "{{exit}}\n" },
+                { "text": "{{exit}}\n" },
+                { "text": "{{exit}}" }
+            ],
+            "variables": [
+                  {
+                    "variable": "PSR",
+                    "label": "PSR #",
+                    "values": [ { "value": "" } ],
+                    "type": "form-text",
+                    "required": true,
+                    "intrusiveness": "",
+                    "regex_name": "numeric_8",
+                    "placeholder": "Valid PSR #"
+                },
+                {
+                    "type": "form-combobox",
+                    "variable": "XCONNECT1",
+                    "label": "Customer P2P Name",
+                    "intrusiveness": "",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show l2vpn xconnect",
+                    "dataParserName": "DataParserForXConnect",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "XConnect P2P Name",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "NEIGHBOR1_TREATMENT",
+                    "label": "Customer PW",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show run l2vpn xconnect group CMS",
+                    "dataPivotVariable": "XCONNECT1",
+                    "dataParserName": "PostProcForPWNeighborRemoval",
+                    "placeholder": "Neighbor Removal",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "CUSTOMER_PW_STATUS",
+                    "label": "Customer PW Status",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataParserName": "PostProcForPWStatusFromXConnectP2p",
+                    "placeholder": "Customer PW Status",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-combobox",
+                    "variable": "XCONNECT2",
+                    "label": "Test Only P2P Name",
+                    "intrusiveness": "",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show l2vpn xconnect",
+                    "dataParserName": "DataParserForXConnect",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "XConnect P2P Name",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "NEIGHBOR2_TREATMENT",
+                    "label": "Test Only PW ",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show run l2vpn xconnect group CMS",
+                    "dataPivotVariable": "XCONNECT2",
+                    "dataParserName": "PostProcForPWNeighborRemoval",
+                    "placeholder": "Neighbor Removal",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_treatment",
+                    "variable": "NEIGHBOR1_LOG",
+                    "label": "Pseudowire #1",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show run l2vpn xconnect group CMS",
+                    "dataPivotVariable": "XCONNECT1",
+                    "dataParserName": "PostProcForPWNeighborBridgeDomain",
+                    "placeholder": "Neighbor Removal",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_treatment",
+                    "variable": "NEIGHBOR2_LOG",
+                    "label": "Pseudowire #2",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show run l2vpn xconnect group CMS",
+                    "dataPivotVariable": "XCONNECT2",
+                    "dataParserName": "PostProcForPWNeighborBridgeDomain",
+                    "placeholder": "Neighbor Removal",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "ROLLBACK_LOG",
+                    "label": "Rollback Log",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataParserName": "PostProcForRollbackPW",
+                    "placeholder": "Customer PW Status",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "USER_ID",
+                    "label": "Current User Id",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataPivotVariable": "PSR",
+                    "dataParserName": "PostProcForCurrentUser",
+                    "placeholder": "Current User Id",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 3018,
+            "platform": "CSS",
+            "category": "Spirent",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 4" ],
+            "name": "XGEN - Local Connect - Disconnect test and restore to normal",
+            "approved": true,
+            "snippets": [
+                { "text": "{{show running-config l2vpn xconnect group CMS p2p <<EVC>>}}\n" },
+                { "text": "{{sh configuration commit list detail | include CC-}}\n" },
+                { "text": "{{configure terminal}}\n" },
+                { "text": "{{load rollback changes CC-<<UPLINKINT>>}}\n" },
+                { "text": "{{show}}\n" },
+                { "text": "{{commit}}\n" },
+                { "text": "{{end}}\n" },
+                { "text": "{{sh run interface <<SPIRENTINT>>\n}}" },
+                { "text": "{{show running-config l2vpn xconnect group CMS p2p <<EVC>>}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-dropdown",
+                    "variable": "SPIRENTINT",
+                    "label": "Spirent Interface to Remove",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show interfaces description | include up | include SPRNTRLBK | exclude \"\\\\.89 |\\\\.88 |\\\\.99 |backbone|Backbone|HUB|Lo0|Mg0|Nu0|RAPSVID|RSP|tp\"",
+                    "dataParserName": "DataParserForSpirentOnPseudowireInclAll",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "Spirent Interface",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "UPLINKINT",
+                    "label": "Rollback Label to Restore",
+                    "required": true,
+                    "regex_name": "TZ_commit",
+                    "dataCommand": "",
+                    "dataParserName": "PostProcForRollbacktoPseudowireInclAll",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "Rollback Label identifying Customer Interface to Restore",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "EVC",
+                    "label": "P2P XCON Name",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show l2vpn xconnect interface <<SPIRENTINT>>",
+                    "dataPivotVariable": "SPIRENTINT",
+                    "dataParserName": "PostProcForEVCFromUplinkInterface",
+                    "placeholder": "P2P XCON Name",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 3092,
+            "platform": "CSS",
+            "category": "Spirent",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 4" ],
+            "name": "XGEN - Pseudowire - Disconnect test and restore to normal",
+            "approved": true,
+            "snippets": [
+                { "text": "{{show running-config l2vpn xconnect group CMS p2p <<EVC>>}}\n" },
+                { "text": "{{sh configuration commit list detail | include CC-}}\n" },
+                { "text": "{{conf t}}\n" },
+                { "text": "{{load rollback changes CC-<<UPLINKINT>>}}\n" },
+                { "text": "{{show}}\n" },
+                { "text": "{{commit}}\n" },
+                { "text": "{{end}}\n" },
+                { "text": "{{sh run interface <<SPIRENTINT>>\n}}" },
+                { "text": "{{sh run l2vpn xconnect group CMS p2p <<EVC>>}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-dropdown",
+                    "variable": "SPIRENTINT",
+                    "label": "Spirent Interface to Remove",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show interfaces description | include SPRNTRLBK | exclude \"\\\\.89 |\\\\.88 |\\\\.99 |backbone|Backbone|HUB|Lo0|Mg0|Nu0|RAPSVID|RSP|tp\"",
+                    "dataParserName": "DataParserForSpirentOnPseudowireInclAll",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "Spirent Interface",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "EVC",
+                    "label": "P2P XCON Name",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show l2vpn xconnect interface <<SPIRENTINT>>",
+                    "dataPivotVariable": "SPIRENTINT",
+                    "dataParserName": "PostProcForEVCFromUplinkInterface",
+                    "placeholder": "P2P XCON Name",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "UPLINKINT",
+                    "label": "Rollback Label to Restore",
+                    "required": true,
+                    "regex_name": "TZ_commit",
+                    "dataCommand": "",
+                    "dataParserName": "PostProcForRollbacktoPseudowireInclAll",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "Rollback Label identifying Customer Interface to Restore",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 303,
+            "platform": "CSS",
+            "category": "Delete",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 4" ],
+            "name": "Re-Build Exit Sub-Interface",
+            "approved": true,
+            "snippets": [
+
+                { "text": "{{show l2vpn bridge-domain}}\n" },
+                { "text": "{{!}}\n" },
+                { "text": "{{interface TenGigE <<UPLINKINT>> l2transport}}\n" },
+                { "text": "{{<<CUSTOMER_TREATMENT>>}}\n" },
+                { "text": "{{root}}\n" },
+                { "text": "{{!}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-combobox",
+                    "variable": "UPLINKINT",
+                    "label": "Ring Exit Sub Interface",
+                    "intrusiveness": "",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show interfaces description | include up | exclude \"\\\\.89 |\\\\.88 |\\\\.99 |backbone|Backbone|HUB|Lo0|Mg0|Nu0|RAPSVID|RSP|tp\"",
+                    "dataParserName": "DataParserForUplinkInterface",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "Ring Exit Sub Interface",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_treatment",
+                    "variable": "CUSTOMER_TREATMENT",
+                    "label": "VLAN Treatment & Policy",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show run interface <<UPLINKINT>>",
+                    "dataPivotVariable": "UPLINKINT",
+                    "dataParserName": "PostProcForTreatmentFromUplinkInterface",
+                    "placeholder": "Customer Treatment",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 304,
+            "platform": "CSS",
+            "category": "Delete",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 4" ],
+            "groups": [ { "name": "ONB" } ],
+            "name": "ONB - Re-Add Exit Sub-Interface to Bridge-Domain",
+            "approved": true,
+            "snippets": [
+
+                { "text": "{{show l2vpn bridge-domain}}\n" },
+                { "text": "{{!}}\n" },
+                { "text": "{{l2vpn}}\n" },
+                { "text": "{{bridge group <ONB_BRIDGE_GROUP>}}\n" },
+                { "text": "{{bridge-domain <BRIDGE_DOMAIN>}}\n" },
+                { "text": "{{interface TenGigE <UPLINKINT>>}}\n" },
+                { "text": "{{root}}\n" },
+                { "text": "{{!}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-combobox",
+                    "variable": "ONB_BRIDGE_GROUP",
+                    "label": "ONB Bridge Group",
+                    "intrusiveness": "",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "registerWatcher": true,
+                    "dataCommand": "show running-config l2vpn | include \"bridge group CUST\"",
+                    "dataParserName": "DataParserForBridgeGroup",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "ONB Bridge Group",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-linked-combobox",
+                    "variable": "BRIDGE_DOMAIN",
+                    "label": "Bridge Domain",
+                    "intrusiveness": "",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show running-config l2vpn bridge group <<ONB_BRIDGE_GROUP>>",
+                    "dataParserName": "PostProcForBridgeGroup",
+                    "placeholder": "Bridge Domain",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-combobox",
+                    "variable": "UPLINKINT",
+                    "label": "Ring Exit Sub Interface",
+                    "intrusiveness": "",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show interfaces description | include up | exclude \"\\\\.89 |\\\\.88 |\\\\.99 |backbone|Backbone|HUB|Lo0|Mg0|Nu0|RAPSVID|RSP|tp\"",
+                    "dataParserName": "DataParserForUplinkInterface",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "Ring Exit Sub Interface",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+	        "id": 305,
+	        "platform": "CSS",
+	        "category": "Spirent",
+	        "intrusiveness": "Y",
+            "access": [ "Command Center Level 4" ],
+            "groups": [ { "name": "ONB" } ],
+	        "name": "ONB - Disconnect test and restore to normal",
+            "approved": true,
+	        "snippets": [
+	            { "text": "{{show running-config l2vpn bridge group <<ONB_BRIDGE_GROUP>> bridge-domain <<BRIDGE_DOMAIN>>}}\n" },
+                { "text": "{{!}}\n" },
+                { "text": "{{sh configuration commit list detail | include CC-}}\n" },
+                { "text": "{{configure terminal}}\n" },
+                { "text": "{{load rollback changes CC-<<UPLINKINT>>}}\n" },
+                { "text": "{{show}}\n" },
+                { "text": "{{commit}}\n" },
+                { "text": "{{end}}\n" },
+                { "text": "{{!}}\n" },
+                { "text": "{{sh run interface <<SPIRENTINT>>\n}}" },
+                { "text": "{{show running-config l2vpn bridge group <<ONB_BRIDGE_GROUP>> bridge-domain <<BRIDGE_DOMAIN>>}}" }
+            ],
+	        "variables": [
+                {
+                    "type": "form-dropdown",
+                    "variable": "SPIRENTINT",
+                    "label": "Spirent Interface to Remove",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show interfaces description | include up | include SPRNTRLBK | exclude \"\\\\.89 |\\\\.88 |\\\\.99 |backbone|Backbone|HUB|Lo0|Mg0|Nu0|RAPSVID|RSP|tp\"",
+                    "dataParserName": "DataParserForSpirentOnPseudowire",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "Spirent Interface",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "ONB_BRIDGE_GROUP",
+                    "label": "ONB Bridge Group",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "show l2vpn bridge-domain interface <<SPIRENTINT>>",
+                    "dataPivotVariable": "SPIRENTINT",
+                    "dataParserName": "DP_CSS_BridgeGroup",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "ONB Bridge Group",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-dv-text",
+                    "variable": "BRIDGE_DOMAIN",
+                    "label": "Bridge Domain",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "Bridge Domain",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "UPLINKINT",
+                    "label": "Rollback Label to Restore",
+                    "required": true,
+                    "regex_name": "TZ_commit",
+                    "dataCommand": "",
+                    "dataParserName": "PostProcForRollbacktoPseudowire",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "Rollback Label identifying Customer Interface to Restore",
+                    "values": [ { "value": "" } ]
+                }
+	        ]
+        },
+        {
+            "id": 306,
+            "platform": "CSS",
+            "category": "Delete",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 4" ],
+            "groups": [ { "name": "ONB" } ],
+            "name": "Multi CSS - Delete Test Bridge Domain between PW1 & PW2",
+            "approved": true,
+            "onSuccess": "MultiCSSDeleteBridgeDomainSuccess",
+            "formSize": "lg",
+            "snippets": [
+                { "text": "{{configure}}\n" },
+                { "text": "{{l2vpn}}\n" },
+                { "text": "{{bridge group Spirent_Testing}}\n" },
+                { "text": "{{bridge-domain <<PSR>>_XCON_Spirent}}\n" },
+                { "text": "{{no <<NEIGHBOR1_TREATMENT>>}}\n" },
+                { "text": "{{exit}}\n" },
+                { "text": "{{no <<NEIGHBOR2_TREATMENT>>}}\n" },
+                { "text": "{{exit}}\n" },
+                { "text": "{{no bridge-domain <<PSR>>_XCON_Spirent}}\n" },
+                { "text": "{{commit}}\n" },
+                { "text": "{{exit}}\n" },
+                { "text": "{{xconnect group CMS}}\n" },
+                { "text": "{{p2p <<XCONNECT1>> }}\n" },
+                { "text": "{{description RESTORED::CC_TEST_FOR_MULTI_CSS}}\n" },
+                { "text": "{{no <<LOG1_TREATMENT>>}}\n" },
+                { "text": "{{commit}}\n" },
+                { "text": "{{exit}}\n" },
+                { "text": "{{configure}}\n" },
+                { "text": "{{l2vpn}}\n" },
+                { "text": "{{xconnect group CMS}}\n" },
+                { "text": "{{p2p <<XCONNECT2>> }}\n" },
+                { "text": "{{no <<LOG2_TREATMENT>>}}\n" },
+                { "text": "{{commit}}\n" },
+                { "text": "{{exit}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-combobox",
+                    "variable": "PSR",
+                    "label": "PSR #",
+                    "values": [ { "value": "" } ],
+                    "required": true,
+                    "intrusiveness": "",
+                    "regex_name": "numeric_8",
+                    "dataCommand": "",
+                    "dataParserName": "DataParserForMultiCSSPSR",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "Valid PSR #"
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "XCONNECT1",
+                    "label": "Customer P2P Name",
+                    "intrusiveness": "",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "",
+                    "dataPivotVariable": "PSR",
+                    "dataParserName": "PostProcForPWRollback",
+                    "placeholder": "XConnect P2P Name",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "XCONNECT2",
+                    "label": "Test Only P2P Name",
+                    "intrusiveness": "",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "",
+                    "dataPivotVariable": "PSR",
+                    "dataParserName": "PostProcForPWRollback",
+                    "placeholder": "XConnect P2P Name",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "NEIGHBOR1_TREATMENT",
+                    "label": "Break Bridge Domain Customer PW",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "",
+                    "dataPivotVariable": "PSR",
+                    "dataParserName": "PostProcForPWRollback",
+                    "placeholder": "Neighbor Removal",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "NEIGHBOR2_TREATMENT",
+                    "label": "Break Bridge Domain Test PW",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "",
+                    "dataPivotVariable": "PSR",
+                    "dataParserName": "PostProcForPWRollback",
+                    "placeholder": "Neighbor Removal",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_treatment",
+                    "variable": "LOG1_TREATMENT",
+                    "label": "Restore Customer PW",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "",
+                    "dataPivotVariable": "PSR",
+                    "dataParserName": "PostProcForPWRollback",
+                    "placeholder": "Neighbor Removal",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_treatment",
+                    "variable": "LOG2_TREATMENT",
+                    "label": "Restore Test Only PW ",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "",
+                    "dataPivotVariable": "PSR",
+                    "dataParserName": "PostProcForPWRollback",
+                    "placeholder": "Neighbor Removal",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "CUST_STATUS_BEFORE_TEST",
+                    "label": "Customer PW Status Before Test",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "",
+                    "dataPivotVariable": "PSR",
+                    "dataParserName": "PostProcForPWRollback",
+                    "placeholder": "Customer PW Status Before Test",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "BUILT_BY",
+                    "label": "Bridge Was Built By User",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "dataCommand": "",
+                    "dataPivotVariable": "PSR",
+                    "dataParserName": "PostProcForPWRollback",
+                    "placeholder": "Bridge Was Built By User",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        }
+    ]
+}

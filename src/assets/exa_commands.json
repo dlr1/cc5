@@ -1,0 +1,1547 @@
+﻿{
+    "commands": [
+        {
+            "id": 102,
+            "platform": "EXA",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 2" ],
+            "name": "Show Run On Specific Efm-Group",
+            "approved": true,
+            "snippets": [
+                { "text": "{{sho run int efm-group <<CONFIG>>}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "CONFIG",
+                    "label": "Efm-Group",
+                    "required": true,
+                    "regex_name": "exa_efm_group",
+                    "placeholder": "shelf/slot/group",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 103,
+            "platform": "EXA",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 2" ],
+            "name": "Show Run On Specific SHDSL",
+            "approved": true,
+            "snippets": [
+                { "text": "{{sho run int shdsl <<CONFIG>>}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "CONFIG",
+                    "label": "SHDSL",
+                    "required": true,
+                    "regex_name": "exa_shdsl_port",
+                    "placeholder": "shelf/slot/port",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 104,
+            "platform": "EXA",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 2" ],
+            "name": "Show Run On Specific T1",
+            "approved": true,
+            "snippets": [
+                { "text": "{{sho run int t1 <<CONFIG>>}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "CONFIG",
+                    "label": "T1",
+                    "required": true,
+                    "regex_name": "exa_t1_port",
+                    "placeholder": "shelf/slot/port:channel",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 105,
+            "platform": "EXA",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 2" ],
+            "name": "Show All EVCs",
+            "approved": true,
+            "snippets": [
+                { "text": "{{sho evc}}" }
+            ],
+            "variables": [
+            ]
+        },
+        {
+            "id": 106,
+            "platform": "EXA",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 2" ],
+            "name": "Show Int Specific Efm-Group",
+            "approved": true,
+            "snippets": [
+                { "text": "{{sho int efm-group <<CONFIG>>}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "CONFIG",
+                    "label": "Efm-Group",
+                    "required": true,
+                    "regex_name": "exa_efm_group",
+                    "placeholder": "shelf/slot/group",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 190,
+            "platform": "EXA",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 2" ],
+            "name": "Show Int All Efm-Groups",
+            "approved": true,
+            "snippets": [
+                { "text": "{{sho int efm-group}}" }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 107,
+            "platform": "EXA",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 2" ],
+            "name": "Show System Inventory",
+            "approved": true,
+            "snippets": [
+                { "text": "{{show system inventory}}" }
+            ],
+            "variables": [
+            ]
+        },
+        {
+            "id": 108,
+            "platform": "EXA",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 2" ],
+            "name": "Sho Int SHDSL",
+            "approved": true,
+            "snippets": [
+                { "text": "{{sho int shdsl <<CONFIG>>}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "CONFIG",
+                    "label": "SHDSL",
+                    "required": true,
+                    "regex_name": "exa_shdsl_port",
+                    "placeholder": "shelf/slot/port",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 109,
+            "platform": "EXA",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 2" ],
+            "name": "Sho Int t1",
+            "approved": true,
+            "snippets": [
+                { "text": "{{sho int t1 <<CONFIG>>}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "CONFIG",
+                    "label": "T1",
+                    "required": true,
+                    "regex_name": "exa_t1_port",
+                    "placeholder": "shelf/slot/port:channel",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 110,
+            "platform": "EXA",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 2" ],
+            "name": "Show Run Specific Evc",
+            "approved": true,
+            "snippets": [
+                { "text": "{{sho run evc <<CONFIG>>}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "CONFIG",
+                    "label": "EVC",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 111,
+            "platform": "EXA",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 2" ],
+            "name": "Sho Int GIGE",
+            "approved": true,
+            "snippets": [
+                { "text": "{{sho int gig}}" }
+            ],
+            "variables": [
+
+            ]
+        },
+        {
+            "id": 112,
+            "platform": "EXA",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 2" ],
+            "name": "Sho Int GIGE Port",
+            "approved": true,
+            "snippets": [
+                { "text": "{{sho int gig <<CONFIGGIGE>>}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "CONFIGGIGE",
+                    "label": "GIGE",
+                    "required": true,
+                    "regex_name": "exa_gige_port",
+                    "placeholder": "shelf/slot/port",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 120,
+            "platform": "EXA",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 2" ],
+            "name": "Search Config Beginning With",
+            "approved": true,
+            "snippets": [
+                { "text": "{{show run | beg <<CONFIG>>}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "CONFIG",
+                    "label": "Search Text",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "placeholder": "type search text here",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 125,
+            "platform": "EXA",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 2" ],
+            "name": "Show Redundancy",
+            "approved": true,
+            "snippets": [
+                { "text": "{{show redundancy <<CONFIG>>}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "CONFIG",
+                    "label": "Shelf/Slot",
+                    "required": true,
+                    "regex_name": "exa_shelf_slot",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 130,
+            "platform": "EXA",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 2" ],
+            "name": "Show Run All EVCs",
+            "approved": true,
+            "snippets": [
+                { "text": "{{sho run evc}}" }
+            ],
+            "variables": [
+            ]
+        },
+        {
+            "id": 135,
+            "platform": "EXA",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 2" ],
+            "name": "Show Specific Evc",
+            "approved": true,
+            "snippets": [
+                { "text": "{{sho evc <<CONFIG>>}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "CONFIG",
+                    "label": "EVC Name",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 136,
+            "platform": "EXA",
+            "category": "Show",
+            "intrusiveness": "",
+            "access": [ "Command Center Level 2" ],
+            "name": "BB Search Config (including)",
+            "approved": true,
+            "snippets": [
+                { "text": "{{show run | inc <<CONFIG>>}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "CONFIG",
+                    "label": "Search Text",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "placeholder": "type search text here",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 202,
+            "platform": "EXA",
+            "category": "Build",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 4" ],
+            "name": "Build EVC",
+            "approved": true,
+            "snippets": [
+                { "text": "{{config t}}\n" },
+                { "text": "{{evc <<EVC>>}}\n" },
+                { "text": "{{s-tag <<STAG>>}}\n" },
+                { "text": "{{connect men-port efm-group <<EFMPORT>>}}\n" },
+                { "text": "{{connect men-port gigabit-eth <<GIGEPORT>>}}\n" },
+                { "text": "{{no shutdown}}\n" },
+                { "text": "{{exit}}\n" },
+                { "text": "{{exit}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "EVC",
+                    "label": "EVC",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "placeholder": "PSR_VLAN",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "STAG",
+                    "label": "STAG",
+                    "required": true,
+                    "regex_name": "range_2_4095",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "EFMPORT",
+                    "label": "EFMPORT",
+                    "required": true,
+                    "regex_name": "exa_efm_group",
+                    "placeholder": "shelf/slot/group",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "GIGEPORT",
+                    "label": "GIGEPORT",
+                    "required": true,
+                    "regex_name": "exa_gige_port",
+                    "placeholder": "shelf/slot/port",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 203,
+            "platform": "EXA",
+            "category": "Build",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 4" ],
+            "name": "Build Interface SHDSL",
+            "approved": true,
+            "snippets": [
+                { "text": "{{config t}}\n" },
+                { "text": "{{interface shdsl <<SHDSL>>}}\n" },
+                { "text": "{{no shut}}\n" },
+                { "text": "{{description <<DESCRIPTION>>}}\n" },
+                { "text": "{{annex a-or-b-efm}}\n" },
+                { "text": "{{linerate adaptive <<ADAPTIVET1>>}}\n" },
+                { "text": "{{diagnostics splice-detect distance-type feet}}\n" },
+                { "text": "{{thresholds snr-margin 5}}\n" },
+                { "text": "{{exit}}\n" },
+                { "text": "{{exit}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "SHDSL",
+                    "label": "Interface SHDSL",
+                    "required": true,
+                    "regex_name": "exa_shdsl_port",
+                    "placeholder": "shelf/slot/port",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "DESCRIPTION",
+                    "label": "Description",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "ADAPTIVET1",
+                    "label": "Adaptive T1",
+                    "required": true,
+                    "regex_name": "exa_linadapt_t1_10max",
+                    "placeholder": "",
+                    "values": [ { "value": "T1-417" } ]
+                }
+            ]
+        },
+        {
+            "id": 204,
+            "platform": "EXA",
+            "category": "Build",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 4" ],
+            "name": "Build EOS Interface EFM-Group",
+            "approved": true,
+            "snippets": [
+                { "text": "{{config t}}\n" },
+                { "text": "{{interface efm-group <<EFMGROUP>>}}\n" },
+                { "text": "{{alias PSR_<<PSR>>}}\n" },
+                { "text": "{{subtended-host snmp-server chassis-id <<CHASSISID>>}}\n" },
+                { "text": "{{subtended-host ip address <<HOSTIPADDRESS>> <<HOSTIPADDRESSMASK>>}}\n" },
+                { "text": "{{subtended-host ip default <<DEFAULTGATEWAY>>}}\n" },
+                { "text": "{{subtended-host s-tag 99}}\n" },
+                { "text": "{{subtended-host s-tag-priority 7}}\n" },
+                { "text": "{{rate-control upstream <<UPSTREAM>> downstream <<DOWNSTREAM>>}}\n" },
+                { "text": "{{threshold xcv 1e-5}}\n" },
+                { "text": "{{xcv-link-removal}}\n" },
+                { "text": "{{active-links-minimum 1}}\n" },
+                { "text": "{{link <<LINK_START>>}}" },
+                { "text": "{{<<LINK_SEPARATOR>><<LINK_END>>}}" },
+                { "text": "\n" },
+                { "text": "{{exit}}\n" },
+                { "text": "{{exit}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "EFMGROUP",
+                    "label": "EFM Group",
+                    "required": true,
+                    "regex_name": "exa_efm_group",
+                    "placeholder": "shelf/slot/group",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "PSR",
+                    "label": "PSR",
+                    "required": true,
+                    "regex_name": "any_positive_number",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "CHASSISID",
+                    "label": "Chassis ID",
+                    "required": true,
+                    "regex_name": "exa_subtend_host_desc_50max",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "HOSTIPADDRESS",
+                    "label": "Host IP Address",
+                    "required": true,
+                    "regex_name": "ip_v4",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "HOSTIPADDRESSMASK",
+                    "label": "Host IP Address Mask",
+                    "required": true,
+                    "regex_name": "ip_v4",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "DEFAULTGATEWAY",
+                    "label": "Default Gateway IP Address",
+                    "required": true,
+                    "regex_name": "ip_v4",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "UPSTREAM",
+                    "label": "Rate Control Upstream",
+                    "required": true,
+                    "regex_name": "range_1500_1000000",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "DOWNSTREAM",
+                    "label": "Rate Control Downstream",
+                    "required": true,
+                    "regex_name": "range_1500_1000000",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "LINK_START",
+                    "label": "Link Start",
+                    "required": true,
+                    "regex_name": "exa_eos_build_int_start",
+                    "placeholder": "starting slot/port:channel",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "LINK_END",
+                    "label": "Link End",
+                    "required": false,
+                    "regex_name": "exa_eos_build_int_end",
+                    "placeholder": "ending port:channel",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "LINK_SEPARATOR",
+                    "label": "Link Separator (System Use Only)",
+                    "required": false,
+                    "regex_name": "exa_dash_only",
+                    "dataParserName": "PostProcForEOSandEOCLinkSeparator",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "EFMGROUP_NOT_INUSE",
+                    "label": "EFM Group In Use?",
+                    "required": true,
+                    "regex_name": "exa_efm_inuse",
+                    "placeholder": "",
+                    "dataParserName": "PostProcForEXAIsEFMNotInUse",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-select",
+                    "variable": "INUSE_EFMS",
+                    "label": "In Use EFMs (For Reference Only)",
+                    "required": false,
+                    "regex_name": "free_type",
+                    "dataCommand": "show int efm-group | inc efm-group ",
+                    "dataParserName": "DataParserForEXAShowEFMsInUse",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "",
+                    "values": [ { "value": "Default" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "HOSTIPADDRESS_NOT_INUSE",
+                    "label": "Host IP Address In Use?",
+                    "required": true,
+                    "regex_name": "exa_ip_check_available",
+                    "placeholder": "",
+                    "dataParserName": "PostProcForEXAIsHostIpAddressNotInUse",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-select",
+                    "variable": "INUSE_IPS",
+                    "label": "In Use IPs (For Reference Only)",
+                    "required": false,
+                    "regex_name": "free_type",
+                    "dataCommand": "show run | inc address",
+                    "dataParserName": "DataParserForEXAIpInUse",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "",
+                    "values": [ { "value": "Default" } ]
+                }
+            ]
+        },
+        {
+            "id": 205,
+            "platform": "EXA",
+            "category": "Build",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 4" ],
+            "name": "Build Interface t1",
+            "approved": true,
+            "snippets": [
+                { "text": "{{config t}}\n" },
+                { "text": "{{interface t1 <<CONFIG>>}}\n" },
+                { "text": "{{description <<DESCRIPTION>>}}\n" },
+                { "text": "{{no shutdown}}\n" },
+                { "text": "{{exit}}\n" },
+                { "text": "{{exit}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "CONFIG",
+                    "label": "Interface T1",
+                    "required": true,
+                    "regex_name": "exa_t1_port",
+                    "placeholder": "shelf/slot/port:channel",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "DESCRIPTION",
+                    "label": "Description",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 210,
+            "platform": "EXA",
+            "category": "Build",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 4" ],
+            "name": "Build EOC Interface EFM-Group",
+            "approved": true,
+            "snippets": [
+                { "text": "{{config t}}\n" },
+                { "text": "{{interface efm-group <<EFMGROUP>>}}\n" },
+                { "text": "{{alias PSR_<<PSR>>}}\n" },
+                { "text": "{{subtended-host snmp-server chassis-id <<CHASSISID>>}}\n" },
+                { "text": "{{subtended-host ip address <<HOSTIPADDRESS>> <<HOSTIPADDRESSMASK>>}}\n" },
+                { "text": "{{subtended-host ip default <<DEFAULTGATEWAY>>}}\n" },
+                { "text": "{{subtended-host s-tag 99}}\n" },
+                { "text": "{{subtended-host s-tag-priority 7}}\n" },
+                { "text": "{{rate-control upstream <<UPSTREAM>> downstream <<DOWNSTREAM>>}}\n" },
+                { "text": "{{threshold xcv 1e-5}}\n" },
+                { "text": "{{xcv-link-removal}}\n" },
+                { "text": "{{active-links-minimum 1}}\n" },
+                { "text": "{{link <<LINK_START>>}}" },
+                { "text": "{{<<LINK_SEPARATOR>><<LINK_END>>}}" },
+                { "text": "\n" },
+                { "text": "{{exit}}\n" },
+                { "text": "{{exit}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "EFMGROUP",
+                    "label": "EFM Group",
+                    "required": true,
+                    "regex_name": "exa_efm_group",
+                    "placeholder": "shelf/slot/group",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "PSR",
+                    "label": "PSR",
+                    "required": true,
+                    "regex_name": "any_positive_number",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "CHASSISID",
+                    "label": "Chassis ID",
+                    "required": true,
+                    "regex_name": "exa_subtend_host_desc_50max",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "HOSTIPADDRESS",
+                    "label": "Host IP Address",
+                    "required": true,
+                    "regex_name": "ip_v4",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "HOSTIPADDRESSMASK",
+                    "label": "Host IP Address Mask",
+                    "required": true,
+                    "regex_name": "ip_v4",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "DEFAULTGATEWAY",
+                    "label": "Default Gateway IP Address",
+                    "required": true,
+                    "regex_name": "ip_v4",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "UPSTREAM",
+                    "label": "Rate Control Upstream",
+                    "required": true,
+                    "regex_name": "range_1500_1000000",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "DOWNSTREAM",
+                    "label": "Rate Control Downstream",
+                    "required": true,
+                    "regex_name": "range_1500_1000000",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "LINK_START",
+                    "label": "Link Start",
+                    "required": true,
+                    "regex_name": "exa_eoc_build_int_start",
+                    "placeholder": "starting slot/port",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "LINK_END",
+                    "label": "Link End",
+                    "required": false,
+                    "regex_name": "exa_eoc_build_int_end",
+                    "placeholder": "ending port",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "LINK_SEPARATOR",
+                    "label": "Link Separator (System Use Only)",
+                    "required": false,
+                    "regex_name": "exa_dash_only",
+                    "dataParserName": "PostProcForEOSandEOCLinkSeparator",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "EFMGROUP_NOT_INUSE",
+                    "label": "EFM Group In Use?",
+                    "required": true,
+                    "regex_name": "exa_efm_inuse",
+                    "placeholder": "",
+                    "dataParserName": "PostProcForEXAIsEFMNotInUse",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-select",
+                    "variable": "INUSE_EFMS",
+                    "label": "In Use EFMs (For Reference Only)",
+                    "required": false,
+                    "regex_name": "free_type",
+                    "dataCommand": "show int efm-group | inc efm-group ",
+                    "dataParserName": "DataParserForEXAShowEFMsInUse",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "",
+                    "values": [ { "value": "Default" } ]
+                },
+                {
+                    "type": "form_linked_text",
+                    "variable": "HOSTIPADDRESS_NOT_INUSE",
+                    "label": "Host IP Address In Use?",
+                    "required": true,
+                    "regex_name": "exa_ip_check_available",
+                    "placeholder": "",
+                    "dataParserName": "PostProcForEXAIsHostIpAddressNotInUse",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-select",
+                    "variable": "INUSE_IPS",
+                    "label": "In Use IPs (For Reference Only)",
+                    "required": false,
+                    "regex_name": "free_type",
+                    "dataCommand": "show run | inc address",
+                    "dataParserName": "DataParserForEXAIpInUse",
+                    "dataCommandRefreshFlag": "always",
+                    "placeholder": "",
+                    "values": [ { "value": "Default" } ]
+                }
+            ]
+        },
+        {
+            "id": 301,
+            "platform": "EXA",
+            "category": "Execute",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 4" ],
+            "name": "Set Up T1 Test Loop",
+            "approved": true,
+            "snippets": [
+
+
+                { "text": "{{app}}\n" },
+                { "text": "{{test int t1 <<FACILITY>> local loop <<LOOPTYPE>>  timeout <<TIMEOUT>>}}\n" },
+                { "text": "{{exit}}" }
+
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "FACILITY",
+                    "label": "T1 Facility",
+                    "required": true,
+                    "regex_name": "exa_t1_port",
+                    "placeholder": "shelf/slot/port:channel",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-select",
+                    "label": "Looptype",
+                    "variable": "LOOPTYPE",
+                    "values": [ { "value": "" } ],
+                    "regex_name": "free_type",
+                    "required": true,
+                    "options": [
+                        { "label": "Inward - Loop Towards the Backplane", "value": "inward" },
+                        { "label": "Line - Loop of the Entire Physical Interface", "value": "line" },
+                        { "label": "Payload - Loop of All Data Except for Framing Bits", "value": "payload" }
+                    ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "TIMEOUT",
+                    "label": "Timeout (In Seconds)",
+                    "required": true,
+                    "regex_name": "digits_1to4",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 302,
+            "platform": "EXA",
+            "category": "Execute",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 4" ],
+            "name": "Send T1 Test Pattern",
+            "approved": true,
+            "snippets": [
+
+
+                { "text": "{{app}}\n" },
+                { "text": "{{test int t1 <<FACILITY>> remote pattern <<TESTPATTERN>>}}\n" },
+                { "text": "{{exit}}" }
+
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "FACILITY",
+                    "label": "T1 Facility",
+                    "required": true,
+                    "regex_name": "exa_t1_port",
+                    "placeholder": "shelf/slot/port:channel",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-select",
+                    "label": "Test Pattern",
+                    "variable": "TESTPATTERN",
+                    "values": [ { "value": "" } ],
+                    "required": true,
+                    "options": [
+                        { "label": "1in8", "value": "1in8" },
+                        { "label": "2in8", "value": "2in8" },
+                        { "label": "3in24", "value": "3in24" },
+                        { "label": "511", "value": "511" },
+                        { "label": "all0s", "value": "all0s" },
+                        { "label": "all1s", "value": "all1s" },
+                        { "label": "none", "value": "none" },
+                        { "label": "p215", "value": "p215" },
+                        { "label": "p220", "value": "p220" },
+                        { "label": "qrss", "value": "qrss" }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 303,
+            "platform": "EXA",
+            "category": "Execute",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 4" ],
+            "name": "Clear T1 Test  Statistics",
+            "approved": true,
+            "snippets": [
+
+                { "text": "{{app}}\n" },
+                { "text": "{{test int t1 <<FACILITY>> clear}}\n" },
+                { "text": "{{exit}}" }
+
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "FACILITY",
+                    "label": "T1 Facility",
+                    "required": true,
+                    "regex_name": "exa_t1_port",
+                    "placeholder": "shelf/slot/port:channel",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 305,
+            "platform": "EXA",
+            "category": "Execute",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 4" ],
+            "name": "Metalic Monitor",
+            "approved": true,
+            "snippets": [
+                { "text": "{{app}}\n" },
+                { "text": "{{test int t1 <<FACILITY>> metallic-test monitor timeout <<TIMEOUT>>}}\n" },
+                { "text": "{{exit}}" }
+
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "FACILITY",
+                    "label": "SHDSL Port",
+                    "required": true,
+                    "regex_name": "exa_shdsl_port",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-select",
+                    "label": "Timeout (In Minutes)",
+                    "variable": "TIMEOUT",
+                    "values": [ { "value": "" } ],
+                    "regex_name": "free_type",
+                    "required": true,
+                    "options": [
+                        { "label": "15", "value": "15" },
+                        { "label": "60", "value": "60" },
+                        { "label": "120", "value": "120" }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 306,
+            "platform": "EXA",
+            "category": "Execute",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 4" ],
+            "name": "Metalic Tscan",
+            "approved": true,
+            "snippets": [
+                { "text": "{{app}}\n" },
+                { "text": "{{test int shdsl <<FACILITY>> tscan}}\n" },
+                { "text": "{{exit}}" }
+
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "FACILITY",
+                    "label": "SHDSL Port",
+                    "required": true,
+                    "regex_name": "exa_shdsl_port",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 310,
+            "platform": "EXA",
+            "category": "Execute",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 4" ],
+            "name": "Remove T1 Test Loop",
+            "approved": true,
+            "snippets": [
+                { "text": "{{app}}\n" },
+                { "text": "{{no test int t1 <<FACILITY>> local loop <<LOOPTYPE>>}}\n" },
+                { "text": "{{exit}}" }
+
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "FACILITY",
+                    "label": "T1 Facility",
+                    "required": true,
+                    "regex_name": "exa_t1_port",
+                    "placeholder": "shelf/slot/port:channel",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-select",
+                    "label": "Looptype",
+                    "variable": "LOOPTYPE",
+                    "values": [ { "value": "" } ],
+                    "regex_name": "free_type",
+                    "required": true,
+                    "options": [
+                        { "label": "Inward - Loop Towards the Backplane", "value": "inward" },
+                        { "label": "Line - Loop of the Entire Physical Interface", "value": "line" },
+                        { "label": "Payload - Loop of All Data Except for Framing Bits", "value": "payload" }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 410,
+            "platform": "EXA",
+            "category": "Edit",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 4" ],
+            "name": "Edit EFM Group Rate Control",
+            "approved": true,
+            "snippets": [
+                { "text": "{{conf t}}\n" },
+                { "text": "{{interface efm-group <<FACILITY>> \n" },
+                { "text": "{{rate-control upstream <<UPSTREAM>> downstream <<DOWNSTREAM>>}}\n" },
+                { "text": "{{exit}}\n" },
+                { "text": "{{exit}}" }
+
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "FACILITY",
+                    "label": "EFM Group",
+                    "required": true,
+                    "regex_name": "exa_efm_group",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "UPSTREAM",
+                    "label": "Upstream Rate",
+                    "required": true,
+                    "regex_name": "range_1500_1000000",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "DOWNSTREAM",
+                    "label": "Downstream Rate",
+                    "required": true,
+                    "regex_name": "range_1500_1000000",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 411,
+            "platform": "EXA",
+            "category": "Edit",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 4" ],
+            "name": "Edit SHDSL Linerate",
+            "approved": true,
+            "snippets": [
+                { "text": "{{conf t}}\n" },
+                { "text": "{{interface efm-group <<FACILITY>> }}\n" },
+                { "text": "{{no rate-control }}\n" },
+                { "text": "{{exit}}\n" },
+                { "text": "{{int shdsl <<SHDSLPORT1>> }}\n" },
+                { "text": "{{linerate fixed <<LINERATE1>> }}\n" },
+                { "text": "{{exit }}\n" },
+
+                { "text": "{{int shdsl <<SHDSLPORT2>> \n linerate fixed <<LINERATE2>> \n exit}}\n" },
+                { "text": "{{int shdsl <<SHDSLPORT3>> \n linerate fixed <<LINERATE3>> \n exit}}\n" },
+                { "text": "{{int shdsl <<SHDSLPORT4>> \n linerate fixed <<LINERATE4>> \n exit}}\n" },
+                { "text": "{{int shdsl <<SHDSLPORT5>> \n linerate fixed <<LINERATE5>> \n exit}}\n" },
+                { "text": "{{int shdsl <<SHDSLPORT6>> \n linerate fixed <<LINERATE6>> \n exit}}\n" },
+                { "text": "{{int shdsl <<SHDSLPORT7>> \n linerate fixed <<LINERATE7>> \n exit}}\n" },
+
+                { "text": "{{interface efm-group <<FACILITY>> }}\n" },
+                { "text": "{{rate-control}} \n" },
+                { "text": "{{exit}} \n" },
+                { "text": "{{exit}}" }
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "FACILITY",
+                    "label": "EFM Group",
+                    "required": true,
+                    "regex_name": "exa_efm_group",
+                    "placeholder": "shelf/slot/group",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "SHDSLPORT1",
+                    "label": "SHDSL Port 1",
+                    "required": true,
+                    "regex_name": "exa_shdsl_port",
+                    "placeholder": "shelf/slot/port",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "LINERATE1",
+                    "label": "Linerate 1",
+                    "required": true,
+                    "regex_name": "range_3_89",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "SHDSLPORT2",
+                    "label": "SHDSL Port 2",
+                    "required": false,
+                    "regex_name": "exa_shdsl_port",
+                    "placeholder": "shelf/slot/port",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "LINERATE2",
+                    "label": "Linerate 2",
+                    "required": false,
+                    "regex_name": "range_3_89",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "SHDSLPORT3",
+                    "label": "SHDSL Port 3",
+                    "required": false,
+                    "regex_name": "exa_shdsl_port",
+                    "placeholder": "shelf/slot/port",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "LINERATE3",
+                    "label": "Linerate 3",
+                    "required": false,
+                    "regex_name": "range_3_89",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "SHDSLPORT4",
+                    "label": "SHDSL Port 4",
+                    "required": false,
+                    "regex_name": "exa_shdsl_port",
+                    "placeholder": "shelf/slot/port",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "LINERATE4",
+                    "label": "Linerate 4",
+                    "required": false,
+                    "regex_name": "range_3_89",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "SHDSLPORT5",
+                    "label": "SHDSL Port 5",
+                    "required": false,
+                    "regex_name": "exa_shdsl_port",
+                    "placeholder": "shelf/slot/port",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "LINERATE5",
+                    "label": "Linerate 5",
+                    "required": false,
+                    "regex_name": "range_3_89",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "SHDSLPORT6",
+                    "label": "SHDSL Port 6",
+                    "required": false,
+                    "regex_name": "exa_shdsl_port",
+                    "placeholder": "shelf/slot/port",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "LINERATE6",
+                    "label": "Linerate 6",
+                    "required": false,
+                    "regex_name": "range_3_89",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "SHDSLPORT7",
+                    "label": "SHDSL Port 7",
+                    "required": false,
+                    "regex_name": "exa_shdsl_port",
+                    "placeholder": "shelf/slot/port",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "LINERATE7",
+                    "label": "Linerate 7",
+                    "required": false,
+                    "regex_name": "range_3_89",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 413,
+            "platform": "EXA",
+            "category": "Edit",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 3" ],
+            "name": "Update EFM Group IP Address",
+            "approved": true,
+            "snippets": [
+                { "text": "{{conf t}}\n" },
+                { "text": "{{interface efm-group <<FACILITY>> }}\n" },
+                { "text": "{{subtended-host snmp-server chassis-id \"<<CLLI>>_<<PSR>>\"}}\n" },
+                { "text": "{{subtended-host ip address <<SUBHOST_MGMT_IP>> <<SUBHOST_SUBNET>>}}\n" },
+                { "text": "{{subtended-host ip default-gateway <<SUBHOST_GW_IP>>}}\n" },
+                { "text": "{{exit}}\n" },
+                { "text": "{{exit}}" }
+
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "FACILITY",
+                    "label": "EFM Group",
+                    "required": true,
+                    "regex_name": "exa_efm_group",
+                    "placeholder": "shelf/slot/group",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "CLLI",
+                    "label": "CLLI",
+                    "required": true,
+                    "regex_name": "alphanum_nspaces",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "PSR",
+                    "label": "PSR",
+                    "required": true,
+                    "regex_name": "any_positive_number",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "SUBHOST_MGMT_IP",
+                    "label": "Subhost Management IP",
+                    "required": true,
+                    "regex_name": "ip_v4",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "SUBHOST_SUBNET",
+                    "label": "Subhost Subnet",
+                    "required": true,
+                    "regex_name": "ip_v4",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "SUBHOST_GW_IP",
+                    "label": "Subhost Gateway IP",
+                    "required": true,
+                    "regex_name": "ip_v4",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 510,
+            "platform": "EXA",
+            "category": "Delete",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 3" ],
+            "name": "Delete EVC",
+            "approved": true,
+            "snippets": [
+
+                { "text": "{{config t}}\n" },
+                { "text": "{{no evc <<CONFIG>>}}\n" },
+                { "text": "{{exit}}" }
+
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "CONFIG",
+                    "label": "EVC",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 511,
+            "platform": "EXA",
+            "category": "Delete",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 3" ],
+            "name": "Delete Interface SHDSL Config",
+            "approved": true,
+            "snippets": [
+
+                { "text": "{{config t}}\n" },
+                { "text": "{{interface shdsl <<FACILITY>>}}\n" },
+                { "text": "{{no description}}\n" },
+                { "text": "{{shutdown}}\n" },
+                { "text": "{{exit}}\n" },
+                { "text": "{{exit}}" }
+
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "FACILITY",
+                    "label": "SHDSL Port",
+                    "required": true,
+                    "regex_name": "exa_shdsl_port",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 512,
+            "platform": "EXA",
+            "category": "Delete",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 3" ],
+            "name": "Delete EFM Group",
+            "approved": true,
+            "snippets": [
+
+                { "text": "{{config t}}\n" },
+                { "text": "{{no interface efm-group <<CONFIG>>}}\n" },
+                { "text": "{{exit}}" }
+
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "CONFIG",
+                    "label": "Efm-Group",
+                    "required": true,
+                    "regex_name": "exa_efm_group",
+                    "placeholder": "shelf/slot/group",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 513,
+            "platform": "EXA",
+            "category": "Delete",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 3" ],
+            "name": "Delete T1 Interface Config",
+            "approved": true,
+            "snippets": [
+
+                { "text": "{{config t}}\n" },
+                { "text": "{{interface t1 <<CONFIG>>}}\n" },
+                { "text": "{{no description}}\n" },
+                { "text": "{{shutdown}}\n" },
+                { "text": "{{exit}}\n" },
+                { "text": "{{exit}}" }
+
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "CONFIG",
+                    "label": "T1",
+                    "required": true,
+                    "regex_name": "exa_t1_port",
+                    "placeholder": "shelf/slot/port:channel",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 514,
+            "platform": "EXA",
+            "category": "Delete",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 3" ],
+            "name": "Delete EOS TA5K EVC and Efm-group config",
+            "approved": true,
+            "snippets": [
+
+                { "text": "{{config t}}\n" },
+                { "text": "{{no evc <<EVC_NAME>>}}\n" },
+                { "text": "{{no interface efm-group <<EFM_NAME>>}}\n" },
+                { "text": "{{exit}}" }
+
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "EVC_NAME",
+                    "label": "EVC",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },
+                {
+                    "type": "form-text",
+                    "variable": "EFM_NAME",
+                    "label": "Efm-Group",
+                    "required": true,
+                    "regex_name": "exa_efm_group",
+                    "placeholder": "shelf/slot/group",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        },
+        {
+            "id": 515,
+            "platform": "EXA",
+            "category": "Delete",
+            "intrusiveness": "Y",
+            "access": [ "Command Center Level 3" ],
+            "name": "Delete EOC TA5K EVC and Efm-group config",
+            "approved": true,
+            "snippets": [
+
+                { "text": "{{config t}}\n" },
+                { "text": "{{no evc <<EVC_NAME>>}}\n" },
+                { "text": "{{no interface efm-group <<EFM_NAME>>}}\n" },
+                { "text": "{{exit}}" }
+
+            ],
+            "variables": [
+                {
+                    "type": "form-text",
+                    "variable": "EVC_NAME",
+                    "label": "EVC",
+                    "required": true,
+                    "regex_name": "free_type",
+                    "placeholder": "",
+                    "values": [ { "value": "" } ]
+                },{
+                    "type": "form-text",
+                    "variable": "EFM_NAME",
+                    "label": "Efm-Group",
+                    "required": true,
+                    "regex_name": "exa_efm_group",
+                    "placeholder": "shelf/slot/group",
+                    "values": [ { "value": "" } ]
+                }
+            ]
+        }
+    ]
+}
