@@ -16,6 +16,8 @@ import { MyDevicesComponent } from './my-devices.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
 
+import { CookieModule } from 'ngx-cookie';
+
 enableProdMode();
 
 @NgModule({
@@ -31,7 +33,8 @@ enableProdMode();
     FormComponentsModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CookieModule.forRoot()
   ],
   entryComponents:[CommandModalComponent, LoginModalComponent],
   providers: [ServiceHelper],

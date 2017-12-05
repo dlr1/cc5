@@ -8,6 +8,8 @@ export interface Device{
     ne_type: string;
     isLoggedOn?: boolean;
     connection:object;
+    session_key: string;
+    context: string;
 }
 export interface Variable{
     type:string;

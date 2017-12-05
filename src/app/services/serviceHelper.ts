@@ -35,23 +35,30 @@ const urls = {
 
 @Injectable()
 export default class ServiceHelper {
-    baseUrl: string = "http://localhost:65427/";
+    baseUrl: string = "http://localhost:65427";
     constructor(private http: HttpClient) {
 
     }
 
     getFilteredDevices(criteria:string) {       
-        return this.http.get(`${this.baseUrl}api/devices/${criteria}`).map(data => data);
+        return this.http.get(`${this.baseUrl}/api/devices/${criteria}`).map(data => data);
     }
 
-    login(request){
-        return this.execute(urls.get_connection,HttpOperation.POST,"", request)                        
+    login(request):Observable<{session_key:string}>{
+        return this.execute<{session_key:string}>(urls.get_connection,HttpOperation.POST,"", request);                      
     }
     sendCommand(request):Observable<any>{
         return this.execute(urls.send_command,HttpOperation.POST,"", request)
     }
 
-    execute(url: string, operation: HttpOperation, params, data) {
+    getDevicesByNames(criteria) {
+        return this.http.get(`${this.baseUrl}/api/devices/names/${criteria}`)          
+    }
+
+    isConnected(request:{session_key: string}){
+        return this.execute(urls.is_connected, HttpOperation.POST,"",request)
+    }
+    execute<T>(url: string, operation: HttpOperation, params, data) {
 
         let user_pwd = "cmdctl:svend71)";
         let backendUrl = "http://localhost:65427/api/dcmService";
@@ -64,13 +71,13 @@ export default class ServiceHelper {
         switch (operation) {
             case 0: // GET
                 jsonStringfiedVersion.opMethod = "GET";
-                return this.http.post(backendUrl, jsonStringfiedVersion);
+                return this.http.post<T>(backendUrl, jsonStringfiedVersion);
             case 1: // POST
                 jsonStringfiedVersion.opMethod = "POST";
-                return this.http.post(backendUrl, jsonStringfiedVersion);
+                return this.http.post<T>(backendUrl, jsonStringfiedVersion);
             case 2: // PUT
                 jsonStringfiedVersion.opMethod = "PUT";
-                return this.http.post(backendUrl, jsonStringfiedVersion);
+                return this.http.post<T>(backendUrl, jsonStringfiedVersion);
         }
 
     }
