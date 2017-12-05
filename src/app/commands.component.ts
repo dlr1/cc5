@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
-import {Variable, Command} from './form-components/models';
+import {Variable, Command, Device} from './form-components/models';
 import { CommandModalComponent } from './command-modal.component';
 
 @Component({
@@ -17,7 +17,7 @@ export class CommandsComponent {
     groupedCategories: Array<{name:string, count:number}>=[];
     selectedCategory:{name:string, count:number};
     selectedCommand: Command;
-
+    @Input() device: Device;
     constructor(private http: HttpClient, private modalService: NgbModal) {
 
     }

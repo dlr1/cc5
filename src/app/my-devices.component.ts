@@ -28,18 +28,19 @@ import { CookieService } from 'ngx-cookie';
 export class MyDevicesComponent {
 
     mydevices: Array<Device>=[];
-  
+    @Output() onVoted = new EventEmitter<Device>();
+
     getDeviceIcon(device: Device){
         return 'assets/router.png';
     }
 
     deviceSelected(device: Device){
-        if (this.mydevices.length > 0 && this.mydevices.filter(x=>x.device_name == device.device_name))
+        if (this.mydevices.length > 0 && this.mydevices.filter(x=>x.device_name == device.device_name).length > 0)
             return;        
         this.mydevices.push(device);
     }
     setDevice(device: Device){
-
+        this.onVoted.next(device);
     }
 
     removeDevice(device: Device){

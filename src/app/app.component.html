@@ -2,10 +2,10 @@
     <div class="col-md-12 column">
         <div class="row clearfix">
             <div class="col-md-3 column">
-                <my-devices></my-devices>
+                <my-devices (onVoted)="deviceSelected($event)"></my-devices>
             </div>
-            <div class="col-md-9 column" *ngIf="device != null">
-                <commands-component></commands-component>
+            <div class="col-md-8 column" *ngIf="selectedDevice != null">
+                <commands-component [device]="selectedDevice"></commands-component>
             </div>
         </div>
     </div>
