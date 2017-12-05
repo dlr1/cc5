@@ -28,9 +28,14 @@ export class MyDevicesComponent {
     mydevices: Array<Device>=[];
   
     getDeviceIcon(device: Device){
-        return 'router.png';
+        return 'assets/router.png';
     }
 
+    deviceSelected(device: Device){
+        if (this.mydevices.length > 0 && this.mydevices.filter(x=>x.device_name == device.device_name))
+            return;        
+        this.mydevices.push(device);
+    }
     setDevice(device: Device){
 
     }
@@ -38,16 +43,39 @@ export class MyDevicesComponent {
     removeDevice(device: Device){
 
     }
+
+    toggleConnection(device: Device){
+        if (device.isLoggedOn){
+
+        }
+        else{
+            let modalRef = this.modalService.open(LoginModalComponent,{size:"sm"});
+            modalRef.componentInstance.device = device;
+            modalRef.result.then((result) => {
+                this.serviceHelper.login({ "username": "nettest1", "password": "!N34RoxE", "device_name": "MCR1-LAB", "context": "" })
+                .subscribe(data=>{
+                    device.connection = data;
+                    device.isLoggedOn = true;
+                });
+              }, (reason) => {
+                console.log(`Dismissed `);
+              });
+            
+            
+            
+        }
+    }
+
     model: any;
     searching = false;
     searchFailed = false;
     hideSearchingWhenUnsubscribed = new Observable(() => () => this.searching = false);
   
-    constructor(private serviceHelper: ServiceHelper) {
-        // this.serviceHelper.getFilteredDevices('mcr1').subscribe(x=>
-        //     console.log(x)
-        // );
-    }
+   
+  constructor(private serviceHelper: ServiceHelper, private modalService: NgbModal) {
+    
+    
+  }
   
     formatter = (device: Device) => device.device_name;
 

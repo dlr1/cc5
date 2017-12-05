@@ -6,7 +6,8 @@ export interface Device{
     ip_address: string;
     market: string;
     ne_type: string;
-    isLoggedOn?: boolean
+    isLoggedOn?: boolean;
+    connection:object;
 }
 export interface Variable{
     type:string;

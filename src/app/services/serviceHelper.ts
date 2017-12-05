@@ -45,8 +45,7 @@ export default class ServiceHelper {
     }
 
     login(request){
-        return this.execute(urls.get_connection,HttpOperation.POST,"", request)
-                        .subscribe(x=>console.log(x));
+        return this.execute(urls.get_connection,HttpOperation.POST,"", request)                        
     }
     sendCommand(request):Observable<any>{
         return this.execute(urls.send_command,HttpOperation.POST,"", request)

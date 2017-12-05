@@ -13,7 +13,7 @@
             <div class="list-group-item" style="max-height:510px">
                 <ul class="nav nav-pills nav-stacked" style="overflow-y:auto;max-height:510px">
                     <li class="default" *ngFor="let device of mydevices" >
-                        <button type="button" class="btn btn-sm " style="width:70%; margin-bottom:5px; vertical-align: middle;"
+                        <button type="button" class="btn" style="margin-bottom:5px; vertical-align: middle;"
                             (click)="setDevice(device)">
                             <table>
                                 <tr>
@@ -25,9 +25,9 @@
                                 </tr>
                             </table>
                         </button>
-                        <i style="margin-left:10px; cursor: pointer" ng-style="{color: (device.isLoggedOn ? 'green' : 'orange') }" 
+                        <i style="margin-left:10px; cursor: pointer" [style.color]="device.isLoggedOn ? 'green' : 'orange'" 
                         class="{{(device.isLoggedOn ? 'fa fa-lock' : 'fa fa-unlock-alt')}}"
-                            ng-click="toggleConnection(device)"></i>
+                            (click)="toggleConnection(device)"></i>
                         <i style="margin-left:10px; cursor: pointer" ng-style="{color: 'black'}" 
                         class="fa fa-remove" (click)="removeDevice(device)"></i>
                     </li>
@@ -38,15 +38,10 @@
                     <span class="input-group-addon">
                         <i class="fa fa-search"></i>
                     </span>
-                    <input id="typeahead-http" type="text" 
+                    <input id="typeahead-http" type="text" (selectItem)="deviceSelected($event.item)"
                     class="form-control" [(ngModel)]="model" [ngbTypeahead]="search" placeholder="Enter device name"
                     [resultTemplate]="rt" [inputFormatter]="formatter"
                     />
-
-                    <!-- <input type="text" class="form-control"
-                           ng-model="mySelectedDevice" placeholder="Enter device name" typeahead-min-length="3"
-                           typeahead-on-select="addSelectedDevice(mySelectedDevice); mySelectedDevice='';"
-                           typeahead="device as device.device_name + ' (' + device.ne_type + ')' for device in filterDevices($viewValue) | limitTo:50" class="form-control">                     -->
                 </div>
             </div>
         </div>

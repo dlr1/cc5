@@ -14,6 +14,8 @@ import ServiceHelper from './services/serviceHelper';
 import { LoginModalComponent } from './login-modal.component';
 import { MyDevicesComponent } from './my-devices.component';
 
+import { ReactiveFormsModule } from '@angular/forms';
+
 enableProdMode();
 
 @NgModule({
@@ -28,9 +30,10 @@ enableProdMode();
     NgbModule.forRoot(),
     FormComponentsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
-  entryComponents:[CommandModalComponent],
+  entryComponents:[CommandModalComponent, LoginModalComponent],
   providers: [ServiceHelper],
   bootstrap: [AppComponent]
 })
