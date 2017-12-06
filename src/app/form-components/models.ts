@@ -9,7 +9,7 @@ export interface Device{
     isLoggedOn?: boolean;
     connection:object;
     session_key: string;
-    context: string;
+    context: string;    
 }
 export interface Variable{
     type:string;
@@ -30,6 +30,14 @@ export interface Variable{
     options?:Array<{label:string, value:string}>;
     checked?:string;
     unchecked?:string;
+    field?: string;
+
+}
+
+export class Script{
+    icon:string;
+    command:string;
+    response:string
 }
 
 export interface Command{
@@ -42,6 +50,7 @@ export interface Command{
     device?:string;
     approved?:boolean
     access:any;
+    scripts?:Array<Script>;
 }
 
 export const regexList = [

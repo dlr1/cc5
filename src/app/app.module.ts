@@ -11,12 +11,14 @@ import {HttpClientModule} from '@angular/common/http';
 import { CommandsComponent } from './commands.component';
 import { CommandModalComponent } from './command-modal.component';
 import ServiceHelper from './services/serviceHelper';
+import {MCRParsers, ELNParsers} from './parsers';
 import { LoginModalComponent } from './login-modal.component';
 import { MyDevicesComponent } from './my-devices.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { CookieModule } from 'ngx-cookie';
+import { OrderByPipe } from './orderByPipe';
 
 enableProdMode();
 
@@ -25,7 +27,9 @@ enableProdMode();
     AppComponent,
     CommandModalComponent,
     CommandsComponent,
-    LoginModalComponent, MyDevicesComponent
+    LoginModalComponent, 
+    MyDevicesComponent, 
+    OrderByPipe
   ],
   imports: [
     BrowserModule,
@@ -37,7 +41,7 @@ enableProdMode();
     CookieModule.forRoot()
   ],
   entryComponents:[CommandModalComponent, LoginModalComponent],
-  providers: [ServiceHelper],
+  providers: [ServiceHelper, ELNParsers, MCRParsers],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

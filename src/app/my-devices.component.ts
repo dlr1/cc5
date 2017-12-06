@@ -59,14 +59,18 @@ export class MyDevicesComponent {
             modalRef.componentInstance.device = device;
             modalRef.result.then((result) => {
                 this.serviceHelper.login({ "username": "nettest1", "password": "!N34RoxE", "device_name": "MCR1-LAB", "context": "" })
+                //this.serviceHelper.login({ "username": "su", "password": "wwp", "device_name": "ELS1-LAB", "context": "" })
                 .subscribe(data=>{
                     device.session_key = data.session_key;
                     device.isLoggedOn = true;
                     let cookies = this.cookie.get("devices");                   
-                    this.cookie.put("devices", cookies + ',' + device.device_name);
+                    if (cookies.indexOf(device.device_name) < 0)
+                        this.cookie.put("devices", cookies + ',' + device.device_name);
+
                     this.cookie.put(device.device_name, JSON.stringify({ 
-                        sessionKey: device.session_key, 
-                        context: device.connection ? device.context : result.context }));
+                            sessionKey: device.session_key, 
+                            context: device.connection ? device.context : result.context }));
+                    
                 });
               }, (reason) => {
                 console.log(`Dismissed `);
@@ -104,6 +108,8 @@ export class MyDevicesComponent {
     this.mydevices.forEach(
         x=>{
             let deviceCookie = this.cookie.get(x.device_name);
+            if (!deviceCookie)
+                return;
             let sessionKey = JSON.parse(deviceCookie)["sessionKey"];
             this.serviceHelper.isConnected({session_key:sessionKey}).subscribe(result=>{
                 if(result["connected"] == "true"){

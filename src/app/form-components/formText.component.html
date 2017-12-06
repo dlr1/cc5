@@ -6,7 +6,7 @@
                name="input"
                [disabled]="data?.isDisabled"
                class="form-control"
-               ng-model="data?.value"                   
+               [(ngModel)]="data.value"                   
                (blur)="validate(box.value)"
                [required]="data?.required"
                [placeholder]="data?.placeholder == null ? '': data.placeholder" />

@@ -1,11 +1,12 @@
-import { Component, Input, ChangeDetectorRef, EventEmitter, Output } from '@angular/core';
+import { Component, Input, ChangeDetectorRef, EventEmitter, Output, Injector } from '@angular/core';
 
 import { HttpClient } from '@angular/common/http';
 
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
-import {Variable, Command, Device} from './form-components/models';
+import { Variable, Command, Device, Script } from './form-components/models';
 import { CommandModalComponent } from './command-modal.component';
+import { MCRParsers, ELNParsers } from './parsers';
 
 @Component({
     selector: 'commands-component',
@@ -13,30 +14,26 @@ import { CommandModalComponent } from './command-modal.component';
 })
 export class CommandsComponent {
     commands: Array<Command>;
-    filteredCommands:Array<Command>;
-    groupedCategories: Array<{name:string, count:number}>=[];
-    selectedCategory:{name:string, count:number};
+    filteredCommands: Array<Command>;
+    groupedCategories: Array<{ name: string, count: number }> = [];
+    selectedCategory: { name: string, count: number };
     selectedCommand: Command;
 
     private _device: Device;
-    @Input() 
-    set device(device: Device){
-        this._device = device
-    }
-    populateCommands(){
-
+    @Input()
+    set device(device: Device) {
+        this._device = device;
+        this.populateCommands();
     }
 
-    get device(){
+    get device() {
         return this._device;
     }
 
-    constructor(private http: HttpClient, private modalService: NgbModal) {
 
-    }
-    ngOnInit() {
+    populateCommands() {
         let url: string;
-        
+
         switch (this.device.device_type) {
             case "ELN":
                 url = 'assets/eln_commands.json';
@@ -69,7 +66,9 @@ export class CommandsComponent {
                 url = 'assets/ctr_commands.json';
                 break;
         }
-       
+        // let q = this.injector.get(MCRParsers);
+        // q.test();
+
         this.http.get<Array<Command>>(url).subscribe(x => {
             this.commands = x["commands"];
             let categories = {};
@@ -80,29 +79,57 @@ export class CommandsComponent {
                 categories[c.category].push(c);
             });
 
-            for(var key in categories){
+            this.groupedCategories = [];
+            for (var key in categories) {
                 if (!categories.hasOwnProperty(key)) continue;
-                this.groupedCategories.push({name:key, count:categories[key].length});                
+                this.groupedCategories.push({ name: key, count: categories[key].length });
             }
             this.selectedCategory = this.groupedCategories[0];
-        });        
+            this.categoryChanged();
+        });
     }
 
-    openDialog(){
-        const modalRef = this.modalService.open(CommandModalComponent,{size:"lg"});
+
+    constructor(private injector: Injector, private http: HttpClient, private modalService: NgbModal) {
+
+    }
+    ngOnInit() {
+
+    }
+
+    openDialog() {
+        
+        const modalRef = this.modalService.open(CommandModalComponent, { size: "lg" });        
         modalRef.componentInstance.command = this.selectedCommand;
-      }
+        let snips: Array<Script> = [];
+        this.selectedCommand.snippets.forEach(x =>
+            snips.push({"icon":"fa fa-angle-right", "command": x.text.replace("{{","").replace("}}",""),response:""})
+        );
+        
+        modalRef.result.then((command: Command) => {
+            command.variables.forEach(variable=>{
+                snips.forEach((x,i)=>{
+                    snips[i].command = x.command.replace(`<<${variable.variable}>>`,`<b>${variable.value}</b>`).replace("{{","").replace("}}";
+                })
+            })
+            this.selectedCommand.scripts = snips;
+          });
+        
+    }
 
-      editCommand(){
+    getCommandIconColor(){
+        return "black";
+    }
+    editCommand() {
         this.openDialog();
     }
 
-    commandChanged(){      
+    commandChanged() {
         this.openDialog();
     }
 
-    
-    categoryChanged(){
-        this.filteredCommands = this.commands.filter(x=>x.category == this.selectedCategory.name);
+
+    categoryChanged() {
+        this.filteredCommands = this.commands.filter(x => x.category == this.selectedCategory.name);
     }
 }

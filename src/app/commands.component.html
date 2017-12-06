@@ -1,32 +1,62 @@
 <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
-<ngb-panel title="MCR1-LAB" >
-  <ng-template ngbPanelContent>      
-      <div class="row">            
-            <select class="form-control col-md-4" [(ngModel)]="selectedCommand"
-             (change)="commandChanged()">
-            <option *ngFor="let c of filteredCommands" [ngValue]="c">{{c.name}}</option>
-    </select>
-            <div class="col-md-1">
-            <div class="btn-group btn-sm">
-                    <button class="btn btn-default btn-sm ng-scope" (click)="editCommand()" tooltip=" edit parameters" 
-                    [disabled]="selectedCommand == null">
-                        <i class="fa fa-pencil"></i>
-                    </button>
+    <ngb-panel title="{{device.device_name}}">
+        <ng-template ngbPanelContent>
+            <div class="row">
+                <select class="form-control col-md-4" [(ngModel)]="selectedCommand" (change)="commandChanged()">
+                    <option *ngFor="let c of filteredCommands | orderBy:'name'" [ngValue]="c">{{c.name}}</option>
+                </select>
+                <div class="col-md-1">
+                    <div class="btn-group btn-sm">
+                        <button class="btn btn-default btn-sm ng-scope" (click)="editCommand()" tooltip=" edit parameters" [disabled]="selectedCommand == null">
+                            <i class="fa fa-pencil"></i>
+                        </button>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-3 column">
+                <div class="col-md-3 column">
                     Type:
                     <div class="btn-group btn-sm">
-                       
-                        <select class="form-control"
-                                [(ngModel)]="selectedCategory" (change)="categoryChanged()">
-                                <option *ngFor="let category of groupedCategories" [ngValue]="category">{{category.name + " ("+ category.count + ")"}}</option>
+                        <select class="form-control" [(ngModel)]="selectedCategory" (change)="categoryChanged()">
+                            <option *ngFor="let category of groupedCategories" [ngValue]="category">{{category.name + " ("+ category.count + ")"}}</option>
                         </select>
                     </div>
                 </div>
-      </div>   
-  </ng-template>
-</ngb-panel>
+            </div>
+            <div class="row clearfix" >
+                <br />
+                <div class="col-md-12 column">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <span style="font-size: 14px;">
+                                Parsed Command:    
+                                <i>
+                                    {{selectedCommand?.name}}                                      
+                                </i>                           
+                            </span>
+                        </div>
+                        <div class="panel-body" style="overflow:auto">
+                            <div class="panel panel-default">
+                                <table class="table table-condensed table-striped table-bordered">
+                                   <tr *ngFor="let cmd of selectedCommand?.scripts">
+                                        <td width="30px" align style="text-align: center">
+                                                <i [class]="cmd.icon" 
+                                                style="margin-top:3px" [style.color]="getCommandIconColor(cmd)"></i>
+                                        </td>
+                                       <td [innerHTML]="cmd.command"></td>
+                                   </tr>
+                                </table>
+                            </div>
+                            <br />
+                            <div class="panel panel-default">
+                                <table class="table table-condensed table-striped table-bordered" >
+                                    
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+    </ngb-panel>
 
 
 </ngb-accordion>

@@ -1,6 +1,8 @@
 import { Component, OnInit, Input, OnChanges, SimpleChange, ViewChild, ComponentFactoryResolver, ChangeDetectorRef } from '@angular/core';
 import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
+import fields from './services/fields';
+
 import { Variable, Command } from './form-components/models';
 import { controlMappings } from './form-components/controlMappings';
 import { HostDirective } from './form-components/host.directive';
@@ -43,6 +45,11 @@ export class CommandModalComponent implements OnInit, OnChanges {
     this.cdref.detach();
     let viewContainerRef = this.componentHost.viewContainerRef;
     this.ctrls = [];
+    this._command.variables.forEach((element, index) => {
+      if (element.field)
+      this._command.variables[index] = fields[element.field];
+    });
+
     this._command.variables.forEach(element => {
       this.createComponent(viewContainerRef, element);      
     });
@@ -107,7 +114,14 @@ export class CommandModalComponent implements OnInit, OnChanges {
   }
 
   save() {
+    let variables: Array<Variable> = [];
+    this.ctrls.forEach(x=>{
+      variables.push(x.data);
+    })
 
+    this.command.variables = variables;
+    this.activeModal.close(this.command);
+    
   }
 
 }
