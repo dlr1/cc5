@@ -24,54 +24,49 @@
                 </div>
             </div>
             <br/>
-            <div class="row clearfix">
-                <br />
-                <div class="col-md-12 column">
+            <div class="card">
+                <div class="card-header">
+                    <span style="font-size: 14px;">
+                        Parsed Command:
+                        <i>
+                            {{selectedCommand?.name}}
+                        </i>
+                    </span>
+                </div>
+                <div class="panel-body" style="overflow:auto">
+                    <div class="panel panel-default">
+                        <table class="table table-condensed table-striped table-bordered">
+                            <tr *ngFor="let cmd of selectedCommand?.scripts">
+                                <td width="30px" align style="text-align: center">
+                                    <i [class]="cmd.icon" style="margin-top:3px" [style.color]="getCommandIconColor(cmd)"></i>
+                                </td>
+                                <td [innerHTML]="cmd.command"></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <br />
                     <div class="card">
-                        <div class="card-header">
-                            <span style="font-size: 14px;">
-                                Parsed Command:
-                                <i>
-                                    {{selectedCommand?.name}}
-                                </i>
-                            </span>
-                        </div>
-                        <div class="panel-body" style="overflow:auto">
-                            <div class="panel panel-default">
-                                <table class="table table-condensed table-striped table-bordered">
-                                    <tr *ngFor="let cmd of selectedCommand?.scripts">
-                                        <td width="30px" align style="text-align: center">
-                                            <i [class]="cmd.icon" style="margin-top:3px" [style.color]="getCommandIconColor(cmd)"></i>
-                                        </td>
-                                        <td [innerHTML]="cmd.command"></td>
-                                    </tr>
-                                </table>
-                            </div>
-                            <br />
-                            <div class="card">
-                                <table class="table table-condensed table-striped table-bordered" ng-cloak>
-                                    <tr>
-                                        <td colspan="2">
-                                            <span class="label label-warning" *ngIf="!device.isLoggedOn" tooltip="Not Connected!">
-                                                Not Connected!
-                                            </span>
-                                            <span *ngIf="device.isLoggedOn">
-                                                <div class="form-group" style="margin-bottom: inherit">
-                                                    &nbsp;
-                                                    <b>Context:</b>&nbsp;
-                                                    <input type="text" class="form-control" ng-model="device.context" style="width:300px; display:inline" placeholder="Enter a Context (Not Required)"
-                                                    />
-                                                    <button role="button" class="btn btn-default btn-sm" style="height:34px" (click)="sendAllCommands(0)" [disabled]="device.isExecuting"
-                                                        tooltip="Send">
-                                                        <i class="fa fa-play"></i>
-                                                    </button>
-                                                </div>
-                                            </span>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>
+                        <table class="table table-condensed table-striped table-bordered" ng-cloak>
+                            <tr>
+                                <td colspan="2">
+                                    <span class="label label-warning" *ngIf="!device.isLoggedOn" tooltip="Not Connected!">
+                                        Not Connected!
+                                    </span>
+                                    <span *ngIf="device.isLoggedOn">
+                                        <div class="form-group" style="margin-bottom: inherit">
+                                            &nbsp;
+                                            <b>Context:</b>&nbsp;
+                                            <input type="text" class="form-control" ng-model="device.context" style="width:300px; display:inline" placeholder="Enter a Context (Not Required)"
+                                            />
+                                            <button role="button" class="btn btn-default btn-sm" style="height:34px" (click)="sendAllCommands(0)" [disabled]="device.isExecuting"
+                                                tooltip="Send">
+                                                <i class="fa fa-play"></i>
+                                            </button>
+                                        </div>
+                                    </span>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -119,7 +114,6 @@
                             </tr>
                         </tbody>
                     </table>
-
                 </div>
                 <div style="height:500px;">
                     <div class="panel-body" style="height: 99%; overflow:scroll">
@@ -131,6 +125,4 @@
             </div>
         </ng-template>
     </ngb-panel>
-
-
 </ngb-accordion>
