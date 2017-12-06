@@ -7,6 +7,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Variable, Command, Device, Script } from './form-components/models';
 import { CommandModalComponent } from './command-modal.component';
 import { MCRParsers, ELNParsers } from './parsers';
+import ServiceHelper from './services/serviceHelper';
 
 @Component({
     selector: 'commands-component',
@@ -90,7 +91,7 @@ export class CommandsComponent {
     }
 
 
-    constructor(private injector: Injector, private http: HttpClient, private modalService: NgbModal) {
+    constructor(private serviceHelper: ServiceHelper, private injector: Injector, private http: HttpClient, private modalService: NgbModal) {
 
     }
     ngOnInit() {
@@ -116,6 +117,61 @@ export class CommandsComponent {
           });
         
     }
+
+    setTerminalCommand = function (commandText) {
+        this.device.terminal += '<div class="command">' + commandText + '</div>';        
+    }
+
+    htmlEscape(str) {
+        return str.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/'/g, '&#39;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+
+    setTerminalText(responseCssClass, textResponse) {
+        var formatted = "";
+        if (textResponse != undefined) {
+            formatted = this.htmlEscape(textResponse);
+        }
+
+        this.device.terminal += "<pre class='" + responseCssClass + "'>" + formatted + "</pre>";
+        this.device.terminal += '<div class="prompt">' + this.device.connection.prompt + '</div>';
+    }
+
+    sendAllCommands(line: number){
+        this.selectedCommand.scripts.forEach((item, index) => {            
+                            if (index == line ) {                                           
+                                this.device.isExecuting = true;
+                               
+                                item.icon = 'fa fa-cog fa-spin';
+            
+                                var temp_line = item.command.replace(new RegExp("<b>", "g"), '');
+                                temp_line = temp_line.replace(new RegExp("</b>", "g"), '');
+            
+                                //send command to terminal
+                                this.setTerminalCommand(temp_line);
+                            
+                                this.serviceHelper.sendCommand({
+                                    session_key: this.device.session_key,
+                                    context: this.device.context,
+                                    commands: [{ command_string: temp_line, command_args: null }]
+                                }).subscribe(data => {
+                                    this.device.isExecuting = false;
+                                    if (data.error == null) {
+                                        this.device.connection.prompt = data.responses[0].prompt;
+                                        this.selectedCommand.scripts[index].icon = 'fa fa-check';
+                                        this.selectedCommand.scripts[index].error = 'Success!';
+                                        this.setTerminalText("response_good", data.responses[0].response);
+                                        this.sendAllCommands(index + 1);
+                                    }
+                                    else {
+                                        this.selectedCommand.scripts[index].icon = 'fa fa-warning';
+                                        this.selectedCommand.scripts[index].error = data.error;
+                                        this.setTerminalText("response_bad", data.error);
+                                    }
+                                })
+                                    
+                                    }
+                                });
+    } 
 
     getCommandIconColor(){
         return "black";

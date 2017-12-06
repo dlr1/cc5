@@ -7,9 +7,11 @@ export interface Device{
     market: string;
     ne_type: string;
     isLoggedOn?: boolean;
-    connection:object;
+    connection:{prompt:string};
     session_key: string;
-    context: string;    
+    context: string;   
+    isExecuting?:boolean;
+    terminal?:string;
 }
 export interface Variable{
     type:string;
@@ -37,7 +39,8 @@ export interface Variable{
 export class Script{
     icon:string;
     command:string;
-    response:string
+    response:string;
+    error: string;
 }
 
 export interface Command{
