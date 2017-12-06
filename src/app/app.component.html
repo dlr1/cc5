@@ -1,10 +1,14 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Navbar</a>
+</nav>
+<br/>
 <div class="row clearfix">
     <div class="col-md-12 column">
         <div class="row clearfix">
-            <div class="col-md-3 column">
+            <div class="col-md-3">
                 <my-devices (onVoted)="deviceSelected($event)"></my-devices>
             </div>
-            <div class="col-md-8 column" *ngIf="selectedDevice != null">
+            <div class="col-md-8" *ngIf="selectedDevice != null">
                 <commands-component [device]="selectedDevice"></commands-component>
             </div>
         </div>
