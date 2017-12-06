@@ -103,16 +103,27 @@ export class CommandsComponent {
         const modalRef = this.modalService.open(CommandModalComponent, { size: "lg" });        
         modalRef.componentInstance.command = this.selectedCommand;
         let snips: Array<Script> = [];
-        this.selectedCommand.snippets.forEach(x =>
-            snips.push({"icon":"fa fa-angle-right", "command": x.text.replace("{{","").replace("}}",""),response:""})
-        );
+        var l_buff = '';
+        
+        // roll the all the entire snippets into one big string
+        for (var i = 0; i < this.selectedCommand.snippets.length; ++i)
+            l_buff += this.selectedCommand.snippets[i].text;
+
+        // this.selectedCommand.snippets.forEach(x =>
+        //     snips.push({"icon":"fa fa-angle-right", "command": x.text.replace("{{","").replace("}}",""),"response":"","error":""})
+        // );
         
         modalRef.result.then((command: Command) => {
             command.variables.forEach(variable=>{
-                snips.forEach((x,i)=>{
-                    snips[i].command = x.command.replace(`<<${variable.variable}>>`,`<b>${variable.value}</b>`).replace("{{","").replace("}}";
-                })
+                var rx = new RegExp(`<<${variable.variable}>>`,"g");
+                l_buff = l_buff.replace(rx,`<b>${variable.value}</b>`).replace(/{{/g,"").replace(/}}/g,"");
+                // snips.forEach((x,i)=>{
+                //     snips[i].command = x.command.replace(`<<${variable.variable}>>`,`<b>${variable.value}</b>`).replace("{{","").replace("}}";
+                // })
             })
+            l_buff.split("\n").forEach(x=>
+                snips.push({"icon":"fa fa-angle-right", "command": x,"response":"","error":""});
+
             this.selectedCommand.scripts = snips;
           });
         
@@ -156,7 +167,7 @@ export class CommandsComponent {
                                 }).subscribe(data => {
                                     this.device.isExecuting = false;
                                     if (data.error == null) {
-                                        this.device.connection.prompt = data.responses[0].prompt;
+                                        this.device.connection = {prompt: data.responses[0].prompt};
                                         this.selectedCommand.scripts[index].icon = 'fa fa-check';
                                         this.selectedCommand.scripts[index].error = 'Success!';
                                         this.setTerminalText("response_good", data.responses[0].response);

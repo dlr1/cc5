@@ -112,9 +112,9 @@ export class MyDevicesComponent {
                 return;
             let sessionKey = JSON.parse(deviceCookie)["sessionKey"];
             this.serviceHelper.isConnected({session_key:sessionKey}).subscribe(result=>{
-                if(result["connected"] == "true"){
+                if(result.connected == "true"){
                     x.isLoggedOn = true;
-                    x.connection = result;                            
+                    x.session_key = result.session_key;                            
                 }
             })
         }

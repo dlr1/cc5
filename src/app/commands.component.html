@@ -80,6 +80,59 @@
                     </div>
                 </div>
             </div>
+            <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            <table width="100%">
+                                <tbody>
+                                    <tr>
+                                        <td width="20%">
+                                            <span class="panel-title">
+                                                <b><i class="fa fa-windows"></i>&nbsp;Device Output</b>&nbsp;
+                                            </span>
+                                        </td>
+                                        <td width="20%"></td>
+                                        <td width="60%">
+                                            <div class="pull-right">
+
+                                                <span style="font-size: xx-small" ng-show="tabularOutput">Smart Display ON</span>
+
+                                                <input type="text" style="text-indent: 2px; height:21px;font-size: xx-small;border:1px;" placeholder="Enter Grep Text"
+                                                       ng-model="grepFilter.filterTerm" />
+                                                <button class="btn btn-default btn-xs" tooltip="Search in Terminal" ng-click="applyHighlighting(device.terminal,grepFilter)">
+                                                    <i class="fa fa-search"></i>
+                                                </button>
+
+                                                <button class="btn btn-default btn-xs" tooltip="Switch Terminal Colors" ng-click="toggleTerminalCss()">
+                                                    <i class="fa fa-paint-brush"></i>
+                                                </button>
+
+                                                <button class="btn btn-default btn-xs" tooltip="Clear Terminal" ng-click="clearTerminal()">
+                                                    <i class="fa fa-eraser"></i>
+                                                </button>
+                                                <button class="btn btn-default btn-xs" tooltip="Smart Display" ng-click="toggleSmartDisplay()">
+                                                    <i class="fa fa-table"></i>
+                                                </button>
+
+                                                &nbsp;&nbsp;&nbsp;
+                                                <button style="border: 0;background: transparent;outline: none;" class="pull-right" data-toggle="collapse" data-target="#panel-element-652008">
+                                                    <span class="glyphicon glyphicon-chevron-right "></span>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </h3>
+                    </div>
+                    <div style="height:500px;">
+                        <div class="panel-body" style="height: 99%; overflow:scroll">
+                            <div auto-scroll [class]="terminal" style="height: 450px;">
+                                <span [innerHTML]="device.terminal"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         </ng-template>
     </ngb-panel>
 

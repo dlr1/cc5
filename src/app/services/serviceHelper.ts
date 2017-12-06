@@ -56,7 +56,7 @@ export default class ServiceHelper {
     }
 
     isConnected(request:{session_key: string}){
-        return this.execute(urls.is_connected, HttpOperation.POST,"",request)
+        return this.execute<{session_key:string, connected:string, error:string}>(urls.is_connected, HttpOperation.POST,"",request)
     }
     execute<T>(url: string, operation: HttpOperation, params, data) {
 

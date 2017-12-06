@@ -2,3 +2,104 @@
     font-weight: bold;
     color: black;
 }
+
+div.terminal {
+    max-width: 100%;
+    height:350px;
+    /*border:1px solid #000;*/
+    background:#202020;
+    padding:5px;
+    overflow-x:scroll;
+    overflow-y:auto;
+    margin: 0 0 0 0;
+    border-radius: 4px;
+    resize:vertical;   
+ 
+ }
+ 
+ div.terminal div.prompt {
+     margin-right: 10px;
+     display: inline-block;
+     border: none;
+     background:#202020;
+     color:#fff;
+     font-weight:normal;
+     font-family:'Courier New';
+ }
+ 
+ div.terminal pre.response_bad {
+     border: none;
+     background:#202020;
+     color:#ff0000;
+     font-weight:normal;
+     font-family:'Courier New';
+ }
+ 
+ div.terminal pre.response_good {
+     border: none;
+     background:#202020;
+     color:#00ff21;
+     font-weight:normal;
+     font-family:'Courier New';
+ }
+ 
+ div.terminal div.command {
+     display: inline-block;
+     border: none;
+     background:#202020;
+     color:#ff6a00;
+     font-weight:normal;
+     font-style:normal;
+     font-family:'Courier New'
+ }
+ 
+ div.terminalGrey {
+    max-width: 100%;
+    height:350px;
+    /*border:1px solid #000;*/
+    background:lightgray;
+    padding:5px;
+    overflow-x:scroll;
+    overflow-y:auto;
+    margin: 0 0 0 0;
+    border-radius: 4px;
+    resize:vertical;   
+ 
+ }
+ 
+ div.terminalGrey div.prompt {
+     margin-right: 10px;
+     display: inline-block;
+     border: none;
+     background:lightgray;
+     color:darkblue;
+     font-weight:bold;
+     font-family:'Courier New';
+ }
+ 
+ div.terminalGrey pre.response_bad {
+     border: none;
+     background:lightgray;
+     color:red;
+     font-weight:normal;
+     font-family:'Courier New';
+ }
+ 
+ div.terminalGrey pre.response_good {
+     border: none;
+     background:lightgray;
+     color:darkgreen;
+     font-weight:normal;
+     font-family:'Courier New';
+ }
+ 
+ div.terminalGrey div.command {
+     display: inline-block;
+     border: none;
+     background:lightgray;
+     color:#ff6a00;
+     font-weight:bold;
+     font-style:normal;
+     font-family:'Courier New'
+ }
+ 
