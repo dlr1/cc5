@@ -26,5 +26,29 @@ export class MCRParsers {
             variable.value = result[0].name;
         else
             variable.values.sort();
+
+        return result;
+    }
+
+    DataParserForCSRVRF(device: Device, data: string, variable: Variable) {
+        var result = [];
+
+        if (!variable || !data)
+            return;
+        var parsedOutput = data.split("\n");
+        var x = 0;
+        while (x < parsedOutput.length) {
+            var parsedASN = parsedOutput[x++].match(/(MS|HI|HO|SP|VSI)-\d{1,6}-[A-Z0-9-]+/gi);
+            if (parsedASN!= null && parsedASN.length > 0) {
+                    result.push({ name: parsedASN[0] });                    
+            }
+        }
+        variable.values = result;
+        if (result.length == 1)
+            variable.value = result[0].name;
+        else
+            variable.values.sort();
+
+        return result;
     }
 }

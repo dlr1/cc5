@@ -2,14 +2,16 @@ import { Component, Input, ChangeDetectorRef, EventEmitter, Output } from '@angu
 import { Variable } from '../models';
 import { BaseComponent } from './base.component';
 import ServiceHelper from '../services/serviceHelper';
+import { Observable } from 'rxjs/Observable';
 
 
 @Component({
-    selector: 'form-dropdown',    
-    templateUrl: './formDropdown.component.html'
+    selector: 'form-combobox',    
+    templateUrl: './formCombobox.component.html'
 })
-export class FormDropdownComponent extends BaseComponent {
+export class FormComboboxComponent extends BaseComponent {
    
+    lookupValues:Array<{name:string}>
     constructor(private ref:ChangeDetectorRef, private serviceHelper: ServiceHelper){
         super(ref);
     }    
@@ -21,9 +23,17 @@ export class FormDropdownComponent extends BaseComponent {
             context: "",
             commands: [{ command_string: this.data.dataCommand, command_args: null }]
         }).subscribe(data=>{
-            this.command.commandParser[this.data.dataParserName](null, data.responses[0].response, this.data);
+            this.lookupValues = this.command.commandParser[this.data.dataParserName](null, data.responses[0].response, this.data);
             this.ref.detectChanges();            
-        });
-        
+        });        
     }
+
+    formatter = (val: {name:string}) => val.name;
+    
+    search = (text$: Observable<string>) =>
+        text$
+        .debounceTime(200)        
+        .switchMap(term => term.length < 3 ? []
+            : this.lookupValues.filter(x=>x.name.toLowerCase() == term.toLowerCase())
+            );
 }

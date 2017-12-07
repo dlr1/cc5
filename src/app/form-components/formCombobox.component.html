@@ -1,0 +1,19 @@
+<ng-template #rt let-r="result" let-t="term">
+    {{ r.device_name + ' (' + r.ne_type + ')'}}
+</ng-template>
+
+<div class="row clearfix" style="padding-top:5px">
+    <label class="col-sm-4 control-label">{{data.label}}</label>
+    <div class="col-sm-6">
+        <input id="typeahead-http" type="text" (selectItem)="deviceSelected($event.item)"
+        class="form-control" [(ngModel)]="model" [ngbTypeahead]="search" [placeholder]="data?.placeholder == null ? '': data.placeholder"
+        [resultTemplate]="rt" [inputFormatter]="formatter"
+        />
+    </div>
+    <div class="col-sm-1">
+        <span 
+        style="font-size:large; vertical-align:bottom; ">
+      <b [style.color]="isValid ? 'green' : 'red'" >*</b>
+  </span>
+    </div>
+</div>
