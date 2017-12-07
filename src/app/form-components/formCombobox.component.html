@@ -5,7 +5,7 @@
 <div class="row clearfix" style="padding-top:5px">
     <label class="col-sm-4 control-label">{{data.label}}</label>
     <div class="col-sm-6">
-        <input id="typeahead-http" type="text" (selectItem)="deviceSelected($event.item)"
+        <input #box id="typeahead-http" type="text" (selectItem)="deviceSelected($event.item)" (change)="validate(box.value)"
         class="form-control" [(ngModel)]="model" [ngbTypeahead]="search" [placeholder]="data?.placeholder == null ? '': data.placeholder"
         [resultTemplate]="rt" [inputFormatter]="formatter"
         />

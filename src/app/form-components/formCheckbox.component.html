@@ -1,0 +1,15 @@
+<div class="row clearfix" style="padding-top:5px">
+    <label class="col-sm-4 control-label">{{data.label}}</label>
+    <div class="col-sm-6">
+            <div class="well-border">
+        <input type="checkbox" #box  style="align-self:center" 
+        class="input-sm" (change)="data.value = $event.target.checked ? data.value=data.checked : data.unchecked">
+        </div>
+    </div>
+    <div class="col-sm-1">
+        <span 
+        style="font-size:large; vertical-align:bottom; ">
+      <b [style.color]="isValid ? 'green' : 'red'" >*</b>
+  </span>
+    </div>
+</div>

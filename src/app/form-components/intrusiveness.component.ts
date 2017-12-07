@@ -12,7 +12,7 @@ import { BaseComponent } from './base.component';
         Alert!
     </h4> <strong>Warning!</strong> This command may cause a service interruption! Check the box to acknowledge you understand
     this could impact a customer!&nbsp;
-    <input [checked]="isValid" type="checkbox">
+    <input [(ngModel)]="isValid" type="checkbox">
 </div>
     `
 })

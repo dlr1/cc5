@@ -117,7 +117,8 @@ export class CommandModalComponent implements OnInit, OnChanges {
   save() {
     let variables: Array<Variable> = [];
     this.ctrls.forEach(x=>{
-      variables.push(x.data);
+      if(x != undefined)
+        variables.push(x.data);
     })
 
     this.command.variables = variables;
