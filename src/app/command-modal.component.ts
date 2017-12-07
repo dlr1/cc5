@@ -3,7 +3,7 @@ import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 import fields from './services/fields';
 
-import { Variable, Command } from './form-components/models';
+import { Variable, Command } from './models';
 import { controlMappings } from './form-components/controlMappings';
 import { HostDirective } from './form-components/host.directive';
 import { FormTextComponent } from './form-components/formText.component';

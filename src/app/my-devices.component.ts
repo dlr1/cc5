@@ -17,7 +17,7 @@ import 'rxjs/add/operator/merge';
 
 import {LoginModalComponent } from './login-modal.component';
 import ServiceHelper from './services/serviceHelper';
-import { Device } from './form-components/models';
+import { Device } from './models';
 
 import { CookieService } from 'ngx-cookie';
 

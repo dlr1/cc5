@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
-import { Device } from '../form-components/models';
+import { Device } from '../models';
 
 enum HttpOperation{
     GET = 0,

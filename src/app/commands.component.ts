@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
-import { Variable, Command, Device, Script } from './form-components/models';
+import { Variable, Command, Device, Script } from './models';
 import { CommandModalComponent } from './command-modal.component';
 import { MCRParsers, ELNParsers } from './parsers';
 import ServiceHelper from './services/serviceHelper';

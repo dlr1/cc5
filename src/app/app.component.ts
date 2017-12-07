@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {NgbModal, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import ServiceHelper from './services/serviceHelper';
-import { Device } from './form-components/models';
+import { Device } from './models';
 
 
 @Component({
