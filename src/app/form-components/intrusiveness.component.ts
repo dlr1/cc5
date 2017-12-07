@@ -1,5 +1,5 @@
 import { Component, Input} from '@angular/core';
-import { Variable } from './models';
+import { Variable } from '../models';
 import { BaseComponent } from './base.component';
 
 

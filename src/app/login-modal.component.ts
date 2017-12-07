@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, OnChanges, SimpleChange, ViewChild, ComponentFactoryResolver, ChangeDetectorRef } from '@angular/core';
 import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
-import { Variable, Command, Device } from './models';
+import { Variable, DeviceCommand, Device } from './models';
 import { controlMappings } from './form-components/controlMappings';
 import { HostDirective } from './form-components/host.directive';
 import { FormTextComponent } from './form-components/formText.component';

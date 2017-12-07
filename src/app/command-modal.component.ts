@@ -3,7 +3,7 @@ import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 import fields from './services/fields';
 
-import { Variable, Command } from './models';
+import { Variable, DeviceCommand } from './models';
 import { controlMappings } from './form-components/controlMappings';
 import { HostDirective } from './form-components/host.directive';
 import { FormTextComponent } from './form-components/formText.component';
@@ -31,7 +31,7 @@ import { ViewContainerRef } from '@angular/core/src/linker/view_container_ref';
 `
 })
 export class CommandModalComponent implements OnInit, OnChanges {
-  _command: Command;
+  _command: DeviceCommand;
 
   ctrls: Array<BaseComponent> = [];
   
@@ -39,7 +39,7 @@ export class CommandModalComponent implements OnInit, OnChanges {
     private cdref: ChangeDetectorRef) { }
 
   @Input()
-  set command(val: Command) {
+  set command(val: DeviceCommand) {
     this._command = val;
 
     this.cdref.detach();
@@ -70,7 +70,7 @@ export class CommandModalComponent implements OnInit, OnChanges {
   }
 
 
-  get command(): Command { return this._command; }
+  get command(): DeviceCommand { return this._command; }
 
   createComponent(viewContainerRef: ViewContainerRef, element: Variable){
     let componentFactory;

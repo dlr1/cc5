@@ -20,6 +20,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CookieModule } from 'ngx-cookie';
 import { OrderByPipe } from './orderByPipe';
 
+import DeviceService from './services/device.service';
+
 enableProdMode();
 
 @NgModule({
@@ -41,7 +43,7 @@ enableProdMode();
     CookieModule.forRoot()
   ],
   entryComponents:[CommandModalComponent, LoginModalComponent],
-  providers: [ServiceHelper, ELNParsers, MCRParsers],
+  providers: [ServiceHelper, ELNParsers, MCRParsers, DeviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

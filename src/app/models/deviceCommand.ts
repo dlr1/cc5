@@ -1,4 +1,7 @@
-export interface Command{
+import { Variable } from "./variable";
+import { Script } from "./script";
+
+export interface DeviceCommand{
     intrusiveness:string;
     name:string;
     snippets:Array<{text:string}>;

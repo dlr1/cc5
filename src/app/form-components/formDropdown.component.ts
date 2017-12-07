@@ -1,5 +1,5 @@
 import { Component, Input, ChangeDetectorRef, EventEmitter, Output } from '@angular/core';
-import { Variable } from './models';
+import { Variable } from '../models';
 import { BaseComponent } from './base.component';
 
 
@@ -11,6 +11,5 @@ export class FormDropdownComponent extends BaseComponent {
    
     constructor(private ref:ChangeDetectorRef){
         super(ref);
-    }
-    
+    }    
 }

@@ -1,5 +1,5 @@
 import { Component, Input, ChangeDetectorRef, EventEmitter, Output } from '@angular/core';
-import { Variable, Command, Device, Script,regexList } from '../models';
+import { Variable, DeviceCommand, Device, Script,regexList } from '../models';
 
 
 @Component({
