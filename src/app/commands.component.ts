@@ -44,6 +44,7 @@ export class CommandsComponent {
 
     openDialog() {
         const modalRef = this.modalService.open(CommandModalComponent, { size: "lg" });
+        this.selectedCommand.session_key = this.device.session_key;
         modalRef.componentInstance.command = this.selectedCommand;
         let snips: Array<Script> = [];
         var l_buff = '';

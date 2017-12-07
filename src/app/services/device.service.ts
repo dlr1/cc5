@@ -1,12 +1,14 @@
 import { HttpClient } from "@angular/common/http";
-import { Injectable } from "@angular/core";
+import { Injectable, Injector } from "@angular/core";
 import { Device, DeviceCommand } from "../models";
 import { Promise } from "q";
+import { ELNParsers } from "../parsers/eln-parsers";
+import { MCRParsers } from "../parsers/mcr-parsers";
 
 @Injectable()
 export default class DeviceService {
     baseUrl: string = "http://localhost:65427";
-    constructor(private http: HttpClient) {
+    constructor(private http: HttpClient, private injector: Injector) {
 
     }
 
@@ -50,13 +52,13 @@ export default class DeviceService {
     populateCommands(device: Device): Promise<boolean> {             
         return Promise((resolve)=>{
             let url = this.getCommandsUrl(device);
-            // let q = this.injector.get(MCRParsers);
-            // q.test();
-    
+            
             this.http.get<Array<DeviceCommand>>(url).subscribe(x => {
                 device.commands = x["commands"];
                 let categories = {};
                 device.commands.forEach((c, i) => {
+
+                    device.commands[i].commandParser = this.injector.get(MCRParsers);
                     if (!categories.hasOwnProperty(c.category))
                         categories[c.category] = [];
     

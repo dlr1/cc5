@@ -2,7 +2,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
-import { Device } from '../models';
+import { Device, CommandResponse } from '../models';
+
 
 enum HttpOperation{
     GET = 0,
@@ -47,7 +48,7 @@ export default class ServiceHelper {
     login(request):Observable<{session_key:string}>{
         return this.execute<{session_key:string}>(urls.get_connection,HttpOperation.POST,"", request);                      
     }
-    sendCommand(request):Observable<any>{
+    sendCommand(request):Observable<CommandResponse>{
         return this.execute(urls.send_command,HttpOperation.POST,"", request)
     }
 

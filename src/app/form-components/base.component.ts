@@ -9,6 +9,9 @@ export class BaseComponent {
     isValid: boolean = false;
 
     testValue:any;
+
+    @Input() command: DeviceCommand;
+    
     @Input()
     set data(val: Variable) {
     

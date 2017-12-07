@@ -1,5 +1,7 @@
 import { Variable } from "./variable";
 import { Script } from "./script";
+import {ELNParsers, MCRParsers} from "../parsers";
+
 
 export interface DeviceCommand{
     intrusiveness:string;
@@ -12,4 +14,7 @@ export interface DeviceCommand{
     approved?:boolean
     access:any;
     scripts?:Array<Script>;
+    session_key?:string;
+
+    commandParser?: MCRParsers;
 }

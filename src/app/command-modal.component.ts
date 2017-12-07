@@ -47,7 +47,7 @@ export class CommandModalComponent implements OnInit, OnChanges {
     this.ctrls = [];
     this._command.variables.forEach((element, index) => {
       if (element.field)
-      this._command.variables[index] = fields[element.field];
+        this._command.variables[index] = fields[element.field];
     });
 
     this._command.variables.forEach(element => {
@@ -79,6 +79,7 @@ export class CommandModalComponent implements OnInit, OnChanges {
     let componentRef = viewContainerRef.createComponent(componentFactory);
     let inst = (<BaseComponent>componentRef.instance);
     inst.data = element;
+    inst.command = this.command;
     inst.valueChanged.subscribe(data => { this.raiseDependantEvents(data); this.checkValid() });
     this.ctrls.push(inst);
   }

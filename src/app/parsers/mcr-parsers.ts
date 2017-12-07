@@ -1,8 +1,30 @@
 import { Injectable } from "@angular/core";
+import { Device, Variable } from "../models";
+
 
 @Injectable()
 export class MCRParsers {
-    test(){
-        console.log('from mcr parser');
+    MCR_NeighborIP(device: Device, data: string, variable: Variable) {
+        var result = [];
+
+        if (!variable || !data)
+            return;
+        var parsedOutput = data.split("\n");
+        var x = 0;
+        while (x < parsedOutput.length) {
+            var parsedASNx = parsedOutput[x++];
+            var parsedASN = parsedASNx.match(/Neighbor: \d+.\d+.\d+.\d+/g);
+
+            if (parsedASN!= null && parsedASN.length > 0) {
+                var parsedIP = parsedASN[0].slice(10, parsedASN[0].length).trim();
+                //result.push({ name: parsedASN[0] });
+                result.push({ name: parsedIP });
+            }
+        }
+        variable.values = result;
+        if (result.length == 1)
+            variable.value = result[0].name;
+        else
+            variable.values.sort();
     }
 }
