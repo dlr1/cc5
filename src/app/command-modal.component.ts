@@ -3,7 +3,7 @@ import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 import fields from './services/fields';
 
-import { Variable, DeviceCommand } from './models';
+import { Variable, DeviceCommand, Device } from './models';
 import { controlMappings } from './form-components/controlMappings';
 import { HostDirective } from './form-components/host.directive';
 import { FormTextComponent } from './form-components/formText.component';
@@ -26,13 +26,14 @@ import { ViewContainerRef } from '@angular/core/src/linker/view_container_ref';
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-primary" [disabled]='!isValid' (click)="save()">Save</button>
-    <button type="button" class="btn" (click)="activeModal.close('Close click')">Close</button>
+    <button type="button" class="btn" (click)="activeModal.close()">Close</button>
   </div>
 `
 })
 export class CommandModalComponent implements OnInit, OnChanges {
   _command: DeviceCommand;
 
+  @Input() device: Device;
   ctrls: Array<BaseComponent> = [];
   
   constructor(public activeModal: NgbActiveModal, private componentFactoryResolver: ComponentFactoryResolver,
@@ -78,6 +79,7 @@ export class CommandModalComponent implements OnInit, OnChanges {
 
     let componentRef = viewContainerRef.createComponent(componentFactory);
     let inst = (<BaseComponent>componentRef.instance);
+    inst.device = this.device;    
     inst.data = element;
     inst.command = this.command;
     inst.valueChanged.subscribe(data => { this.raiseDependantEvents(data); this.checkValid() });

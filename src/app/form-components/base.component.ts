@@ -12,6 +12,8 @@ export class BaseComponent {
 
     @Input() command: DeviceCommand;
     
+    @Input() device: Device;
+
     @Input()
     set data(val: Variable) {
     
@@ -34,7 +36,13 @@ export class BaseComponent {
     }
 
     validate(value) {
-        this.isValid = this.data.pattern.test(value)
+        if (this.data.pattern)
+            this.isValid = this.data.pattern.test(value)
+        else if(this.data.required)
+            this.isValid = value != null && value != "";
+        else
+            this.isValid = true;
+
         this.cdref.detectChanges();
         this.valueChanged.emit(this.data);
     }

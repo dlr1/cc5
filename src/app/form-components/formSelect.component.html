@@ -1,8 +1,9 @@
 <div class="row clearfix" style="padding-top:5px">
     <label class="col-sm-4 control-label">{{data.label}}</label>
     <div class="col-sm-6">
-        <select #box name="input" class="form-control" [(ngModel)]="data.value" (change)="validate(box.value)" [required]="data.required">
-            <option *ngFor="let c of data.values" [value]="c.name">{{c.name}}</option>
+        <select #box  name="input" class="form-control" 
+        [(ngModel)]="data.value" (change)="validate(box.value)" [required]="data.required">
+            <option *ngFor="let c of data.options" [value]="c.value">{{c.label}}</option>
         </select>
     </div>
     <div class="col-sm-1">

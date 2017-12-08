@@ -6,10 +6,10 @@ import { Observable } from 'rxjs/Observable';
 
 
 @Component({
-    selector: 'form-combobox',
-    templateUrl: './formCombobox.component.html'
+    selector: 'form-select',
+    templateUrl: './formSelect.component.html'
 })
-export class FormComboboxComponent extends BaseComponent {
+export class FormSelectComponent extends BaseComponent {
 
     lookupValues: Array<{ name: string }>
     constructor(private ref: ChangeDetectorRef, private serviceHelper: ServiceHelper) {
@@ -17,23 +17,16 @@ export class FormComboboxComponent extends BaseComponent {
     }
 
     ngOnInit() {
-        if (this.data.dataCommand != "")
+        if (this.data.dataCommand != undefined && this.data.dataCommand != "")
             this.serviceHelper.sendCommand({
                 session_key: this.command.session_key,
                 context: "",
                 commands: [{ command_string: this.data.dataCommand, command_args: null }]
             }).subscribe(data => {
-                this.lookupValues = this.command.commandParser[this.data.dataParserName](this.device, data.responses[0].response, this.data);
+                this.data.options = this.command.commandParser[this.data.dataParserName](this.device, data.responses[0].response, this.data);
                 this.ref.detectChanges();
             });
     }
 
-    formatter = (val: { name: string }) => val.name;
-
-    search = (text$: Observable<string>) =>
-        text$
-            .debounceTime(200)
-            .switchMap(term => term.length < 3 ? []
-                : this.lookupValues.filter(x => x.name.toLowerCase() == term.toLowerCase())
-            );
+   
 }

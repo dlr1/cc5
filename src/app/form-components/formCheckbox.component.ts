@@ -29,7 +29,7 @@ export class FormCheckboxComponent extends BaseComponent {
                 context: "",
                 commands: [{ command_string: this.data.dataCommand, command_args: null }]
             }).subscribe(data => {
-                this.command.commandParser[this.data.dataParserName](null, data.responses[0].response, this.data);
+                this.command.commandParser[this.data.dataParserName](this.device, data.responses[0].response, this.data);
                 this.ref.detectChanges();
             });
 

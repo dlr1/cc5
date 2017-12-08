@@ -42,29 +42,36 @@ export class CommandsComponent {
 
     ngOnInit() { }
 
-    openDialog() {
-        const modalRef = this.modalService.open(CommandModalComponent, { size: "lg" });
-        this.selectedCommand.session_key = this.device.session_key;
-        modalRef.componentInstance.command = this.selectedCommand;
+    populateScripts(command: DeviceCommand){
         let snips: Array<Script> = [];
         var l_buff = '';
 
         // roll the all the entire snippets into one big string
         for (var i = 0; i < this.selectedCommand.snippets.length; ++i)
             l_buff += this.selectedCommand.snippets[i].text;
+            
+        l_buff = l_buff.replace(/{{/g, "").replace(/}}/g, "");             
 
-        modalRef.result.then((command: DeviceCommand) => {
-            command.variables.forEach(variable => {
-                var rx = new RegExp(`<<${variable.variable}>>`, "g");
-                l_buff = l_buff.replace(rx, `<b>${variable.value}</b>`).replace(/{{/g, "").replace(/}}/g, "");
-                // snips.forEach((x,i)=>{
-                //     snips[i].command = x.command.replace(`<<${variable.variable}>>`,`<b>${variable.value}</b>`).replace("{{","").replace("}}";
-                // })
-            })
-            l_buff.split("\n").forEach(x =>
-                snips.push({ "icon": "fa fa-angle-right", "command": x, "response": "", "error": "" }));
+        command.variables.forEach(variable => {
+            var rx = new RegExp(`<<${variable.variable}>>`, "g");
+            l_buff = l_buff.replace(rx, `<b>${variable.value}</b>`);             
+        })
+        l_buff.split("\n").forEach(x =>
+            snips.push({ "icon": "fa fa-angle-right", "command": x, "response": "", "error": "" }));
 
-            this.selectedCommand.scripts = snips;
+        this.selectedCommand.scripts = snips;
+    }
+
+    openDialog() {
+        const modalRef = this.modalService.open(CommandModalComponent, { size: "lg" });
+        this.selectedCommand.session_key = this.device.session_key;
+
+        modalRef.componentInstance.device = this.device;
+        modalRef.componentInstance.command = this.selectedCommand;
+        
+        modalRef.result.then((command: DeviceCommand) => { 
+            if(command != undefined)
+                this.populateScripts(command);
         });
 
     }
@@ -129,11 +136,15 @@ export class CommandsComponent {
     }
 
     editCommand() {
-        this.openDialog();
+        if (this.selectedCommand.variables.length > 0)
+            this.openDialog();
     }
 
     commandChanged() {
-        this.openDialog();
+        if (this.selectedCommand.variables.length > 0)
+            this.openDialog();
+        else
+            this.populateScripts(this.selectedCommand);
     }
 
     categoryChanged() {
