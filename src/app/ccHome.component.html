@@ -4,7 +4,7 @@
             <div class="col-md-3">
                 <my-devices (onVoted)="deviceSelected($event)"></my-devices>
             </div>
-            <div class="col-md-8" *ngIf="selectedDevice != null">
+            <div class="col-md-9" *ngIf="selectedDevice != null">
                 <commands-component [device]="selectedDevice"></commands-component>
             </div>
         </div>

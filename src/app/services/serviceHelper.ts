@@ -1,11 +1,11 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-
+import { Promise } from "q";
 import { Device, CommandResponse } from '../models';
 
 
-enum HttpOperation{
+export enum HttpOperation{
     GET = 0,
     POST,
     PUT
@@ -39,6 +39,19 @@ export default class ServiceHelper {
     baseUrl: string = "http://localhost:65427";
     constructor(private http: HttpClient) {
 
+    }
+
+    performAsyncInvocation(aMethod: HttpOperation, aUrl: string, aParams): Promise<any> {
+        return Promise((resolve)=>{
+            this.http.get(`${this.baseUrl + aUrl}`,{params: aParams}).subscribe(data=>{
+                console.log(JSON.parse(data["content"]));
+                resolve(data);
+            },
+            data=>{
+                console.log("error");
+                resolve(data);
+            })            
+        });       
     }
 
     getFilteredDevices(criteria:string) {       

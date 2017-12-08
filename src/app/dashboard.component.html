@@ -1,1 +1,126 @@
-fgbdhd
+<div class="row clearfix">
+    <div class="col-md-12 column">
+        <div class="row clearfix">
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-header">
+                        Audit Filters
+                        <span class="pull-right">
+                                <i style="margin-left:10px; cursor: pointer"
+                                   ng-style="{color: 'black'  }"
+                                   class="fa fa-refresh"
+                                   (click)="loadUserReport()"></i>
+                            </span>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-sm">
+                            <tr>
+                                <td>Users</td>
+                                <td>
+                                    <div class=" input-group">
+                                        <span class="input-group-addon">
+                                            <span class="fa fa-search"></span>
+                                        </span>
+                                        <input type="text" ng-model="mySelectedUser" placeholder="Enter User name" typeahead-on-select="addSelectedUser(mySelectedUser); mySelectedUser='';"
+                                            typeahead="u as u for u in users | filter:$viewValue | limitTo:8" class="form-control">
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Timeframe</td>
+                                <td>
+                                    <div class=" btn btn-default">
+                                       <div class="input-group">                                            
+                                            <button class="input-group-addon" (click)="d.toggle()" type="button">
+                                              <img src="assets/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+                                            </button>
+                                            <input class="form-control" placeholder="yyyy-mm-dd"
+                                            name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+                                        </div>
+
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Devices</td>
+                                <td>
+                                    <div class=" input-group">
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-search"></span>
+                                        </span>
+                                        <input type="text" ng-model="mySelectedDevice" placeholder="Enter Device name" typeahead-on-select="addSelectedDevice(mySelectedDevice.device_name)"
+                                            typeahead="device as device.device_name for device in devices | filter:$viewValue | limitTo:8"
+                                            class="form-control">
+                                    </div>
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Filter</td>
+                                <td>
+                                    <div class="input-group pull-right">
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-search"></i>
+                                        </div>
+                                        <input class="form-control" placeholder="Enter Log Filter" ng-model="searchText" value="error">
+                                    </div>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <div class="input-group pull-left">
+                                        <input type="radio" [(ngModel)]="contextFilter" value="ALL">&nbsp;All &nbsp;&nbsp;
+                                        <input type="radio" [(ngModel)]="contextFilter" value="commandsOnly">&nbsp;Commands &nbsp;&nbsp;
+                                        <input type="radio" [(ngModel)]="contextFilter" value="puttyOnly">&nbsp;XO Putty &nbsp;&nbsp;
+                                    </div>
+
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="card-footer">
+                        <span [class]="statusIcon"></span> {{ statusMessage}}
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="card">
+                    <div class="card-header">
+                        User Audit Preview
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-sm table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>User</th>
+                                    <th>Device</th>
+                                    <th>Context</th>
+                                    <th>Date/Time</th>
+                                    <th style="text-align: right">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let row of userReportOut">
+                                    <td ng-click="addSelectedUser(row._id.username)">
+                                        <a>{{row._id.username}}</a>
+                                    </td>
+                                    <td ng-click="addSelectedDevice(row._id.device)">
+                                        <a>{{row._id.device}}</a>
+                                    </td>
+                                    <td>{{row._id.context}}</td>
+                                    <td>{{row._id.timestamp.month}}/{{row._id.timestamp.day}}/{{row._id.timestamp.year}}</td>
+                                    <td ng-click="showUserActivity(row._id.username, row._id.device, row._id.timestamp)" style="text-align: right">
+                                        <a>{{row.total}}</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
