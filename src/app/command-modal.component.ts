@@ -111,8 +111,7 @@ export class CommandModalComponent implements OnInit, OnChanges {
     this.cdref.detectChanges();
   }
 
-  raiseDependantEvents(data: Variable) {
-    console.log("raise events");
+  raiseDependantEvents(data: Variable) {    
     this.checkValid();
   }
 
