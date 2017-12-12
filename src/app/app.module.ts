@@ -25,10 +25,13 @@ import { OrderByPipe } from './orderByPipe';
 import DeviceService from './services/device.service';
 import { DashboardComponent } from './dashboard.component';
 import { CCHomeComponent } from './ccHome.component';
+import { NITComponent } from './nit.component';
+import NitService from './services/nitService';
 
 enableProdMode();
 
 const appRoutes: Routes = [
+  { path: 'nit', component: NITComponent },  
   { path: 'dashboard', component: DashboardComponent },  
   { path: '**', component: CCHomeComponent }
 ];
@@ -42,7 +45,8 @@ const appRoutes: Routes = [
     MyDevicesComponent, 
     DashboardComponent,
     CCHomeComponent,
-    OrderByPipe
+    OrderByPipe,
+    NITComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +59,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes)
   ],
   entryComponents:[CommandModalComponent, LoginModalComponent],
-  providers: [ServiceHelper, ELNParsers, MCRParsers, DeviceService],
+  providers: [ServiceHelper, ELNParsers, MCRParsers, DeviceService, NitService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -31,7 +31,9 @@ const urls = {
     get_interfaces: 'https://plancactst01.pla.dc.xo.com:8000/dcm/',
     get_version: 'https://plancactst01.pla.dc.xo.com:8000/dcm/',
     get_devicetypes: 'https://plancactst01.pla.dc.xo.com:8000/dcm/admin/devicetypes',
-    get_deviceNameFromTbsId: 'https://plancactst01.pla.dc.xo.com:8000/dcm/admin/devices/tbs'
+    get_deviceNameFromTbsId: 'https://plancactst01.pla.dc.xo.com:8000/dcm/admin/devices/tbs',
+    disconnectUrl: "https://plancactst01.pla.dc.xo.com:8000/dcm/disconnect",
+    connectUrl: "https://plancactst01.pla.dc.xo.com:8000/dcm/connect"
 }
 
 @Injectable()
@@ -39,6 +41,19 @@ export default class ServiceHelper {
     baseUrl: string = "http://localhost:65427";
     constructor(private http: HttpClient) {
 
+    }
+
+    disconnect(data): Promise<any>{       
+        var jsonStringfiedVersion = {
+                        json: encodeURIComponent(JSON.stringify(data)),
+                        backendUrl: urls.disconnectUrl,
+                        opMethod: "POST"
+                    };
+                     var backendUrl = "/api/dcmService";
+        return Promise((resolve)=>{
+            this.http.post(`${this.baseUrl}/api/dcmService`, jsonStringfiedVersion).subscribe(data=>resolve(data)
+        )});
+        
     }
 
     performAsyncInvocation(aMethod: HttpOperation, aUrl: string, aParams): Promise<any> {
