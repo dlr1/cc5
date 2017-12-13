@@ -1,17 +1,30 @@
 import { HttpClient } from "@angular/common/http";
-import { Injectable } from "@angular/core";
+import { Injectable, Injector } from "@angular/core";
 import { Observable } from "rxjs/Observable";
 import { NitDevice } from "../models/nitDevice";
+
+import  {CSSDevice}  from './cssdevice.service';
 
 @Injectable()
 export default class NitService {
    
     baseUrl: string = "http://localhost:65427";
-    constructor(private http: HttpClient) {
-
+    constructor(private http: HttpClient, private injector: Injector){
+        
     }
-
    
+    extend<T, U>(first: T, second: U): T & U {
+        let result = <T & U>{};
+        for (let id in first) {
+            (<any>result)[id] = (<any>first)[id];
+        }
+        for (let id in second) {
+            if (!result.hasOwnProperty(id)) {
+                (<any>result)[id] = (<any>second)[id];
+            }
+        }
+        return result;
+    }
 
     getRings(): Observable<Object>{        
         return this.http.get(`${this.baseUrl}/api/rings`);
@@ -30,27 +43,44 @@ export default class NitService {
                 if (found.indexOf(node.nodeA) == -1) {
                     found += node.nodeA;
                     if (!node.excludeNodeA)
-                        devices.push(<NitDevice>{
-                            name: node.nodeA,
-                            type: node.nodeAType,
-                            address: node.nodeAAddress
-                        });
+                        if (node.nodeA.startsWith("CSS"))
+                        devices.push(this.extend(this.injector.get(CSSDevice), {
+                                name: node.nodeA,
+                                type: node.nodeAType,
+                                address: node.nodeAAddress,
+                                circuits:[]   
+                            }));
+                        else
+                            devices.push(<NitDevice>{
+                                name: node.nodeA,
+                                type: node.nodeAType,
+                                address: node.nodeAAddress,     
+                                circuits:[]                           
+                            });
                 }
 
                 if (found.indexOf(node.nodeB) == -1) {
                     found += node.nodeB;
                     if (!node.excludeNodeB)
-                        devices.push(<NitDevice>{
-                            name: node.nodeB,
-                            type: node.nodeBType,
-                            address: node.nodeBAddress
-                        });
+                        if (node.nodeA.startsWith("CSS"))
+                            devices.push(this.extend(this.injector.get(CSSDevice), {
+                                name: node.nodeB,
+                                type: node.nodeBType,
+                                address: node.nodeBAddress,
+                                circuits:[]   
+                            }));
+                        else
+                            devices.push(<NitDevice>{
+                                name: node.nodeB,
+                                type: node.nodeBType,
+                                address: node.nodeBAddress,
+                                circuits:[]
+                            });
                 }
             }
 
             for (var i = 0; i < devices.length; ++i) {
-                var device = devices[i];
-                device.circuits = [];
+                var device = devices[i];                
                 found = '';
 
                 for (var j = 0; j < nodes.length; ++j) {

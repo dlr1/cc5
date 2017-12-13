@@ -43,6 +43,16 @@ export default class ServiceHelper {
 
     }
 
+    getConnection(request): Promise<CommandResponse> {
+        request.osusername = 'ldarbha';
+        request.connectUrl = urls.connectUrl;
+
+        return Promise((resolve) => {
+            this.http.post<CommandResponse>(`${this.baseUrl}/api/connectRequest`, request).subscribe(data => resolve(data)
+            )
+        });
+    }
+
     disconnect(data): Promise<any>{       
         var jsonStringfiedVersion = {
                         json: encodeURIComponent(JSON.stringify(data)),

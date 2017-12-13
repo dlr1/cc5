@@ -27,6 +27,8 @@ import { DashboardComponent } from './dashboard.component';
 import { CCHomeComponent } from './ccHome.component';
 import { NITComponent } from './nit.component';
 import NitService from './services/nitService';
+import { CSSDevice } from './services/cssdevice.service';
+import { RingLib } from './services/ringLib';
 
 enableProdMode();
 
@@ -59,7 +61,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes)
   ],
   entryComponents:[CommandModalComponent, LoginModalComponent],
-  providers: [ServiceHelper, ELNParsers, MCRParsers, DeviceService, NitService],
+  providers: [ServiceHelper, ELNParsers, MCRParsers, DeviceService, NitService, CSSDevice, RingLib],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

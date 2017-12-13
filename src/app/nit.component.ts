@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Injector } from '@angular/core';
 import  NitService  from "./services/nitService";
 import { NitDevice } from './models/nitDevice';
 import { CSSDevice } from './services/cssdevice.service';
+
 
 
 @Component({
@@ -15,7 +16,7 @@ export class NITComponent {
     selectedRing;
     devices: Array<NitDevice>;
     nodePdfUrl = null;
-    constructor(private nitService: NitService) {
+    constructor(private nitService: NitService, private injector: Injector) {
         this.selectedRing = {
             health: {
                 state: 'No Data',
@@ -37,14 +38,15 @@ export class NITComponent {
     }
 
     getDeviceMetaData(device: NitDevice){
-        if (device.type.startsWith("CSS"))
-            (<CSSDevice>device).getMetadata();
+       (<CSSDevice>device).getMetadata();
     }
+
+   
 
     getRing() {
         this.nitService.getRing(this.ring.name).subscribe(data => {
             this.devices = this.nitService.getUniqueNodes(data[0].spans);
-            this.devices.forEach(x=>x.ring = this.ring.name);
+            this.devices.forEach(x=>x.ringName = this.ring.name);
         });
     }
     ngOnInit() {
